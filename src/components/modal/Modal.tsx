@@ -9,8 +9,8 @@ export default class Modal extends PureComponent<Props, State>
     public static defaultProps:Partial<Props> = {
         outTime: 0
     };
-    private root = document.getElementById('modal');
-    private container:HTMLDivElement;
+    private root = document.getElementById('modal-root');
+    private modal:HTMLDivElement;
     private visibleDelay:number;
     private activeDelay:number;
     
@@ -22,17 +22,26 @@ export default class Modal extends PureComponent<Props, State>
             visible: props.visible,
             active: false
         };
-        this.container = document.createElement('div');
+        this.modal = document.createElement('div');
+        this.modal.addEventListener('click', this.onClickModal);
     }
     
     componentDidMount()
     {
         if (this.state.visible) {
-            this.root.appendChild(this.container);
+            this.root.appendChild(this.modal);
             this.activeDelay = window.setTimeout(()=>
                 this.setState({active: true}), 20);
         }
     }
+    
+    onClickModal = (event:MouseEvent)=>
+    {
+        if (event.target === event.currentTarget) {
+            if (this.props.onClose)
+                this.props.onClose();
+        }
+    };
     
     static getDerivedStateFromProps(nextProps:Props, prevState:State)
     {
@@ -54,7 +63,7 @@ export default class Modal extends PureComponent<Props, State>
         if (!prevProps.visible && this.props.visible) {
             clearTimeout(this.visibleDelay);
             clearTimeout(this.activeDelay);
-            this.root.appendChild(this.container);
+            this.root.appendChild(this.modal);
             this.activeDelay = window.setTimeout(()=>
                 this.setState({active: true}), 20);
         }
@@ -64,7 +73,7 @@ export default class Modal extends PureComponent<Props, State>
             clearTimeout(this.activeDelay);
             this.visibleDelay = window.setTimeout(()=> {
                 this.setState({visible: false});
-                this.root.removeChild(this.container);
+                this.root.removeChild(this.modal);
             }, this.props.outTime);
         }
     }
@@ -73,14 +82,18 @@ export default class Modal extends PureComponent<Props, State>
     {
         clearTimeout(this.activeDelay);
         clearTimeout(this.visibleDelay);
-        if (this.container.parentElement)
-            this.root.removeChild(this.container);
+        
+        this.modal.removeEventListener('click', this.onClickModal);
+        if (this.modal.parentElement)
+            this.root.removeChild(this.modal);
     }
     
     render()
     {
-        this.container.className = classNames(
-            style.container,
+        document.body.style.overflow =
+            this.state.visible ? 'hidden' : 'unset';
+        this.modal.className = classNames(
+            style.modal,
             this.state.active && style.active,
             this.props.interactive && style.interactive,
             this.props.center && style.center
@@ -88,10 +101,12 @@ export default class Modal extends PureComponent<Props, State>
         return this.state.visible &&
             ReactDOM.createPortal(
                 React.cloneElement(
-                    this.props.children as ReactElement<State>,
-                    this.state
+                    this.props.children as ReactElement<Props & State>, {
+                        active: this.state.active,
+                        onClose: this.props.onClose
+                    }
                 ),
-                this.container
+                this.modal
             );
     }
 }
@@ -101,6 +116,7 @@ interface Props {
     outTime?:number;
     interactive?:boolean;
     center?:boolean;
+    onClose?:()=> void;
 }
 
 interface State {
