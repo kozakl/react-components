@@ -1,5 +1,1 @@
-import ResponsiveImage from './ResponsiveImage';
-/**
- * @author kozakluke@gmail.com
- */
-export default ResponsiveImage;
+export {default as ResponsiveImage} from './ResponsiveImage';
