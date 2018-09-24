@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as style from './Modal.pcss';
-import classNames from '@kozakl/utils/classNames';
 import {PureComponent, ReactElement} from 'react';
+import {classNames} from '@kozakl/utils';
 
 export default class Modal extends PureComponent<Props, State>
 {
