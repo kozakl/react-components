@@ -1,0 +1,34 @@
+:root {
+  --bg-color: color(#000 a(0.7));
+}
+
+.container {
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transition:
+          background 0.2s ease-out;
+  
+  &.active {
+    background: var(--bg-color);
+  }
+  &.interactive {
+    visibility: hidden;
+    
+    & * {
+      visibility: visible;
+    }
+  }
+  &.center {
+    text-align: center;
+    
+    &::before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+}
