@@ -1,11 +1,16 @@
 import * as React from 'react';
 import * as style from './Spinner.pcss';
 import {StatelessComponent} from 'react';
+import {classNames} from '@kozakl/utils';
 
 const Spinner:StatelessComponent<Props> = (props)=>
 {
+    const spinnerClass = classNames(
+        props.className,
+        style.spinner
+    );
     return (
-        <div className={style.spinner} style={{width: props.size}}>
+        <div className={spinnerClass} style={{width: props.size}}>
             <svg className={style.container} viewBox="0 0 60 60">
                 <circle
                     className={style.circle}
@@ -24,6 +29,7 @@ Spinner.defaultProps = {
 };
 
 interface Props {
+    className?:string;
     color?:string;
     size?:string;
 }
