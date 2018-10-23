@@ -1,9 +1,7 @@
 import * as React from 'react';
 import * as style from './ResponsiveImage.pcss';
 import {PureComponent} from 'react';
-/**
- * @author kozakluke@gmail.com
- */
+
 export default class ResponsiveImage extends PureComponent<Props, State>
 {
     constructor(props:Props)
@@ -58,7 +56,7 @@ export default class ResponsiveImage extends PureComponent<Props, State>
 
 interface Props {
     className?:string;
-    id:string;
+    id?:string;
     ratio:number;
     thumb:string;
     srcSet:string;

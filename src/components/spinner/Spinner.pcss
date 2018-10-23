@@ -1,0 +1,18 @@
+@import 'animations.pcss';
+
+.spinner {
+  display: inline-block;
+  transform: rotate(-90deg);
+}
+
+.container {
+  animation: rotate 2s linear infinite;
+}
+
+.circle {
+  fill: none;
+  stroke-linecap: round;
+  stroke-miterlimit: 20;
+  stroke-width: 4px;
+  animation: stroke-dash 1.5s ease-in-out infinite;
+}

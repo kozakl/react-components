@@ -59,7 +59,7 @@ module.exports = {
     devServer: {
         contentBase: 'public/',
         historyApiFallback: true,
-        open: 'google-chrome-beta'
+        open: 'google-chrome-unstable'
     },
     plugins: [
         new DefinePlugin({
