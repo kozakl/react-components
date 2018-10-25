@@ -1,9 +1,7 @@
 import * as React from 'react';
 import * as style from './AudioPlayer.pcss';
 import {clamp} from '@kozakl/utils/math';
-/**
- * @author kozakluke@gmail.com
- */
+
 export default class AudioPlayer extends React.PureComponent<Props, State>
 {
     private bar:HTMLSpanElement;
