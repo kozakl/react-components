@@ -25,7 +25,7 @@ export default class AudioPlayer extends React.PureComponent<Props, State>
         const audio = this.audio = document.createElement('audio');
         audio.addEventListener('timeupdate', this.onUpdateAudio);
         audio.addEventListener('ended', this.onEndAudio);
-        audio.src = './assets/sound.mp3';
+        audio.src = './assets/sample.mp3';
         audio.load();
         
         document.addEventListener('mouseup', this.onUp);
@@ -109,7 +109,7 @@ export default class AudioPlayer extends React.PureComponent<Props, State>
 }
 
 interface Props {
-    className:string;
+    className?:string;
 }
 
 interface State {
