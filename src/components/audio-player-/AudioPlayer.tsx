@@ -1,6 +1,6 @@
 import * as React from 'react';
-import * as style from './AudioPlayer.css';
-import MathUtil from '../../utils/MathUtil';
+import * as style from './AudioPlayer.pcss';
+import {clamp} from '@kozakl/utils/math';
 /**
  * @author kozakluke@gmail.com
  */
@@ -46,8 +46,8 @@ export default class AudioPlayer extends React.PureComponent<Props, State>
     onUp = (event:MouseEvent)=>
     {
         if (this.drag) {
-            const rect    = this.bar.getBoundingClientRect(),
-                  percent = MathUtil.clamp((event.clientX - rect.left) / rect.width, 0, 1);
+            const rect = this.bar.getBoundingClientRect(),
+                  percent = clamp((event.clientX - rect.left) / rect.width, 0, 1);
             this.audio.currentTime = this.audio.duration * percent;
         }
         this.drag = false;
@@ -56,8 +56,8 @@ export default class AudioPlayer extends React.PureComponent<Props, State>
     onMove = (event:MouseEvent)=>
     {
         if (this.drag) {
-            const rect    = this.bar.getBoundingClientRect(),
-                  percent = MathUtil.clamp((event.clientX - rect.left) / rect.width, 0, 1) * 100;
+            const rect = this.bar.getBoundingClientRect(),
+                  percent = clamp((event.clientX - rect.left) / rect.width, 0, 1) * 100;
             this.setState({percent});
         }
     };
@@ -76,8 +76,8 @@ export default class AudioPlayer extends React.PureComponent<Props, State>
     {
         this.drag = true;
         
-        const rect    = this.bar.getBoundingClientRect(),
-              percent = MathUtil.clamp((event.nativeEvent.clientX - rect.left) / rect.width, 0, 1) * 100;
+        const rect = this.bar.getBoundingClientRect(),
+              percent = clamp((event.nativeEvent.clientX - rect.left) / rect.width, 0, 1) * 100;
         this.setState({percent});
     };
     
