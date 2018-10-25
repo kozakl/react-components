@@ -1,5 +1,5 @@
 {
-  "name": "react-template-ts",
+  "name": "react-components",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
     "prebuild": "npm run clean-public",
