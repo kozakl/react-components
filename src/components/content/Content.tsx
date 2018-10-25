@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as style from './Content.pcss';
 import {PureComponent} from 'react';
 import {SpinnerSample} from '../../pages/spinner-sample';
-import AudioPlayer from '../audio-player-/AudioPlayer';
+import {AudioPlayer} from '../audio-player-';
 
 export default class Content extends PureComponent<Props>
 {

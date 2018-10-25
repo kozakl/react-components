@@ -1,5 +1,1 @@
-import AudioPlayer from './AudioPlayer';
-/**
- * @author kozakluke@gmail.com
- */
-export default AudioPlayer;
+export {default as AudioPlayer} from './AudioPlayer';
