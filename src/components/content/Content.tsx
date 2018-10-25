@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as style from './Content.pcss';
 import {PureComponent} from 'react';
+import {SpinnerSample} from '../../pages/spinner-sample';
 
 export default class Content extends PureComponent<Props>
 {
@@ -13,10 +14,7 @@ export default class Content extends PureComponent<Props>
     {
         return (
             <div className={style.content}>
-                <div className={style.logo}>
-                    <img src={require('res/logo.svg')}/>
-                </div>
-                <button className={style.button} onClick={this.onClick}>Click</button>
+                <SpinnerSample/>
             </div>
         );
     }
