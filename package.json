@@ -2,13 +2,13 @@
   "name": "react-template-ts",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
-    "prebuild": "yarn clean-public",
+    "prebuild": "npm run clean-public",
     "build": "webpack --config webpack.config.prod.js",
     "deploy": "babel-node ./tasks/deploy.js ~/Public/kozakl.bitbucket.org/",
-    "clean-npm": "babel-node ./tasks/clean-npm.js",
+    "clean-cache": "babel-node ./tasks/clean-cache.js",
     "clean-public": "babel-node ./tasks/clean-public.js",
     "test": "jest --coverage",
-    "test:watch": "yarn test -- --watchAll"
+    "test:watch": "npm run test -- --watchAll"
   },
   "jest": {
     "transform": {
@@ -49,6 +49,7 @@
     "postcss-simple-vars": "^4.1.0",
     "rest-optimize-webpack-plugin": "^1.0.2",
     "style-loader": "^0.21.0",
+    "ts-jest": "^23.10.4",
     "ts-loader": "^4.4.2",
     "typescript": "^2.9.2",
     "url-loader": "^1.0.1",

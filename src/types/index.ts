@@ -1,3 +1,0 @@
-/**
- * @author kozakluke@gmail.com
- */
