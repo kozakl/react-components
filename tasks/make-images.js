@@ -1,6 +1,7 @@
 import gm from 'gm';
 import fs from 'fs-extra';
 import path from 'path';
+import {listFiles} from '@kozakl/utils/file';
 
 const filter = ['.jpg', 'jpeg', '.png', '.gif'],
       buffer = fs.readFileSync(process.argv[2], 'utf8'),
@@ -26,17 +27,6 @@ function makeImage(image)
     const next = images.next();
     if (!next.done)
         makeImage(next.value);
-}
-
-function listFiles(dir, filter, list = [])
-{
-    fs.readdirSync(dir).forEach((file)=> {
-        if (fs.statSync(path.join(dir, file)).isDirectory())
-            listFiles(path.join(dir, file), filter, list);
-        else if (filter.includes(path.extname(file)))
-            list.push(path.join(dir, file));
-    });
-    return list;
 }
 
 function writeSizes(image)
