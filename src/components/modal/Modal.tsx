@@ -90,7 +90,7 @@ export default class Modal extends PureComponent<Props, State>
     
     render()
     {
-        document.body.style.overflow =
+        document.body.style.overflowY =
             this.state.visible ? 'hidden' : 'unset';
         this.modal.className = classNames(
             style.modal,
