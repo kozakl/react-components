@@ -3,6 +3,7 @@ import * as style from './Content.pcss';
 import {PureComponent} from 'react';
 import {SpinnerSample} from '../../pages/spinner-sample';
 import {AudioPlayerSample} from '../../pages/audio-player-sample';
+import {CrossfadeBgSample} from '../../pages/crossfade-bg-sample';
 
 export default class Content extends PureComponent<Props>
 {
@@ -15,7 +16,7 @@ export default class Content extends PureComponent<Props>
     {
         return (
             <div className={style.content}>
-                <AudioPlayerSample/>
+                <CrossfadeBgSample/>
             </div>
         );
     }
