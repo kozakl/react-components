@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@kozakl/webpack-dev-server": "^3.1.6",
+    "@types/fs-extra": "^5.0.4",
     "@types/jest": "^23.3.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
