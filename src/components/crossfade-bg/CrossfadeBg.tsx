@@ -61,7 +61,7 @@ export default class CrossfadeBg extends PureComponent<{}, State>
             <div className={style.crossfadeBg}>
                 <ResponsiveImage
                     className={style.current}
-                    ratio={1080 / 1920}
+                    ratio={1280 / 1920}
                     thumb={`${this.images[this.state.current]}_thumb.jpg`}
                     srcSet={`${this.images[this.state.current]}_992w.jpg 661w,
                              ${this.images[this.state.current]}_1200w.jpg 960w,
@@ -70,7 +70,7 @@ export default class CrossfadeBg extends PureComponent<{}, State>
                 {this.images[this.state.next] &&
                     <ResponsiveImage
                         className={nextClass}
-                        ratio={1080 / 1920}
+                        ratio={1280 / 1920}
                         thumb={`${this.images[this.state.next]}_thumb.jpg`}
                         srcSet={`${this.images[this.state.next]}_992w.jpg 661w,
                                  ${this.images[this.state.next]}_1200w.jpg 960w,
