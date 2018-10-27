@@ -5,7 +5,7 @@ import {basename, dirname,
         extname, join} from 'path';
 import {listFiles} from '@kozakl/utils/file';
 
-const filter = ['.jpg', 'jpeg', '.png', '.gif'],
+const filter = ['.jpg', '.jpeg', '.png', '.gif'],
       buffer = readFileSync(process.argv[2], 'utf8'),
       images = JSON.parse(buffer).values();
 makeImage(images.next().value);
