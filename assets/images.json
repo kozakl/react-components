@@ -1,0 +1,28 @@
+[
+  {
+    "src": "assets/bg1.jpg",
+    "dest": "public/assets/",
+    "ext": ".jpg",
+    "quality": 80,
+    "sizes": [
+      {"resize": "992", "suffix": "_992w"},
+      {"resize": "1200", "suffix": "_1200w"},
+      {"resize": "1366", "suffix": "_1366w"},
+      {"resize": "1920", "suffix": "_1920w"},
+      {"resize": "300", "suffix": "_thumb", "blur": "0x1.5"}
+    ]
+  },
+  {
+    "src": "assets/bg2.jpg",
+    "dest": "public/assets/",
+    "ext": ".jpg",
+    "quality": 80,
+    "sizes": [
+      {"resize": "992", "suffix": "_992w"},
+      {"resize": "1200", "suffix": "_1200w"},
+      {"resize": "1366", "suffix": "_1366w"},
+      {"resize": "1920", "suffix": "_1920w"},
+      {"resize": "300", "suffix": "_thumb", "blur": "0x1.5"}
+    ]
+  }
+]
