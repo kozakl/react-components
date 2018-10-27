@@ -5,7 +5,7 @@
     "prebuild": "npm run clean-public",
     "build": "webpack --config webpack.config.prod.js",
     "deploy": "babel-node ./tasks/deploy.js ~/Public/kozakl.bitbucket.org/",
-    "make-images": "babel-node ./tasks/make-images.js 'assets/images.json'",
+    "make-images": "node -r esm ./tasks/make-images.js 'assets/images.json'",
     "clean-cache": "babel-node ./tasks/clean-cache.js",
     "clean-public": "babel-node ./tasks/clean-public.js",
     "test": "jest --coverage",
@@ -24,7 +24,7 @@
     ]
   },
   "dependencies": {
-    "@kozakl/utils": "^3.0.0",
+    "@kozakl/utils": "^3.1.1",
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",
     "react": "^16.4.1",
@@ -37,6 +37,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^1.0.0",
+    "esm": "^3.0.84",
     "file-loader": "^1.1.11",
     "fs-extra": "^7.0.0",
     "gm": "^1.23.1",
