@@ -1,23 +1,25 @@
 import gm from 'gm';
-import fs from 'fs-extra';
-import path from 'path';
+import {existsSync, lstatSync,
+        mkdirpSync, readFileSync} from 'fs-extra';
+import {basename, dirname,
+        extname, join} from 'path';
 import {listFiles} from '@kozakl/utils/file';
 
 const filter = ['.jpg', 'jpeg', '.png', '.gif'],
-      buffer = fs.readFileSync(process.argv[2], 'utf8'),
+      buffer = readFileSync(process.argv[2], 'utf8'),
       images = JSON.parse(buffer).values();
 makeImage(images.next().value);
 
 function makeImage(image)
 {
-    if (fs.lstatSync(image.src).isFile())
-        writeSizes(image);
+    if (lstatSync(image.src).isFile())
+        makeSizes(image);
     else
     {
         listFiles(image.src, filter).forEach((src)=> {
             const diff = src.replace(image.src, ''),
-                  dest = path.dirname(path.join(image.dest, diff));
-            writeSizes({
+                  dest = dirname(join(image.dest, diff));
+            makeSizes({
                 ...image,
                 src, dest
             });
@@ -29,15 +31,17 @@ function makeImage(image)
         makeImage(next.value);
 }
 
-function writeSizes(image)
+function makeSizes(image)
 {
-    if (!fs.existsSync(image.dest))
-        fs.mkdirpSync(image.dest);
+    if (!existsSync(image.dest))
+        mkdirpSync(image.dest);
     
     image.sizes.forEach((size)=> {
-        const dest = path.join(image.dest,
-                     path.basename(image.src, path.extname(image.src)) +
-                     size.suffix + (image.ext || path.extname(image.src)));
+        const dest = join(
+            image.dest,
+            basename(image.src, extname(image.src)) +
+            size.suffix + (image.ext || extname(image.src))
+        );
         gm(image.src)
             .noProfile()
             .resize(size.resize)
