@@ -42,11 +42,27 @@ function makeSizes(image)
             basename(image.src, extname(image.src)) +
             size.suffix + (image.ext || extname(image.src))
         );
-        gm(image.src)
-            .noProfile()
-            .resize(size.resize)
-            .blur(size.blur || image.blur || '0x0.001')
-            .quality(size.quality || image.quality)
-            .write(dest, err => err && console.log(err));
+        if (!process.argv.includes('--debug')) {
+            gm(image.src)
+                .noProfile()
+                .resize(size.resize)
+                .blur(size.blur || image.blur || '0x0.001')
+                .quality(size.quality || image.quality)
+                .write(dest, err => err && console.log(err));
+        } else {
+            gm(image.src)
+                .noProfile()
+                .resize(size.resize)
+                .blur(size.blur || image.blur || '0x0.001')
+                .quality(size.quality || image.quality)
+                .fill('#FFFFFF')
+                .font('Helvetica', 0.1 * size.resize)
+                .drawText(
+                    0.4 * size.resize,
+                    0.11 * size.resize,
+                    size.suffix
+                )
+                .write(dest, err => err && console.log(err));
+        }
     });
 }
