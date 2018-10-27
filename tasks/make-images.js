@@ -45,21 +45,21 @@ function makeSizes(image)
         if (!process.argv.includes('--debug')) {
             gm(image.src)
                 .noProfile()
-                .resize(size.resize)
+                .resize(size.value)
                 .blur(size.blur || image.blur || '0x0.001')
                 .quality(size.quality || image.quality)
                 .write(dest, err => err && console.log(err));
         } else {
             gm(image.src)
                 .noProfile()
-                .resize(size.resize)
+                .resize(size.value)
                 .blur(size.blur || image.blur || '0x0.001')
                 .quality(size.quality || image.quality)
                 .fill('#FFFFFF')
-                .font('Helvetica', 0.1 * size.resize)
+                .font('Helvetica', 0.1 * size.value)
                 .drawText(
-                    0.4 * size.resize,
-                    0.11 * size.resize,
+                    0.4 * size.value,
+                    0.11 * size.value,
                     size.suffix
                 )
                 .write(dest, err => err && console.log(err));
