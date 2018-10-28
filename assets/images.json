@@ -24,5 +24,33 @@
       {"value": "1920", "suffix": "_1920w"},
       {"value": "300", "suffix": "_thumb", "blur": "0x1.5"}
     ]
+  },
+  {
+    "src": "assets/room1.jpg",
+    "dest": "public/assets/",
+    "quality": 85,
+    "sizes": [
+      {"value": "400", "suffix": "_400w"},
+      {"value": "525", "suffix": "_525w"},
+      {"value": "700", "suffix": "_700w"},
+      {"value": "800", "suffix": "_800w-2x"},
+      {"value": "1050", "suffix": "_1050w-2x"},
+      {"value": "1400", "suffix": "_1400w-2x"},
+      {"value": "100", "suffix": "_thumb", "blur": "0x1.5"}
+    ]
+  },
+  {
+    "src": "assets/room2.jpg",
+    "dest": "public/assets/",
+    "quality": 85,
+    "sizes": [
+      {"value": "400", "suffix": "_400w"},
+      {"value": "525", "suffix": "_525w"},
+      {"value": "700", "suffix": "_700w"},
+      {"value": "800", "suffix": "_800w-2x"},
+      {"value": "1050", "suffix": "_1050w-2x"},
+      {"value": "1400", "suffix": "_1400w-2x"},
+      {"value": "100", "suffix": "_thumb", "blur": "0x1.5"}
+    ]
   }
 ]
