@@ -4,7 +4,7 @@ import {classNames} from '@kozakl/utils';
 import {ResponsiveImage} from '../../components/responsive-image';
 import {PureComponent} from 'react';
 
-export default class CrossfadeBg extends PureComponent<{}, State>
+export default class CrossfadeBg extends PureComponent<Props, State>
 {
     private images = [
         '/assets/bg1', '/assets/bg2'
@@ -12,9 +12,9 @@ export default class CrossfadeBg extends PureComponent<{}, State>
     private nextDelay:number;
     private swapDelay:number;
     
-    constructor()
+    constructor(props:Props)
     {
-        super(undefined);
+        super(props);
         
         this.state = {
             current: 0,
@@ -58,7 +58,7 @@ export default class CrossfadeBg extends PureComponent<{}, State>
             this.state.loadedNext && style.show
         );
         return (
-            <div className={style.crossfadeBg}>
+            <div className={this.props.className}>
                 <ResponsiveImage
                     className={style.current}
                     ratio={1280 / 1920}
@@ -80,6 +80,10 @@ export default class CrossfadeBg extends PureComponent<{}, State>
             </div>
         );
     }
+}
+
+interface Props {
+    className?:string;
 }
 
 interface State {

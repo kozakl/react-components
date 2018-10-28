@@ -6,7 +6,7 @@ export default function CrossfadeBgSample()
 {
     return (
         <div>
-            <CrossfadeBg/>
+            <CrossfadeBg className={style.crossfadeBg}/>
         </div>
     );
 }
