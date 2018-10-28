@@ -16,7 +16,7 @@ export default class Content extends PureComponent<Props>
     {
         return (
             <div className={style.content}>
-                <CrossfadeBgSample/>
+                <AudioPlayerSample/>
             </div>
         );
     }
