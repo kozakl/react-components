@@ -1,6 +1,7 @@
-import fs from 'fs-extra';
-import path from 'path';
+import {copySync, existsSync,
+        removeSync} from 'fs-extra';
 import {exec} from 'child_process';
+import {join} from 'path';
 
 const git = exec('git rev-parse --abbrev-ref HEAD && git describe --tags');
 git.stdout.on('data', (result)=> {
@@ -12,9 +13,9 @@ git.stdout.on('data', (result)=> {
                branch = lines[0],
                tag = lines[1];
         if (branch === 'master')
-            deploy(server, path.join(name, tag));
+            deploy(server, join(name, tag));
         else
-            deploy(server, path.join(name, branch));
+            deploy(server, join(name, branch));
     }
     else
         deploy(server, name)
@@ -22,14 +23,14 @@ git.stdout.on('data', (result)=> {
 
 function deploy(server, project)
 {
-    fs.removeSync(path.join(server, project));
-    fs.copySync('./public', path.join(server, project));
-    if (fs.existsSync(path.join(server, project, 'bundle.js'))) {
+    removeSync(join(server, project));
+    copySync('./public', join(server, project));
+    if (existsSync(join(server, project, 'bundle.js'))) {
         const cache = Math.random();
-        fs.renameSync(path.join(server, project, 'bundle.js'),
-                      path.join(server, project, `bundle-${cache}.js`));
-        fs.writeFileSync(path.join(server, project, 'index.html'),
-            fs.readFileSync(path.join(server, project, 'index.html'), 'utf8')
+        fs.renameSync(join(server, project, 'bundle.js'),
+                      join(server, project, `bundle-${cache}.js`));
+        fs.writeFileSync(join(server, project, 'index.html'),
+            fs.readFileSync(join(server, project, 'index.html'), 'utf8')
             .replace('bundle.js', `bundle-${cache}.js`));
     }
     
