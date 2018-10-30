@@ -1,6 +1,6 @@
+import {exec} from 'child_process';
 import {copySync, existsSync,
         removeSync} from 'fs-extra';
-import {exec} from 'child_process';
 import {join} from 'path';
 
 const git = exec('git rev-parse --abbrev-ref HEAD && git describe --tags');
@@ -27,11 +27,11 @@ function deploy(server, project)
     copySync('./public', join(server, project));
     if (existsSync(join(server, project, 'bundle.js'))) {
         const cache = Math.random();
-        fs.renameSync(join(server, project, 'bundle.js'),
-                      join(server, project, `bundle-${cache}.js`));
-        fs.writeFileSync(join(server, project, 'index.html'),
-            fs.readFileSync(join(server, project, 'index.html'), 'utf8')
-            .replace('bundle.js', `bundle-${cache}.js`));
+        renameSync(join(server, project, 'bundle.js'),
+                   join(server, project, `bundle-${cache}.js`));
+        writeFileSync(join(server, project, 'index.html'),
+            readFileSync(join(server, project, 'index.html'), 'utf8')
+                .replace('bundle.js', `bundle-${cache}.js`));
     }
     
     const git = exec(`cd ${server} &&\
