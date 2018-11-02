@@ -12,7 +12,7 @@ git.stdout.on('data', (result)=> {
         const lines = result.trim().split(/\s*[\r\n]+\s*/g),
                branch = lines[0],
                tag = lines[1];
-        if (branch === 'master')
+        if (branch === 'master' && tag)
             deploy(server, join(name, tag));
         else
             deploy(server, join(name, branch));
