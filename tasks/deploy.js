@@ -1,6 +1,7 @@
 import {exec} from 'child_process';
 import {copySync, existsSync,
-        removeSync} from 'fs-extra';
+        removeSync, renameSync,
+        readFileSync, writeFileSync} from 'fs-extra';
 import {join} from 'path';
 
 const git = exec('git rev-parse --abbrev-ref HEAD && git describe --tags');
