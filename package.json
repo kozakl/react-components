@@ -13,14 +13,13 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.tsx?$": "ts-jest"
     },
+    "testRegex": "(/src/.*.test)\\.tsx?$",
     "moduleFileExtensions": [
-      "ts",
-      "tsx",
       "js",
-      "jsx"
+      "ts",
+      "tsx"
     ]
   },
   "dependencies": {
