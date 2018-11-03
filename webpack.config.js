@@ -43,15 +43,15 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(woff|woff2|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
-                use: ['url-loader']
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
+                test: /assets.*\.(woff|woff2|svg|png|jpg)$/,
                 loader: 'file-loader',
                 options: {
                     name: '[path][name].[ext]'
                 }
+            },
+            {
+                test: /res.*\.(woff|woff2|svg|png|jpg)$/,
+                use: ['url-loader']
             }
         ]
     },
