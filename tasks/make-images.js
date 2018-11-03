@@ -39,8 +39,9 @@ function makeSizes(image)
     image.sizes.forEach((size)=> {
         const dest = join(
             image.dest,
-            basename(image.src, extname(image.src)) +
-            size.suffix + (image.ext || extname(image.src))
+            (size.name || basename(image.src, extname(image.src))) +
+            (size.suffix || '') +
+            (image.ext || extname(image.src))
         );
         if (!process.argv.includes('--debug')) {
             gm(image.src)
