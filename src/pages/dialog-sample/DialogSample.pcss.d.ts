@@ -1,0 +1,1 @@
+export const dialogSample:string;

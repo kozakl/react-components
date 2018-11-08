@@ -7,6 +7,7 @@ import {CrossfadeBgSample} from '../../pages/crossfade-bg-sample';
 import {ResponsiveImageSample} from '../../pages/responsive-image-sample';
 import {Modal} from '../modal';
 import {Dialog} from '../dialog/Dialog';
+import DialogSample from '../../pages/dialog-sample/DialogSample';
 
 export default class Content extends PureComponent<Props>
 {
@@ -19,16 +20,7 @@ export default class Content extends PureComponent<Props>
     {
         return (
             <div className={style.content}>
-                <Modal visible={true}>
-                    <Dialog
-                        onConfirm={this.onConfirmDelete}
-                        onDismiss={this.onDismissDelete}
-                        title="Ostrzeżenie!">
-                        <p>
-                            Info Text
-                        </p>
-                    </Dialog>
-                </Modal>
+                <DialogSample></DialogSample>
             </div>
         );
     }
