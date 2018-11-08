@@ -12,12 +12,17 @@ export default class DialogSample extends PureComponent<{}, State>
         super(undefined);
         
         this.state = {
-            infoDialog: false
+            infoDialog: false,
+            deleteDialog: false
         };
     }
     
     onClickInfo = ()=> {
         this.setState({infoDialog: true});
+    };
+    
+    onClickDelete = ()=> {
+        this.setState({deleteDialog: true});
     };
     
     onConfirmInfo = ()=> {
@@ -28,12 +33,29 @@ export default class DialogSample extends PureComponent<{}, State>
         this.setState({infoDialog: false});
     };
     
+    onConfirmDelete = ()=> {
+        this.setState({deleteDialog: false});
+    };
+    
+    onDismissDelete = ()=> {
+        this.setState({deleteDialog: false});
+    };
+    
     render()
     {
         return (
             <div className={style.dialogSample}>
-                <Button onClick={this.onClickInfo}>
-                    Show Info
+                <Button
+                    onClick={this.onClickInfo}
+                    color="success"
+                    size="sm">
+                    Show Info Dialog
+                </Button>
+                <Button
+                    onClick={this.onClickDelete}
+                    color="danger"
+                    size="sm">
+                    Show Delete Dialog
                 </Button>
                 <Modal visible={this.state.infoDialog}>
                     <Dialog
@@ -45,6 +67,17 @@ export default class DialogSample extends PureComponent<{}, State>
                         </p>
                     </Dialog>
                 </Modal>
+                <Modal visible={this.state.deleteDialog}>
+                    <Dialog
+                        onConfirm={this.onConfirmDelete}
+                        onDismiss={this.onDismissDelete}
+                        confirm="Delete"
+                        title="Warning!">
+                        <p>
+                            Are you sure you want to delete?
+                        </p>
+                    </Dialog>
+                </Modal>
             </div>
         );
     }
@@ -52,4 +85,5 @@ export default class DialogSample extends PureComponent<{}, State>
 
 interface State {
     infoDialog:boolean;
+    deleteDialog:boolean;
 }
