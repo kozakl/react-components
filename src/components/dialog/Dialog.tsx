@@ -2,9 +2,7 @@ import * as React from 'react';
 import * as style from './Dialog.pcss';
 import {StatelessComponent} from 'react';
 import {Button} from 'reactstrap';
-/**
- * @author kozakluke@gmail.com
- */
+
 export const Dialog:StatelessComponent<Props> = (props)=>
 {
     return (
