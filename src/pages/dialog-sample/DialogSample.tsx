@@ -5,11 +5,11 @@ import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Dialog} from '../../components/dialog';
 
-export default class DialogSample extends PureComponent<Props, State>
+export default class DialogSample extends PureComponent<{}, State>
 {
-    constructor(props:Props)
+    constructor()
     {
-        super(props);
+        super(undefined);
         
         this.state = {
             infoDialog: false
@@ -49,8 +49,6 @@ export default class DialogSample extends PureComponent<Props, State>
         );
     }
 }
-
-interface Props { }
 
 interface State {
     infoDialog:boolean;
