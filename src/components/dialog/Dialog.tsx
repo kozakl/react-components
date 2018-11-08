@@ -32,7 +32,7 @@ export const Dialog:StatelessComponent<Props> = (props)=>
 
 Dialog.defaultProps = {
     confirm: 'OK',
-    dismiss: 'Anuluj'
+    dismiss: 'Cancel'
 };
 
 interface Props {
