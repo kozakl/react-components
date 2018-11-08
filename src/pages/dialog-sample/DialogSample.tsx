@@ -46,6 +46,7 @@ export default class DialogSample extends PureComponent<{}, State>
         return (
             <div className={style.dialogSample}>
                 <Button
+                    className={style.info}
                     onClick={this.onClickInfo}
                     color="success"
                     size="sm">
