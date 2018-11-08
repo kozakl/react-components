@@ -3,7 +3,7 @@ import * as style from './DialogSample.pcss';
 import Modal from '../../components/modal/Modal';
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
-import {Dialog} from '../../components/dialog/Dialog';
+import {Dialog} from '../../components/dialog';
 
 export default class DialogSample extends PureComponent<Props, State>
 {
