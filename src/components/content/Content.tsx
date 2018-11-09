@@ -20,7 +20,7 @@ export default class Content extends PureComponent<Props>
     {
         return (
             <div className={style.content}>
-                <DialogSample></DialogSample>
+                <CrossfadeBgSample></CrossfadeBgSample>
             </div>
         );
     }
