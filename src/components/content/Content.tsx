@@ -11,8 +11,7 @@ import DialogSample from '../../pages/dialog-sample/DialogSample';
 
 export default class Content extends PureComponent<Props>
 {
-    onClick = ()=>
-    {
+    onClick = ()=> {
         console.log(this.props.message);
     };
     

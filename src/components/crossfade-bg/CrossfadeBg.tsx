@@ -23,8 +23,7 @@ export default class CrossfadeBg extends PureComponent<Props, State>
         };
     }
     
-    componentDidMount()
-    {
+    componentDidMount() {
         this.nextDelay = window.setTimeout(this.nextImage, 5000);
     }
     

@@ -36,8 +36,7 @@ export default class AudioPlayer extends React.PureComponent<Props, State>
             this.setState({percent: this.audio.currentTime * 100 / this.audio.duration});
     };
     
-    onEndAudio = ()=>
-    {
+    onEndAudio = ()=> {
         this.setState({paused: true, percent: 0});
     };
     
