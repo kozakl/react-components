@@ -64,7 +64,7 @@ export default class DialogSample extends PureComponent<{}, State>
                         onDismiss={this.onDismissInfo}
                         title="Info!">
                         <p>
-                            Info Text
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
                         </p>
                     </Dialog>
                 </Modal>
