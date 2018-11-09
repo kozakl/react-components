@@ -5,9 +5,9 @@ import {SpinnerSample} from '../../pages/spinner-sample';
 import {AudioPlayerSample} from '../../pages/audio-player-sample';
 import {CrossfadeBgSample} from '../../pages/crossfade-bg-sample';
 import {ResponsiveImageSample} from '../../pages/responsive-image-sample';
-import {Modal} from '../modal';
-import {Dialog} from '../dialog/Dialog';
 import DialogSample from '../../pages/dialog-sample/DialogSample';
+import {HashRouter} from 'react-router-dom';
+import {Route, Switch} from 'react-router';
 
 export default class Content extends PureComponent<Props>
 {
@@ -18,9 +18,15 @@ export default class Content extends PureComponent<Props>
     render()
     {
         return (
-            <div className={style.content}>
-                <CrossfadeBgSample></CrossfadeBgSample>
-            </div>
+            <HashRouter>
+                <Switch>
+                    <Route path="/audio-player" component={AudioPlayerSample}/>
+                    <Route path="/crossfade-bg" component={CrossfadeBgSample}/>
+                    <Route path="/dialog" component={DialogSample}/>
+                    <Route path="/responsive-image" component={ResponsiveImageSample}/>
+                    <Route path="/spinner" component={SpinnerSample}/>
+                </Switch>
+            </HashRouter>
         );
     }
 }
