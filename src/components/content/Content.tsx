@@ -13,6 +13,7 @@ export default function Content()
         <HashRouter>
             <>
                 <select
+                    style={{position: 'fixed', top: '0'}}
                     onChange={(event)=>
                         window.location.href = event.target.value}>
                     <option value="#/audio-player">Audio Player</option>
