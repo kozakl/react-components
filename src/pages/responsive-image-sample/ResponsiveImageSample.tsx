@@ -31,7 +31,7 @@ export default class ResponsiveImageSample extends PureComponent<Props, State>
     render()
     {
         return (
-            <div className={style.content}>
+            <div className={style.responsiveImageSample}>
                 <button onClick={this.onStart}>on start</button>
                 <button onClick={this.onClick}>on load</button>
                 {this.state.start && 

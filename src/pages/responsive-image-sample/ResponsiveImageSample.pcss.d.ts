@@ -1,2 +1,2 @@
-export const audioPlayerSample:string;
-export const audioPlayer:string;
+export const responsiveImageSample:string;
+export const image:string;
