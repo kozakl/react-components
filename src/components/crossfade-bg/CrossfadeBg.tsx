@@ -41,7 +41,7 @@ export default class CrossfadeBg extends PureComponent<Props, State>
         
         this.swapDelay = window.setTimeout(()=> {
             this.setState({current: this.state.next}, ()=>
-                this.swapDelay = setTimeout(()=> this.setState({next: null})));
+                this.swapDelay = window.setTimeout(()=> this.setState({next: null}), 20));
         }, 1250);
         this.nextDelay = window.setTimeout(this.nextImage, 5000);
     };
