@@ -5,7 +5,7 @@ import {AudioPlayer} from '../../components/audio-player';
 export default function AudioPlayerSample()
 {
     return (
-        <div className={style.audioPlayerSample}>
+        <div>
             <AudioPlayer className={style.audioPlayer}/>
         </div>
     );
