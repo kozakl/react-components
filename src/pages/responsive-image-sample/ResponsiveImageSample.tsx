@@ -3,16 +3,16 @@ import * as style from './ResponsiveImageSample.pcss';
 import {PureComponent} from 'react';
 import {ResponsiveImage} from '../../components/responsive-image-beta';
 
-export default class ResponsiveImageSample extends PureComponent<Props, State>
+export default class ResponsiveImageSample extends PureComponent<{}, State>
 {
     private images:Images = {
         'assets/room1/': {width: 4104, height: 2310},
         'assets/room2/': {width: 1200, height: 900}
     };
     
-    constructor(props:Props)
+    constructor()
     {
-        super(props);
+        super(undefined);
         
         this.state = {
             start: false,
@@ -54,15 +54,14 @@ export default class ResponsiveImageSample extends PureComponent<Props, State>
     }
 }
 
-export interface Images {
+interface Images {
     [key:string]: {
         width:number;
         height:number;
     }
 }
 
-interface Props { }
-
 interface State {
+    start:boolean;
     path:string;
 }
