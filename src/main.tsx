@@ -5,6 +5,6 @@ import {Content} from './components/content';
 import './main.pcss';
 
 ReactDOM.render(
-    <Content message={'Clicked!'}/>,
+    <Content/>,
     document.getElementById('main-root')
 );
