@@ -1,28 +1,24 @@
-import {exec} from 'child_process';
+import {exec, execSync} from 'child_process';
 import {copySync, existsSync,
         removeSync, renameSync,
         readFileSync, writeFileSync} from 'fs-extra';
 import {join} from 'path';
 
-const git = exec('git rev-parse --abbrev-ref HEAD && git describe --tags');
-git.stdout.on('data', (result)=> {
-    const server = process.argv[2],
-          name = require('../package.json').name;
-    if (!result.includes('fatal:'))
-    {
-        const lines = result.trim().split(/\s*[\r\n]+\s*/g),
-               branch = lines[0],
-               tag = lines[1];
-        if (branch === 'master' && tag)
-            deploy(server, join(name, tag));
-        else
-            deploy(server, join(name, branch));
-    }
+const server = process.argv[2],
+      name = require('../package.json').name;
+try {
+    const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim(),
+          tag = execSync('git tag').toString().length &&
+                execSync('git describe --tags --abbrev=0').toString().trim();
+    if (branch === 'master' && tag)
+        deploy(join(name, tag));
     else
-        deploy(server, name)
-});
+        deploy(join(name, branch));
+} catch(error) {
+    deploy(name);
+}
 
-function deploy(server, project)
+function deploy(project)
 {
     removeSync(join(server, project));
     copySync('./public', join(server, project));
