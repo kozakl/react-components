@@ -2,7 +2,7 @@
   "name": "react-components",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
-    "prebuild": "npm run clean-public",
+    "prebuild": "npm run clean-public && npm run make-images",
     "build": "webpack --config webpack.config.prod.js",
     "deploy": "node -r esm ./tasks/deploy.js ~/Public/kozakl.bitbucket.org/",
     "make-images": "node -r esm ./tasks/make-images.js assets/images.json",
