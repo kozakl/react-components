@@ -20,17 +20,18 @@ export default class SidebarSample extends PureComponent<{}, State>
     };
     
     onCloseSidebar = ()=> {
-        console.log(this.state);
         this.setState({sidebar: false});
     };
     
     render()
     {
-        console.log(this.state);
         return (
-            <div className={style.responsiveImageSample}>
-                <button onClick={this.onClickShowSidebar}>Show Sidebar</button>
-                
+            <div className={style.sidebarSample}>
+                <button
+                    className={style.show}
+                    onClick={this.onClickShowSidebar}>
+                    Show Sidebar
+                </button>
                 <Modal onClose={this.onCloseSidebar} visible={this.state.sidebar} outTime={750}>
                     <Sidebar/>
                 </Modal>

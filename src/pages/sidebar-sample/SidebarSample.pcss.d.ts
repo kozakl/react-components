@@ -1,1 +1,1 @@
-export const spinnerSample:string;
+export const show:string;
