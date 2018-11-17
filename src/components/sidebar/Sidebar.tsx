@@ -21,5 +21,5 @@ export default function Sidebar(props:Props)
 
 interface Props {
     active?:boolean;
-    onClose:()=> void;
+    onClose?:()=> void;
 }
