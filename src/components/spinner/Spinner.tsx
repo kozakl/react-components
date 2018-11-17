@@ -9,16 +9,22 @@ const Spinner:StatelessComponent<Props> = (props)=>
         props.className,
         style.spinner
     );
+    const wrapperClass = classNames(
+        style.wrapper,
+        props.background && style.bg,
+    );
     return (
         <div className={spinnerClass} style={{width: props.size}}>
-            <svg className={style.container} viewBox="0 0 60 60">
-                <circle
-                    className={style.circle}
-                    stroke={props.color}
-                    cx="30"
-                    cy="30"
-                    r="25"/>
-            </svg>
+            <div className={wrapperClass} style={{background: props.background}}>
+                <svg className={style.svg} viewBox="0 0 60 60">
+                    <circle
+                        className={style.circle}
+                        stroke={props.color}
+                        cx="30"
+                        cy="30"
+                        r="25"/>
+                </svg>
+            </div>
         </div>
     );
 };
@@ -30,6 +36,7 @@ Spinner.defaultProps = {
 
 interface Props {
     className?:string;
+    background?:string;
     color?:string;
     size?:string;
 }

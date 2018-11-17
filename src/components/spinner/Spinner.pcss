@@ -1,11 +1,27 @@
 @import 'animations.pcss';
 
-.spinner {
-  display: inline-block;
-  transform: rotate(-90deg);
+:root {
+  --bg-color: #FFFFFF;
+  --bg-shadow: -1px 0 1.5px 0 rgba(0,0,0,.12),
+               -1px 0 1px 0 rgba(0,0,0,.24);
 }
 
-.container {
+.spinner {
+  display: inline-block;
+}
+
+.wrapper {
+  transform: rotate(-90deg);
+  
+  &.bg {
+    box-shadow: var(--bg-shadow);
+    padding: 10%;
+    border-radius: 50%;
+  }
+}
+
+.svg {
+  display: block;
   animation: rotate 2s linear infinite;
 }
 

@@ -7,6 +7,7 @@ export default function SpinnerSample()
     return (
         <div className={style.spinnerSample}>
             <Spinner color="red" size="1.5em"/>
+            <Spinner background="white"/>
             <Spinner/>
         </div>
     );
