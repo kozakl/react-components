@@ -4,12 +4,12 @@ import {classNames} from '@kozakl/utils';
 
 export default function Sidebar(props:Props)
 {
-    const legendSidebarClass = classNames(
-        style.legend,
+    const sidebarClass = classNames(
+        style.sidebar,
         props.active && style.active
     );
     return (
-        <div className={legendSidebarClass}>
+        <div className={sidebarClass}>
             <h5 className={style.title}>Sidebar Title</h5>
             <a className={style.close} onClick={props.onClose}>
                 <img src={require('res/close.svg')}/>
