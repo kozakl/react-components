@@ -12,7 +12,7 @@ export default function Sidebar(props:Props)
         <div className={legendSidebarClass}>
             <h5 className={style.title}>Legenda</h5>
             <a className={style.close} onClick={props.onClose}>
-                &#xe903;
+                <img src={require('res/close.svg')}/>
             </a>
             Sidebar
         </div>
