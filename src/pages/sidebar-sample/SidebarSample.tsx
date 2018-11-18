@@ -34,18 +34,14 @@ export default class SidebarSample extends PureComponent<{}, State>
                     color="success">
                     Show Sidebar
                 </Button>
-                <Modal onClose={this.onCloseSidebar} visible={this.state.sidebar} outTime={750}>
+                <Modal
+                    onClose={this.onCloseSidebar}
+                    visible={this.state.sidebar}
+                    outTime={750}>
                     <Sidebar/>
                 </Modal>
             </div>
         );
-    }
-}
-
-interface Images {
-    [key:string]: {
-        width:number;
-        height:number;
     }
 }
 
