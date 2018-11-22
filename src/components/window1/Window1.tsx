@@ -4,9 +4,7 @@ import {ChangeEvent, FormEvent,
         PureComponent} from 'react';
 import {Button, CustomInput, Input} from 'reactstrap';
 import {isFill} from '@kozakl/utils/validate';
-/**
- * @author kozakluke@gmail.com
- */
+
 export default class Window1 extends PureComponent<Props, State>
 {
     public static defaultProps = {
