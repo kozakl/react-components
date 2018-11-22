@@ -9,6 +9,10 @@ import {isFill} from '@kozakl/utils/validate';
  */
 export default class Window1 extends PureComponent<Props, State>
 {
+    public static defaultProps = {
+        categories: ['Category1', 'Category2', 'Category3', 'Category4']
+    };
+    
     constructor(props:Props)
     {
         super(props);
@@ -50,7 +54,7 @@ export default class Window1 extends PureComponent<Props, State>
                 
                 <form className={style.form} onSubmit={this.onSubmit}>
                     <label className={style.label} htmlFor="category">Kategoria</label>
-                    {/*
+                    
                     <CustomInput
                         className={style.category}
                         value={this.state.category}
@@ -58,12 +62,12 @@ export default class Window1 extends PureComponent<Props, State>
                         id="category"
                         type="select">
                         {!this.state.category && <option>----</option>}
-                        {this.props.categories.all.map((id)=>
-                            <option value={id} key={id}>
-                                {this.props.categories.byId[id]}
+                        {this.props.categories.map((category, index)=>
+                            <option value={index} key={category}>
+                                {category}
                             </option>)}
                     </CustomInput>
-                    
+                    {/*
                     <label className={style.label}>Kolor</label>
                     <div className={style.colorContainer}>
                         <span
@@ -105,12 +109,7 @@ export default class Window1 extends PureComponent<Props, State>
 }
 
 interface Props {
-    categories:{
-        byId: {
-            [key:number]:string;
-        }
-        all:number[];
-    };
+    categories:string[];
     onAdd:()=> void;
     onCancel:()=> void;
 }
