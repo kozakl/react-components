@@ -8,8 +8,12 @@ import {isFill} from '@kozakl/utils/validate';
 export default class Window1 extends PureComponent<Props, State>
 {
     public static defaultProps = {
-        categories: ['Category1', 'Category2', 'Category3', 'Category4'],
-        categories2: ['Category2-1', 'Category2-2', 'Category2-3', 'Category2-4']
+        categories1: [
+            'Category1-1', 'Category1-2', 'Category1-3', 'Category1-4'
+        ],
+        categories2: [
+            'Category2-1', 'Category2-2', 'Category2-3', 'Category2-4'
+        ]
     };
     
     constructor(props:Props)
@@ -17,11 +21,9 @@ export default class Window1 extends PureComponent<Props, State>
         super(props);
         
         this.state = {
-            category: 1,
+            category1: 1,
             category2: 1,
-            color: 1,
-            desc: '',
-            colorPicker: false
+            desc: ''
         };
     }
     
@@ -30,19 +32,11 @@ export default class Window1 extends PureComponent<Props, State>
     };
     
     onChangeCategory = (event:ChangeEvent<HTMLInputElement>)=> {
-        this.setState({category: +event.target.value});
+        this.setState({category1: +event.target.value});
     };
     
     onChangeCategory2 = (event:ChangeEvent<HTMLInputElement>)=> {
         this.setState({category2: +event.target.value});
-    };
-    
-    onClickColor = ()=> {
-        this.setState({colorPicker: true});
-    };
-    
-    onCloseColorPicker = ()=> {
-        this.setState({colorPicker: false});
     };
     
     onChangeDesc = (event:ChangeEvent<HTMLInputElement>)=> {
@@ -57,27 +51,26 @@ export default class Window1 extends PureComponent<Props, State>
                 <h5 className={style.title}>Nowy Marker</h5>
                 
                 <form className={style.form} onSubmit={this.onSubmit}>
-                    <label className={style.label} htmlFor="category">Kategoria</label>
-                    
+                    <label className={style.label} htmlFor="category1">Category1</label>
                     <CustomInput
                         className={style.category}
-                        value={this.state.category}
+                        value={this.state.category1}
                         onChange={this.onChangeCategory}
-                        id="category"
+                        id="category1"
                         type="select">
-                        {!this.state.category && <option>----</option>}
-                        {this.props.categories.map((category, index)=>
+                        {!this.state.category1 && <option>----</option>}
+                        {this.props.categories1.map((category, index)=>
                             <option value={index} key={category}>
                                 {category}
                             </option>)}
                     </CustomInput>
                     
-                    <label className={style.label} htmlFor="category">Category2</label>
+                    <label className={style.label} htmlFor="category2">Category2</label>
                     <CustomInput
                         className={style.category}
                         value={this.state.category2}
                         onChange={this.onChangeCategory2}
-                        id="category"
+                        id="category2"
                         type="select">
                         {!this.state.category2 && <option>----</option>}
                         {this.props.categories2.map((category, index)=>
@@ -114,16 +107,14 @@ export default class Window1 extends PureComponent<Props, State>
 }
 
 interface Props {
-    categories:string[];
+    categories1:string[];
     categories2:string[];
     onAdd:()=> void;
     onCancel:()=> void;
 }
 
 interface State {
-    category:number;
+    category1:number;
     category2:number;
-    color:number;
     desc:string;
-    colorPicker:boolean;
 }
