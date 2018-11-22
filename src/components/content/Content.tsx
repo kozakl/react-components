@@ -7,6 +7,7 @@ import {DialogSample} from '../../pages/dialog-sample';
 import {ResponsiveImageSample} from '../../pages/responsive-image-sample';
 import {SidebarSample} from '../../pages/sidebar-sample';
 import {SpinnerSample} from '../../pages/spinner-sample';
+import {Window1Sample} from '../../pages/window1-sample';
 
 export default function Content()
 {
@@ -24,6 +25,7 @@ export default function Content()
                     <option value="#/responsive-image">Responsive Image</option>
                     <option value="#/sidebar">Sidebar</option>
                     <option value="#/spinner">Spinner</option>
+                    <option value="#/window1">Window1</option>
                 </select>
                 <Switch>
                     <Redirect from="/" to='/audio-player' exact/>
@@ -33,6 +35,7 @@ export default function Content()
                     <Route path="/responsive-image" component={ResponsiveImageSample}/>
                     <Route path="/sidebar" component={SidebarSample}/>
                     <Route path="/spinner" component={SpinnerSample}/>
+                    <Route path="/window1" component={Window1Sample}/>
                 </Switch>
             </>
         </HashRouter>

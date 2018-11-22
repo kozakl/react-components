@@ -50,6 +50,7 @@ export default class Window1 extends PureComponent<Props, State>
                 
                 <form className={style.form} onSubmit={this.onSubmit}>
                     <label className={style.label} htmlFor="category">Kategoria</label>
+                    {/*
                     <CustomInput
                         className={style.category}
                         value={this.state.category}
@@ -62,7 +63,7 @@ export default class Window1 extends PureComponent<Props, State>
                                 {this.props.categories.byId[id]}
                             </option>)}
                     </CustomInput>
-                    {/*
+                    
                     <label className={style.label}>Kolor</label>
                     <div className={style.colorContainer}>
                         <span
