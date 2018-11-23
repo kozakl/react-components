@@ -47,7 +47,7 @@ export default class Window1 extends PureComponent<Props, State>
     {
         const enabled = isFill(this.state.desc);
         return (
-            <div className={style.newMarker}>
+            <div className={style.window1}>
                 <h5 className={style.title}>Nowy Marker</h5>
                 
                 <form className={style.form} onSubmit={this.onSubmit}>
