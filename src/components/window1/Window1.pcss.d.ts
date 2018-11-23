@@ -1,6 +1,3 @@
-/**
- * @author kozakluke@gmail.com
- */
 export const newMarker:string;
 export const title:string;
 export const form:string;
