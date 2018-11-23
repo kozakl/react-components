@@ -48,7 +48,7 @@ export default class Window1 extends PureComponent<Props, State>
         const enabled = isFill(this.state.desc);
         return (
             <div className={style.window1}>
-                <h5 className={style.title}>Nowy Marker</h5>
+                <h5 className={style.title}>Window1</h5>
                 
                 <form className={style.form} onSubmit={this.onSubmit}>
                     <label className={style.label} htmlFor="category1">Category1</label>
@@ -79,7 +79,7 @@ export default class Window1 extends PureComponent<Props, State>
                             </option>)}
                     </CustomInput>
                     
-                    <label className={style.label} htmlFor="desc">Opis</label>
+                    <label className={style.label} htmlFor="desc">Description</label>
                     <Input
                         className={style.desc}
                         value={this.state.desc}
@@ -90,14 +90,14 @@ export default class Window1 extends PureComponent<Props, State>
                     
                     <div className={style.actions}>
                         <Button onClick={this.props.onCancel} size="sm" outline>
-                            Anuluj
+                            Cancel
                         </Button>
                         <Button
                             disabled={!enabled}
                             type="submit"
                             color="success"
                             size="sm">
-                            Dodaj
+                            Add
                         </Button>
                     </div>
                 </form>
