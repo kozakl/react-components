@@ -31,7 +31,7 @@ export default class Window1 extends PureComponent<Props, State>
         event.preventDefault();
     };
     
-    onChangeCategory = (event:ChangeEvent<HTMLInputElement>)=> {
+    onChangeCategory1 = (event:ChangeEvent<HTMLInputElement>)=> {
         this.setState({category1: +event.target.value});
     };
     
@@ -53,9 +53,9 @@ export default class Window1 extends PureComponent<Props, State>
                 <form className={style.form} onSubmit={this.onSubmit}>
                     <label className={style.label} htmlFor="category1">Category1</label>
                     <CustomInput
-                        className={style.category}
+                        className={style.category1}
                         value={this.state.category1}
-                        onChange={this.onChangeCategory}
+                        onChange={this.onChangeCategory1}
                         id="category1"
                         type="select">
                         {!this.state.category1 && <option>----</option>}
@@ -67,7 +67,7 @@ export default class Window1 extends PureComponent<Props, State>
                     
                     <label className={style.label} htmlFor="category2">Category2</label>
                     <CustomInput
-                        className={style.category}
+                        className={style.category2}
                         value={this.state.category2}
                         onChange={this.onChangeCategory2}
                         id="category2"
