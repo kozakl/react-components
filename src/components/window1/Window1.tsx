@@ -107,8 +107,8 @@ export default class Window1 extends PureComponent<Props, State>
 }
 
 interface Props {
-    categories1:string[];
-    categories2:string[];
+    categories1?:string[];
+    categories2?:string[];
     onAdd:()=> void;
     onCancel:()=> void;
 }
