@@ -3,8 +3,7 @@ import * as style from './Window1Sample.pcss';
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
-import {Sidebar} from '../../components/sidebar';
-import Window1 from '../../components/window1/Window1';
+import {Window1} from '../../components/window1';
 
 export default class Window1Sample extends PureComponent<{}, State>
 {
@@ -13,34 +12,39 @@ export default class Window1Sample extends PureComponent<{}, State>
         super(undefined);
         
         this.state = {
-            sidebar: false
+            window: true
         };
     }
     
-    onClickShowSidebar = ()=> {
-        this.setState({sidebar: true});
+    onClickShowWindow = ()=> {
+        this.setState({window: true});
     };
     
-    onCloseSidebar = ()=> {
-        this.setState({sidebar: false});
+    onCancelWindow = ()=> {
+        this.setState({window: false});
     };
     
     render()
     {
         return (
-            <div className={style.sidebarSample}>
+            <div className={style.window1Sample}>
                 <Button
                     className={style.show}
-                    onClick={this.onClickShowSidebar}
+                    onClick={this.onClickShowWindow}
                     color="success">
-                    Show Sidebar
+                    Show Window
                 </Button>
-                <Window1></Window1>
+                
+                <Modal visible={this.state.window} interactive>
+                    <Window1
+                        onAdd={null}
+                        onCancel={this.onCancelWindow}/>
+                </Modal>
             </div>
         );
     }
 }
 
 interface State {
-    sidebar:boolean;
+    window:boolean;
 }

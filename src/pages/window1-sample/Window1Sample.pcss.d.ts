@@ -1,2 +1,2 @@
-export const sidebarSample:string;
+export const window1Sample:string;
 export const show:string;
