@@ -1,0 +1,62 @@
+@import '../../variables.pcss';
+
+.imagePreview {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.close {
+  position: fixed;
+  cursor: pointer;
+  top: 1em;
+  right: 1em;
+  
+  & > img {
+    width: 2rem;
+  }
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.arrows {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.prev, .next {
+  opacity: 0.75;
+  cursor: pointer;
+  user-select: none;
+  width: 50%;
+  height: 100%;
+  transition: opacity 0.15s;
+  
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+  & > img {
+    vertical-align: middle;
+    width: 3rem;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.prev {
+  text-align: left;
+  float: left;
+}
+
+.next {
+  text-align: right;
+  float: right;
+}
