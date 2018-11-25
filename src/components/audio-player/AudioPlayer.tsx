@@ -83,7 +83,7 @@ export default class AudioPlayer extends React.PureComponent<Props, State>
         return (
             <div className={this.props.className}>
                 <span className={style.control} onClick={this.onClickControl}>
-                    {this.state.paused ? '\ue912' : '\ue911'}
+                    {this.state.paused ? '\ue900' : '\ue901'}
                 </span>
                 <span className={style.bar} ref={(bar:HTMLSpanElement)=> this.bar = bar}
                       onMouseDown={this.onDownBar}>
