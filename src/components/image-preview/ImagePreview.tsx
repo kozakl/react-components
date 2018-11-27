@@ -58,10 +58,10 @@ export default class ImagePreview extends PureComponent<Props, State>
                         sizes="1352px"/>
                     <div className={style.arrows}>
                         <a className={style.prev} onClick={this.onClickPrev}>
-                            <img src={require('res/prev.svg')}/>
+                            <img src={require('res/icons/prev.svg')}/>
                         </a>
                         <a className={style.next} onClick={this.onClickNext}>
-                            <img src={require('res/next.svg')}/>
+                            <img src={require('res/icons/next.svg')}/>
                         </a>
                     </div>
                 </div>
