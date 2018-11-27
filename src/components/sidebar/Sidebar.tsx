@@ -12,7 +12,7 @@ export default function Sidebar(props:Props)
         <div className={sidebarClass}>
             <h5 className={style.title}>Sidebar Title</h5>
             <a className={style.close} onClick={props.onClose}>
-                <img src={require('res/close.svg')}/>
+                <img src={require('res/icons/close.svg')}/>
             </a>
             <p className={style.content}>
                 Sidebar Content

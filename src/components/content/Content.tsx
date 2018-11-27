@@ -4,6 +4,7 @@ import {HashRouter} from 'react-router-dom';
 import {AudioPlayerSample} from '../../pages/audio-player-sample';
 import {CrossfadeBgSample} from '../../pages/crossfade-bg-sample';
 import {DialogSample} from '../../pages/dialog-sample';
+import {ImagePreviewSample} from '../../pages/image-preview-sample';
 import {ResponsiveImageSample} from '../../pages/responsive-image-sample';
 import {SidebarSample} from '../../pages/sidebar-sample';
 import {SpinnerSample} from '../../pages/spinner-sample';
@@ -22,6 +23,7 @@ export default function Content()
                     <option value="#/audio-player">Audio Player</option>
                     <option value="#/crossfade-bg">Crossfade Bg</option>
                     <option value="#/dialog">Dialog</option>
+                    <option value="#/image-preview">Image Preview</option>
                     <option value="#/responsive-image">Responsive Image</option>
                     <option value="#/sidebar">Sidebar</option>
                     <option value="#/spinner">Spinner</option>
@@ -32,6 +34,7 @@ export default function Content()
                     <Route path="/audio-player" component={AudioPlayerSample}/>
                     <Route path="/crossfade-bg" component={CrossfadeBgSample}/>
                     <Route path="/dialog" component={DialogSample}/>
+                    <Route path="/image-preview" component={ImagePreviewSample}/>
                     <Route path="/responsive-image" component={ResponsiveImageSample}/>
                     <Route path="/sidebar" component={SidebarSample}/>
                     <Route path="/spinner" component={SpinnerSample}/>
