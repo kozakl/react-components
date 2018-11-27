@@ -4,13 +4,13 @@
     "dest": "public/assets/gallery/",
     "quality": 80,
     "sizes": [
-      {"resize": "366", "suffix": "_366w"},
-      {"resize": "480", "suffix": "_480w"},
-      {"resize": "676", "suffix": "_676w"},
-      {"resize": "732", "suffix": "_732w-2x"},
-      {"resize": "960", "suffix": "_960w-2x"},
-      {"resize": "1352", "suffix": "_1352w-2x"},
-      {"resize": "100", "suffix": "_thumb", "blur": "0x1.5"}
+      {"value": "366", "suffix": "_366w"},
+      {"value": "480", "suffix": "_480w"},
+      {"value": "676", "suffix": "_676w"},
+      {"value": "732", "suffix": "_732w-2x"},
+      {"value": "960", "suffix": "_960w-2x"},
+      {"value": "1352", "suffix": "_1352w-2x"},
+      {"value": "100", "suffix": "_thumb", "blur": "0x1.5"}
     ]
   },
   {
