@@ -37,8 +37,13 @@ function makeSizes(image)
         mkdirpSync(image.dest);
     
     image.sizes.forEach((size)=> {
+        const imageName = basename(image.src, extname(image.src));
+        if (image.destDir)
+            mkdirpSync(join(image.dest, imageName));
+        
         const dest = join(
             image.dest,
+            image.destDir ? imageName : '' ,
             (size.name || basename(image.src, extname(image.src))) +
             (size.suffix || '') +
             (image.ext || extname(image.src))
