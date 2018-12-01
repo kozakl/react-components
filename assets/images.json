@@ -17,7 +17,6 @@
   {
     "src": "assets/bg1.jpg",
     "dest": "public/assets/bg1/",
-    "ext": ".jpg",
     "quality": 80,
     "sizes": [
       {"value": "992", "name": "992w"},
@@ -30,7 +29,6 @@
   {
     "src": "assets/bg2.jpg",
     "dest": "public/assets/bg2/",
-    "ext": ".jpg",
     "quality": 80,
     "sizes": [
       {"value": "992", "name": "992w"},
