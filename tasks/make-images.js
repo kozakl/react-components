@@ -44,7 +44,7 @@ function makeSizes(image)
         const dest = join(
             image.dest,
             image.destDir ? imageName : '' ,
-            (size.name || basename(image.src, extname(image.src))) +
+            (size.name || imageName) +
             (size.suffix || '') +
             (image.ext || extname(image.src))
         );
