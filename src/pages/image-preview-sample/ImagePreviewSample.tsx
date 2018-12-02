@@ -5,6 +5,8 @@ import {Button} from 'reactstrap';
 import {Dialog} from '../../components/dialog';
 import {Modal} from '../../components/modal';
 import {ImagePreview} from '../../components/image-preview';
+import {getGalleryImages} from '../../actions';
+import {Image} from '../../types';
 
 export default class ImagePreviewSample extends PureComponent<{}, State>
 {
@@ -13,9 +15,16 @@ export default class ImagePreviewSample extends PureComponent<{}, State>
         super(undefined);
         
         this.state = {
+            images: [],
             infoDialog: false,
             deleteDialog: false
         };
+    }
+    
+    async componentDidMount()
+    {
+        const images = await getGalleryImages();
+        this.setState({images});
     }
     
     onClickInfo = ()=> {
@@ -46,66 +55,17 @@ export default class ImagePreviewSample extends PureComponent<{}, State>
     {
         return (
             <div className={style.dialogSample}>
-                <ImagePreview
-                    images={[
-                      {
-                        "path": "/assets/gallery/image1",
-                        "width": 2304,
-                        "height": 1536
-                      },
-                      {
-                        "path": "/assets/gallery/image2",
-                        "width": 1048,
-                        "height": 699
-                      },
-                      {
-                        "path": "/assets/gallery/image3",
-                        "width": 2592,
-                        "height": 3872
-                      },
-                      {
-                        "path": "/assets/gallery/image4",
-                        "width": 2592,
-                        "height": 3872
-                      },
-                      {
-                        "path": "/assets/gallery/image5",
-                        "width": 2592,
-                        "height": 3872
-                      },
-                      {
-                        "path": "/assets/gallery/image6",
-                        "width": 2304,
-                        "height": 1536
-                      },
-                      {
-                        "path": "/assets/gallery/image7",
-                        "width": 2304,
-                        "height": 1536
-                      },
-                      {
-                        "path": "/assets/gallery/image8",
-                        "width": 2304,
-                        "height": 1536
-                      },
-                      {
-                        "path": "/assets/gallery/image9",
-                        "width": 2304,
-                        "height": 1536
-                      },
-                      {
-                        "path": "/assets/gallery/image10",
-                        "width": 2304,
-                        "height": 1536
-                      }
-                    ]}
-                    current={1}/>
+                {this.state.images.length &&
+                    <ImagePreview
+                        images={this.state.images}
+                        current={1}/>}
             </div>
         );
     }
 }
 
 interface State {
+    images:Image[];
     infoDialog:boolean;
     deleteDialog:boolean;
 }
