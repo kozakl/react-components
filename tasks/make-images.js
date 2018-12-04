@@ -3,7 +3,7 @@ import {existsSync, lstatSync,
         mkdirpSync, readFileSync} from 'fs-extra';
 import {basename, dirname,
         extname, join} from 'path';
-import {listFiles} from '@kozakl/utils/file';
+import {listFiles} from '@kozakl/node/file';
 
 const filter = ['.jpg', '.png'],
       buffer = readFileSync(process.argv[2], 'utf8'),
