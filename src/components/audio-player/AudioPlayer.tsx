@@ -23,7 +23,7 @@ export default class AudioPlayer extends React.PureComponent<Props, State>
         const audio = this.audio = document.createElement('audio');
         audio.addEventListener('timeupdate', this.onUpdateAudio);
         audio.addEventListener('ended', this.onEndAudio);
-        audio.src = './assets/sample.mp3';
+        audio.src = 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3';
         audio.load();
         
         document.addEventListener('mouseup', this.onUp);
