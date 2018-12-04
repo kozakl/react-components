@@ -1,14 +1,13 @@
 @import '../../variables.pcss';
 
 :root {
-  --color-grey-800: #424242;
-  --color-grey-600: #757575;
-  --color-grey-300: #E0E0E0;
+  --control-color: #424242;
+  --bar-color: #E0E0E0;
 }
 
 .control {
   display: inline-block;
-  color: var(--color-grey-800);
+  color: var(--control-color);
   font: 1.65rem var(--font-icons);
   vertical-align: middle;
   user-select: none;
@@ -16,14 +15,14 @@
   margin-right: 1rem;
   
   &:hover {
-    color: var(--color-grey-600);
+    color: color(var(--control-color) a(0.75));
   }
 }
 
 .bar {
   display: inline-block;
   position: relative;
-  background: var(--color-grey-300);
+  background: var(--bar-color);
   vertical-align: middle;
   cursor: pointer;
   width: calc(100% - 2.7rem);
@@ -39,15 +38,14 @@
     bottom: 0;
   }
   &:hover {
-    
     & .progress {
-      background: var(--color-grey-600);
+      background: color(var(--control-color) a(0.75));
     }
   }
 }
 
 .progress {
   display: block;
-  background: var(--color-grey-800);
+  background: var(--control-color);
   height: 100%;
 }
