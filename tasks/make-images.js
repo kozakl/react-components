@@ -66,7 +66,7 @@ function makeSizes(image)
                 .drawText(
                     0.4 * size.value,
                     0.11 * size.value,
-                    size.suffix
+                    size.name
                 )
                 .write(dest, err => err && console.log(err));
         }
