@@ -49,13 +49,12 @@ export default class ImagePreview extends PureComponent<Props, State>
                     <ResponsiveImage
                         ratio={image.height / image.width}
                         thumb={`${image.path}/thumb.jpg`}
-                        srcSet={`${image.path}/366w.jpg 366w,
-                                 ${image.path}/480w.jpg 480w,
-                                 ${image.path}/676w.jpg 676w,
-                                 ${image.path}/732w-2x.jpg 732w,
-                                 ${image.path}/960w-2x.jpg 960w,
-                                 ${image.path}/1352w-2x.jpg 1352w`}
-                        sizes="1352px"/>
+                        srcSet={`${image.path}/425w.jpg 425w,
+                                 ${image.path}/768w.jpg 768w,
+                                 ${image.path}/1024w.jpg 1024w,
+                                 ${image.path}/1440w.jpg 1440w,
+                                 ${image.path}/1920w.jpg 1920w`}
+                        sizes="85vw"/>
                     <div className={style.arrows}>
                         <a className={style.prev} onClick={this.onClickPrev}>
                             <img src={require('res/icons/prev.svg')}/>
