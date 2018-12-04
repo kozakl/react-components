@@ -15,6 +15,7 @@ module.exports = {
                     preserve: false
                 }
             }
-        }
+        },
+        'postcss-color-function': {}
     }
 };
