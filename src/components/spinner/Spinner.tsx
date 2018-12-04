@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as style from './Spinner.pcss';
-import {StatelessComponent} from 'react';
+import {FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 
-const Spinner:StatelessComponent<Props> = (props)=>
+const Spinner:FunctionComponent<Props> = (props)=>
 {
     const spinnerClass = classNames(
         props.className,
