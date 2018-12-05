@@ -3,7 +3,7 @@ import * as style from './Dialog.pcss';
 import {FunctionComponent} from 'react';
 import {Button} from 'reactstrap';
 
-export const Dialog:FunctionComponent<Props> = (props)=>
+const Dialog:FunctionComponent<Props> = (props)=>
 {
     return (
         <div className={style.dialog}>
@@ -42,3 +42,5 @@ interface Props {
     onConfirm?:()=> void;
     onDismiss?:()=> void;
 }
+
+export default Dialog;
