@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as style from './Dialog.pcss';
-import {StatelessComponent} from 'react';
+import {FunctionComponent} from 'react';
 import {Button} from 'reactstrap';
 
-export const Dialog:StatelessComponent<Props> = (props)=>
+export const Dialog:FunctionComponent<Props> = (props)=>
 {
     return (
         <div className={style.dialog}>
