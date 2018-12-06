@@ -6,6 +6,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
         alias: {
+            assets: join(__dirname, 'assets'),
             res: join(__dirname, 'res')
         }
     },
