@@ -4,22 +4,29 @@ import {PureComponent} from 'react';
 
 export default class ResponsiveImage extends PureComponent<Props, State>
 {
+    private empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
+    
     constructor(props:Props)
     {
         super(props);
         
         this.state = {
             thumb: props.thumb,
+            init: false,
             loadedThumb: false
         };
     }
     
     onLoadThumb = ()=>
     {
-        if (this.props.onLoadThumb)
-            this.props.onLoadThumb();
-        
-        this.setState({loadedThumb: true});
+        if (!this.state.init) {
+            this.setState({init: true});
+        } else if (!this.state.loadedThumb) {
+            if (this.props.onLoadThumb)
+                this.props.onLoadThumb();
+            
+            this.setState({loadedThumb: true});
+        }
     };
     
     static getDerivedStateFromProps(props:Props, state:State)
@@ -40,14 +47,10 @@ export default class ResponsiveImage extends PureComponent<Props, State>
                      style={{'paddingTop': `${this.props.ratio * 100}%`}}>
                     <img
                         className={style.image}
-                        src={this.state.thumb}
+                        src={this.state.init ? this.state.thumb : this.empty}
+                        srcSet={this.state.loadedThumb ? this.props.srcSet : ''}
+                        sizes={this.state.loadedThumb ? this.props.sizes : ''}
                         onLoad={this.onLoadThumb}/>
-                    {this.state.loadedThumb && 
-                        <img
-                            className={style.image}
-                            srcSet={this.props.srcSet}
-                            sizes={this.props.sizes}
-                            src={this.props.src}/>}
                 </div>
             </div>
         );
@@ -61,11 +64,11 @@ interface Props {
     thumb:string;
     srcSet:string;
     sizes?:string;
-    src?:string;
     onLoadThumb?:()=> void;
 }
 
 interface State {
     thumb:string;
+    init:boolean;
     loadedThumb:boolean;
 }
