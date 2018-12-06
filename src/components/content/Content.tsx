@@ -6,6 +6,7 @@ import {CrossfadeBgSample} from '../../pages/crossfade-bg-sample';
 import {DialogSample} from '../../pages/dialog-sample';
 import {ImagePreviewSample} from '../../pages/image-preview-sample';
 import {LoginSample} from '../../pages/login-sample';
+import {ModalSample} from '../../pages/modal-sample';
 import {ResponsiveImageSample} from '../../pages/responsive-image-sample';
 import {SidebarSample} from '../../pages/sidebar-sample';
 import {SpinnerSample} from '../../pages/spinner-sample';
@@ -26,6 +27,7 @@ export default function Content()
                     <option value="#/dialog">Dialog</option>
                     <option value="#/image-preview">Image Preview</option>
                     <option value="#/login">Login</option>
+                    <option value="#/modal">Modal</option>
                     <option value="#/responsive-image">Responsive Image</option>
                     <option value="#/sidebar">Sidebar</option>
                     <option value="#/spinner">Spinner</option>
@@ -38,6 +40,7 @@ export default function Content()
                     <Route path="/dialog" component={DialogSample}/>
                     <Route path="/image-preview" component={ImagePreviewSample}/>
                     <Route path="/login" component={LoginSample}/>
+                    <Route path="/modal" component={ModalSample}/>
                     <Route path="/responsive-image" component={ResponsiveImageSample}/>
                     <Route path="/sidebar" component={SidebarSample}/>
                     <Route path="/spinner" component={SpinnerSample}/>
