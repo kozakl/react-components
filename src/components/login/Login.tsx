@@ -43,7 +43,7 @@ export default class Login extends PureComponent<Props, State>
                 
                 <form onSubmit={this.onSubmit}>
                     <Input
-                        className={style.username}
+                        className={style.email}
                         value={this.state.email}
                         onChange={this.onChangeEmail}
                         placeholder="Email"
