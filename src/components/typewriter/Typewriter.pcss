@@ -1,0 +1,15 @@
+@import '../../variables.pcss';
+
+.typewriter {
+  @for $i from 1 to 11 {
+      & :nth-child($i) {
+        opacity: 0;
+        transition: opacity 0.1s linear calc($i * 0.075)s;
+      }
+  }
+  &.show {
+    & > span {
+      opacity: 1;
+    }
+  }
+}
