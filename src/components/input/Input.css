@@ -1,0 +1,30 @@
+@import '../../variables.css';
+
+.field {
+  background: none;
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: calc(var(--font-size-base) * 1.25);
+  outline: none;
+  padding: 0.35rem 0;
+  border: none;
+  border-bottom: solid 1px var(--color-white);
+  transition: border-bottom 0.2s;
+  
+  &.error {
+    border-bottom: solid 1px var(--color-orange);
+  }
+  &::placeholder {
+    color: var(--color-white);
+    opacity: 1;
+  }
+}
+
+.error:not(.field) {
+  color: var(--color-orange);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: calc(var(--font-size-base) * 0.55);
+  margin: 0.5rem 0;
+}
