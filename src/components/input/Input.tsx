@@ -1,9 +1,7 @@
-import React      from 'react';
-import classNames from '../../utils/classNames';
-import style from './Input.css';
-/**
- * @author kozakluke@gmail.com
- */
+import * as React from 'react';
+import * as style from './Input.css';
+import {classNames} from '@kozakl/utils';
+
 export default class Input extends React.Component
 {
     render()
