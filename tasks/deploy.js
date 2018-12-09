@@ -14,7 +14,7 @@ try {
         deploy(join(name, tag));
     else
         deploy(join(name, branch));
-} catch(error) {
+} catch (error) {
     deploy(name);
 }
 
