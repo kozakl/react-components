@@ -2,7 +2,8 @@ import * as React from 'react';
 import * as style from './Login.pcss';
 import {ChangeEvent, FormEvent,
         PureComponent} from 'react';
-import {Button, Input} from 'reactstrap';
+import {Button, FormFeedback,
+        Input, InputGroup} from 'reactstrap';
 import {isEmail, isFill} from '@kozakl/utils/validate';
 
 export default class Login extends PureComponent<Props, State>
@@ -13,14 +14,19 @@ export default class Login extends PureComponent<Props, State>
         
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            errorEmail: null,
+            errorPassword: null
         };
     }
     
     onSubmit = (event:FormEvent<HTMLFormElement>)=>
     {
         event.preventDefault();
-        this.props.onLogin();
+        if (this.state.password === 'abc') {
+            this.props.onLogin();
+        } else
+            this.setState({errorPassword: 'Incorrect password'});
     };
     
     onChangeEmail = (event:ChangeEvent<HTMLInputElement>)=> {
@@ -28,7 +34,10 @@ export default class Login extends PureComponent<Props, State>
     };
     
     onChangePassword = (event:ChangeEvent<HTMLInputElement>)=> {
-        this.setState({password: event.target.value});
+        this.setState({
+            password: event.target.value,
+            errorPassword: null
+        });
     };
     
     render()
@@ -42,19 +51,26 @@ export default class Login extends PureComponent<Props, State>
                 </h5>
                 
                 <form onSubmit={this.onSubmit}>
-                    <Input
-                        className={style.email}
-                        value={this.state.email}
-                        onChange={this.onChangeEmail}
-                        placeholder="Email"
-                        bsSize="sm"/>
-                    <Input
-                        value={this.state.password}
-                        onChange={this.onChangePassword}
-                        type="password"
-                        placeholder="Password"
-                        bsSize="sm"/>
-                    
+                    <InputGroup className={style.email}>
+                        <Input
+                            value={this.state.email}
+                            onChange={this.onChangeEmail}
+                            placeholder="Email"
+                            bsSize="sm"/>
+                    </InputGroup>
+                    <InputGroup className={style.password}>
+                        <Input
+                            value={this.state.password}
+                            invalid={!!this.state.errorPassword}
+                            onChange={this.onChangePassword}
+                            type="password"
+                            placeholder="Password"
+                            bsSize="sm"/>
+                        <FormFeedback>
+                            {this.state.errorPassword}
+                        </FormFeedback>
+                    </InputGroup>
+
                     <Button
                         className={style.confirm}
                         disabled={!enabled}
@@ -76,4 +92,6 @@ interface Props {
 interface State {
     email:string;
     password:string;
+    errorEmail:string;
+    errorPassword:string;
 }
