@@ -70,7 +70,7 @@ export default class Login extends PureComponent<Props, State>
                             {this.state.errorPassword}
                         </FormFeedback>
                     </InputGroup>
-
+                    
                     <Button
                         className={style.confirm}
                         disabled={!enabled}
