@@ -5,6 +5,7 @@ import {AudioPlayerSample} from '../../pages/audio-player-sample';
 import {CrossfadeBgSample} from '../../pages/crossfade-bg-sample';
 import {DialogSample} from '../../pages/dialog-sample';
 import {ImagePreviewSample} from '../../pages/image-preview-sample';
+import {InputSample} from '../../pages/input-sample';
 import {LoginSample} from '../../pages/login-sample';
 import {ModalSample} from '../../pages/modal-sample';
 import {ResponsiveImageSample} from '../../pages/responsive-image-sample';
@@ -26,6 +27,7 @@ export default function Content()
                     <option value="#/crossfade-bg">Crossfade Bg</option>
                     <option value="#/dialog">Dialog</option>
                     <option value="#/image-preview">Image Preview</option>
+                    <option value="#/input">Input</option>
                     <option value="#/login">Login</option>
                     <option value="#/modal">Modal</option>
                     <option value="#/responsive-image">Responsive Image</option>
@@ -39,6 +41,7 @@ export default function Content()
                     <Route path="/crossfade-bg" component={CrossfadeBgSample}/>
                     <Route path="/dialog" component={DialogSample}/>
                     <Route path="/image-preview" component={ImagePreviewSample}/>
+                    <Route path="/input" component={InputSample}/>
                     <Route path="/login" component={LoginSample}/>
                     <Route path="/modal" component={ModalSample}/>
                     <Route path="/responsive-image" component={ResponsiveImageSample}/>
