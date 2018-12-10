@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Redirect, Route, Switch} from 'react-router';
 import {HashRouter} from 'react-router-dom';
 import {AudioPlayerSample} from '../../pages/audio-player-sample';
+import {CheckboxSample} from '../../pages/checkbox-sample';
 import {CrossfadeBgSample} from '../../pages/crossfade-bg-sample';
 import {DialogSample} from '../../pages/dialog-sample';
 import {ImagePreviewSample} from '../../pages/image-preview-sample';
@@ -24,6 +25,7 @@ export default function Content()
                     onChange={(event)=>
                         window.location.href = event.target.value}>
                     <option value="#/audio-player">Audio Player</option>
+                    <option value="#/checkbox">Checkbox</option>
                     <option value="#/crossfade-bg">Crossfade Bg</option>
                     <option value="#/dialog">Dialog</option>
                     <option value="#/image-preview">Image Preview</option>
@@ -38,7 +40,8 @@ export default function Content()
                 <Switch>
                     <Redirect from="/" to='/audio-player' exact/>
                     <Route path="/audio-player" component={AudioPlayerSample}/>
-                    <Route path="/crossfade-bg" component={CrossfadeBgSample}/>
+                    <Route path="/checkbox" component={CheckboxSample}/>
+                    <Route path="/checkbox" component={CrossfadeBgSample}/>
                     <Route path="/dialog" component={DialogSample}/>
                     <Route path="/image-preview" component={ImagePreviewSample}/>
                     <Route path="/input" component={InputSample}/>
