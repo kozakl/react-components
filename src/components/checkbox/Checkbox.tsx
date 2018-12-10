@@ -10,10 +10,15 @@ export default function Checkbox(props:Props)
             <label className={style.label} htmlFor="checkbox">
                 Label&nbsp;
             </label>
+            {props.error &&
+                <div className={style.error}>
+                    {props.error}
+                </div>}
         </div>
     );
 }
 
 interface Props {
     className?:string;
+    error?:string;
 }
