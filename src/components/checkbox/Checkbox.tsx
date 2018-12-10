@@ -1,8 +1,8 @@
 import * as React from 'react';
-import * as style from './CustomCheckbox.pcss';
+import * as style from './Checkbox.pcss';
 import {classNames} from '@kozakl/utils';
 
-export default function CustomCheckbox(props:Props)
+export default function Checkbox(props:Props)
 {
     return (
         <div className={props.className}>
