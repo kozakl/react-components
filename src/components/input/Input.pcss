@@ -3,10 +3,14 @@
   --error-color: #FF0000;
 }
 
+.input {
+  position: relative;
+}
+
 .field {
+  position: relative;
   background: none;
   outline: none;
-  padding: 0.35rem 0;
   border: none;
   border-bottom: solid 1px var(--border-color);
   transition: border-bottom 0.2s;
@@ -17,6 +21,16 @@
   &::placeholder {
     color: var(--border-color);
     opacity: 1;
+  }
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  
+  &.min {
+    top: -1.25rem;
+    font-size: 0.75em;
   }
 }
 

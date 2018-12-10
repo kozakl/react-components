@@ -6,7 +6,8 @@ export default function SpinnerSample()
 {
     return (
         <div className={style.spinnerSample}>
-            <Input/>
+            <Input placeholder="Imie"/>
+            <Input placeholder="Telefon (9 cyfr)"/>
         </div>
     );
 }
