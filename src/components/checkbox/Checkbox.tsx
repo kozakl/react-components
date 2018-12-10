@@ -19,7 +19,7 @@ const Checkbox:FunctionComponent<Props> = (props)=>
     );
 };
 
-interface Props extends FunctionComponent {
+interface Props {
     className?:string;
     error?:string;
 }
