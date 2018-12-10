@@ -1,14 +1,15 @@
 import * as React from 'react';
 import * as style from './Checkbox.pcss';
 import {classNames} from '@kozakl/utils';
+import {FunctionComponent} from "react";
 
-export default function Checkbox(props:Props)
+const Checkbox:FunctionComponent<Props> = (props)=>
 {
     return (
         <div className={props.className}>
             <input className={style.input} id="checkbox" type="checkbox"/>
             <label className={style.label} htmlFor="checkbox">
-                Label&nbsp;
+                {props.children}
             </label>
             {props.error &&
                 <div className={style.error}>
@@ -16,9 +17,11 @@ export default function Checkbox(props:Props)
                 </div>}
         </div>
     );
-}
+};
 
-interface Props {
+interface Props extends FunctionComponent {
     className?:string;
     error?:string;
 }
+
+export default Checkbox;

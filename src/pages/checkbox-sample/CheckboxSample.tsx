@@ -6,7 +6,11 @@ export default function CheckboxSample()
 {
     return (
         <div className={style.checkboxSample}>
-            <Checkbox className={style.checkbox} error="Error please try again later"/>
+            <Checkbox
+                className={style.checkbox}
+                error="Error please try again later">
+                Hello Checkbox
+            </Checkbox>
         </div>
     );
 }
