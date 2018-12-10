@@ -1,8 +1,7 @@
 import * as React from 'react';
 import * as style from './Input.pcss';
+import {InputHTMLAttributes, PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
-import {InputHTMLAttributes} from "react";
-import {PureComponent} from "react";
 
 export default class Modal extends PureComponent<Props, State>
 {
