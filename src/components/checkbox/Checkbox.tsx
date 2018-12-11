@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as style from './Checkbox.pcss';
-import {classNames} from '@kozakl/utils';
 import {FunctionComponent} from "react";
 
 const Checkbox:FunctionComponent<Props> = (props)=>
