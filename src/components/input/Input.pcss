@@ -1,5 +1,4 @@
 :root {
-  --border-color: #010101;
   --error-color: #FF0000;
 }
 
@@ -10,16 +9,15 @@
 .field {
   position: relative;
   background: none;
+  color: inherit;
   outline: none;
   border: none;
-  border-bottom: solid 1px var(--border-color);
-  transition: border-bottom 0.2s;
+  border-bottom: solid 1px;
   
   &.error {
     border-bottom: solid 1px var(--error-color);
   }
   &::placeholder {
-    color: var(--border-color);
     opacity: 1;
   }
 }

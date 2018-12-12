@@ -6,10 +6,13 @@ export default function CheckboxSample()
 {
     return (
         <div className={style.checkboxSample}>
-            <Checkbox
-                className={style.checkbox}
-                error="Error please try again later">
-                Hello Checkbox
+            
+            <Checkbox className={style.statement} error="DUPA">
+                Oświadczam że zapoznałem się z&nbsp;
+                <a className={style.terms}>
+                    regulaminem
+                </a>&nbsp;
+                i akceptuję...
             </Checkbox>
         </div>
     );
