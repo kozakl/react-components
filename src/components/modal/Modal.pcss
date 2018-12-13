@@ -14,10 +14,10 @@
     background: var(--bg-color);
   }
   &.interactive {
-    visibility: hidden;
+    pointer-events: none;
     
     & * {
-      visibility: visible;
+      pointer-events: initial;
     }
   }
   &.center {
