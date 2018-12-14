@@ -60,7 +60,7 @@ export default class Sidebar2 extends PureComponent<Props, State>
                 <div className={style.send}>
                     Wyślij
                 </div>
-                <Modal visible={false} onClose={this.onCloseTerms}>
+                <Modal visible={this.state.terms} onClose={this.onCloseTerms}>
                     <div className={style.terms}>
                         Regulamin
                     </div>
