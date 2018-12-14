@@ -1,12 +1,12 @@
 import * as React from 'react';
-import * as style from './Sidebar.pcss';
+import * as style from './Sidebar2.pcss';
 import {PureComponent, MouseEvent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {Checkbox} from '../checkbox';
 import {Input} from '../input';
 import {Modal} from '../modal';
 
-export default class ContactSidebar extends PureComponent<Props, State>
+export default class Sidebar2 extends PureComponent<Props, State>
 {
     constructor()
     {
@@ -28,12 +28,12 @@ export default class ContactSidebar extends PureComponent<Props, State>
     
     render()
     {
-        const sidebarClass = classNames(
-            style.sidebar,
+        const sidebar2Class = classNames(
+            style.sidebar2,
             this.props.active && style.active
         );
         return (
-            <div className={sidebarClass}>
+            <div className={sidebar2Class}>
                 <a className={style.close} onClick={this.props.onClose}>
                     <img src={require('res/icons/close.svg')}/>
                 </a>
