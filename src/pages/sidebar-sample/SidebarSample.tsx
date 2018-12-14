@@ -3,7 +3,7 @@ import * as style from './SidebarSample.pcss';
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
-import {Sidebar} from '../../components/sidebar';
+import {Sidebar} from '../../components/sidebar2';
 
 export default class SidebarSample extends PureComponent<{}, State>
 {
@@ -12,7 +12,7 @@ export default class SidebarSample extends PureComponent<{}, State>
         super(undefined);
         
         this.state = {
-            sidebar: false
+            sidebar: !false
         };
     }
     
