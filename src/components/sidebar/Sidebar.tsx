@@ -13,54 +13,35 @@ export default function Sidebar(props:Props)
             <a className={style.close} onClick={props.onClose}>
                 <img src={require('res/icons/close.svg')}/>
             </a>
-            <h5 className={style.title}>Sidebar Title</h5>
-            <p className={style.content}>
-                Sidebar Content
+            <h5 className={style.title}>
+                Sidebar Title
+            </h5>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
-            <p className={style.content}>
-                Sidebar Content
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
-            <p className={style.content}>
-                Sidebar Content
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
-            <p className={style.content}>
-                Sidebar Content
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
-            <p className={style.content}>
-                Sidebar Content
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
-            <p className={style.content}>
-                Sidebar Content
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
-            <p className={style.content}>
-                Sidebar Content
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
-            <p className={style.content}>
-                Sidebar Content
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
-            <p className={style.content}>
-                Sidebar Content
-            </p>
-            <p className={style.content}>
-                Sidebar Content
-            </p>
-            <p className={style.content}>
-                Sidebar Content
-            </p>
-            <p className={style.content}>
-                Sidebar Content
-            </p>
-            <p className={style.content}>
-                Sidebar Content
-            </p>
-            <p className={style.content}>
-                Sidebar Content
-            </p>
-            <p className={style.content}>
-                Sidebar Content
-            </p>
-            <p className={style.content}>
-                Sidebar Content
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
         </div>
     );
