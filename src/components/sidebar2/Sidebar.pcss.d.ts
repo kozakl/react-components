@@ -1,4 +1,10 @@
 export const sidebar:string;
 export const active:string;
 export const close:string;
-export const title:string;
+export const headline:string;
+export const info:string;
+export const name:string;
+export const tel:string;
+export const statement:string;
+export const terms:string;
+export const send:string;
