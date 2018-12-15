@@ -1,10 +1,10 @@
 import * as React from 'react';
-import * as style from './TextField.pcss';
+import * as style from './Input.pcss';
 import {InputHTMLAttributes, PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {isFill} from '@kozakl/utils/validate';
 
-export default class Modal extends PureComponent<Props, State>
+export default class Input extends PureComponent<Props, State>
 {
     constructor(props:Props)
     {

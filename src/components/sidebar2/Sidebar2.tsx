@@ -3,7 +3,7 @@ import * as style from './Sidebar2.pcss';
 import {PureComponent, MouseEvent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {Checkbox} from '../checkbox';
-import {TextField} from '../text-field';
+import {Input} from '../input';
 import {Modal} from '../modal';
 import {ChangeEvent} from "react";
 
@@ -52,12 +52,12 @@ export default class Sidebar2 extends PureComponent<Props, State>
                 <div className={style.info}>
                     Podaj nam swoje imię i numer telefonu. Oddzwonimy.
                 </div>
-                <TextField
+                <Input
                     className={style.name}
                     value={this.state.name}
                     onChange={this.onChangeName}
                     placeholder="Imie"/>
-                <TextField
+                <Input
                     className={style.tel}
                     value={this.state.tel}
                     onChange={this.onChangeTel}
