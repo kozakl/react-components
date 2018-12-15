@@ -7,7 +7,6 @@
 }
 
 .text {
-  position: relative;
   background: none;
   color: inherit;
   outline: none;
@@ -18,9 +17,6 @@
   &.error {
     border-bottom: solid 1px var(--error-color);
   }
-  &::placeholder {
-    opacity: 1;
-  }
 }
 
 .placeholder {
@@ -28,12 +24,12 @@
   top: 0;
   
   &.open {
-    top: -1.25rem;
+    top: -1.25em;
     font-size: 0.75em;
   }
 }
 
-.error:not(.field) {
+.error {
   color: var(--error-color);
-  margin: 0.5rem 0;
+  margin: 0.5em 0;
 }
