@@ -14,7 +14,9 @@ export default class Sidebar2 extends PureComponent<Props, State>
         super(undefined);
         
         this.state = {
-            terms: false
+            terms: false,
+            name: '',
+            tel: ''
         };
     }
     
