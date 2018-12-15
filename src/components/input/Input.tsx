@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as style from './Input.pcss';
 import {InputHTMLAttributes, PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
-import {isFill} from '@kozakl/utils/validate';
 
 export default class Input extends PureComponent<Props, State>
 {
@@ -35,7 +34,9 @@ export default class Input extends PureComponent<Props, State>
         );
         const placeholderClass = classNames(
             style.placeholder,
-            (this.state.focus || isFill(this.props.value)) && style.open
+            this.state.focus && style.open,
+            this.props.value &&
+            this.props.value.length && style.open
         );
         return (
             <div
@@ -62,6 +63,7 @@ export default class Input extends PureComponent<Props, State>
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
     className?:string;
+    value?:string;
     error?:string;
 }
 
