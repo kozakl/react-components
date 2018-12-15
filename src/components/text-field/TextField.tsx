@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as style from './TextField.pcss';
 import {InputHTMLAttributes, PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
+import {isFill} from '@kozakl/utils/validate';
 
 export default class Modal extends PureComponent<Props, State>
 {
@@ -24,35 +25,32 @@ export default class Modal extends PureComponent<Props, State>
     
     render()
     {
-        const {name, type, placeholder, onChange} = this.props;
-        
         const inputClass = classNames(
             this.props.className,
             style.input
         );
-        const fieldClass = classNames(
-            style.field,
+        const textClass = classNames(
+            style.text,
             this.props.error && style.error
         );
         const placeholderClass = classNames(
             style.placeholder,
-            this.state.focus && style.min
+            (this.state.focus || isFill(this.props.value)) && style.open
         );
-        
         return (
             <div
                 className={inputClass}
                 onFocus={this.onFocus}
                 onBlur={this.onBlur}>
+                <input
+                    className={textClass}
+                    value={this.props.value || ''}
+                    onChange={this.props.onChange}/>
+                
                 {this.props.placeholder &&
                     <div className={placeholderClass}>
                         {this.props.placeholder}
                     </div>}
-                
-                <input
-                    className={fieldClass}
-                    {...{name, type, onChange}}/>
-                
                 {this.props.error &&
                     <div className={style.error}>
                         {this.props.error}

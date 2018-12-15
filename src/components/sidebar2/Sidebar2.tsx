@@ -5,6 +5,7 @@ import {classNames} from '@kozakl/utils';
 import {Checkbox} from '../checkbox';
 import {TextField} from '../text-field';
 import {Modal} from '../modal';
+import {ChangeEvent} from "react";
 
 export default class Sidebar2 extends PureComponent<Props, State>
 {
@@ -16,6 +17,14 @@ export default class Sidebar2 extends PureComponent<Props, State>
             terms: false
         };
     }
+    
+    onChangeName = (event:ChangeEvent<HTMLInputElement>)=> {
+        this.setState({name: event.target.value});
+    };
+    
+    onChangeTel = (event:ChangeEvent<HTMLInputElement>)=> {
+        this.setState({tel: event.target.value});
+    };
     
     onClickTerms = (event:MouseEvent)=> {
         event.preventDefault();
@@ -45,9 +54,13 @@ export default class Sidebar2 extends PureComponent<Props, State>
                 </div>
                 <TextField
                     className={style.name}
+                    value={this.state.name}
+                    onChange={this.onChangeName}
                     placeholder="Imie"/>
                 <TextField
                     className={style.tel}
+                    value={this.state.tel}
+                    onChange={this.onChangeTel}
                     placeholder="Telefon (9 cyfr)"/>
                 
                 <Checkbox className={style.statement}>
@@ -76,5 +89,7 @@ interface Props {
 }
 
 interface State {
+    name:string;
+    tel:string;
     terms:boolean;
 }
