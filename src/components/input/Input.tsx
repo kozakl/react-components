@@ -45,6 +45,7 @@ export default class Input extends PureComponent<Props, State>
                 onBlur={this.onBlur}>
                 <input
                     className={textClass}
+                    type={this.props.type}
                     value={this.props.value}
                     onChange={this.props.onChange}/>
                 
