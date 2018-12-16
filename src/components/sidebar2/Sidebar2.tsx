@@ -16,14 +16,20 @@ export default class Sidebar2 extends PureComponent<Props, State>
         this.state = {
             terms: false,
             name: '',
-            tel: ''
+            tel: '',
+            errorName: null,
+            errorTel: null,
+            errorStatement: null
         };
     }
     
     onSubmit = (event:FormEvent<HTMLFormElement>)=> {
         event.preventDefault();
         
-        console.log('sent form')
+        this.setState({
+            errorName: 'Prosze podaj imie',
+            errorTel: 'Prosze podaj telefon'
+        });
     };
     
     onChangeName = (event:ChangeEvent<HTMLInputElement>)=> {
@@ -64,11 +70,13 @@ export default class Sidebar2 extends PureComponent<Props, State>
                     <Input
                         className={style.name}
                         value={this.state.name}
+                        error={this.state.errorName}
                         onChange={this.onChangeName}
                         placeholder="Imie"/>
                     <Input
                         className={style.tel}
                         value={this.state.tel}
+                        error={this.state.errorTel}
                         onChange={this.onChangeTel}
                         placeholder="Telefon (9 cyfr)"/>
                     
@@ -104,4 +112,7 @@ interface State {
     name:string;
     tel:string;
     terms:boolean;
+    errorName:string;
+    errorTel:string;
+    errorStatement:string;
 }
