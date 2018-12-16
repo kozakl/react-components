@@ -1,13 +1,14 @@
 import * as React from 'react';
 import * as style from './Checkbox.pcss';
-import {FunctionComponent} from "react";
+import {FunctionComponent} from 'react';
 
 const Checkbox:FunctionComponent<Props> = (props)=>
 {
     return (
         <div className={props.className}>
-            <input className={style.input} id="checkbox" type="checkbox"/>
-            <label className={style.label} htmlFor="checkbox">
+            <label className={style.label}>
+                <input className={style.input} type="checkbox"/>
+                <span className={style.box}/>
                 {props.children}
             </label>
             {props.error &&
