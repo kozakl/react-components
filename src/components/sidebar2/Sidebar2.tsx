@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as style from './Sidebar2.pcss';
-import {PureComponent, MouseEvent} from 'react';
+import {ChangeEvent, FormEvent,
+        MouseEvent, PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {Checkbox} from '../checkbox';
 import {Input} from '../input';
 import {Modal} from '../modal';
-import {ChangeEvent} from "react";
 
 export default class Sidebar2 extends PureComponent<Props, State>
 {
@@ -19,6 +19,12 @@ export default class Sidebar2 extends PureComponent<Props, State>
             tel: ''
         };
     }
+    
+    onSubmit = (event:FormEvent<HTMLFormElement>)=> {
+        event.preventDefault();
+        
+        console.log('sent form')
+    };
     
     onChangeName = (event:ChangeEvent<HTMLInputElement>)=> {
         this.setState({name: event.target.value});
@@ -54,27 +60,31 @@ export default class Sidebar2 extends PureComponent<Props, State>
                 <div className={style.info}>
                     Podaj nam swoje imię i numer telefonu. Oddzwonimy.
                 </div>
-                <Input
-                    className={style.name}
-                    value={this.state.name}
-                    onChange={this.onChangeName}
-                    placeholder="Imie"/>
-                <Input
-                    className={style.tel}
-                    value={this.state.tel}
-                    onChange={this.onChangeTel}
-                    placeholder="Telefon (9 cyfr)"/>
-                
-                <Checkbox className={style.statement}>
-                    Oświadczam że zapoznałem się z&nbsp;
-                    <a className={style.terms} onClick={this.onClickTerms}>
-                        regulaminem
-                    </a>&nbsp;
-                    i akceptuję...
-                </Checkbox>
-                <div className={style.send}>
-                    Wyślij
-                </div>
+                <form onSubmit={this.onSubmit}>
+                    <Input
+                        className={style.name}
+                        value={this.state.name}
+                        onChange={this.onChangeName}
+                        placeholder="Imie"/>
+                    <Input
+                        className={style.tel}
+                        value={this.state.tel}
+                        onChange={this.onChangeTel}
+                        placeholder="Telefon (9 cyfr)"/>
+                    
+                    <Checkbox className={style.statement}>
+                        Oświadczam że zapoznałem się z&nbsp;
+                        <a className={style.terms} onClick={this.onClickTerms}>
+                            regulaminem
+                        </a>&nbsp;
+                        i akceptuję...
+                    </Checkbox>
+                    <button
+                        className={style.send}
+                        type="submit">
+                        Wyślij
+                    </button>
+                </form>
                 <Modal visible={this.state.terms} onClose={this.onCloseTerms}>
                     <div className={style.terms}>
                         Regulamin
