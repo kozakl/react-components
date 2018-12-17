@@ -14,6 +14,12 @@
   border-bottom: solid 1px;
   width: inherit;
   
+  &:focus {
+    +.placeholder {
+      font-size: 0.75em;
+      top: -1.5em;
+    }
+  }
   &.error {
     border-bottom: solid 1px var(--error-color);
   }
