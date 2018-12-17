@@ -29,22 +29,8 @@ export default class Sidebar2 extends PureComponent<Props, State>
     {
         event.preventDefault();
         
-        if (!isFill(this.state.name)) {
-            this.setState({errorName: 'Prosze podaj imie'});
-        } else {
-            this.setState({errorName: null});
-        }
-        if (!isFill(this.state.tel)) {
-            this.setState({errorTel: 'Prosze podaj telefon'});
-        } else if (this.state.tel.length != 9) {
-            this.setState({errorTel: 'Nie poprawny numer'});
-        } else {
-            this.setState({errorTel: null});
-        }
-        if (!this.state.statement) {
-            this.setState({errorStatement: 'Musisz zakceptować regulamin'});
-        } else {
-            this.setState({errorStatement: null});
+        if (this.validateForm()) {
+            
         }
     };
     
@@ -72,6 +58,33 @@ export default class Sidebar2 extends PureComponent<Props, State>
     onCloseTerms = ()=> {
         this.setState({terms: false});
     };
+    
+    validateForm()
+    {
+        let validate = true;
+        if (!isFill(this.state.name)) {
+            this.setState({errorName: 'Prosze podaj imie'});
+        } else {
+            validate = false;
+            this.setState({errorName: null});
+        }
+        if (!isFill(this.state.tel)) {
+            this.setState({errorTel: 'Prosze podaj telefon'});
+        } else if (this.state.tel.length != 9) {
+            this.setState({errorTel: 'Nie poprawny numer'});
+        } else {
+            validate = false;
+            this.setState({errorTel: null});
+        }
+        if (!this.state.statement) {
+            this.setState({errorStatement: 'Musisz zakceptować regulamin'});
+        } else {
+            validate = false;
+            this.setState({errorStatement: null});
+        }
+        
+        return validate;
+    }
     
     render()
     {
