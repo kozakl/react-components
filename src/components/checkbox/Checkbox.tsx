@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as style from './Checkbox.pcss';
-import {FunctionComponent} from 'react';
+import {FunctionComponent,
+        InputHTMLAttributes} from 'react';
 
 const Checkbox:FunctionComponent<Props> = (props)=>
 {
@@ -10,6 +11,7 @@ const Checkbox:FunctionComponent<Props> = (props)=>
                 <input
                     className={style.input}
                     checked={props.checked}
+                    onChange={props.onChange}
                     type="checkbox"/>
                 <span className={style.box}/>
                 {props.children}
@@ -22,9 +24,7 @@ const Checkbox:FunctionComponent<Props> = (props)=>
     );
 };
 
-interface Props {
-    className?:string;
-    checked?:boolean;
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
     error?:string;
 }
 
