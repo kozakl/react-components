@@ -18,13 +18,15 @@ export default class Sidebar2 extends PureComponent<Props, State>
             terms: false,
             name: '',
             tel: '',
+            statement: false,
             errorName: null,
             errorTel: null,
             errorStatement: null
         };
     }
     
-    onSubmit = (event:FormEvent<HTMLFormElement>)=> {
+    onSubmit = (event:FormEvent<HTMLFormElement>)=>
+    {
         event.preventDefault();
         
         if (!isFill(this.state.name)) {
@@ -39,6 +41,11 @@ export default class Sidebar2 extends PureComponent<Props, State>
         } else {
             this.setState({errorTel: null});
         }
+        if (!this.state.statement) {
+            this.setState({errorStatement: 'Musisz zakceptować regulamin'});
+        } else {
+            this.setState({errorStatement: null});
+        }
     };
     
     onChangeName = (event:ChangeEvent<HTMLInputElement>)=> {
@@ -51,6 +58,10 @@ export default class Sidebar2 extends PureComponent<Props, State>
         if (!isNaN(+tel) && tel.length <= 9) {
             this.setState({tel});
         }
+    };
+    
+    onChangeStatement = (event:ChangeEvent<HTMLInputElement>)=> {
+        this.setState({statement: !this.state.statement});
     };
     
     onClickTerms = (event:MouseEvent)=> {
@@ -94,7 +105,11 @@ export default class Sidebar2 extends PureComponent<Props, State>
                         type="tel"
                         placeholder="Telefon (9 cyfr)"/>
                     
-                    <Checkbox className={style.statement}>
+                    <Checkbox
+                        className={style.statement}
+                        checked={this.state.statement}
+                        error={this.state.errorStatement}
+                        onChange={this.onChangeStatement}>
                         Oświadczam że zapoznałem się z&nbsp;
                         <a className={style.terms} onClick={this.onClickTerms}>
                             regulaminem
@@ -125,6 +140,7 @@ interface Props {
 interface State {
     name:string;
     tel:string;
+    statement:boolean;
     terms:boolean;
     errorName:string;
     errorTel:string;
