@@ -15,10 +15,10 @@ export default class Sidebar2 extends PureComponent<Props, State>
         super(undefined);
         
         this.state = {
-            terms: false,
             name: '',
             tel: '',
             statement: false,
+            terms: false,
             errorName: null,
             errorTel: null,
             errorStatement: null
@@ -60,7 +60,7 @@ export default class Sidebar2 extends PureComponent<Props, State>
         }
     };
     
-    onChangeStatement = (event:ChangeEvent<HTMLInputElement>)=> {
+    onChangeStatement = ()=> {
         this.setState({statement: !this.state.statement});
     };
     
