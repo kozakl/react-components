@@ -40,7 +40,6 @@ const Input:FunctionComponent<Props> = (props)=>
 };
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-    className?:string;
     value?:string;
     error?:string;
 }
