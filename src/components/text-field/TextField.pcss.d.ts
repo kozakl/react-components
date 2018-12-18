@@ -1,4 +1,4 @@
-export const input:string;
+export const textField:string;
 export const text:string;
 export const error:string;
 export const placeholder:string;

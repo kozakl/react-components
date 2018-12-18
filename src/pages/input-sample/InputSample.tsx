@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as style from './InputSample.pcss';
-import {Input} from '../../components/input';
+import {Input} from '../../components/text-field';
 
 export default function SpinnerSample()
 {

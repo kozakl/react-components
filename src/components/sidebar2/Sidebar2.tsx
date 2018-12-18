@@ -5,8 +5,8 @@ import {ChangeEvent, FormEvent,
 import {classNames} from '@kozakl/utils';
 import {isFill} from '@kozakl/utils/validate';
 import {Checkbox} from '../checkbox';
-import {Input} from '../input';
 import {Modal} from '../modal';
+import {TextField} from '../text-field';
 
 export default class Sidebar2 extends PureComponent<Props, State>
 {
@@ -104,13 +104,13 @@ export default class Sidebar2 extends PureComponent<Props, State>
                     Podaj nam swoje imię i numer telefonu. Oddzwonimy.
                 </div>
                 <form onSubmit={this.onSubmit}>
-                    <Input
+                    <TextField
                         className={style.name}
                         value={this.state.name}
                         error={this.state.errorName}
                         onChange={this.onChangeName}
                         placeholder="Imie"/>
-                    <Input
+                    <TextField
                         className={style.tel}
                         value={this.state.tel}
                         error={this.state.errorTel}

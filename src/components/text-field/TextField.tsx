@@ -1,14 +1,14 @@
 import * as React from 'react';
-import * as style from './Input.pcss';
+import * as style from './TextField.pcss';
 import {FunctionComponent,
         InputHTMLAttributes} from 'react';
 import {classNames} from '@kozakl/utils';
 
-const Input:FunctionComponent<Props> = (props)=>
+const TextField:FunctionComponent<Props> = (props)=>
 {
-    const inputClass = classNames(
+    const textFieldClass = classNames(
         props.className,
-        style.input
+        style.textField
     );
     const textClass = classNames(
         style.text,
@@ -20,7 +20,7 @@ const Input:FunctionComponent<Props> = (props)=>
         props.value.length && style.open
     );
     return (
-        <div className={inputClass}>
+        <div className={textFieldClass}>
             <input
                 className={textClass}
                 type={props.type}
@@ -44,4 +44,4 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
     error?:string;
 }
 
-export default Input;
+export default TextField;
