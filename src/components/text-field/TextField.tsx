@@ -10,8 +10,8 @@ const TextField:FunctionComponent<Props> = (props)=>
         props.className,
         style.textField
     );
-    const textClass = classNames(
-        style.text,
+    const inputClass = classNames(
+        style.input,
         props.error && style.error
     );
     const placeholderClass = classNames(
@@ -22,7 +22,7 @@ const TextField:FunctionComponent<Props> = (props)=>
     return (
         <div className={textFieldClass}>
             <input
-                className={textClass}
+                className={inputClass}
                 type={props.type}
                 value={props.value}
                 onChange={props.onChange}/>
