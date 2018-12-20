@@ -10,7 +10,10 @@ const Toggle:FunctionComponent<Props> = (props)=>
         props.opened && style.opened
     );
     return (
-        <svg className={toggleClass} viewBox="0 0 100 100">
+        <svg
+            className={toggleClass}
+            onClick={props.onChange}
+            viewBox="0 0 100 100">
             <path className={style.line1} d="M5 13h90v14H5z"/>
             <path className={style.line2} d="M5 43h90v14H5z"/>
             <path className={style.line3} d="M5 73h90v14H5z"/>
@@ -20,6 +23,7 @@ const Toggle:FunctionComponent<Props> = (props)=>
 
 interface Props {
     opened:boolean;
+    onChange?:()=> void;
 }
 
 export default Toggle;
