@@ -10,10 +10,17 @@ export default class Nav extends PureComponent<Props, State>
     {
         super(undefined);
         
+        const desktopMedia = window.matchMedia('(min-width: 550px)');
+        desktopMedia.addEventListener('change', this.onDesktopMedia);
+        
         this.state = {
             opened: false
         };
     }
+    
+    onDesktopMedia = ()=> {
+        this.setState({opened: false});
+    };
     
     onChangeToggle = ()=> {
         this.setState({opened: !this.state.opened});
