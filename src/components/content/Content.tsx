@@ -9,6 +9,7 @@ import {ImagePreviewSample} from '../../pages/image-preview-sample';
 import {InputSample} from '../../pages/input-sample';
 import {LoginSample} from '../../pages/login-sample';
 import {ModalSample} from '../../pages/modal-sample';
+import {NavSample} from '../../pages/nav-sample';
 import {ResponsiveImageSample} from '../../pages/responsive-image-sample';
 import {SidebarSample} from '../../pages/sidebar-sample';
 import {Sidebar2Sample} from '../../pages/sidebar2-sample';
@@ -33,6 +34,7 @@ export default function Content()
                     <option value="#/input">Input</option>
                     <option value="#/login">Login</option>
                     <option value="#/modal">Modal</option>
+                    <option value="#/nav">Nav</option>
                     <option value="#/responsive-image">Responsive Image</option>
                     <option value="#/sidebar">Sidebar</option>
                     <option value="#/sidebar2">Sidebar2</option>
@@ -49,6 +51,7 @@ export default function Content()
                     <Route path="/input" component={InputSample}/>
                     <Route path="/login" component={LoginSample}/>
                     <Route path="/modal" component={ModalSample}/>
+                    <Route path="/nav" component={NavSample}/>
                     <Route path="/responsive-image" component={ResponsiveImageSample}/>
                     <Route path="/sidebar" component={SidebarSample}/>
                     <Route path="/sidebar2" component={Sidebar2Sample}/>
