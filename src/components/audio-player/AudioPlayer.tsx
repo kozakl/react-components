@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as style from './AudioPlayer.pcss';
 import {clamp} from '@kozakl/utils/math';
+import React from 'react';
+import style from './AudioPlayer.pcss';
 
 export default class AudioPlayer extends React.PureComponent<Props, State>
 {
