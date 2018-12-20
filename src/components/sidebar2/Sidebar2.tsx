@@ -1,5 +1,3 @@
-import * as React from 'react';
-import * as style from './Sidebar2.pcss';
 import {ChangeEvent, FormEvent,
         MouseEvent, PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
@@ -7,6 +5,8 @@ import {isFill} from '@kozakl/utils/validate';
 import {Checkbox} from '../checkbox';
 import {Modal} from '../modal';
 import {TextField} from '../text-field';
+import React from 'react';
+import style from './Sidebar2.pcss';
 
 export default class Sidebar2 extends PureComponent<Props, State>
 {
