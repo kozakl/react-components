@@ -90,6 +90,7 @@ export default class Sidebar2 extends PureComponent<Props, State>
     {
         const sidebar2Class = classNames(
             style.sidebar2,
+            this.props.className,
             this.props.active && style.active
         );
         return (
@@ -146,6 +147,7 @@ export default class Sidebar2 extends PureComponent<Props, State>
 }
 
 interface Props {
+    className?:string;
     active?:boolean;
     onClose?:()=> void;
 }
