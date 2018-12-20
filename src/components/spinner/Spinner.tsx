@@ -6,8 +6,8 @@ import {classNames} from '@kozakl/utils';
 const Spinner:FunctionComponent<Props> = (props)=>
 {
     const spinnerClass = classNames(
-        props.className,
-        style.spinner
+        style.spinner,
+        props.className
     );
     const wrapperClass = classNames(
         style.wrapper,
