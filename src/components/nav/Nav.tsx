@@ -1,40 +1,60 @@
-import * as React from 'react';
-import * as style from './Nav.pcss';
-import {FunctionComponent} from 'react';
-import {Toggle} from "./toggle";
+import {PureComponent} from 'react';
+import {Toggle} from './toggle';
+import {classNames} from '@kozakl/utils';
+import React from 'react';
+import style from './Nav.pcss';
 
-const Nav:FunctionComponent<Props> = (props)=>
+export default class Nav extends PureComponent<Props, State>
 {
-    return (
-        <nav className={style.nav}>
-            {/*<Toggle opened/>*/}
-            <ul className={style.list}>
-                <li>
-                    <a className={style.link}>
+    constructor()
+    {
+        super(undefined);
+        
+        this.state = {
+            opened: false
+        };
+    }
+    
+    onChangeToggle = ()=> {
+        this.setState({opened: !this.state.opened});
+    };
+    
+    render()
+    {
+        const navClass = classNames(
+            style.nav,
+            this.props.className
+        );
+        const listClass = classNames(
+            style.list,
+            this.state.opened && style.hide
+        );
+        return (
+            <nav className={navClass}>
+                <Toggle
+                    className={style.toggle}
+                    opened={!this.state.opened}
+                    onChange={this.onChangeToggle}/>
+                <div className={listClass}>
+                    <a className={style.link} href="#nav/#a">
                         Kalkulator zdolności kredytowej
                     </a>
-                </li>
-                <li>
-                    <a className={style.link}>
+                    <a className={style.link} href="#nav/#b">
                         Wiedza
                     </a>
-                </li>
-                <li>
-                    <a className={style.link}>
+                    <a className={style.link} href="#nav/#c">
                         Korzyści
                     </a>
-                </li>
-            </ul>
-        </nav>
-    )
-};
-
-interface Props {
-    title:string;
-    confirm?:string;
-    dismiss?:string;
-    onConfirm?:()=> void;
-    onDismiss?:()=> void;
+                </div>
+            </nav>
+        );
+    }
 }
 
-export default Nav;
+interface Props {
+    className?:string;
+}
+
+interface State {
+    opened:boolean;
+}
