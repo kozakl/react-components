@@ -1,7 +1,9 @@
-import React      from 'react';
-import Icons      from '../../model/Icons';
-import classNames from '../../utils/classNames';
-import style from './Badge.css';
+import {PureComponent} from 'react';
+import {clamp} from '@kozakl/utils/math';
+import React from 'react';
+import style from './Badge.pcss';
+import {classNames} from "@kozakl/utils";
+
 /**
  * @author kozakluke@gmail.com
  */
@@ -16,7 +18,6 @@ export default class Badge extends React.Component
         );
         return (
             <a {...this.props} className={classes}>
-                <img className={style.leaf} src={Icons.get('leaf')}/>
                 {this.props.children}
             </a>
         )
