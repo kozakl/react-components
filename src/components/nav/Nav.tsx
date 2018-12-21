@@ -1,6 +1,6 @@
 import {PureComponent} from 'react';
-import {Toggle} from './toggle';
 import {classNames} from '@kozakl/utils';
+import {Toggle} from './toggle';
 import React from 'react';
 import style from './Nav.pcss';
 
