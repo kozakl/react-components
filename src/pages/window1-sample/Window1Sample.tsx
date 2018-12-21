@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as style from './Window1Sample.pcss';
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
 import {Window1} from '../../components/window1';
+import React from 'react';
+import style from './Window1Sample.pcss';
 
 export default class Window1Sample extends PureComponent<{}, State>
 {
