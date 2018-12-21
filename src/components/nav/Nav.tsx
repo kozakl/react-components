@@ -38,10 +38,12 @@ export default class Nav extends PureComponent<Props, State>
         );
         return (
             <nav className={navClass}>
-                <Toggle
-                    className={style.toggle}
-                    opened={!this.state.opened}
-                    onChange={this.onChangeToggle}/>
+                <div className={style.toggleWrapper}>
+                    <Toggle
+                        className={style.toggle}
+                        opened={!this.state.opened}
+                        onChange={this.onChangeToggle}/>
+                </div>
                 <div className={listClass}>
                     <a className={style.link} href="#nav/#a">
                         Kalkulator zdolności kredytowej
