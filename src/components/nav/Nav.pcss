@@ -5,12 +5,20 @@
 }
 
 .nav {
-  background: var(--bg-color);
+}
+
+.toggle {
+  position: relative;
+  margin: 0.5em 1em 0.5em auto;
+  z-index: 1;
 }
 
 .list {
+  background: var(--bg-color);
+  transition: transform 0.25s ease-in-out;
+  
   &.hide {
-    display: none;
+    transform: translateY(calc(-3em - 100%));
   }
 }
 
@@ -25,6 +33,8 @@
 @media (min-width: 550px) {
   .nav {
     text-align: center;
+  }
+  .list {
     padding: 1em 0;
   }
   .toggle {
