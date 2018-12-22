@@ -3,6 +3,7 @@ import {classNames} from '@kozakl/utils';
 import {Toggle} from './toggle';
 import React from 'react';
 import style from './Nav.pcss';
+import {Link} from "./link";
 
 export default class Nav extends PureComponent<Props, State>
 {
@@ -14,6 +15,7 @@ export default class Nav extends PureComponent<Props, State>
         desktopMedia.addEventListener('change', this.onDesktopMedia);
         
         this.state = {
+            active: '',
             opened: false
         };
     }
@@ -26,8 +28,13 @@ export default class Nav extends PureComponent<Props, State>
         this.setState({opened: !this.state.opened});
     };
     
+    onClickLinks = (event)=> {
+        this.setState({active: event.target.hash});
+    };
+    
     render()
     {
+        //console.log(this.state.active)
         const navClass = classNames(
             style.nav,
             this.props.className
@@ -44,16 +51,30 @@ export default class Nav extends PureComponent<Props, State>
                         opened={!this.state.opened}
                         onChange={this.onChangeToggle}/>
                 </div>
-                <div className={listClass}>
-                    <a className={style.link} href="#nav/#a">
+                <div
+                    className={listClass}
+                    onClick={this.onClickLinks}>
+                    <Link
+                        className={style.link}
+                        activeClass={style.active}
+                        active={this.state.active}
+                        href="#/nav/#a">
                         Kalkulator zdolności kredytowej
-                    </a>
-                    <a className={style.link} href="#nav/#b">
+                    </Link>
+                    <Link
+                        className={style.link}
+                        activeClass={style.active}
+                        active={this.state.active}
+                        href="#/nav/#b">
                         Wiedza
-                    </a>
-                    <a className={style.link} href="#nav/#c">
+                    </Link>
+                    <Link
+                        className={style.link}
+                        activeClass={style.active}
+                        active={this.state.active}
+                        href="#/nav/#c">
                         Korzyści
-                    </a>
+                    </Link>
                 </div>
             </nav>
         );
@@ -65,5 +86,6 @@ interface Props {
 }
 
 interface State {
+    active:string;
     opened:boolean;
 }
