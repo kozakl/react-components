@@ -62,11 +62,11 @@ export default class AudioPlayer extends PureComponent<Props, State>
     
     onClickControl = ()=>
     {
-        if (this.audio.paused)
+        if (this.audio.paused) {
             this.audio.play();
-        else
+        } else {
             this.audio.pause();
-        
+        }
         this.setState({paused: this.audio.paused});
     };
     
@@ -78,6 +78,17 @@ export default class AudioPlayer extends PureComponent<Props, State>
               percent = clamp((event.nativeEvent.clientX - rect.left) / rect.width, 0, 1) * 100;
         this.setState({percent});
     };
+    
+    componentWillUnmount()
+    {
+        document.removeEventListener('mouseup', this.onUp);
+        document.removeEventListener('mousemove', this.onMove);
+        
+        this.audio.removeEventListener('timeupdate', this.onUpdateAudio);
+        this.audio.removeEventListener('ended', this.onEndAudio);
+        this.audio.pause();
+        this.audio = null;
+    }
     
     render()
     {
@@ -92,17 +103,6 @@ export default class AudioPlayer extends PureComponent<Props, State>
                 </span>
             </div>
         );
-    }
-    
-    componentWillUnmount()
-    {
-        document.removeEventListener('mouseup', this.onUp);
-        document.removeEventListener('mousemove', this.onMove);
-        
-        this.audio.removeEventListener('timeupdate', this.onUpdateAudio);
-        this.audio.removeEventListener('ended', this.onEndAudio);
-        this.audio.pause();
-        this.audio = null;
     }
 }
 
