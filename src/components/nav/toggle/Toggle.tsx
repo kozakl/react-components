@@ -19,7 +19,7 @@ const Toggle:FunctionComponent<Props> = (props)=>
             <path className={style.line2} d="M5 43h90v14H5z"/>
             <path className={style.line3} d="M5 73h90v14H5z"/>
         </svg>
-    )
+    );
 };
 
 interface Props {
