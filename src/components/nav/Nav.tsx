@@ -21,8 +21,8 @@ export default class Nav extends PureComponent<Props, State>
         };
     }
     
-    onDesktopMedia = ()=> {
-        this.setState({opened: false});
+    onDesktopMedia = (event:MediaQueryListEvent)=> {
+        this.setState({opened: !event.matches});
     };
     
     onChangeToggle = ()=> {
