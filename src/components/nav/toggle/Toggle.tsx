@@ -1,5 +1,5 @@
 import {FunctionComponent} from 'react';
-import {classNames} from "@kozakl/utils";
+import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Toggle.pcss';
 
