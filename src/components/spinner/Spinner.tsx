@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as style from './Spinner.pcss';
 import {FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
+import style from './Spinner.pcss';
 
 const Spinner:FunctionComponent<Props> = (props)=>
 {
