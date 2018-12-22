@@ -1,48 +1,28 @@
-import {PureComponent} from 'react';
+import {AnchorHTMLAttributes,
+        FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
-import {Toggle} from '../toggle/index';
 import React from 'react';
-import style from '../Nav.pcss';
 
-export default class Nav extends PureComponent<Props, State>
+const Link:FunctionComponent<Props> = (props)=>
 {
-    constructor()
-    {
-        super(undefined);
-        
-        const desktopMedia = window.matchMedia('(min-width: 550px)');
-        desktopMedia.addEventListener('change', this.onDesktopMedia);
-        
-        this.state = {
-            active: '',
-            opened: false
-        };
-    }
-    
-    render()
-    {
-        const linkClass = classNames(
-            this.props.className,
-            this.props.active === this.props.href &&
-            this.props.activeClass
-        );
-        return (
-            <a
-                {...this.props}
-                className={linkClass}>
-                {this.props.children}
-            </a>
-        );
-    }
-}
+    const linkClass = classNames(
+        props.className,
+        props.active === props.href &&
+        props.activeClass
+    );
+    return (
+        <a
+            {...props}
+            className={linkClass}>
+            {props.children}
+        </a>
+    );
+};
 
-interface Props {
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
     className?:string;
     activeClass?:string;
     active?:string;
 }
 
-interface State {
-    active:string;
-    opened:boolean;
-}
+export default Link;
