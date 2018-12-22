@@ -1,9 +1,10 @@
-import {PureComponent} from 'react';
+import {MouseEvent,
+        PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {Toggle} from './toggle';
+import {Link} from './link';
 import React from 'react';
 import style from './Nav.pcss';
-import {Link} from "./link";
 
 export default class Nav extends PureComponent<Props, State>
 {
@@ -28,19 +29,20 @@ export default class Nav extends PureComponent<Props, State>
         this.setState({opened: !this.state.opened});
     };
     
-    onClickLinks = (event)=> {
-        this.setState({active: event.target.hash});
+    onClickLinks = (event:MouseEvent<HTMLDivElement>)=>
+    {
+        const target = event.target as HTMLAnchorElement;
+        this.setState({active: target.hash});
     };
     
     render()
     {
-        //console.log(this.state.active)
         const navClass = classNames(
             style.nav,
             this.props.className
         );
-        const listClass = classNames(
-            style.list,
+        const linksClass = classNames(
+            style.links,
             this.state.opened && style.hide
         );
         return (
@@ -52,7 +54,7 @@ export default class Nav extends PureComponent<Props, State>
                         onChange={this.onChangeToggle}/>
                 </div>
                 <div
-                    className={listClass}
+                    className={linksClass}
                     onClick={this.onClickLinks}>
                     <Link
                         className={style.link}
