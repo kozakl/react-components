@@ -4,9 +4,6 @@ import React from 'react';
 import style from './Badge.pcss';
 import {classNames} from "@kozakl/utils";
 
-/**
- * @author kozakluke@gmail.com
- */
 export default class Badge extends React.Component
 {
     render()
