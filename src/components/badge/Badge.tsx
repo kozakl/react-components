@@ -1,22 +1,25 @@
-import {PureComponent} from 'react';
-import {clamp} from '@kozakl/utils/math';
+import {FunctionComponent} from 'react';
+import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Badge.pcss';
-import {classNames} from "@kozakl/utils";
 
-export default class Badge extends React.Component
+const Badge:FunctionComponent<Props> = (props)=>
 {
-    render()
-    {
-        const classes = classNames(
-            style.badge,
-            this.props.className,
-            this.props.disabled && style.disabled
-        );
-        return (
-            <a {...this.props} className={classes}>
-                {this.props.children}
-            </a>
-        )
-    }
+    const classes = classNames(
+        style.badge,
+        props.className,
+        props.disabled && style.disabled
+    );
+    return (
+        <a {...props} className={classes}>
+            {props.children}
+        </a>
+    );
+};
+
+interface Props {
+    className?:string;
+    disabled?:boolean;
 }
+
+export default Badge;
