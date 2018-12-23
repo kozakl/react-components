@@ -321,7 +321,7 @@ $(function () {
       .bootstrapModal('show')
   })
 
-  QUnit.test('should restore focus to toggling element when modal is hidden after having been opened via data-api', function (assert) {
+  QUnit.test('should restore focus to toggling element when modal is hidden after having been open via data-api', function (assert) {
     assert.expect(1)
     var done = assert.async()
 
@@ -812,7 +812,7 @@ $(function () {
     assert.strictEqual($modalBody.scrollTop(), 100)
 
     $modal.on('shown.bs.modal', function () {
-      assert.strictEqual($modalBody.scrollTop(), 0, 'modal body scrollTop should be 0 when opened')
+      assert.strictEqual($modalBody.scrollTop(), 0, 'modal body scrollTop should be 0 when open')
       done()
     })
       .bootstrapModal('show')

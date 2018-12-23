@@ -17,16 +17,16 @@ export default class Nav extends PureComponent<Props, State>
         
         this.state = {
             active: '',
-            opened: false
+            open: false
         };
     }
     
     onDesktopMedia = (event:MediaQueryListEvent)=> {
-        this.setState({opened: !event.matches});
+        this.setState({open: !event.matches});
     };
     
     onChangeToggle = ()=> {
-        this.setState({opened: !this.state.opened});
+        this.setState({open: !this.state.open});
     };
     
     onClickLinks = (event:MouseEvent<HTMLDivElement>)=>
@@ -43,14 +43,14 @@ export default class Nav extends PureComponent<Props, State>
         );
         const linksClass = classNames(
             style.links,
-            this.state.opened && style.hide
+            this.state.open && style.hide
         );
         return (
             <nav className={navClass}>
                 <div className={style.toggleWrapper}>
                     <Toggle
                         className={style.toggle}
-                        opened={!this.state.opened}
+                        opened={!this.state.open}
                         onChange={this.onChangeToggle}/>
                 </div>
                 <div
@@ -89,5 +89,5 @@ interface Props {
 
 interface State {
     active:string;
-    opened:boolean;
+    open:boolean;
 }

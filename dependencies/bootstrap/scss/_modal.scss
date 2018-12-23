@@ -111,7 +111,7 @@
   border: $modal-content-border-width solid $modal-content-border-color;
   @include border-radius($modal-content-border-radius);
   @include box-shadow($modal-content-box-shadow-xs);
-  // Remove focus outline from opened modal
+  // Remove focus outline from open modal
   outline: 0;
 }
 
