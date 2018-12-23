@@ -12,8 +12,8 @@ const Link:FunctionComponent<Props> = (props)=>
     );
     return (
         <a
-            {...props}
-            className={linkClass}>
+            className={linkClass}
+            href={props.href}>
             {props.children}
         </a>
     );
