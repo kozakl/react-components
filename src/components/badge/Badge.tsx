@@ -12,7 +12,9 @@ const Badge:FunctionComponent<Props> = (props)=>
     );
     return (
         <a {...props} className={classes}>
-            {props.children}
+            <label className={style.label}>
+                {props.children}
+            </label>
         </a>
     );
 };

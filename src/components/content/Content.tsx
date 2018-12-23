@@ -23,7 +23,7 @@ export default function Content()
         <HashRouter>
             <>
                 <Badge>
-                    2
+                    1
                 </Badge>
                 <select
                     style={{position: 'fixed', top: '0'}}
