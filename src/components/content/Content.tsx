@@ -15,12 +15,16 @@ import {SidebarSample} from '../../pages/sidebar-sample';
 import {Sidebar2Sample} from '../../pages/sidebar2-sample';
 import {SpinnerSample} from '../../pages/spinner-sample';
 import {Window1Sample} from '../../pages/window1-sample';
+import {Badge} from "../badge";
 
 export default function Content()
 {
     return (
         <HashRouter>
             <>
+                <Badge>
+                    2
+                </Badge>
                 <select
                     style={{position: 'fixed', top: '0'}}
                     defaultValue={location.hash}
