@@ -60,6 +60,8 @@ export default class Modal extends PureComponent<Props, State>
     
     componentDidUpdate(prevProps:Props)
     {
+        document.body.style.overflowY =
+            this.state.visible ? 'hidden' : 'unset';
         if (!prevProps.visible && this.props.visible) {
             clearTimeout(this.visibleDelay);
             clearTimeout(this.activeDelay);
@@ -90,8 +92,6 @@ export default class Modal extends PureComponent<Props, State>
     
     render()
     {
-        document.body.style.overflowY =
-            this.state.visible ? 'hidden' : 'unset';
         this.modal.className = classNames(
             style.modal,
             this.state.active && style.active,
