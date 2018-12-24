@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Redirect, Route, Switch} from 'react-router';
 import {HashRouter} from 'react-router-dom';
 import {AudioPlayerSample} from '../../pages/audio-player-sample';
+import {BadgeSample} from '../../pages/badge-sample';
 import {CheckboxSample} from '../../pages/checkbox-sample';
 import {CrossfadeBgSample} from '../../pages/crossfade-bg-sample';
 import {DialogSample} from '../../pages/dialog-sample';
@@ -22,15 +23,13 @@ export default function Content()
     return (
         <HashRouter>
             <>
-                <Badge>
-                    1
-                </Badge>
                 <select
                     style={{position: 'fixed', top: '0'}}
                     defaultValue={location.hash}
                     onChange={(event)=>
                         window.location.href = event.target.value}>
                     <option value="#/audio-player">Audio Player</option>
+                    <option value="#/badge">Badge</option>
                     <option value="#/checkbox">Checkbox</option>
                     <option value="#/crossfade-bg">Crossfade Bg</option>
                     <option value="#/dialog">Dialog</option>
@@ -48,6 +47,7 @@ export default function Content()
                 <Switch>
                     <Redirect from="/" to='/audio-player' exact/>
                     <Route path="/audio-player" component={AudioPlayerSample}/>
+                    <Route path="/badge" component={BadgeSample}/>
                     <Route path="/checkbox" component={CheckboxSample}/>
                     <Route path="/checkbox" component={CrossfadeBgSample}/>
                     <Route path="/dialog" component={DialogSample}/>
