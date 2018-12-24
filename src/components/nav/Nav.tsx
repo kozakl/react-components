@@ -17,14 +17,14 @@ export default class Nav extends PureComponent<Props, State>
         this.state = {
             active: '',
             trans: false,
-            open: false
+            open: desktopMedia.matches
         };
     }
     
     onDesktopMedia = (event:MediaQueryListEvent)=> {
         this.setState({
             trans: false,
-            open: !event.matches
+            open: event.matches
         });
     };
     
@@ -57,7 +57,7 @@ export default class Nav extends PureComponent<Props, State>
                 <div className={style.toggleWrapper}>
                     <Toggle
                         className={style.toggle}
-                        opened={!this.state.open}
+                        opened={this.state.open}
                         onChange={this.onChangeToggle}/>
                 </div>
                 <div
