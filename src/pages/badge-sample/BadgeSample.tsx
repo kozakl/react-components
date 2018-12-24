@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as style from './BadgeSample.pcss';
 import {Badge} from '../../components/badge';
+import React from 'react';
+import style from './BadgeSample.pcss';
 
 export default function SpinnerSample()
 {
