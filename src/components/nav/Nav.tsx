@@ -1,5 +1,4 @@
-import {MouseEvent,
-        PureComponent} from 'react';
+import {MouseEvent, PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {Toggle} from './toggle';
 import {Link} from './link';
@@ -17,16 +16,23 @@ export default class Nav extends PureComponent<Props, State>
         
         this.state = {
             active: '',
+            trans: false,
             open: false
         };
     }
     
     onDesktopMedia = (event:MediaQueryListEvent)=> {
-        this.setState({open: !event.matches});
+        this.setState({
+            trans: false,
+            open: !event.matches
+        });
     };
     
     onChangeToggle = ()=> {
-        this.setState({open: !this.state.open});
+        this.setState({
+            trans: true,
+            open: !this.state.open
+        });
     };
     
     onClickLinks = (event:MouseEvent<HTMLDivElement>)=>
@@ -43,6 +49,7 @@ export default class Nav extends PureComponent<Props, State>
         );
         const linksClass = classNames(
             style.links,
+            this.state.trans && style.trans,
             this.state.open && style.hide
         );
         return (
@@ -89,5 +96,6 @@ interface Props {
 
 interface State {
     active:string;
+    trans:boolean;
     open:boolean;
 }

@@ -16,10 +16,12 @@
 
 .links {
   background: var(--bg-color);
-  transition: transform 0.4s ease-in-out;
   
   & :first-child {
     border-top: none;
+  }
+  &.trans {
+    transition: transform 0.4s ease-in-out;
   }
   &.hide {
     transform: translateY(calc(-3em - 100%));
