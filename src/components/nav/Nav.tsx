@@ -16,22 +16,22 @@ export default class Nav extends PureComponent<Props, State>
         
         this.state = {
             active: '',
-            trans: false,
-            open: desktopMedia.matches
+            open: desktopMedia.matches,
+            trans: false
         };
     }
     
     onDesktopMedia = (event:MediaQueryListEvent)=> {
         this.setState({
-            trans: false,
-            open: event.matches
+            open: event.matches,
+            trans: false
         });
     };
     
     onChangeToggle = ()=> {
         this.setState({
-            trans: true,
-            open: !this.state.open
+            open: !this.state.open,
+            trans: true
         });
     };
     
@@ -97,6 +97,6 @@ interface Props {
 
 interface State {
     active:string;
-    trans:boolean;
     open:boolean;
+    trans:boolean;
 }
