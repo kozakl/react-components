@@ -15,7 +15,7 @@ export default class Nav extends PureComponent<Props, State>
         desktopMedia.addEventListener('change', this.onDesktopMedia);
         
         this.state = {
-            active: '',
+            active: location.hash,
             open: desktopMedia.matches,
             trans: false
         };
