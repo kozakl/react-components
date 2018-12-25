@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as style from './Checkbox.pcss';
 import {FunctionComponent,
         InputHTMLAttributes} from 'react';
+import React from 'react';
+import style from './Checkbox.pcss';
 
 const Checkbox:FunctionComponent<Props> = (props)=>
 {
