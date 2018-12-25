@@ -8,7 +8,7 @@ const Toggle:FunctionComponent<Props> = (props)=>
     const toggleClass = classNames(
         style.toggle,
         props.className,
-        props.opened && style.opened
+        props.open && style.open
     );
     return (
         <svg
@@ -24,7 +24,7 @@ const Toggle:FunctionComponent<Props> = (props)=>
 
 interface Props {
     className?:string;
-    opened:boolean;
+    open:boolean;
     onChange?:()=> void;
 }
 
