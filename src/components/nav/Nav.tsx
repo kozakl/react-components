@@ -7,16 +7,18 @@ import style from './Nav.pcss';
 
 export default class Nav extends PureComponent<Props, State>
 {
+    private mobile:MediaQueryList;
+    
     constructor()
     {
         super(undefined);
         
-        const desktopMedia = window.matchMedia('(min-width: 550px)');
-        desktopMedia.addEventListener('change', this.onDesktopMedia);
+        this.mobile = window.matchMedia('(min-width: 550px)');
+        this.mobile.addEventListener('change', this.onDesktopMedia);
         
         this.state = {
             active: location.hash,
-            open: desktopMedia.matches,
+            open: this.mobile.matches,
             trans: false
         };
     }
@@ -38,7 +40,12 @@ export default class Nav extends PureComponent<Props, State>
     onClickLinks = (event:MouseEvent<HTMLDivElement>)=>
     {
         const target = event.target as HTMLAnchorElement;
-        this.setState({active: target.hash});
+        if (target.hash) {
+            this.setState({
+                active: target.hash,
+                open: this.mobile.matches
+            });
+        }
     };
     
     render()
