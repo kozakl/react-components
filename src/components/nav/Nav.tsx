@@ -57,7 +57,8 @@ export default class Nav extends PureComponent<Props, State>
                 <div className={style.toggleWrapper}>
                     <Toggle
                         className={style.toggle}
-                        opened={this.state.open}
+                        opened={this.state.open &&
+                                this.state.trans}
                         onChange={this.onChangeToggle}/>
                 </div>
                 <div
