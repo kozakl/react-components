@@ -1,4 +1,3 @@
-import * as React from 'react';
 import {Redirect, Route, Switch} from 'react-router';
 import {HashRouter} from 'react-router-dom';
 import {AudioPlayerSample} from '../../pages/audio-player-sample';
@@ -16,7 +15,7 @@ import {SidebarSample} from '../../pages/sidebar-sample';
 import {Sidebar2Sample} from '../../pages/sidebar2-sample';
 import {SpinnerSample} from '../../pages/spinner-sample';
 import {Window1Sample} from '../../pages/window1-sample';
-import {Badge} from "../badge";
+import React from 'react';
 
 export default function Content()
 {
