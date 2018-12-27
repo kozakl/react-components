@@ -14,7 +14,7 @@ export default class Nav extends PureComponent<Props, State>
         super(undefined);
         
         this.mobile = window.matchMedia('(min-width: 550px)');
-        this.mobile.addEventListener('change', this.onDesktopMedia);
+        this.mobile.addEventListener('change', this.onChangeMobile);
         
         this.state = {
             active: location.hash,
@@ -23,7 +23,7 @@ export default class Nav extends PureComponent<Props, State>
         };
     }
     
-    onDesktopMedia = (event:MediaQueryListEvent)=> {
+    onChangeMobile = (event:MediaQueryListEvent)=> {
         this.setState({
             open: event.matches,
             trans: false
@@ -47,6 +47,10 @@ export default class Nav extends PureComponent<Props, State>
             });
         }
     };
+    
+    componentWillUnmount() {
+        this.mobile.removeEventListener('change', this.onChangeMobile);
+    }
     
     render()
     {
