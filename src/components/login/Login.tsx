@@ -1,10 +1,10 @@
-import * as React from 'react';
-import * as style from './Login.pcss';
 import {ChangeEvent, FormEvent,
         PureComponent} from 'react';
 import {Button, FormFeedback,
         Input, InputGroup} from 'reactstrap';
 import {isEmail, isFill} from '@kozakl/utils/validate';
+import React from 'react';
+import style from './Login.pcss';
 
 export default class Login extends PureComponent<Props, State>
 {

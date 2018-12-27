@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as style from './Window1.pcss';
 import {ChangeEvent, FormEvent,
         PureComponent} from 'react';
 import {Button, CustomInput, Input} from 'reactstrap';
 import {isFill} from '@kozakl/utils/validate';
+import React from 'react';
+import style from './Window1.pcss';
 
 export default class Window1 extends PureComponent<Props, State>
 {

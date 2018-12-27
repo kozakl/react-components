@@ -1,8 +1,8 @@
-import * as React from 'react';
-import * as style from './TextField.pcss';
 import {FunctionComponent,
         InputHTMLAttributes} from 'react';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
+import style from './TextField.pcss';
 
 const TextField:FunctionComponent<Props> = (props)=>
 {

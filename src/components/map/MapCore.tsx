@@ -1,8 +1,8 @@
-import * as React from 'react';
-import * as theme from './theme.json';
 import {ReactElement} from 'react';
 import {GoogleMap, Marker,
         withGoogleMap, withScriptjs} from 'react-google-maps';
+import React from 'react';
+import theme from './theme.json';
 
 function MapCore(props:Props)
 {

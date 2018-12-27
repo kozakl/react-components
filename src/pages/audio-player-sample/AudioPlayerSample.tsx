@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as style from './AudioPlayerSample.pcss';
 import {AudioPlayer} from '../../components/audio-player';
+import React from 'react';
+import style from './AudioPlayerSample.pcss';
 
 export default function AudioPlayerSample()
 {

@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as style from './CheckboxSample.pcss';
 import {Checkbox} from '../../components/checkbox';
+import React from 'react';
+import style from './CheckboxSample.pcss';
 
 export default function CheckboxSample()
 {

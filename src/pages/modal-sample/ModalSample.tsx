@@ -1,8 +1,8 @@
-import * as React from 'react';
-import * as style from './ModalSample.pcss';
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
+import React from 'react';
+import style from './ModalSample.pcss';
 
 export default class ModalSample extends PureComponent<{}, State>
 {

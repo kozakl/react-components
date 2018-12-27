@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as style from './ImagePreviewSample.pcss';
 import {PureComponent} from 'react';
 import {ImagePreview} from '../../components/image-preview';
 import {getGalleryImages} from '../../actions';
 import {Image} from '../../types';
+import React from 'react';
+import style from './ImagePreviewSample.pcss';
 
 export default class ImagePreviewSample extends PureComponent<{}, State>
 {

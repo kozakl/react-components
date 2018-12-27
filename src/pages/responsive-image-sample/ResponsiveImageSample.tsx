@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as style from './ResponsiveImageSample.pcss';
 import {PureComponent} from 'react';
 import {ResponsiveImage} from '../../components/responsive-image';
+import React from 'react';
+import style from './ResponsiveImageSample.pcss';
 
 export default class ResponsiveImageSample extends PureComponent<{}, State>
 {

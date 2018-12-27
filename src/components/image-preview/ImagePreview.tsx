@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as style from './ImagePreview.pcss';
 import {PureComponent} from 'react';
 import {scaleDown} from '@kozakl/utils';
 import {ResponsiveImage} from '../responsive-image';
 import {Image} from '../../types';
+import React from 'react';
+import style from './ImagePreview.pcss';
 
 export default class ImagePreview extends PureComponent<Props, State>
 {

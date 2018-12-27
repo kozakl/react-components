@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as style from './Map.pcss';
 import MapCore from './MapCore';
 import {ReactElement} from 'react';
 import {Marker} from 'react-google-maps';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
+import style from './Map.pcss';
 
 export default function Map(props:Props)
 {

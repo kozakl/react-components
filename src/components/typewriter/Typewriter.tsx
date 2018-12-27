@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as style from './Typewriter.pcss';
 import {PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
+import style from './Typewriter.pcss';
 
 export default class Typewriter extends PureComponent<Props, State>
 {

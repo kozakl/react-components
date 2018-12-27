@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as style from './InputSample.pcss';
 import {TextField} from '../../components/text-field';
+import React from 'react';
+import style from './InputSample.pcss';
 
 export default function SpinnerSample()
 {

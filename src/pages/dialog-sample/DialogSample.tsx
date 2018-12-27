@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as style from './DialogSample.pcss';
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Dialog} from '../../components/dialog';
 import {Modal} from '../../components/modal';
+import React from 'react';
+import style from './DialogSample.pcss';
 
 export default class DialogSample extends PureComponent<{}, State>
 {

@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as style from './SpinnerSample.pcss';
 import {Spinner} from '../../components/spinner';
+import React from 'react';
+import style from './SpinnerSample.pcss';
 
 export default function SpinnerSample()
 {

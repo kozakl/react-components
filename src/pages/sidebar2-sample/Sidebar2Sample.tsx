@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as style from './Sidebar2Sample.pcss';
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
 import {Sidebar2} from '../../components/sidebar2';
+import React from 'react';
+import style from './Sidebar2Sample.pcss';
 
 export default class Sidebar2Sample extends PureComponent<{}, State>
 {

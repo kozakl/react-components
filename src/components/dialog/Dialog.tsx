@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as style from './Dialog.pcss';
 import {FunctionComponent} from 'react';
 import {Button} from 'reactstrap';
+import React from 'react';
+import style from './Dialog.pcss';
 
 const Dialog:FunctionComponent<Props> = (props)=>
 {
