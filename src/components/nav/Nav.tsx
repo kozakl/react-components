@@ -7,23 +7,22 @@ import style from './Nav.pcss';
 
 export default class Nav extends PureComponent<Props, State>
 {
-    private mobile:MediaQueryList;
+    private desktop:MediaQueryList;
     
     constructor()
     {
         super(undefined);
         
-        this.mobile = window.matchMedia('(min-width: 550px)');
-        this.mobile.addEventListener('change', this.onChangeMobile);
+        this.desktop = window.matchMedia('(min-width: 550px)');
+        this.desktop.addEventListener('change', this.onChangeDesktop);
         
         this.state = {
             active: location.hash,
-            open: this.mobile.matches,
-            trans: false
+            open: this.desktop.matches
         };
     }
     
-    onChangeMobile = (event:MediaQueryListEvent)=> {
+    onChangeDesktop = (event:MediaQueryListEvent)=> {
         this.setState({
             open: event.matches,
             trans: false
@@ -43,7 +42,7 @@ export default class Nav extends PureComponent<Props, State>
         if (target.hash) {
             this.setState({
                 active: target.hash,
-                open: this.mobile.matches
+                open: this.desktop.matches
             });
         }
     };
@@ -53,7 +52,7 @@ export default class Nav extends PureComponent<Props, State>
     };
     
     componentWillUnmount() {
-        this.mobile.removeEventListener('change', this.onChangeMobile);
+        this.desktop.removeEventListener('change', this.onChangeDesktop);
     }
     
     render()
@@ -73,7 +72,7 @@ export default class Nav extends PureComponent<Props, State>
                     <Toggle
                         className={style.toggle}
                         open={this.state.open &&
-                              this.state.trans}
+                              !this.desktop.matches}
                         onChange={this.onChangeToggle}/>
                 </div>
                 <div
@@ -102,7 +101,7 @@ export default class Nav extends PureComponent<Props, State>
                     </Link>
                 </div>
                 {this.state.open &&
-                 !this.mobile.matches &&
+                 !this.desktop.matches &&
                     <div
                         className={style.modal}
                         onClick={this.onClickModal}/>}
@@ -118,5 +117,5 @@ interface Props {
 interface State {
     active:string;
     open:boolean;
-    trans:boolean;
+    trans?:boolean;
 }

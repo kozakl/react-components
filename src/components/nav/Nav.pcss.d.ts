@@ -6,3 +6,4 @@ export const toggleWrapper:string;
 export const toggle:string;
 export const link:string;
 export const active:string;
+export const modal:string;
