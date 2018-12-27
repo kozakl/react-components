@@ -1,8 +1,8 @@
-import * as React from 'react';
-import * as style from './CrossfadeBg.pcss';
 import {PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {ResponsiveImage} from '../responsive-image';
+import React from 'react';
+import style from './CrossfadeBg.pcss';
 
 export default class CrossfadeBg extends PureComponent<Props, State>
 {
