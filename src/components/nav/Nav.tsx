@@ -48,6 +48,10 @@ export default class Nav extends PureComponent<Props, State>
         }
     };
     
+    onClickModal = ()=> {
+        this.setState({open: false});
+    };
+    
     componentWillUnmount() {
         this.mobile.removeEventListener('change', this.onChangeMobile);
     }
@@ -97,6 +101,11 @@ export default class Nav extends PureComponent<Props, State>
                         Korzyści
                     </Link>
                 </div>
+                {this.state.open &&
+                 !this.mobile.matches &&
+                    <div
+                        className={style.modal}
+                        onClick={this.onClickModal}/>}
             </nav>
         );
     }
