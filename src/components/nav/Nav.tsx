@@ -7,23 +7,25 @@ import style from './Nav.pcss';
 
 export default class Nav extends PureComponent<Props, State>
 {
-    private desktop:MediaQueryList;
+    private desktopMedia:MediaQueryList;
     
     constructor()
     {
         super(undefined);
         
-        this.desktop = window.matchMedia('(min-width: 550px)');
-        this.desktop.addEventListener('change', this.onChangeDesktop);
+        this.desktopMedia = window.matchMedia('(min-width: 550px)');
+        this.desktopMedia.addEventListener('change', this.onChangeDesktop);
         
         this.state = {
+            desktop: this.desktopMedia.matches,
             active: location.hash,
-            open: this.desktop.matches
+            open: this.desktopMedia.matches
         };
     }
     
     onChangeDesktop = (event:MediaQueryListEvent)=> {
         this.setState({
+            desktop: event.matches,
             open: event.matches,
             trans: false
         });
@@ -42,7 +44,7 @@ export default class Nav extends PureComponent<Props, State>
         if (target.hash) {
             this.setState({
                 active: target.hash,
-                open: this.desktop.matches
+                open: this.state.desktop
             });
         }
     };
@@ -52,7 +54,7 @@ export default class Nav extends PureComponent<Props, State>
     };
     
     componentWillUnmount() {
-        this.desktop.removeEventListener('change', this.onChangeDesktop);
+        this.desktopMedia.removeEventListener('change', this.onChangeDesktop);
     }
     
     render()
@@ -68,13 +70,16 @@ export default class Nav extends PureComponent<Props, State>
         );
         return (
             <nav className={navClass}>
-                <div className={style.toggleWrapper}>
-                    <Toggle
-                        className={style.toggle}
-                        open={this.state.open &&
-                              !this.desktop.matches}
-                        onChange={this.onChangeToggle}/>
-                </div>
+                {!this.state.desktop ?
+                    <div className={style.top}>
+                        <Toggle
+                            className={style.toggle}
+                            open={this.state.open &&
+                                  !this.state.desktop}
+                            onChange={this.onChangeToggle}/>
+                        <div className={style.langSwitch}>NAV</div>
+                    </div> :
+                    <div className={style.langSwitch}>NAV</div>}
                 <div
                     className={linksClass}
                     onClick={this.onClickLinks}>
@@ -82,26 +87,26 @@ export default class Nav extends PureComponent<Props, State>
                         className={style.link}
                         activeClass={style.active}
                         active={this.state.active}
-                        href="#/nav/#a">
-                        Kalkulator zdolności kredytowej
+                        href="#home">
+                        HOME
                     </Link>
                     <Link
                         className={style.link}
                         activeClass={style.active}
                         active={this.state.active}
-                        href="#/nav/#b">
-                        Wiedza
+                        href="#benefits">
+                        KORZYSCI
                     </Link>
                     <Link
                         className={style.link}
                         activeClass={style.active}
                         active={this.state.active}
-                        href="#/nav/#c">
-                        Korzyści
+                        href="#calculator">
+                        KALKULATOR ZDOLNOŚCI KREDYTOWYCH
                     </Link>
                 </div>
                 {this.state.open &&
-                 !this.desktop.matches &&
+                 !this.state.desktop &&
                     <div
                         className={style.modal}
                         onClick={this.onClickModal}/>}
@@ -115,6 +120,7 @@ interface Props {
 }
 
 interface State {
+    desktop:boolean;
     active:string;
     open:boolean;
     trans?:boolean;

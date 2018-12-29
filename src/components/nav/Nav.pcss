@@ -1,25 +1,30 @@
 @import '../../variables.pcss';
 
 :root {
-  --bg-color: #E0E0E0;
+  --bg-color: #F1F3F4;
   --link-active-color: #57B75C;
 }
 
-.toggleWrapper {
+.top {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: space-between;
   background: var(--bg-color);
-  text-align: right;
   border-bottom: 1px solid;
+  padding: 0 1em;
   z-index: 1;
 }
 
 .toggle {
   padding: 0.5em 1em;
+  margin-left: -1em;
   height: 3em;
 }
 
 .links {
   background: var(--bg-color);
+  font-size: 0.85em;
   
   & :first-child {
     border-top: none;
@@ -51,18 +56,19 @@
 
 @media (min-width: 550px) {
   .nav {
-    text-align: center;
+    display: flex;
+    background: var(--bg-color);
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
   }
-  .links {
-    padding: 1em 0;
-  }
-  .toggleWrapper {
-    display: none;
+  .langSwitch {
+    order: 1;
   }
   .link {
     display: inline-block;
     border: 0;
     padding: 0;
-    margin: 0 5vw;
+    margin-right: 2.25vw;
   }
 }
