@@ -13,7 +13,7 @@ export default class Nav extends PureComponent<Props, State>
     {
         super(undefined);
         
-        this.desktopMedia = window.matchMedia('(min-width: 550px)');
+        this.desktopMedia = window.matchMedia('(min-width: 570px)');
         this.desktopMedia.addEventListener('change', this.onChangeDesktop);
         
         this.state = {

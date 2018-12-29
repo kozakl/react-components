@@ -5,6 +5,14 @@
   --link-active-color: #57B75C;
 }
 
+.nav {
+  pointer-events: none;
+  
+  & * {
+    pointer-events: initial;
+  }
+}
+
 .top {
   display: flex;
   position: relative;
@@ -54,7 +62,7 @@
   height: 100vh;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 570px) {
   .nav {
     display: flex;
     background: var(--bg-color);
