@@ -1,0 +1,38 @@
+
+.current {
+  height: 100vh;
+  
+  & img {
+    object-fit: cover;
+  }
+}
+
+.next {
+  @extend .current;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  &.show {
+    animation: fadeOut 1s forwards;
+  }
+}
+
+.list {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  white-space: nowrap;
+  overflow: scroll;
+  width: 20em;
+  
+  & div {
+    scroll-snap-align: center;
+    display: inline-block;
+    width: 10em;
+    height: 10em;
+    background: red;
+    margin: 1em;
+  }
+}
