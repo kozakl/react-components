@@ -28,8 +28,9 @@ export default class Carousel extends PureComponent<Props, State>
     
     onClickIndicator = (event:MouseEvent)=>
     {
-        this.list.scrollLeft = (this.list.scrollWidth - this.paddingLeft - this.paddingRight) /
-                               (Children.count(this.props.children) * Number(event.target.id));
+        const listWidth = this.list.scrollWidth - this.paddingLeft - this.paddingRight,
+              count = Children.count(this.props.children);
+        this.list.scrollLeft = listWidth / count * +event.target.id;
     };
     
     onResize = ()=> {
