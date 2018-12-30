@@ -5,8 +5,8 @@ import style from './CarouselSample.pcss';
 export default function CarouselSample()
 {
     return (
-        <div className={style.badgeSample}>
-            <Carousel>
+        <div className={style.carouselSample}>
+            <Carousel className={style.carousel}>
                 <div>A</div>
                 <div>B</div>
                 <div>C</div>
