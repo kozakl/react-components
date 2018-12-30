@@ -24,8 +24,8 @@
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   white-space: nowrap;
-  overflow: scroll;
-  width: 20em;
+  overflow-x: scroll;
+  width: 100%;
   
   & div {
     scroll-snap-align: center;
@@ -35,4 +35,22 @@
     background: red;
     margin: 1em;
   }
+  
+  & div:nth-child(1) {
+    background: yellow;
+  }
+  & div:nth-child(3) {
+    background: yellow;
+  }
+  & div:nth-child(5) {
+    background: yellow;
+  }
+}
+
+.indicatorDot {
+  display: inline-block;
+  background: red;
+  width: 1em;
+  height: 1em;
+  margin: 1em;
 }
