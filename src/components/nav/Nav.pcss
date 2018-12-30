@@ -2,6 +2,7 @@
 
 :root {
   --bg-color: #F1F3F4;
+  --border-color: #A9AFC2;
   --link-active-color: #57B75C;
 }
 
@@ -19,7 +20,7 @@
   align-items: center;
   justify-content: space-between;
   background: var(--bg-color);
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--border-color);
   padding: 0 1em;
   z-index: 1;
 }
@@ -49,7 +50,7 @@
   display: block;
   color: var(--text-color-primary);
   text-decoration: none;
-  border-top: 1px solid var(--text-color-primary);
+  border-top: 1px solid var(--border-color);
   padding: 0.7em 1em;
   
   &:hover,
@@ -68,6 +69,7 @@
     background: var(--bg-color);
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
     padding: 1em 2em;
   }
   .langSwitch {
