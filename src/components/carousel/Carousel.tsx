@@ -49,6 +49,10 @@ export default class Carousel extends PureComponent<Props, State>
         this.list.style.paddingRight = this.paddingRight + 'px';
     }
     
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.onResize);
+    }
+    
     render()
     {
         return (
