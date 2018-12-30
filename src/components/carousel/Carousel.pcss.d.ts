@@ -1,3 +1,3 @@
-export const current:string;
-export const next:string;
-export const show:string;
+export const list:string;
+export const indicator:string;
+export const indicatorDot:string;
