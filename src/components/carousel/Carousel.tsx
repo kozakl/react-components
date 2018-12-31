@@ -3,21 +3,15 @@ import {Children, MouseEvent,
 import React from 'react';
 import style from './Carousel.pcss';
 
-export default class Carousel extends PureComponent<Props, State>
+export default class Carousel extends PureComponent<Props>
 {
+    private list:HTMLDivElement;
     private paddingLeft:number;
     private paddingRight:number;
-    private list:any;
     
     constructor(props:Props)
     {
         super(props);
-        
-        this.state = {
-            current: 0,
-            next: null,
-            loadedNext: false
-        };
         
         window.addEventListener('resize', this.onResize);
     }
@@ -28,23 +22,27 @@ export default class Carousel extends PureComponent<Props, State>
     
     onClickIndicator = (event:MouseEvent<HTMLDivElement>)=>
     {
-        const listWidth = this.list.scrollWidth -
-                          this.paddingLeft - this.paddingRight,
+        const width = this.list.scrollWidth -
+                      this.paddingLeft - this.paddingRight,
               count = Children.count(this.props.children),
               target = event.target as HTMLSpanElement;
-        this.list.scrollLeft = listWidth / count * +target.id;
+        this.list.scrollLeft = width / count * +target.id;
     };
     
     onResize = ()=> {
         this.updateListPadding();
     };
     
+    setListRef = (list:HTMLDivElement)=> {
+        this.list = list;
+    };
+    
     updateListPadding()
     {
         this.paddingLeft = this.list.clientWidth * 0.5 -
-                           this.list.firstChild.clientWidth * 0.5;
+                           (this.list.firstChild as HTMLElement).clientWidth * 0.5;
         this.paddingRight = this.list.clientWidth * 0.5 -
-                            this.list.lastChild.clientWidth * 0.5;
+                            (this.list.firstChild as HTMLElement).clientWidth * 0.5;
         this.list.style.paddingLeft = this.paddingLeft + 'px';
         this.list.style.paddingRight = this.paddingRight + 'px';
     }
@@ -57,17 +55,14 @@ export default class Carousel extends PureComponent<Props, State>
     {
         return (
             <div className={this.props.className}>
-                <div
-                    className={style.list}
-                    ref={(list)=> this.list = list}>
+                <div className={style.list} ref={this.setListRef}>
                     {this.props.children}
                 </div>
                 <div
                     className={style.indicator}
                     onClick={this.onClickIndicator}>
-                    {Children.map(this.props.children, (child, index)=> {
-                        return <span className={style.indicatorDot} id={index.toString()}/>
-                    })}
+                    {Children.map(this.props.children, (child, index)=>
+                        <span className={style.indicatorDot} id={index.toString()}/>)}
                 </div>
             </div>
         );
@@ -76,10 +71,4 @@ export default class Carousel extends PureComponent<Props, State>
 
 interface Props {
     className?:string;
-}
-
-interface State {
-    current:number;
-    next:number;
-    loadedNext:boolean;
 }
