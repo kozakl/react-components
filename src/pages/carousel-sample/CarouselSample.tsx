@@ -5,12 +5,10 @@ import style from './CarouselSample.pcss';
 export default function CarouselSample()
 {
     return (
-        <div className={style.carouselSample}>
-            <Carousel className={style.carousel}>
-                <div className={style.item}>A</div>
-                <div className={style.item}>B</div>
-                <div className={style.item}>C</div>
-            </Carousel>
-        </div>
+        <Carousel className={style.carousel}>
+            <div className={style.item}>A</div>
+            <div className={style.item}>B</div>
+            <div className={style.item}>C</div>
+        </Carousel>
     );
 }
