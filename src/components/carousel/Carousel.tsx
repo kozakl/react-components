@@ -70,7 +70,7 @@ export default class Carousel extends PureComponent<Props, State>
                     onClick={this.onClickIndicator}>
                     {Children.map(this.props.children, (child, index)=> {
                         const dotClass = classNames(
-                            style.indicatorDot,
+                            style.dot,
                             this.state.dot === index &&
                                 style.active
                         );
