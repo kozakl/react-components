@@ -1,5 +1,6 @@
 :root {
   --dot-color: #A1A3B5;
+  --dot-color-active: #242854;
 }
 
 .list {
@@ -25,4 +26,8 @@
   margin: 0 1em;
   width: 0.5rem;
   height: 0.5rem;
+  
+  &.active {
+    background: var(--dot-color-active);
+  }
 }

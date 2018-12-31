@@ -2,8 +2,9 @@ import {Children, MouseEvent,
         PureComponent} from 'react';
 import React from 'react';
 import style from './Carousel.pcss';
+import {classNames} from "@kozakl/utils";
 
-export default class Carousel extends PureComponent<Props>
+export default class Carousel extends PureComponent<Props, State>
 {
     private list:HTMLDivElement;
     private paddingLeft:number;
@@ -12,6 +13,10 @@ export default class Carousel extends PureComponent<Props>
     constructor(props:Props)
     {
         super(props);
+        
+        this.state = {
+            dot: 0
+        };
         
         window.addEventListener('resize', this.onResize);
     }
@@ -25,8 +30,9 @@ export default class Carousel extends PureComponent<Props>
         const width = this.list.scrollWidth -
                       this.paddingLeft - this.paddingRight,
               count = Children.count(this.props.children),
-              target = event.target as HTMLSpanElement;
-        this.list.scrollLeft = width / count * +target.id;
+              dot = event.target as HTMLSpanElement;
+        this.list.scrollLeft = width / count * +dot.id;
+        this.setState({dot: +dot.id});
     };
     
     onResize = ()=> {
@@ -53,6 +59,7 @@ export default class Carousel extends PureComponent<Props>
     
     render()
     {
+        console.log(this.state.dot);
         return (
             <div className={this.props.className}>
                 <div className={style.list} ref={this.setListRef}>
@@ -61,8 +68,14 @@ export default class Carousel extends PureComponent<Props>
                 <div
                     className={style.indicator}
                     onClick={this.onClickIndicator}>
-                    {Children.map(this.props.children, (child, index)=>
-                        <span className={style.indicatorDot} id={index.toString()}/>)}
+                    {Children.map(this.props.children, (child, index)=> {
+                        const dotClass = classNames(
+                            style.indicatorDot,
+                            this.state.dot === index &&
+                                style.active
+                        );
+                        return <span className={dotClass} id={index.toString()}/>
+                    })}
                 </div>
             </div>
         );
@@ -71,4 +84,8 @@ export default class Carousel extends PureComponent<Props>
 
 interface Props {
     className?:string;
+}
+
+interface State {
+    dot:number;
 }
