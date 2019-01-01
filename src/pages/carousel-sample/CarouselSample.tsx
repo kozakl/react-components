@@ -1,14 +1,75 @@
 import {Carousel} from '../../components/carousel';
 import React from 'react';
 import style from './CarouselSample.pcss';
+import {ResponsiveImage} from "../../components/responsive-image";
 
 export default function CarouselSample()
 {
     return (
-        <Carousel className={style.carousel}>
-            <div className={style.item}>A</div>
-            <div className={style.item}>B</div>
-            <div className={style.item}>C</div>
-        </Carousel>
+        <div className={style.carouselSample}>
+            <Carousel className={style.carousel}>
+                <div className={style.item}>A</div>
+                <div className={style.item}>B</div>
+                <div className={style.item}>C</div>
+            </Carousel>
+            
+            <Carousel className={style.cards}>
+                <div className={style.card}>
+                    <ResponsiveImage
+                        className={style.cardImage}
+                        ratio={2310 / 4104}
+                        thumb={`assets/cards/card1/thumb.jpg`}
+                        srcSet={`assets/cards/card1/800w.jpg 800w`}/>
+                    <div className={style.cardBody}>
+                        <div className={style.cardTitle}>
+                            <h5>Decyzja kredytowa przed podpisaniem umowy zakupy</h5>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                
+                <div className={style.card}>
+                    <ResponsiveImage
+                        className={style.cardImage}
+                        ratio={2310 / 4104}
+                        thumb={`assets/cards/card2/thumb.jpg`}
+                        srcSet={`assets/cards/card2/800w.jpg 800w`}/>
+                    <div className={style.cardBody}>
+                        <div className={style.cardTitle}>
+                            <h5>Ubezpieczenie na 5 lat</h5>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                
+                <div className={style.card}>
+                    <ResponsiveImage
+                        className={style.cardImage}
+                        ratio={2310 / 4104}
+                        thumb={`assets/cards/card3/thumb.jpg`}
+                        srcSet={`assets/cards/card3/800w.jpg 800w`}/>
+                    <div className={style.cardBody}>
+                        <div className={style.cardTitle}>
+                            <h5>Unikatowy projekt wnętrz</h5>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                
+                <div className={style.card}>
+                    <ResponsiveImage
+                        className={style.cardImage}
+                        ratio={2310 / 4104}
+                        thumb={`assets/cards/card4/thumb.jpg`}
+                        srcSet={`assets/cards/card4/800w.jpg 800w`}/>
+                    <div className={style.cardBody}>
+                        <div className={style.cardTitle}>
+                            <h5>Voucher na zakupy w Leroy Merlin</h5>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </Carousel>
+        </div>
     );
 }
