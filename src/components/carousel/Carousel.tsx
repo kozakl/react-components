@@ -1,8 +1,8 @@
 import {Children, MouseEvent,
         PureComponent} from 'react';
+import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Carousel.pcss';
-import {classNames} from "@kozakl/utils";
 
 export default class Carousel extends PureComponent<Props, State>
 {
@@ -59,7 +59,6 @@ export default class Carousel extends PureComponent<Props, State>
     
     render()
     {
-        console.log(this.state.dot);
         return (
             <div className={this.props.className}>
                 <div className={style.list} ref={this.setListRef}>
