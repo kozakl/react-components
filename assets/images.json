@@ -1,5 +1,15 @@
 [
   {
+    "src": "assets/cards",
+    "dest": "public/assets/cards/",
+    "destDir": true,
+    "quality": 85,
+    "sizes": [
+      {"value": "800", "name": "800w"},
+      {"value": "100", "name": "thumb", "blur": "0x1.5"}
+    ]
+  },
+  {
     "src": "assets/gallery/",
     "dest": "public/assets/gallery/",
     "destDir": true,
