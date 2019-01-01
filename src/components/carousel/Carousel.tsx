@@ -1,5 +1,5 @@
 import {Children, MouseEvent,
-        PureComponent} from 'react';
+        PureComponent, ReactNode} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Carousel.pcss';
@@ -25,15 +25,26 @@ export default class Carousel extends PureComponent<Props, State>
         this.updateListPadding();
     }
     
+    onScrollList = ()=>
+    {
+        const width = this.list.scrollWidth -
+                      this.paddingLeft - this.paddingRight,
+              count = (this.props.children as ReactNode[]).length,
+              dot = this.list.scrollLeft / width * count + 0.5 | 0;
+        if (this.state.dot !== dot) {
+            this.setState({dot});
+        }
+    };
+    
     onClickIndicator = (event:MouseEvent<HTMLDivElement>)=>
     {
         const dot = parseFloat((event.target as HTMLSpanElement).id);
         if (!isNaN(dot)) {
             const width = this.list.scrollWidth -
                           this.paddingLeft - this.paddingRight,
-                  count = Children.count(this.props.children);
+                  count = (this.props.children as ReactNode[]).length;
             this.list.scrollLeft = width / count * dot;
-            this.setState({dot});
+            
         }
     };
     
@@ -62,7 +73,9 @@ export default class Carousel extends PureComponent<Props, State>
     render()
     {
         return (
-            <div className={this.props.className}>
+            <div
+                className={this.props.className}
+                onScroll={this.onScrollList}>
                 <div className={style.list} ref={this.setListRef}>
                     {this.props.children}
                 </div>
