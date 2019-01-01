@@ -75,7 +75,11 @@ export default class Carousel extends PureComponent<Props, State>
                             this.state.dot === index &&
                                 style.active
                         );
-                        return <span className={dotClass} id={index.toString()}/>
+                        return (
+                            <div className={style.dotWrapper} id={index.toString()}>
+                                <div className={dotClass}/>
+                            </div>
+                        );
                     })}
                 </div>
             </div>
