@@ -27,12 +27,14 @@ export default class Carousel extends PureComponent<Props, State>
     
     onClickIndicator = (event:MouseEvent<HTMLDivElement>)=>
     {
-        const width = this.list.scrollWidth -
-                      this.paddingLeft - this.paddingRight,
-              count = Children.count(this.props.children),
-              dot = event.target as HTMLSpanElement;
-        this.list.scrollLeft = width / count * +dot.id;
-        this.setState({dot: +dot.id});
+        const dot = parseFloat((event.target as HTMLSpanElement).id);
+        if (!isNaN(dot)) {
+            const width = this.list.scrollWidth -
+                          this.paddingLeft - this.paddingRight,
+                  count = Children.count(this.props.children);
+            this.list.scrollLeft = width / count * dot;
+            this.setState({dot});
+        }
     };
     
     onResize = ()=> {
