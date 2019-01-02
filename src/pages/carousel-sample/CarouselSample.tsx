@@ -17,7 +17,6 @@ export default function CarouselSample()
                 <div className={style.card}>
                     <ResponsiveImage
                         className={style.cardImage}
-                        ratio={2310 / 4104}
                         thumb={`assets/cards/card1/thumb.jpg`}
                         srcSet={`assets/cards/card1/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
@@ -33,7 +32,6 @@ export default function CarouselSample()
                 <div className={style.card}>
                     <ResponsiveImage
                         className={style.cardImage}
-                        ratio={2310 / 4104}
                         thumb={`assets/cards/card2/thumb.jpg`}
                         srcSet={`assets/cards/card2/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
@@ -49,7 +47,6 @@ export default function CarouselSample()
                 <div className={style.card}>
                     <ResponsiveImage
                         className={style.cardImage}
-                        ratio={2310 / 4104}
                         thumb={`assets/cards/card3/thumb.jpg`}
                         srcSet={`assets/cards/card3/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
@@ -65,7 +62,6 @@ export default function CarouselSample()
                 <div className={style.card}>
                     <ResponsiveImage
                         className={style.cardImage}
-                        ratio={2310 / 4104}
                         thumb={`assets/cards/card4/thumb.jpg`}
                         srcSet={`assets/cards/card4/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
