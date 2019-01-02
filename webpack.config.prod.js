@@ -41,7 +41,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             modules: true,
-                            localIdentName: '[hash:base64:10]'
+                            localIdentName: '[hash:base64:8]'
                         }
                     },
                     'postcss-loader'
@@ -51,7 +51,7 @@ module.exports = {
                 test: /assets.*\.(woff|woff2|svg|png|jpg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[path][hash:10].[ext]'
+                    name: '[path][hash:8].[ext]'
                 }
             },
             {
