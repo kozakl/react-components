@@ -9,7 +9,7 @@ const server = process.argv[2],
 try {
     const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim(),
           tag = execSync('git tag').toString().length &&
-                execSync('git describe --tags --abbrev=0').toString().trim();
+                execSync('git describe --tags --always').toString().trim();
     if (branch === 'master' && tag)
         deploy(join(name, tag));
     else
