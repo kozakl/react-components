@@ -21,7 +21,7 @@ export default function CarouselSample()
                         srcSet={`assets/cards/card1/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
                         <div className={style.cardTitle}>
-                            <h5>Decyzja kredytowa przed podpisaniem umowy zakupy</h5>
+                            <h3>Decyzja kredytowa przed podpisaniem umowy zakupy</h3>
                         </div>
                         <p className={style.cardText}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -36,7 +36,7 @@ export default function CarouselSample()
                         srcSet={`assets/cards/card2/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
                         <div className={style.cardTitle}>
-                            <h5>Ubezpieczenie na 5 lat</h5>
+                            <h3>Ubezpieczenie na 5 lat</h3>
                         </div>
                         <p className={style.cardText}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -51,7 +51,7 @@ export default function CarouselSample()
                         srcSet={`assets/cards/card3/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
                         <div className={style.cardTitle}>
-                            <h5>Unikatowy projekt wnętrz</h5>
+                            <h3>Unikatowy projekt wnętrz</h3>
                         </div>
                         <p className={style.cardText}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -66,7 +66,7 @@ export default function CarouselSample()
                         srcSet={`assets/cards/card4/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
                         <div className={style.cardTitle}>
-                            <h5>Voucher na zakupy w Leroy Merlin</h5>
+                            <h3>Voucher na zakupy w Leroy Merlin</h3>
                         </div>
                         <p className={style.cardText}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
