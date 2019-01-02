@@ -13,7 +13,7 @@ export default function CarouselSample()
                 <div className={style.item}>C</div>
             </Carousel>
             
-            <Carousel className={style.cards}>
+            <Carousel>
                 <div className={style.card}>
                     <ResponsiveImage
                         className={style.cardImage}

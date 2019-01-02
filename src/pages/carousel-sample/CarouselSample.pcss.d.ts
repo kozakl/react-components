@@ -1,7 +1,6 @@
 export const carouselSample:string;
 export const carousel:string;
 export const item:string;
-export const cards:string;
 export const card:string;
 export const cardImage:string;
 export const cardBody:string;
