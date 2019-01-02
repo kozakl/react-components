@@ -24,7 +24,9 @@ export default function CarouselSample()
                         <div className={style.cardTitle}>
                             <h5>Decyzja kredytowa przed podpisaniem umowy zakupy</h5>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p className={style.cardText}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
                     </div>
                 </div>
                 
@@ -38,7 +40,9 @@ export default function CarouselSample()
                         <div className={style.cardTitle}>
                             <h5>Ubezpieczenie na 5 lat</h5>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p className={style.cardText}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
                     </div>
                 </div>
                 
@@ -52,7 +56,9 @@ export default function CarouselSample()
                         <div className={style.cardTitle}>
                             <h5>Unikatowy projekt wnętrz</h5>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p className={style.cardText}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
                     </div>
                 </div>
                 
@@ -66,7 +72,9 @@ export default function CarouselSample()
                         <div className={style.cardTitle}>
                             <h5>Voucher na zakupy w Leroy Merlin</h5>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p className={style.cardText}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
                     </div>
                 </div>
             </Carousel>
