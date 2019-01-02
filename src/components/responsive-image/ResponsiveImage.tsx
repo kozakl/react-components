@@ -4,6 +4,9 @@ import style from './ResponsiveImage.pcss';
 
 export default class ResponsiveImage extends PureComponent<Props, State>
 {
+    public static defaultProps:Partial<Props> = {
+        ratio: 1
+    };
     private empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
     
     constructor(props:Props)
