@@ -1,7 +1,7 @@
 import {Carousel} from '../../components/carousel';
+import {ResponsiveImage} from '../../components/responsive-image';
 import React from 'react';
 import style from './CarouselSample.pcss';
-import {ResponsiveImage} from "../../components/responsive-image";
 
 export default function CarouselSample()
 {
