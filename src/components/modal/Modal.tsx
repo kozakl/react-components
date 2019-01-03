@@ -1,4 +1,5 @@
-import {Children, PureComponent} from 'react';
+import {Children, PureComponent,
+        ReactElement} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -101,10 +102,10 @@ export default class Modal extends PureComponent<Props, State>
         return this.state.visible &&
             ReactDOM.createPortal(
                 React.cloneElement(
-                    Children.only(this.props.children), {
+                    Children.only(this.props.children) as ReactElement, {
                         active: this.state.active,
                         onClose: this.props.onClose,
-                        ...Children.only(this.props.children).props
+                        ...(this.props.children as ReactElement).props
                     }
                 ),
                 this.modal
