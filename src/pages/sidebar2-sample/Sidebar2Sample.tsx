@@ -12,7 +12,7 @@ export default class Sidebar2Sample extends PureComponent<{}, State>
         super(undefined);
         
         this.state = {
-            sidebar: !false
+            sidebar: false
         };
     }
     
