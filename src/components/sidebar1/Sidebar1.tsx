@@ -1,8 +1,9 @@
+import {FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Sidebar1.pcss';
 
-export default function Sidebar(props:Props)
+const Sidebar1:FunctionComponent<Props> = (props)=>
 {
     const sidebarClass = classNames(
         style.sidebar,
@@ -46,10 +47,12 @@ export default function Sidebar(props:Props)
             </p>
         </div>
     );
-}
+};
 
 interface Props {
     className?:string;
     active?:boolean;
     onClose?:()=> void;
 }
+
+export default Sidebar1;
