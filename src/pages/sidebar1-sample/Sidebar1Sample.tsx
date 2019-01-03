@@ -3,9 +3,9 @@ import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
 import {Sidebar} from '../../components/sidebar';
 import React from 'react';
-import style from './SidebarSample.pcss';
+import style from './Sidebar1Sample.pcss';
 
-export default class SidebarSample extends PureComponent<{}, State>
+export default class Sidebar1Sample extends PureComponent<{}, State>
 {
     constructor()
     {
@@ -27,7 +27,7 @@ export default class SidebarSample extends PureComponent<{}, State>
     render()
     {
         return (
-            <div className={style.sidebarSample}>
+            <div className={style.sidebar1Sample}>
                 <Button
                     className={style.show}
                     onClick={this.onClickShowSidebar}
