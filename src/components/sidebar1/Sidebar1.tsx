@@ -6,6 +6,7 @@ export default function Sidebar(props:Props)
 {
     const sidebarClass = classNames(
         style.sidebar,
+        props.className,
         props.active && style.active
     );
     return (
@@ -48,6 +49,7 @@ export default function Sidebar(props:Props)
 }
 
 interface Props {
+    className?:string;
     active?:boolean;
     onClose?:()=> void;
 }
