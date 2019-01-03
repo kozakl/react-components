@@ -1,6 +1,6 @@
 import {classNames} from '@kozakl/utils';
 import React from 'react';
-import style from './Sidebar.pcss';
+import style from './Sidebar1.pcss';
 
 export default function Sidebar(props:Props)
 {
