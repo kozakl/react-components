@@ -33,8 +33,9 @@ export default class AudioPlayer extends PureComponent<Props, State>
     
     onUpdateAudio = ()=>
     {
-        if (!this.drag)
+        if (!this.drag) {
             this.setState({percent: this.audio.currentTime * 100 / this.audio.duration});
+        }
     };
     
     onEndAudio = ()=> {
@@ -79,6 +80,10 @@ export default class AudioPlayer extends PureComponent<Props, State>
         this.setState({percent});
     };
     
+    setBarRef = (bar:HTMLDivElement)=> {
+        this.bar = bar;
+    };
+    
     componentWillUnmount()
     {
         document.removeEventListener('mouseup', this.onUp);
@@ -97,9 +102,13 @@ export default class AudioPlayer extends PureComponent<Props, State>
                 <span className={style.control} onClick={this.onClickControl}>
                     {this.state.paused ? '\ue901' : '\ue900'}
                 </span>
-                <span className={style.bar} ref={(bar:HTMLSpanElement)=> this.bar = bar}
-                      onMouseDown={this.onDownBar}>
-                    <span className={style.progress} style={{width: this.state.percent + '%'}}/>
+                <span
+                    className={style.bar}
+                    ref={this.setBarRef}
+                    onMouseDown={this.onDownBar}>
+                    <span
+                        className={style.progress}
+                        style={{width: this.state.percent + '%'}}/>
                 </span>
             </div>
         );
