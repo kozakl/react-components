@@ -7,7 +7,9 @@ const Dialog:FunctionComponent<Props> = (props)=>
 {
     return (
         <div className={style.dialog}>
-            <h5 className={style.title}>{props.title}</h5>
+            <h5 className={style.title}>
+                {props.title}
+            </h5>
             <div className={style.message}>
                 {props.children}
             </div>
