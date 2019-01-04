@@ -6,7 +6,7 @@ import style from './CarouselSample.pcss';
 export default function CarouselSample()
 {
     return (
-        <div className={style.carouselSample}>
+        <div>
             <Carousel className={style.carousel}>
                 <div className={style.item}>A</div>
                 <div className={style.item}>B</div>
