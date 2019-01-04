@@ -1,16 +1,22 @@
 import {FunctionComponent,
         InputHTMLAttributes} from 'react';
+import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Checkbox.pcss';
 
 const Checkbox:FunctionComponent<Props> = (props)=>
 {
+    const labelClass = classNames(
+        style.label,
+        props.disabled && style.disabled
+    );
     return (
         <div className={props.className}>
-            <label className={style.label}>
+            <label className={labelClass}>
                 <input
                     className={style.input}
                     checked={props.checked}
+                    disabled={props.disabled}
                     onChange={props.onChange}
                     type="checkbox"/>
                 <span className={style.box}/>
