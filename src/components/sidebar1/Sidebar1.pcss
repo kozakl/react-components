@@ -7,10 +7,9 @@
 .sidebar {
   overflow-y: auto;
   background: var(--bg-color);
+  color: var(--text-color-primary);
   box-shadow: var(--bg-shadow);
   padding: 3em 2em;
-  width: 32.5em;
-  height: 100%;
   transform: translateX(-110%);
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0.1s;
@@ -22,6 +21,7 @@
 
 .close {
   cursor: pointer;
+  border: 1px solid;
   margin-top: -1.5em;
   float: right;
   
@@ -35,7 +35,8 @@
   }
 }
 
-.title {
-  display: inline-block;
-  margin-bottom: 2.2em;
+.headline {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0 0 2em;
 }

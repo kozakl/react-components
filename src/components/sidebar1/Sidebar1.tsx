@@ -15,9 +15,9 @@ const Sidebar1:FunctionComponent<Props> = (props)=>
             <a className={style.close} onClick={props.onClose}>
                 <img src={require('res/icons/close.svg')}/>
             </a>
-            <h5 className={style.title}>
+            <h3 className={style.headline}>
                 Sidebar Title
-            </h5>
+            </h3>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
             </p>
