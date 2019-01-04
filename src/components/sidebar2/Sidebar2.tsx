@@ -10,9 +10,9 @@ import style from './Sidebar2.pcss';
 
 export default class Sidebar2 extends PureComponent<Props, State>
 {
-    constructor()
+    constructor(props:Props)
     {
-        super(undefined);
+        super(props);
         
         this.state = {
             name: '',
