@@ -51,7 +51,7 @@ export default function Content()
                     <Route path="/badge" component={BadgeSample}/>
                     <Route path="/carousel" component={CarouselSample}/>
                     <Route path="/checkbox" component={CheckboxSample}/>
-                    <Route path="/checkbox" component={CrossfadeBgSample}/>
+                    <Route path="/crossfade-bg" component={CrossfadeBgSample}/>
                     <Route path="/dialog" component={DialogSample}/>
                     <Route path="/image-preview" component={ImagePreviewSample}/>
                     <Route path="/input" component={InputSample}/>
