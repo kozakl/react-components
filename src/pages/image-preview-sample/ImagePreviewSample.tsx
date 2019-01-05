@@ -7,7 +7,6 @@ import {Image} from '../../types';
 import React from 'react';
 import style from './ImagePreviewSample.pcss';
 
-
 export default class ImagePreviewSample extends PureComponent<{}, State>
 {
     constructor()
