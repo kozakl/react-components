@@ -1,8 +1,8 @@
 import {TextField} from '../../components/text-field';
 import React from 'react';
-import style from './InputSample.pcss';
+import style from './TextFieldSample.pcss';
 
-export default function SpinnerSample()
+export default function TextFieldSample()
 {
     return (
         <div className={style.spinnerSample}>
