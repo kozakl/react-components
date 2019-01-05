@@ -1,7 +1,7 @@
 import {MouseEvent, PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {Toggle} from './toggle';
-import {Link} from './link';
+import {NavLink} from './nav-link';
 import React from 'react';
 import style from './Nav.pcss';
 
@@ -83,27 +83,27 @@ export default class Nav extends PureComponent<Props, State>
                 <div
                     className={linksClass}
                     onClick={this.onClickLinks}>
-                    <Link
+                    <NavLink
                         className={style.link}
                         activeClass={style.active}
                         active={this.state.active}
                         href="#home">
                         HOME
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                         className={style.link}
                         activeClass={style.active}
                         active={this.state.active}
                         href="#benefits">
                         KORZYSCI
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                         className={style.link}
                         activeClass={style.active}
                         active={this.state.active}
                         href="#calculator">
                         KALKULATOR ZDOLNOŚCI KREDYTOWYCH
-                    </Link>
+                    </NavLink>
                 </div>
                 {this.state.open &&
                  !this.state.desktop &&

@@ -3,7 +3,7 @@ import {AnchorHTMLAttributes,
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 
-const Link:FunctionComponent<Props> = (props)=>
+const NavLink:FunctionComponent<Props> = (props)=>
 {
     const linkClass = classNames(
         props.className,
@@ -25,4 +25,4 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
     active?:string;
 }
 
-export default Link;
+export default NavLink;
