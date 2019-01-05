@@ -14,8 +14,12 @@ const Spinner:FunctionComponent<Props> = (props)=>
         props.background && style.bg,
     );
     return (
-        <div className={spinnerClass} style={{width: props.size}}>
-            <div className={wrapperClass} style={{background: props.background}}>
+        <div
+            className={spinnerClass}
+            style={{width: props.size}}>
+            <div
+                className={wrapperClass}
+                style={{background: props.background}}>
                 <svg className={style.svg} viewBox="0 0 60 60">
                     <circle
                         className={style.circle}
