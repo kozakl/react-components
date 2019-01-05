@@ -1,9 +1,12 @@
 import {PureComponent} from 'react';
+import {Button} from 'reactstrap';
 import {ImagePreview} from '../../components/image-preview';
+import {Modal} from '../../components/modal';
 import {getGalleryImages} from '../../actions';
 import {Image} from '../../types';
 import React from 'react';
 import style from './ImagePreviewSample.pcss';
+
 
 export default class ImagePreviewSample extends PureComponent<{}, State>
 {
@@ -12,7 +15,8 @@ export default class ImagePreviewSample extends PureComponent<{}, State>
         super(undefined);
         
         this.state = {
-            images: []
+            images: [],
+            imagePreview: false
         };
     }
     
@@ -22,14 +26,32 @@ export default class ImagePreviewSample extends PureComponent<{}, State>
         this.setState({images});
     }
     
+    onClickShowPreview = ()=> {
+        this.setState({imagePreview: true});
+    };
+    
+    onClosePreview = ()=> {
+        this.setState({imagePreview: false});
+    };
+    
     render()
     {
         return (
-            <div className={style.dialogSample}>
-                {this.state.images.length &&
+            <div className={style.imagePreviewSample}>
+                <Button
+                    onClick={this.onClickShowPreview}
+                    color="success"
+                    size="sm">
+                    Show Image Preview
+                </Button>
+                <Modal
+                    visible={this.state.imagePreview}
+                    onClose={this.onClosePreview}
+                    center>
                     <ImagePreview
                         images={this.state.images}
-                        current={1}/>}
+                        current={1}/>
+                </Modal>
             </div>
         );
     }
@@ -37,4 +59,5 @@ export default class ImagePreviewSample extends PureComponent<{}, State>
 
 interface State {
     images:Image[];
+    imagePreview:boolean;
 }

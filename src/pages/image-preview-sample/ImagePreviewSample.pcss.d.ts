@@ -1,1 +1,1 @@
-export const dialogSample:string;
+export const imagePreviewSample:string;
