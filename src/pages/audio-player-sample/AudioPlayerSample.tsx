@@ -5,6 +5,8 @@ import style from './AudioPlayerSample.pcss';
 export default function AudioPlayerSample()
 {
     return (
-        <AudioPlayer className={style.audioPlayer}/>
+        <div className={style.audioPlayerSample}>
+            <AudioPlayer className={style.audioPlayer}/>
+        </div>
     );
 }
