@@ -6,14 +6,14 @@ import style from './Badge.pcss';
 
 const Badge:FunctionComponent<Props> = (props)=>
 {
-    const classes = classNames(
+    const badgeClass = classNames(
         style.badge,
         props.className,
         props.disabled && style.disabled
     );
     return (
         <a
-            className={classes}
+            className={badgeClass}
             href={props.href}>
             <label className={style.label}>
                 {props.children}
