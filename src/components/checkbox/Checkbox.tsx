@@ -6,12 +6,16 @@ import style from './Checkbox.pcss';
 
 const Checkbox:FunctionComponent<Props> = (props)=>
 {
+    const checkboxClass = classNames(
+        style.checkbox,
+        props.className
+    );
     const labelClass = classNames(
         style.label,
         props.disabled && style.disabled
     );
     return (
-        <div className={props.className}>
+        <div className={checkboxClass}>
             <label className={labelClass}>
                 <input
                     className={style.input}
