@@ -1,7 +1,7 @@
 import {MouseEvent, PureComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {Toggle} from './toggle';
-import {NavLink} from './nav-link';
+import {NavLink} from '../nav-link';
 import React from 'react';
 import style from './Nav.pcss';
 
