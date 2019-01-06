@@ -37,23 +37,23 @@ export default class CheckboxSample extends PureComponent<{}, State>
                     checked={this.state.checkbox1}
                     onChange={this.onChangeCheckbox1}>
                     Checked option
-                </Checkbox>
+                </Checkbox><br/>
                 <Checkbox
                     className={style.checkbox2}
                     checked={this.state.checkbox2}
                     onChange={this.onChangeCheckbox2}>
                     Unchecked option
-                </Checkbox>
+                </Checkbox><br/>
                 <Checkbox
                     className={style.checkbox3}
                     checked={this.state.checkbox3}
                     onChange={this.onChangeCheckbox3}
                     error="Error message">
                     Error checkbox
-                </Checkbox>
+                </Checkbox><br/>
                 <Checkbox className={style.checkbox4} disabled>
                     Disabled checkbox
-                </Checkbox>
+                </Checkbox><br/>
             </div>
         );
     }
