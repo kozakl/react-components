@@ -1,5 +1,6 @@
 import {PureComponent} from 'react';
 import {clamp} from '@kozakl/utils/math';
+import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './AudioPlayer.pcss';
 
@@ -97,8 +98,12 @@ export default class AudioPlayer extends PureComponent<Props, State>
     
     render()
     {
+        const audioPlayerClass = classNames(
+            style.audioPlayer,
+            this.props.className
+        );
         return (
-            <div className={this.props.className}>
+            <div className={audioPlayerClass}>
                 <span className={style.control} onClick={this.onClickControl}>
                     {this.state.paused ? '\ue901' : '\ue900'}
                 </span>
