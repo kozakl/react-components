@@ -6,8 +6,10 @@ export default function SpinnerSample()
 {
     return (
         <div className={style.badgeSample}>
-            <Badge>0</Badge>
-            <Badge>00</Badge>
+            <Badge className={style.badge1}>
+                0
+            </Badge><br/>
+            <Badge>00</Badge><br/>
             <Badge>000</Badge>
         </div>
     );
