@@ -1,11 +1,12 @@
-import MapCore from './MapCore';
-import {ReactElement} from 'react';
+import {FunctionComponent,
+        ReactElement} from 'react';
 import {Marker} from 'react-google-maps';
 import {classNames} from '@kozakl/utils';
+import MapCore from './MapCore';
 import React from 'react';
 import style from './Map.pcss';
 
-export default function Map(props:Props)
+const Map:FunctionComponent<Props> = (props)=>
 {
     return (
         <div className={classNames(style.map, props.className)}>
@@ -19,7 +20,7 @@ export default function Map(props:Props)
             </MapCore>
         </div>
     );
-}
+};
 
 interface Props {
     children?:ReactElement<Marker> |
@@ -30,3 +31,5 @@ interface Props {
         lng:number;
     };
 }
+
+export default Map;
