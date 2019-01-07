@@ -61,11 +61,10 @@ export default class Modal extends PureComponent<Props, State>
     
     componentDidUpdate(prevProps:Props)
     {
-        document.body.style.overflowY =
-            this.state.visible ? 'hidden' : 'unset';
         if (!prevProps.visible && this.props.visible) {
             clearTimeout(this.visibleDelay);
             clearTimeout(this.activeDelay);
+            this.setBodyOverflowY('hidden');
             this.root.appendChild(this.modal);
             this.activeDelay = window.setTimeout(()=>
                 this.setState({active: true}), 20);
@@ -75,11 +74,16 @@ export default class Modal extends PureComponent<Props, State>
             clearTimeout(this.visibleDelay);
             clearTimeout(this.activeDelay);
             this.visibleDelay = window.setTimeout(()=> {
+                this.setBodyOverflowY('unset');
                 this.setState({visible: false});
                 this.root.removeChild(this.modal);
             }, this.props.outTime);
         }
     }
+    
+    setBodyOverflowY(overflow:string) {
+        document.body.style.overflowY = overflow;
+    };
     
     componentWillUnmount()
     {
