@@ -72,7 +72,7 @@ export default class Sidebar1Sample extends PureComponent<{}, State>
                 <Modal
                     onClose={this.onCloseSidebar}
                     visible={this.state.sidebar}
-                    outTime={750}>
+                    outTime={700}>
                     <Sidebar1 className={style.sidebar}/>
                 </Modal>
             </div>
