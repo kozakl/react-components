@@ -2,7 +2,7 @@ import {FunctionComponent,
         ReactElement} from 'react';
 import {Marker} from 'react-google-maps';
 import {classNames} from '@kozakl/utils';
-import MapCore from './MapCore';
+import {MapCore} from './map-core';
 import React from 'react';
 import style from './Map.pcss';
 
