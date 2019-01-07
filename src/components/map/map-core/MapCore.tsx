@@ -1,10 +1,11 @@
-import {ReactElement} from 'react';
+import {FunctionComponent,
+        ReactElement} from 'react';
 import {GoogleMap, Marker,
         withGoogleMap, withScriptjs} from 'react-google-maps';
 import React from 'react';
 import theme from './theme.json';
 
-function MapCore(props:Props)
+const MapCore:FunctionComponent<Props> = (props)=>
 {
     const options = {
         styles: theme.default,
@@ -20,7 +21,7 @@ function MapCore(props:Props)
             {props.children}
         </GoogleMap>
     );
-}
+};
 
 interface Props {
     children?:ReactElement<Marker> |
