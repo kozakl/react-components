@@ -3,12 +3,10 @@ import {FunctionComponent,
 import {GoogleMap, Marker,
         withGoogleMap, withScriptjs} from 'react-google-maps';
 import React from 'react';
-import theme from './theme.json';
 
 const MapCore:FunctionComponent<Props> = (props)=>
 {
     const options = {
-        styles: theme.default,
         fullscreenControl: false,
         mapTypeControl: false,
         streetViewControl: false
