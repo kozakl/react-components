@@ -1,6 +1,4 @@
-import {FunctionComponent,
-        ReactElement} from 'react';
-import {Marker} from 'react-google-maps';
+import {FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import {MapCore} from './map-core';
 import React from 'react';
@@ -23,8 +21,6 @@ const Map:FunctionComponent<Props> = (props)=>
 };
 
 interface Props {
-    children?:ReactElement<Marker> |
-              ReactElement<Marker>[];
     className?:string;
     defaultCenter: {
         lat:number;

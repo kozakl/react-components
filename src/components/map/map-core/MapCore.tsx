@@ -1,7 +1,6 @@
-import {FunctionComponent,
-        ReactElement} from 'react';
-import {GoogleMap, Marker,
-        withGoogleMap, withScriptjs} from 'react-google-maps';
+import {FunctionComponent} from 'react';
+import {GoogleMap, withGoogleMap,
+        withScriptjs} from 'react-google-maps';
 import React from 'react';
 
 const MapCore:FunctionComponent<Props> = (props)=>
@@ -22,8 +21,6 @@ const MapCore:FunctionComponent<Props> = (props)=>
 };
 
 interface Props {
-    children?:ReactElement<Marker> |
-              ReactElement<Marker>[];
     defaultCenter: {
         lat:number;
         lng:number;
