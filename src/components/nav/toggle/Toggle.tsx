@@ -7,6 +7,7 @@ const Toggle:FunctionComponent<Props> = (props)=>
 {
     const toggleClass = classNames(
         style.toggle,
+        props.className,
         props.opened && style.opened
     );
     return (
@@ -22,6 +23,7 @@ const Toggle:FunctionComponent<Props> = (props)=>
 };
 
 interface Props {
+    className?:string;
     opened:boolean;
     onChange?:()=> void;
 }
