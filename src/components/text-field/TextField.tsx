@@ -12,10 +12,12 @@ const TextField:FunctionComponent<Props> = (props)=>
     );
     const inputClass = classNames(
         style.input,
-        props.error && style.error
+        props.disabled && style.disabled,
+        props.error && style.error,
     );
     const placeholderClass = classNames(
         style.placeholder,
+        props.disabled && style.disabled,
         props.value &&
         props.value.length && style.open
     );
@@ -25,6 +27,7 @@ const TextField:FunctionComponent<Props> = (props)=>
                 className={inputClass}
                 type={props.type}
                 value={props.value}
+                disabled={props.disabled}
                 onChange={props.onChange}/>
             
             {props.placeholder &&
