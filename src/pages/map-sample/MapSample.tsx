@@ -1,5 +1,4 @@
 import {PureComponent} from 'react';
-import {Checkbox} from '../../components/checkbox';
 import React from 'react';
 import style from './MapSample.pcss';
 import Marker from "react-google-maps/lib/components/Marker";
