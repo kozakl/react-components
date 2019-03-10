@@ -5,9 +5,13 @@ import style from './TextFieldSample.pcss';
 export default function TextFieldSample()
 {
     return (
-        <div className={style.spinnerSample}>
-            <TextField placeholder="Imie"/>
-            <TextField placeholder="Telefon (9 cyfr)"/>
+        <div className={style.textFieldSample}>
+            <TextField
+                className={style.textField1}
+                placeholder="Imie"/>
+            <TextField
+                className={style.textField2}
+                placeholder="Telefon (9 cyfr)"/>
         </div>
     );
 }
