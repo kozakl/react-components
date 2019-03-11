@@ -1,6 +1,6 @@
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
-import {ImagePreview} from '../../components/image-preview';
+import {ImagePreview} from '../../components-hooks/image-preview';
 import {Modal} from '../../components/modal';
 import {getGalleryImages} from '../../actions';
 import {Image} from '../../types';
