@@ -12,6 +12,7 @@ const Map:FunctionComponent<Props> = (props)=>
                 loadingElement={<div className={style.element}/>}
                 containerElement={<div className={style.element}/>}
                 mapElement={<div className={style.element}/>}
+                options={props.options}
                 defaultCenter={props.defaultCenter}
                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtuxvcVrxLvP6mvd2TsLHIyaU-JFXhZK0&v=3">
                 {props.children}
@@ -22,6 +23,7 @@ const Map:FunctionComponent<Props> = (props)=>
 
 interface Props {
     className?:string;
+    options?:any
     defaultCenter: {
         lat:number;
         lng:number;

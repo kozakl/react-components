@@ -24,9 +24,17 @@ export default class MapSample extends PureComponent<{}, State>
     
     render()
     {
+        const options = {
+            fullscreenControl: false,
+            mapTypeControl: false,
+            streetViewControl: false
+        };
         return (
             <div className={style.checkboxSample}>
-                <Map className={style.map} defaultCenter={{lat: 51.1080513, lng: 17.0251989}}>
+                <Map
+                    className={style.map}
+                    options={options}
+                    defaultCenter={{lat: 51.1080513, lng: 17.0251989}}>
                     <Marker
                         position={{lat: 51.1098569, lng: 17.028251}}
                         onClick={this.onToggleMarker}

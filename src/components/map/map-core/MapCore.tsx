@@ -5,14 +5,9 @@ import React from 'react';
 
 const MapCore:FunctionComponent<Props> = (props)=>
 {
-    const options = {
-        fullscreenControl: false,
-        mapTypeControl: false,
-        streetViewControl: false
-    };
     return (
         <GoogleMap
-            options={options}
+            options={props.options}
             zoom={15}
             defaultCenter={props.defaultCenter}>
             {props.children}
@@ -21,6 +16,7 @@ const MapCore:FunctionComponent<Props> = (props)=>
 };
 
 interface Props {
+    options:any;
     defaultCenter: {
         lat:number;
         lng:number;
