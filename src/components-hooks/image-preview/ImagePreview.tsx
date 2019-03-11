@@ -10,17 +10,17 @@ const ImagePreview:FunctionComponent<Props> = (props)=>
     const [current, setCurrent] = useState(props.current);
     
     function onClickPrev() {
-        if (current > 0)
-            setCurrent(current - 1);
-        else
-            setCurrent(props.images.length - 1);
+        const images = props.images;
+        setCurrent(
+            (current - 1 + images.length) % images.length
+        );
     }
     
     function onClickNext() {
-        if (current < props.images.length - 1)
-            setCurrent(current + 1);
-        else 
-            setCurrent(0);
+        const images = props.images;
+        setCurrent(
+            (current + 1 + images.length) % images.length
+        );
     }
     
     const image = props.images[current];
