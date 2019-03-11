@@ -18,18 +18,20 @@ export default class ImagePreview extends PureComponent<Props, State>
     
     onClickPrev = ()=>
     {
-        if (this.state.current > 0)
-            this.setState({current: this.state.current - 1});
-        else
-            this.setState({current: this.props.images.length - 1});
+        const images = this.props.images,
+              current = this.state.current;
+        this.setState({
+            current: (current - 1 + images.length) % images.length
+        });
     };
     
     onClickNext = ()=>
     {
-        if (this.state.current < this.props.images.length - 1)
-            this.setState({current: this.state.current + 1});
-        else 
-            this.setState({current: 0});
+        const images = this.props.images,
+              current = this.state.current;
+        this.setState({
+            current: (current + 1 + images.length) % images.length
+        });
     };
     
     render()
