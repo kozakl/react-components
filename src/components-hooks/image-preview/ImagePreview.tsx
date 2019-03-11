@@ -19,7 +19,7 @@ const ImagePreview:FunctionComponent<Props> = (props)=>
     function onClickNext() {
         const images = props.images;
         setCurrent(
-            (current + 1 + images.length) % images.length
+            (current + 1) % images.length
         );
     }
     

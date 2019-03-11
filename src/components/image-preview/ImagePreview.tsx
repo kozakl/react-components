@@ -30,7 +30,7 @@ export default class ImagePreview extends PureComponent<Props, State>
         const images = this.props.images,
               current = this.state.current;
         this.setState({
-            current: (current + 1 + images.length) % images.length
+            current: (current + 1) % images.length
         });
     };
     
