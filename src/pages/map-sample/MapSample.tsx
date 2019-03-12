@@ -34,6 +34,7 @@ export default class MapSample extends PureComponent<{}, State>
                 <Map
                     className={style.map}
                     options={options}
+                    zoom={15}
                     defaultCenter={{lat: 51.1080513, lng: 17.0251989}}>
                     <Marker
                         position={{lat: 51.1098569, lng: 17.028251}}

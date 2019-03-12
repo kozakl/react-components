@@ -8,7 +8,7 @@ const MapCore:FunctionComponent<Props> = (props)=>
     return (
         <GoogleMap
             options={props.options}
-            zoom={15}
+            zoom={props.zoom}
             defaultCenter={props.defaultCenter}>
             {props.children}
         </GoogleMap>
@@ -17,6 +17,7 @@ const MapCore:FunctionComponent<Props> = (props)=>
 
 interface Props {
     options:any;
+    zoom:number;
     defaultCenter: {
         lat:number;
         lng:number;
