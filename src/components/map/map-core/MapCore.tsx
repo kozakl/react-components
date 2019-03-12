@@ -6,10 +6,7 @@ import React from 'react';
 const MapCore:FunctionComponent<Props> = (props)=>
 {
     return (
-        <GoogleMap
-            options={props.options}
-            zoom={props.zoom}
-            defaultCenter={props.defaultCenter}>
+        <GoogleMap {...props}>
             {props.children}
         </GoogleMap>
     );
