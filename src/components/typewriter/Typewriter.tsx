@@ -25,8 +25,7 @@ export default class Typewriter extends PureComponent<Props, State>
             this.setState({start: true}), this.props.delay);
     }
     
-    componentWillUnmount()
-    {
+    componentWillUnmount() {
         clearTimeout(this.delay);
     }
     
