@@ -6,8 +6,12 @@ import style from './Map.pcss';
 
 const Map:FunctionComponent<Props> = (props)=>
 {
+    const mapClass = classNames(
+        style.map,
+        props.className
+    );
     return (
-        <div className={classNames(style.map, props.className)}>
+        <div className={mapClass}>
             <MapCore
                 loadingElement={<div className={style.element}/>}
                 containerElement={<div className={style.element}/>}
