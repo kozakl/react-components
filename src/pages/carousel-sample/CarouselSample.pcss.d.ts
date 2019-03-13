@@ -1,4 +1,4 @@
-export const carousel:string;
+export const carouselSample:string;
 export const item:string;
 export const card:string;
 export const cardImage:string;
