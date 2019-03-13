@@ -26,6 +26,10 @@ const Map:FunctionComponent<Props> = (props)=>
     );
 };
 
+Map.defaultProps = {
+    zoom: 15
+};
+
 interface Props {
     className?:string;
     options?:any;
