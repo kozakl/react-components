@@ -5,9 +5,9 @@ import style from './CheckboxSample.pcss';
 
 export default function CheckboxSample()
 {
-    const checkbox1 = useCheckboxChange(true);
-    const checkbox2 = useCheckboxChange(false);
-    const checkbox3 = useCheckboxChange(false);
+    const checkbox1 = useCheckboxChange(true),
+          checkbox2 = useCheckboxChange(false),
+          checkbox3 = useCheckboxChange(false);
     return (
         <div className={style.checkboxSample}>
             <Checkbox
