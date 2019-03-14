@@ -1,4 +1,4 @@
-import {PureComponent} from 'react';
+import {useEffect, useState} from 'react';
 import {Button} from 'reactstrap';
 import {ImagePreview} from '../../components-hooks/image-preview';
 import {Modal} from '../../components/modal';
@@ -7,56 +7,36 @@ import {Image} from '../../types';
 import React from 'react';
 import style from './ImagePreviewSample.pcss';
 
-export default class ImagePreviewSample extends PureComponent<{}, State>
+export default function ImagePreviewSample()
 {
-    constructor()
-    {
-        super(undefined);
-        
-        this.state = {
-            images: [],
-            imagePreview: false
-        };
+    const [imagePreview, setImagePreview] = useState(false);
+    const [images, setImages] = useState<Image[]>([]);
+    
+    useEffect(()=> {
+        getGalleryImages()
+            .then(setImages);
+    }, []);
+    
+    function onCloseImagePreview() {
+        setImagePreview(false);
     }
     
-    async componentDidMount()
-    {
-        const images = await getGalleryImages();
-        this.setState({images});
-    }
-    
-    onClickShowPreview = ()=> {
-        this.setState({imagePreview: true});
-    };
-    
-    onClosePreview = ()=> {
-        this.setState({imagePreview: false});
-    };
-    
-    render()
-    {
-        return (
-            <div className={style.imagePreviewSample}>
-                <Button
-                    onClick={this.onClickShowPreview}
-                    color="success"
-                    size="sm">
-                    Show Image Preview
-                </Button>
-                <Modal
-                    visible={this.state.imagePreview}
-                    onClose={this.onClosePreview}
-                    center>
-                    <ImagePreview
-                        images={this.state.images}
-                        current={1}/>
-                </Modal>
-            </div>
-        );
-    }
-}
-
-interface State {
-    images:Image[];
-    imagePreview:boolean;
+    return (
+        <div className={style.imagePreviewSample}>
+            <Button
+                onClick={()=> setImagePreview(true)}
+                color="success"
+                size="sm">
+                Show Image Preview
+            </Button>
+            <Modal
+                visible={imagePreview}
+                onClose={onCloseImagePreview}
+                center>
+                <ImagePreview
+                    images={images}
+                    current={1}/>
+            </Modal>
+        </div>
+    );
 }
