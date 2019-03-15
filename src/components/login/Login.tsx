@@ -2,6 +2,7 @@ import {ChangeEvent, FormEvent,
         PureComponent} from 'react';
 import {Button, FormFeedback,
         Input, InputGroup} from 'reactstrap';
+import {classNames} from '@kozakl/utils';
 import {isEmail, isFill} from '@kozakl/utils/validate';
 import React from 'react';
 import style from './Login.pcss';
@@ -42,10 +43,14 @@ export default class Login extends PureComponent<Props, State>
     
     render()
     {
+        const loginClass = classNames(
+            style.login,
+            this.props.className
+        );
         const enabled = isEmail(this.state.email) &&
                         isFill(this.state.password);
         return (
-            <div className={style.login}>
+            <div className={loginClass}>
                 <h5 className={style.headline}>
                     Logowanie
                 </h5>
@@ -86,6 +91,7 @@ export default class Login extends PureComponent<Props, State>
 }
 
 interface Props {
+    className?:string;
     onLogin:()=> void;
 }
 
