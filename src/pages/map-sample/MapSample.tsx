@@ -1,60 +1,46 @@
-import {PureComponent} from 'react';
+import {useState} from 'react';
 import {InfoWindow, Marker} from 'react-google-maps';
 import {Map} from '../../components/map';
 import React from 'react';
 import style from './MapSample.pcss';
 
-export default class MapSample extends PureComponent<{}, State>
+export default function MapSample()
 {
-    constructor()
-    {
-        super(undefined);
-        
-        this.state = {
-            infoWindow: false
-        };
+    const [infoWindow, setInfoWindow] = useState(false);
+    
+    function onToggleInfo() {
+        setInfoWindow(!infoWindow);
     }
     
-    onToggleInfo = ()=> {
-        this.setState({infoWindow: !this.state.infoWindow});
+    const options = {
+        fullscreenControl: false,
+        mapTypeControl: false,
+        streetViewControl: false
     };
-    
-    render()
-    {
-        const options = {
-            fullscreenControl: false,
-            mapTypeControl: false,
-            streetViewControl: false
-        };
-        return (
-            <Map
-                className={style.map}
-                options={options}
-                zoom={15}
-                defaultCenter={{lat: 51.1080513, lng: 17.0251989}}>
-                <Marker
-                    position={{lat: 51.1098569, lng: 17.028251}}
-                    onClick={this.onToggleInfo}
-                    label={{text: 'A'}}
-                    title="Title Marker">
-                    {this.state.infoWindow &&
-                        <InfoWindow onCloseClick={this.onToggleInfo}>
-                            <div className={style.info}>
-                                <h6>Lublin downtown</h6>
-                                Ruska 65<br/>
-                                50-072 Wrocław<br/>
-                                Poland<br/>
-                                <a target="_blank" href="https://www.google.pl/maps?q=Ruska+65+50-072+Wroc%C5%82aw&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiw4a2g6djdAhXioosKHcmqDbUQ_AUICigB">
-                                    View on Google Maps
-                                </a>
-                            </div>
-                        </InfoWindow>}
-                </Marker>
-            </Map>
-        );
-    }
-}
-
-interface State {
-    infoWindow:boolean;
+    return (
+        <Map
+            className={style.map}
+            options={options}
+            zoom={15}
+            defaultCenter={{lat: 51.1080513, lng: 17.0251989}}>
+            <Marker
+                position={{lat: 51.1098569, lng: 17.028251}}
+                onClick={onToggleInfo}
+                label={{text: 'A'}}
+                title="Title Marker">
+                {infoWindow &&
+                    <InfoWindow onCloseClick={onToggleInfo}>
+                        <div className={style.info}>
+                            <h6>Lublin downtown</h6>
+                            Ruska 65<br/>
+                            50-072 Wrocław<br/>
+                            Poland<br/>
+                            <a target="_blank" href="https://www.google.pl/maps?q=Ruska+65+50-072+Wroc%C5%82aw&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiw4a2g6djdAhXioosKHcmqDbUQ_AUICigB">
+                                View on Google Maps
+                            </a>
+                        </div>
+                    </InfoWindow>}
+            </Marker>
+        </Map>
+    );
 }
