@@ -5,8 +5,6 @@ import style from './CrossfadeBgSample.pcss';
 export default function CrossfadeBgSample()
 {
     return (
-        <div>
-            <CrossfadeBg className={style.crossfadeBg}/>
-        </div>
+        <CrossfadeBg className={style.crossfadeBg}/>
     );
 }
