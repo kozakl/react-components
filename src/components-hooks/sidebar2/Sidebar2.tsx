@@ -8,12 +8,13 @@ import {Modal} from '../../components/modal';
 import {TextField} from '../../components/text-field';
 import React from 'react';
 import style from './Sidebar2.pcss';
+import {useCheckboxChange} from "../../hooks";
 
 const Sidebar2:FunctionComponent<Props> = (props)=>
 {
     const [name, setName] = useState('');
     const [tel, setTel] = useState('');
-    const [statement, setStatement] = useState(false);
+    const statement = useCheckboxChange(false);
     const [terms, setTerms] = useState(false);
     const [errorName, setErrorName] = useState(null);
     const [errorTel, setErrorTel] = useState(null);
@@ -38,10 +39,6 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
         if (!isNaN(+tel) && tel.length <= 9) {
             setTel(tel);
         }
-    }
-    
-    function onChangeStatement() {
-        setStatement(!statement);
     }
     
     function onClickTerms(event:MouseEvent) {
@@ -70,7 +67,7 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
             validate = false;
             setErrorTel(null);
         }
-        if (!statement) {
+        if (!statement.checked) {
             setErrorStatement('Musisz zakceptować regulamin');
         } else {
             validate = false;
@@ -113,9 +110,8 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
                 
                 <Checkbox
                     className={style.statement}
-                    checked={statement}
                     error={errorStatement}
-                    onChange={onChangeStatement}>
+                    {...statement}>
                     Oświadczam że zapoznałem się z&nbsp;
                     <a className={style.terms} onClick={onClickTerms}>
                         regulaminem
