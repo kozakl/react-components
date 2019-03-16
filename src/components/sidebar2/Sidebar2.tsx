@@ -137,7 +137,7 @@ export default class Sidebar2 extends PureComponent<Props, State>
                     </button>
                 </form>
                 <Modal visible={this.state.terms} onClose={this.onCloseTerms}>
-                    <div className={style.terms}>
+                    <div>
                         Regulamin
                     </div>
                 </Modal>
