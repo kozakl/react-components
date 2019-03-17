@@ -96,6 +96,7 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
                     {...name}/>
                 <TextField
                     className={style.tel}
+                    maxLength={9}
                     error={errorTel}
                     type="tel"
                     placeholder="Telefon (9 cyfr)"
