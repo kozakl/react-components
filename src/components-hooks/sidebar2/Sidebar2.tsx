@@ -1,6 +1,5 @@
-import {ChangeEvent, FormEvent,
-        FunctionComponent, MouseEvent,
-        useState} from 'react';
+import {FormEvent, FunctionComponent,
+        MouseEvent, useState} from 'react';
 import {classNames} from '@kozakl/utils';
 import {isFill} from '@kozakl/utils/validate';
 import {Checkbox} from '../../components/checkbox';
@@ -8,12 +7,12 @@ import {Modal} from '../../components/modal';
 import {TextField} from '../../components/text-field';
 import React from 'react';
 import style from './Sidebar2.pcss';
-import {useCheckboxChange} from "../../hooks";
+import {useCheckboxChange, useTextFieldControl} from "../../hooks";
 
 const Sidebar2:FunctionComponent<Props> = (props)=>
 {
-    const [name, setName] = useState('');
-    const [tel, setTel] = useState('');
+    const name = useTextFieldControl('');
+    const tel = useTextFieldControl('');
     const statement = useCheckboxChange(false);
     const [terms, setTerms] = useState(false);
     const [errorName, setErrorName] = useState(null);
@@ -29,17 +28,13 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
         }
     }
     
-    function onChangeName(event:ChangeEvent<HTMLInputElement>) {
-        setName(event.target.value);
-    }
-    
-    function onChangeTel(event:ChangeEvent<HTMLInputElement>)
-    {
-        const tel = event.target.value.trim();
-        if (!isNaN(+tel) && tel.length <= 9) {
-            setTel(tel);
-        }
-    }
+    //function onChangeTel(event:ChangeEvent<HTMLInputElement>)
+    //{
+    //    const tel = event.target.value.trim();
+    //    if (!isNaN(+tel) && tel.length <= 9) {
+    //        setTel(tel);
+    //    }
+    //}
     
     function onClickTerms(event:MouseEvent) {
         event.preventDefault();
@@ -53,15 +48,15 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
     function validateForm()
     {
         let validate = true;
-        if (!isFill(name)) {
+        if (!isFill(name.value)) {
             setErrorName('Prosze podaj imie');
         } else {
             validate = false;
             setErrorName(null);
         }
-        if (!isFill(tel)) {
+        if (!isFill(tel.value)) {
             setErrorTel('Prosze podaj telefon');
-        } else if (tel.length != 9) {
+        } else if (tel.value.length != 9) {
             setErrorTel('Nie poprawny numer');
         } else {
             validate = false;
@@ -96,17 +91,15 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
             <form onSubmit={onSubmit}>
                 <TextField
                     className={style.name}
-                    value={name}
                     error={errorName}
-                    onChange={onChangeName}
-                    placeholder="Imie"/>
+                    placeholder="Imie"
+                    {...name}/>
                 <TextField
                     className={style.tel}
-                    value={tel}
                     error={errorTel}
-                    onChange={onChangeTel}
                     type="tel"
-                    placeholder="Telefon (9 cyfr)"/>
+                    placeholder="Telefon (9 cyfr)"
+                    {...tel}/>
                 
                 <Checkbox
                     className={style.statement}
