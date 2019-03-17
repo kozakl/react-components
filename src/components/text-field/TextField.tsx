@@ -27,6 +27,7 @@ const TextField:FunctionComponent<Props> = (props)=>
                 className={inputClass}
                 type={props.type}
                 value={props.value}
+                maxLength={props.maxLength}
                 disabled={props.disabled}
                 onChange={props.onChange}/>
             
