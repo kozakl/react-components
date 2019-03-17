@@ -12,7 +12,7 @@ import {useCheckboxChange, useTextFieldControl} from "../../hooks";
 const Sidebar2:FunctionComponent<Props> = (props)=>
 {
     const name = useTextFieldControl('');
-    const tel = useTextFieldControl('');
+    const tel = useTextFieldControl('', (value)=> !isNaN(+value));
     const statement = useCheckboxChange(false);
     const [terms, setTerms] = useState(false);
     const [errorName, setErrorName] = useState(null);
