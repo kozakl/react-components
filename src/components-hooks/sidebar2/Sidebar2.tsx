@@ -28,14 +28,6 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
         }
     }
     
-    //function onChangeTel(event:ChangeEvent<HTMLInputElement>)
-    //{
-    //    const tel = event.target.value.trim();
-    //    if (!isNaN(+tel) && tel.length <= 9) {
-    //        setTel(tel);
-    //    }
-    //}
-    
     function onClickTerms(event:MouseEvent) {
         event.preventDefault();
         setTerms(true);
