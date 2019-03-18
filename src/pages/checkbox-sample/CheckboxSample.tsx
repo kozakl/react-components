@@ -1,13 +1,13 @@
 import {Checkbox} from '../../components/checkbox';
-import {useCheckboxChange} from '../../hooks'
+import {useCheckboxControl} from '../../hooks'
 import React from 'react';
 import style from './CheckboxSample.pcss';
 
 export default function CheckboxSample()
 {
-    const checkbox1 = useCheckboxChange(true),
-          checkbox2 = useCheckboxChange(false),
-          checkbox3 = useCheckboxChange(false);
+    const checkbox1 = useCheckboxControl(true),
+          checkbox2 = useCheckboxControl(false),
+          checkbox3 = useCheckboxControl(false);
     return (
         <div className={style.checkboxSample}>
             <Checkbox

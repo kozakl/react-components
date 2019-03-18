@@ -5,7 +5,7 @@ import {isFill} from '@kozakl/utils/validate';
 import {Checkbox} from '../../components/checkbox';
 import {Modal} from '../../components/modal';
 import {TextField} from '../../components/text-field';
-import {useCheckboxChange, useTextFieldControl} from '../../hooks';
+import {useCheckboxControl, useTextFieldControl} from '../../hooks';
 import React from 'react';
 import style from './Sidebar2.pcss';
 
@@ -13,7 +13,7 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
 {
     const name = useTextFieldControl('');
     const tel = useTextFieldControl('', (value)=> !isNaN(+value));
-    const statement = useCheckboxChange(false);
+    const statement = useCheckboxControl(false);
     const [terms, setTerms] = useState(false);
     
     function onSubmit(event:FormEvent<HTMLFormElement>)
