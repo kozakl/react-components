@@ -5,9 +5,9 @@ import {isFill} from '@kozakl/utils/validate';
 import {Checkbox} from '../../components/checkbox';
 import {Modal} from '../../components/modal';
 import {TextField} from '../../components/text-field';
+import {useCheckboxChange, useTextFieldControl} from '../../hooks';
 import React from 'react';
 import style from './Sidebar2.pcss';
-import {useCheckboxChange, useTextFieldControl} from "../../hooks";
 
 const Sidebar2:FunctionComponent<Props> = (props)=>
 {
@@ -15,9 +15,6 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
     const tel = useTextFieldControl('', (value)=> !isNaN(+value));
     const statement = useCheckboxChange(false);
     const [terms, setTerms] = useState(false);
-    const [errorName, setErrorName] = useState(null);
-    const [errorTel, setErrorTel] = useState(null);
-    const [errorStatement, setErrorStatement] = useState(null);
     
     function onSubmit(event:FormEvent<HTMLFormElement>)
     {
@@ -41,24 +38,24 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
     {
         let validate = true;
         if (!isFill(name.value)) {
-            setErrorName('Prosze podaj imie');
+            name.setError('Prosze podaj imie');
         } else {
             validate = false;
-            setErrorName(null);
+            name.setError(null);
         }
         if (!isFill(tel.value)) {
-            setErrorTel('Prosze podaj telefon');
+            tel.setError('Prosze podaj telefon');
         } else if (tel.value.length != 9) {
-            setErrorTel('Nie poprawny numer');
+            tel.setError('Nie poprawny numer');
         } else {
             validate = false;
-            setErrorTel(null);
+            tel.setError(null);
         }
         if (!statement.checked) {
-            setErrorStatement('Musisz zakceptować regulamin');
+            statement.setError('Musisz zakceptować regulamin');
         } else {
             validate = false;
-            setErrorStatement(null);
+            statement.setError(null);
         }
         
         return validate;
@@ -83,20 +80,17 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
             <form onSubmit={onSubmit}>
                 <TextField
                     className={style.name}
-                    error={errorName}
                     placeholder="Imie"
                     {...name}/>
                 <TextField
                     className={style.tel}
                     maxLength={9}
-                    error={errorTel}
                     type="tel"
                     placeholder="Telefon (9 cyfr)"
                     {...tel}/>
                 
                 <Checkbox
                     className={style.statement}
-                    error={errorStatement}
                     {...statement}>
                     Oświadczam że zapoznałem się z&nbsp;
                     <a className={style.terms} onClick={onClickTerms}>
