@@ -11,9 +11,9 @@ import style from './Sidebar2.pcss';
 
 const Sidebar2:FunctionComponent<Props> = (props)=>
 {
-    const name = useTextFieldControl('');
-    const tel = useTextFieldControl('', (value)=> !isNaN(+value));
-    const statement = useCheckboxControl(false);
+    const name = useTextFieldControl(''),
+          tel = useTextFieldControl('', (value)=> !isNaN(+value)),
+          statement = useCheckboxControl(false);
     const [terms, setTerms] = useState(false);
     
     function onSubmit(event:FormEvent<HTMLFormElement>)
