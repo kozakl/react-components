@@ -32,10 +32,6 @@ const Nav:FunctionComponent<Props> = (props)=>
         }
     }
     
-    function onClickModal() {
-        setOpen(false);
-    }
-    
     const navClass = classNames(
         style.nav,
         props.className
@@ -84,7 +80,7 @@ const Nav:FunctionComponent<Props> = (props)=>
             {open && !desktop &&
                 <div
                     className={style.modal}
-                    onClick={onClickModal}/>}
+                    onClick={()=> setOpen(false)}/>}
         </nav>
     );
 };
