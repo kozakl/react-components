@@ -27,14 +27,14 @@ export default class Nav extends PureComponent<Props, State>
         this.setState({
             desktop: event.matches,
             open: event.matches,
-            trans: false
+            transit: false
         });
     };
     
     onChangeToggle = ()=> {
         this.setState({
             open: !this.state.open,
-            trans: true
+            transit: true
         });
     };
     
@@ -65,7 +65,7 @@ export default class Nav extends PureComponent<Props, State>
         );
         const linksClass = classNames(
             style.links,
-            this.state.trans && style.trans,
+            this.state.transit && style.transit,
             !this.state.open && style.close
         );
         return (
@@ -123,5 +123,5 @@ interface State {
     desktop:boolean;
     active:string;
     open:boolean;
-    trans?:boolean;
+    transit?:boolean;
 }

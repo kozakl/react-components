@@ -3,7 +3,7 @@ export const top:string;
 export const toggle:string;
 export const langSwitch:string;
 export const links:string;
-export const trans:string;
+export const transit:string;
 export const close:string;
 export const link:string;
 export const active:string;
