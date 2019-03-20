@@ -12,16 +12,16 @@ const Nav:FunctionComponent<Props> = (props)=>
     const desktop = useMatchMedia('(min-width: 570px)', onChangeDesktop);
     const [active, setActive] = useState(location.hash),
           [open, setOpen] = useState(desktop),
-          [trans, setTrans] = useState();
+          [transit, setTransit] = useState();
     
     function onChangeDesktop(event:MediaQueryListEvent) {
         setOpen(event.matches);
-        setTrans(false);
+        setTransit(false);
     }
     
     function onChangeToggle() {
         setOpen(!open);
-        setTrans(true);
+        setTransit(true);
     }
     
     function onClickLinks(event:MouseEvent<HTMLDivElement>) {
@@ -42,7 +42,7 @@ const Nav:FunctionComponent<Props> = (props)=>
     );
     const linksClass = classNames(
         style.links,
-        trans && style.trans,
+        transit && style.transit,
         !open && style.close
     );
     return (
