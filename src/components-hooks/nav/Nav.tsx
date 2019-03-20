@@ -38,8 +38,8 @@ const Nav:FunctionComponent<Props> = (props)=>
     );
     const linksClass = classNames(
         style.links,
-        transit && style.transit,
-        !open && style.close
+        !open && style.close,
+        transit && style.transit
     );
     return (
         <nav className={navClass}>
