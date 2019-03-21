@@ -65,8 +65,8 @@ export default class Nav extends PureComponent<Props, State>
         );
         const linksClass = classNames(
             style.links,
-            this.state.transit && style.transit,
-            !this.state.open && style.close
+            !this.state.open && style.close,
+            this.state.transit && style.transit
         );
         return (
             <nav className={navClass}>
