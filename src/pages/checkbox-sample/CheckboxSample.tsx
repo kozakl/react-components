@@ -1,5 +1,5 @@
+import {useCheckboxControl} from '@kozakl/hooks';
 import {Checkbox} from '../../components/checkbox';
-import {useCheckboxControl} from '../../hooks'
 import React from 'react';
 import style from './CheckboxSample.pcss';
 
