@@ -1,11 +1,12 @@
 import {FormEvent, FunctionComponent,
         MouseEvent, useState} from 'react';
+import {useCheckboxControl,
+        useTextFieldControl} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {isFill} from '@kozakl/utils/validate';
 import {Checkbox} from '../../components/checkbox';
 import {Modal} from '../../components/modal';
 import {TextField} from '../../components/text-field';
-import {useCheckboxControl, useTextFieldControl} from '../../hooks';
 import React from 'react';
 import style from './Sidebar2.pcss';
 

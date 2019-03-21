@@ -1,9 +1,9 @@
 import {FunctionComponent, MouseEvent,
         useState} from 'react';
+import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {NavLink} from '../../components/nav-link';
 import {Toggle} from './toggle';
-import {useMatchMedia} from '../../hooks';
 import React from 'react';
 import style from './Nav.pcss';
 

@@ -23,6 +23,7 @@
     ]
   },
   "dependencies": {
+    "@kozakl/hooks": "^1.0.0",
     "@kozakl/utils": "^4.4.2",
     "@types/googlemaps": "^3.30.16",
     "@types/react": "^16.4.6",
