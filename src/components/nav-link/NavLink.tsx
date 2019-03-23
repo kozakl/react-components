@@ -7,6 +7,8 @@ const NavLink:FunctionComponent<Props> = (props)=>
 {
     const linkClass = classNames(
         props.className,
+        props.active === true &&
+        props.activeClass,
         props.active === props.href &&
         props.activeClass
     );
@@ -23,7 +25,7 @@ const NavLink:FunctionComponent<Props> = (props)=>
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
     className?:string;
     activeClass?:string;
-    active?:string;
+    active?:boolean | string;
 }
 
 export default NavLink;
