@@ -13,7 +13,8 @@ const NavLink:FunctionComponent<Props> = (props)=>
     return (
         <a
             className={linkClass}
-            href={props.href}>
+            href={props.href}
+            onClick={props.onClick}>
             {props.children}
         </a>
     );
