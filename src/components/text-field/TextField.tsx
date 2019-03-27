@@ -18,6 +18,7 @@ const TextField:FunctionComponent<Props> = (props)=>
     const placeholderClass = classNames(
         style.placeholder,
         props.disabled && style.disabled,
+        props.open && style.open,
         props.value &&
         props.value.length && style.open
     );
@@ -45,6 +46,7 @@ const TextField:FunctionComponent<Props> = (props)=>
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
     value?:string;
+    open?:boolean;
     error?:string;
 }
 
