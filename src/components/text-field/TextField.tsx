@@ -1,5 +1,5 @@
-import {FunctionComponent,
-        InputHTMLAttributes} from 'react';
+import {FunctionComponent, InputHTMLAttributes,
+        ReactNode} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './TextField.pcss';
@@ -33,8 +33,12 @@ const TextField:FunctionComponent<Props> = (props)=>
                 onChange={props.onChange}/>
             
             {props.placeholder &&
-                <div className={placeholderClass}>
+                <label className={placeholderClass}>
                     {props.placeholder}
+                </label>}
+            {props.endAdornment &&
+                <div className={style.endAdornment}>
+                    {props.endAdornment}
                 </div>}
             {props.error &&
                 <div className={style.error}>
@@ -47,6 +51,7 @@ const TextField:FunctionComponent<Props> = (props)=>
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
     value?:string;
     open?:boolean;
+    endAdornment?:ReactNode;
     error?:string;
 }
 

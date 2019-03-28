@@ -14,7 +14,7 @@
   border: none;
   padding-bottom: 0.25em;
   border-bottom: solid 1px;
-  width: inherit;
+  width: 100%;
   
   &.disabled {
     opacity: 0.45;
@@ -31,6 +31,7 @@
 }
 
 .placeholder {
+  display: block;
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -42,6 +43,12 @@
     font-size: 0.75em;
     top: -1.5em;
   }
+}
+
+.endAdornment {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .error:not(.input) {
