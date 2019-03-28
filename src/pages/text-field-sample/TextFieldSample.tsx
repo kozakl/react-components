@@ -8,7 +8,7 @@ export default function TextFieldSample()
         <div className={style.textFieldSample}>
             <TextField
                 className={style.textField1}
-                placeholder="Imie"/>
+                placeholder="Imie Imie Imie Imie Imie Imie"/>
             <TextField
                 className={style.textField2}
                 placeholder="Telefon (9 cyfr)"/>
