@@ -1,4 +1,4 @@
-import {FunctionComponent, InputHTMLAttributes,
+import {ChangeEventHandler, FunctionComponent,
         ReactNode} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
@@ -48,11 +48,17 @@ const TextField:FunctionComponent<Props> = (props)=>
     );
 };
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
+interface Props {
+    className?:string;
+    type?:string;
     value?:string;
     open?:boolean;
+    maxLength?:number;
+    disabled?:boolean;
+    placeholder?:ReactNode;
     endAdornment?:ReactNode;
     error?:string;
+    onChange?:ChangeEventHandler<HTMLInputElement>
 }
 
 export default TextField;
