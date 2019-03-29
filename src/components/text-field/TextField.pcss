@@ -6,6 +6,7 @@
   display: inline-block;
   position: relative;
   text-align: left;
+  margin-top: 2.5em;
   
   &:focus-within {
     .placeholder {
@@ -16,24 +17,24 @@
   }
 }
 
-.inputContainer {
-  position: relative;
+.container {
+  border-bottom: solid 1px;
+  
+  &.flex {
+    display: flex;
+    align-items: flex-end;
+  }
 }
 
-.input {
-  background: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding-bottom: 0.25em;
-  border-bottom: solid 1px;
-  width: 100%;
+.startAdornment {
+  margin-right: 0.4em;
+}
+
+.inputContainer {
+  flex: 1;
   
-  &.disabled {
-    opacity: 0.45;
-  }
-  &.error {
-    border-bottom: solid 1px var(--error-color);
+  &.relative {
+    position: relative;
   }
 }
 
@@ -46,6 +47,7 @@
   pointer-events: none;
   width: 100%;
   top: 0;
+  left: 0;
   
   &.disabled {
     opacity: 0.45;
@@ -57,10 +59,23 @@
   }
 }
 
+.input {
+  background: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  width: 100%;
+  
+  &.disabled {
+    opacity: 0.45;
+  }
+  &.error {
+    border-bottom: solid 1px var(--error-color);
+  }
+}
+
 .endAdornment {
-  position: absolute;
-  top: 0;
-  right: 0;
+  margin-left: 0.4em;
 }
 
 .error:not(.input) {
