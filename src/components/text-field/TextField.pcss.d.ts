@@ -1,4 +1,5 @@
 export const textField:string;
+export const inputContainer:string;
 export const input:string;
 export const disabled:string;
 export const error:string;

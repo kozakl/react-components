@@ -28,18 +28,19 @@ const TextField:FunctionComponent<Props> = (props)=>
                 <label className={placeholderClass}>
                     {props.placeholder}
                 </label>}
-            <input
-                className={inputClass}
-                type={props.type}
-                value={props.value}
-                maxLength={props.maxLength}
-                disabled={props.disabled}
-                onChange={props.onChange}/>
-            
-            {props.endAdornment &&
-                <div className={style.endAdornment}>
-                    {props.endAdornment}
-                </div>}
+            <div className={style.inputContainer}>
+                <input
+                    className={inputClass}
+                    type={props.type}
+                    value={props.value}
+                    maxLength={props.maxLength}
+                    disabled={props.disabled}
+                    onChange={props.onChange}/>
+                {props.endAdornment &&
+                    <div className={style.endAdornment}>
+                        {props.endAdornment}
+                    </div>}
+            </div>
             {props.error &&
                 <div className={style.error}>
                     {props.error}
