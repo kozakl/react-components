@@ -6,7 +6,6 @@ import style from './TextField.pcss';
 
 const TextField:FunctionComponent<Props> = (props)=>
 {
-    console.log(props.error)
     const textFieldClass = classNames(
         props.className,
         style.textField
@@ -15,6 +14,7 @@ const TextField:FunctionComponent<Props> = (props)=>
         style.container,
         (props.startAdornment ||
             props.endAdornment) && style.flex,
+        props.error && style.error
     );
     const inputContainerClass = classNames(
         style.inputContainer,
@@ -29,8 +29,7 @@ const TextField:FunctionComponent<Props> = (props)=>
     );
     const inputClass = classNames(
         style.input,
-        props.disabled && style.disabled,
-        props.error && style.error,
+        props.disabled && style.disabled
     );
     return (
         <div className={textFieldClass}>

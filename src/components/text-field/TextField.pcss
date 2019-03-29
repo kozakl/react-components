@@ -24,6 +24,9 @@
     display: flex;
     align-items: flex-end;
   }
+  &.error {
+    border-bottom: solid 1px var(--error-color);
+  }
 }
 
 .startAdornment {
@@ -69,16 +72,13 @@
   &.disabled {
     opacity: 0.45;
   }
-  &.error {
-    border-bottom: solid 1px var(--error-color);
-  }
 }
 
 .endAdornment {
   margin-left: 0.4em;
 }
 
-.error:not(.input) {
+.error:not(.container) {
   color: var(--error-color);
   font-size: 0.75em;
   margin-top: 0.4em;
