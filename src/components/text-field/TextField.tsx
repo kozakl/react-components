@@ -24,6 +24,10 @@ const TextField:FunctionComponent<Props> = (props)=>
     );
     return (
         <div className={textFieldClass}>
+            {props.placeholder &&
+                <label className={placeholderClass}>
+                    {props.placeholder}
+                </label>}
             <input
                 className={inputClass}
                 type={props.type}
@@ -32,10 +36,6 @@ const TextField:FunctionComponent<Props> = (props)=>
                 disabled={props.disabled}
                 onChange={props.onChange}/>
             
-            {props.placeholder &&
-                <label className={placeholderClass}>
-                    {props.placeholder}
-                </label>}
             {props.endAdornment &&
                 <div className={style.endAdornment}>
                     {props.endAdornment}
