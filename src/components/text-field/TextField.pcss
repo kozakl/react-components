@@ -11,14 +11,14 @@
   &:focus-within {
     .placeholder {
       font-size: 0.75em;
-      top: unset;
-      bottom: 2.25em;
+      top: -1.5em;
     }
   }
 }
 
 .container {
   border-bottom: solid 1px;
+  padding-bottom: 0.25em;
   
   &.flex {
     display: flex;
@@ -57,8 +57,7 @@
   }
   &.opened {
     font-size: 0.75em;
-    top: unset;
-    bottom: 2.25em;
+    top: -1.5em;
   }
 }
 
@@ -67,6 +66,7 @@
   color: inherit;
   outline: none;
   border: none;
+  padding: 0;
   width: 100%;
   
   &.disabled {
