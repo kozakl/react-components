@@ -38,6 +38,13 @@ export default function TextFieldSample()
                 placeholder="Lorem ipsum dolor sit amet consectetur adipiscing"
                 {...textField5}
                 error="Lorem ipsum dolor sit amet consectetur adipiscing"/>
+            <TextField
+                className={style.textField}
+                placeholder="Lorem ipsum dolor sit amet consectetur adipiscing"
+                value="Lorem ipsum dolor sit amet consectetur adipiscing"
+                error="Lorem ipsum dolor sit amet consectetur adipiscing"
+                opened
+                disabled/>
             
             {/*<TextField
                 className={style.textField}
