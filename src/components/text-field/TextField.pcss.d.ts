@@ -6,7 +6,7 @@ export const inputContainer:string;
 export const relative:string;
 export const placeholder:string;
 export const disabled:string;
-export const open:string;
+export const opened:string;
 export const input:string;
 export const error:string;
 export const endAdornment:string;

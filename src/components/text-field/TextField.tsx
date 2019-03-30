@@ -24,8 +24,8 @@ const TextField:FunctionComponent<Props> = (props)=>
         style.placeholder,
         props.disabled && style.disabled,
         (props.value ||
-            props.open ||
-            props.startAdornment) && style.open
+            props.opened ||
+            props.startAdornment) && style.opened
     );
     const inputClass = classNames(
         style.input,
@@ -68,7 +68,7 @@ interface Props {
     className?:string;
     type?:string;
     value?:string;
-    open?:boolean;
+    opened?:boolean;
     maxLength?:number;
     disabled?:boolean;
     placeholder?:ReactNode;
