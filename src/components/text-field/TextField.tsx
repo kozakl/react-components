@@ -8,7 +8,8 @@ const TextField:FunctionComponent<Props> = (props)=>
 {
     const textFieldClass = classNames(
         props.className,
-        style.textField
+        style.textField,
+        props.disabled && style.disabled
     );
     const containerClass = classNames(
         style.container,
@@ -22,14 +23,9 @@ const TextField:FunctionComponent<Props> = (props)=>
     );
     const placeholderClass = classNames(
         style.placeholder,
-        props.disabled && style.disabled,
         (props.value ||
             props.opened ||
             props.startAdornment) && style.opened
-    );
-    const inputClass = classNames(
-        style.input,
-        props.disabled && style.disabled
     );
     return (
         <div className={textFieldClass}>
@@ -44,7 +40,7 @@ const TextField:FunctionComponent<Props> = (props)=>
                             {props.placeholder}
                         </label>}
                     <input
-                        className={inputClass}
+                        className={style.input}
                         type={props.type}
                         value={props.value}
                         maxLength={props.maxLength}
