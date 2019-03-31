@@ -9,8 +9,7 @@ export default function TextFieldSample()
           textField2 = useTextFieldControl(''),
           textField3 = useTextFieldControl(''),
           textField4 = useTextFieldControl(''),
-          textField5 = useTextFieldControl(''),
-          textField6 = useTextFieldControl('');
+          textField5 = useTextFieldControl('');
     return (
         <div className={style.textFieldSample}>
             <TextField
@@ -45,18 +44,6 @@ export default function TextFieldSample()
                 error="Lorem ipsum dolor sit amet consectetur adipiscing"
                 opened
                 disabled/>
-            
-            {/*<TextField
-                className={style.textField}
-                placeholder={
-                    <div className={style.fieldPlaceholder}>
-                        Miesieczny dochód netto w gospodarstwie domowym:
-                        <img src={require('res/icons/question-mark.svg')}/>
-                    </div>}
-                endAdornment={'END'}
-                error={'Error sxee here'}
-                open
-                {...textField5}/>*/}
         </div>
     );
 }
