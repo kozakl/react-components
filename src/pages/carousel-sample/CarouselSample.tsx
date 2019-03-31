@@ -1,4 +1,4 @@
-import {Carousel} from '../../components/carousel';
+import {Carousel} from '../../components-hooks/carousel';
 import {ResponsiveImage} from '../../components/responsive-image';
 import React from 'react';
 import style from './CarouselSample.pcss';
