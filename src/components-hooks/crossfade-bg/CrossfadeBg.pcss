@@ -1,0 +1,22 @@
+@import 'animations.pcss';
+
+.current {
+  height: 100vh;
+  
+  & img {
+    object-fit: cover;
+  }
+}
+
+.next {
+  @extend .current;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  &.show {
+    animation: fadeOut 1s forwards;
+  }
+}
