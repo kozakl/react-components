@@ -1,36 +1,17 @@
-import {FunctionComponent, MouseEvent,
-        useState} from 'react';
-import {useMatchMedia} from '@kozakl/hooks';
+import {FunctionComponent} from 'react';
+import {useLocation, useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {NavLink} from '../../components/nav-link';
 import {Toggle} from './toggle';
+import {useOpenNav} from './hooks';
 import React from 'react';
 import style from './Nav.pcss';
 
 const Nav:FunctionComponent<Props> = (props)=>
 {
-    const desktop = useMatchMedia('(min-width: 570px)', onChangeDesktop);
-    const [active, setActive] = useState(location.hash),
-          [open, setOpen] = useState(desktop),
-          [transit, setTransit] = useState();
-    
-    function onChangeDesktop(event:MediaQueryListEvent) {
-        setOpen(event.matches);
-        setTransit(false);
-    }
-    
-    function onChangeToggle() {
-        setOpen(!open);
-        setTransit(true);
-    }
-    
-    function onClickLinks(event:MouseEvent<HTMLDivElement>) {
-        const target = event.target as HTMLAnchorElement;
-        if (target.hash) {
-            setActive(target.hash);
-            setOpen(desktop);
-        }
-    }
+    const desktop = useMatchMedia('(min-width: 768px)'),
+          location = useLocation();
+    const {open, transit, setOpen} = useOpenNav(desktop);
     
     const navClass = classNames(
         style.nav,
@@ -48,33 +29,37 @@ const Nav:FunctionComponent<Props> = (props)=>
                     <Toggle
                         className={style.toggle}
                         open={open && !desktop}
-                        onChange={onChangeToggle}/>
-                    <div className={style.langSwitch}>NAV</div>
+                        onChange={()=> setOpen(!open)}/>
+                    <div className={style.langSwitch}>
+                        LANG
+                    </div>
                 </div> :
-                <div className={style.langSwitch}>NAV</div>}
+                <div className={style.langSwitch}>
+                    LANG
+                </div>}
             <div
                 className={linksClass}
-                onClick={onClickLinks}>
+                onClick={()=> !desktop && setOpen(false)}>
                 <NavLink
                     className={style.link}
                     activeClass={style.active}
-                    active={active}
-                    href="#home">
-                    HOME
+                    active={location.hash}
+                    href={`#/benefits`}>
+                    Benefits
                 </NavLink>
                 <NavLink
                     className={style.link}
                     activeClass={style.active}
-                    active={active}
-                    href="#benefits">
-                    KORZYSCI
+                    active={location.hash}
+                    href={`#/experts`}>
+                    Experts
                 </NavLink>
                 <NavLink
                     className={style.link}
                     activeClass={style.active}
-                    active={active}
-                    href="#calculator">
-                    KALKULATOR ZDOLNOŚCI KREDYTOWYCH
+                    active={location.hash}
+                    href={`#/calculator`}>
+                    Calculator
                 </NavLink>
             </div>
             {open && !desktop &&
