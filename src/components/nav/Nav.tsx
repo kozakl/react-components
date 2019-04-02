@@ -1,7 +1,7 @@
 import {FunctionComponent} from 'react';
 import {useLocation, useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
-import {NavLink} from '../../components/nav-link';
+import {NavLink} from '../nav-link';
 import {Toggle} from './toggle';
 import {useOpenNav} from './hooks';
 import React from 'react';

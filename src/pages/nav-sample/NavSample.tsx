@@ -1,4 +1,4 @@
-import {Nav} from '../../components-hooks/nav';
+import {Nav} from '../../components/nav';
 import React from 'react';
 import style from './NavSample.pcss';
 
