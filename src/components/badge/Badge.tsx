@@ -4,7 +4,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Badge.pcss';
 
-const Badge:FunctionComponent<Props> = (props)=>
+export const Badge:FunctionComponent<Props> = (props)=>
 {
     const badgeClass = classNames(
         style.badge,
@@ -26,5 +26,3 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
     className?:string;
     disabled?:boolean;
 }
-
-export default Badge;
