@@ -7,7 +7,7 @@ import {useOpenNav} from './hooks';
 import React from 'react';
 import style from './Nav.pcss';
 
-const Nav:FunctionComponent<Props> = (props)=>
+export const Nav:FunctionComponent<Props> = (props)=>
 {
     const desktop = useMatchMedia('(min-width: 768px)'),
           location = useLocation();
@@ -73,5 +73,3 @@ const Nav:FunctionComponent<Props> = (props)=>
 interface Props {
     className?:string;
 }
-
-export default Nav;
