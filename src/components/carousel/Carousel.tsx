@@ -7,7 +7,7 @@ import {useListPadding} from './hooks';
 import React from 'react';
 import style from './Carousel.pcss';
 
-const Carousel:FunctionComponent<Props> = (props)=>
+export const Carousel:FunctionComponent<Props> = (props)=>
 {
     const list = useRef<HTMLDivElement>(),
           [dot, setDot] = useState(0);
@@ -67,8 +67,6 @@ const Carousel:FunctionComponent<Props> = (props)=>
         </div>
     );
 };
-
-export default Carousel;
 
 interface Props {
     className?:string;
