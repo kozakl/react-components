@@ -1,5 +1,6 @@
 import {Children, FunctionComponent,
-        ReactNode, useRef, useState} from 'react';
+        MouseEvent, ReactNode,
+        useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
 import {paddingLeft, paddingRight} from './helpers/list';
 import {useListPadding} from './hooks';
@@ -25,7 +26,7 @@ const Carousel:FunctionComponent<Props> = (props)=>
         }
     }
     
-    function onClickIndicator()
+    function onClickIndicator(event:MouseEvent<HTMLDivElement>)
     {
         const dot = parseFloat((event.target as HTMLSpanElement).id);
         if (!isNaN(dot)) {
