@@ -1,7 +1,7 @@
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
-import {Sidebar2} from '../../components-hooks/sidebar2';
+import {Sidebar2} from '../../components/sidebar2';
 import React from 'react';
 import style from './Sidebar2Sample.pcss';
 
