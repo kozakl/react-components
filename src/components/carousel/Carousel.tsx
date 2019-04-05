@@ -17,7 +17,7 @@ export const Carousel:FunctionComponent<Props> = (props)=>
     useResize(()=> {
         list.current.style.paddingLeft = paddingLeft() + 'px';
         list.current.style.paddingRight = paddingRight() + 'px';
-    });
+    }, true);
     
     function onScrollList()
     {
