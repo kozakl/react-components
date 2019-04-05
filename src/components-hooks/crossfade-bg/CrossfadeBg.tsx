@@ -4,7 +4,7 @@ import {ResponsiveImage} from '../../components/responsive-image';
 import React from 'react';
 import style from './CrossfadeBg.pcss';
 
-const CrossfadeBg:FunctionComponent<Props> = (props)=>
+export const CrossfadeBg:FunctionComponent<Props> = (props)=>
 {
     const [current, setCurrent] = useState(0),
           [next, setNext] = useState(null),
@@ -55,8 +55,6 @@ const CrossfadeBg:FunctionComponent<Props> = (props)=>
         </div>
     );
 };
-
-export default CrossfadeBg;
 
 interface Props {
     className?:string;
