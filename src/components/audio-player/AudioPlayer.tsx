@@ -1,10 +1,10 @@
-import {PureComponent} from 'react';
+import {Component} from 'react';
 import {clamp} from '@kozakl/utils/math';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './AudioPlayer.pcss';
 
-export class AudioPlayer extends PureComponent<Props, State>
+export class AudioPlayer extends Component<Props, State>
 {
     private bar:HTMLSpanElement;
     private audio:HTMLAudioElement;
