@@ -1,6 +1,6 @@
 import {Component} from 'react';
-import {clamp} from '@kozakl/utils/math';
 import {classNames} from '@kozakl/utils';
+import {clamp} from '@kozakl/utils/math';
 import React from 'react';
 import style from './AudioPlayer.pcss';
 
