@@ -71,7 +71,7 @@ interface Props {
     startAdornment?:ReactNode;
     endAdornment?:ReactNode;
     error?:string;
-    onChange?:ChangeEventHandler<HTMLInputElement>
+    onChange?:ChangeEventHandler<HTMLInputElement>;
 }
 
 export default TextField;
