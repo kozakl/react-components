@@ -104,7 +104,9 @@ export class AudioPlayer extends Component<Props, State>
         );
         return (
             <div className={audioPlayerClass}>
-                <span className={style.control} onClick={this.onClickControl}>
+                <span
+                    className={style.control}
+                    onClick={this.onClickControl}>
                     {this.state.paused ? '\ue901' : '\ue900'}
                 </span>
                 <span
