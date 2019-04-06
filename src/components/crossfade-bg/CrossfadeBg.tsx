@@ -1,6 +1,6 @@
 import {FunctionComponent, useEffect, useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
-import {ResponsiveImage} from '../../components/responsive-image';
+import {ResponsiveImage} from '../responsive-image/index';
 import React from 'react';
 import style from './CrossfadeBg.pcss';
 

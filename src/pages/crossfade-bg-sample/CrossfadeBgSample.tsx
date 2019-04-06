@@ -1,4 +1,4 @@
-import {CrossfadeBg} from '../../components-hooks/crossfade-bg';
+import {CrossfadeBg} from '../../components/crossfade-bg';
 import React from 'react';
 import style from './CrossfadeBgSample.pcss';
 
