@@ -1,5 +1,5 @@
-import {ChangeEventHandler, FunctionComponent,
-        ReactNode} from 'react';
+import {ChangeEventHandler,
+        FunctionComponent, ReactNode} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './TextField.pcss';
