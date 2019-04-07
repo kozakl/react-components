@@ -4,7 +4,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './TextField.pcss';
 
-const TextField:FunctionComponent<Props> = (props)=>
+export const TextField:FunctionComponent<Props> = (props)=>
 {
     const textFieldClass = classNames(
         props.className,
@@ -73,5 +73,3 @@ interface Props {
     error?:string;
     onChange?:ChangeEventHandler<HTMLInputElement>;
 }
-
-export default TextField;
