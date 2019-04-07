@@ -1,5 +1,5 @@
-import {FunctionComponent,
-        InputHTMLAttributes} from 'react';
+import {ChangeEventHandler,
+        FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Checkbox.pcss';
@@ -34,6 +34,10 @@ export const Checkbox:FunctionComponent<Props> = (props)=>
     );
 };
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
+interface Props {
+    className?:string;
+    checked?:boolean;
+    disabled?:boolean;
     error?:string;
+    onChange?:ChangeEventHandler<HTMLInputElement>;
 }
