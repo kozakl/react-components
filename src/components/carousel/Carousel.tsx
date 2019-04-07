@@ -1,8 +1,6 @@
-import {
-    Children, FunctionComponent,
-    MouseEvent, MutableRefObject, ReactNode,
-    useRef, useState
-} from 'react';
+import {Children, FunctionComponent,
+        MouseEvent, ReactNode,
+        useRef, useState} from 'react';
 import {useResize} from '@kozakl/hooks/useResize';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
@@ -15,15 +13,15 @@ export const Carousel:FunctionComponent<Props> = (props)=>
     
     
     useResize(()=> {
-        list.current.style.paddingLeft = paddingLeft() + 'px';
-        list.current.style.paddingRight = paddingRight() + 'px';
+        list.current.style.paddingLeft = listPaddingLeft() + 'px';
+        list.current.style.paddingRight = listPaddingRight() + 'px';
     }, true);
     
     function onScrollList()
     {
         const width = list.current.scrollWidth -
-                      paddingLeft() -
-                      paddingRight(),
+                      listPaddingLeft() -
+                      listPaddingRight(),
               count = (props.children as ReactNode[]).length,
               currentDot = list.current.scrollLeft / width * count  + 0.5 | 0;
         if (currentDot !== dot) {
@@ -36,19 +34,19 @@ export const Carousel:FunctionComponent<Props> = (props)=>
         const dot = parseFloat((event.target as HTMLSpanElement).id);
         if (!isNaN(dot)) {
             const width = list.current.scrollWidth -
-                          paddingLeft() -
-                          paddingRight(),
+                          listPaddingLeft() -
+                          listPaddingRight(),
                   count = (props.children as ReactNode[]).length;
             list.current.scrollLeft = width / count * dot;
         }
     }
     
-    function paddingLeft() {
+    function listPaddingLeft() {
         return list.current.clientWidth * 0.5 -
             (list.current.firstChild as HTMLElement).clientWidth * 0.5;
     }
     
-    function paddingRight() {
+    function listPaddingRight() {
         return list.current.clientWidth * 0.5 -
             (list.current.lastChild as HTMLElement).clientWidth * 0.5;
     }
