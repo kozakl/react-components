@@ -1,7 +1,7 @@
 import {FunctionComponent, useState} from 'react';
 import {scaleDown} from '@kozakl/utils';
-import {ResponsiveImage} from './index';
-import {Image} from '../../types/index';
+import {ResponsiveImage} from '../responsive-image';
+import {Image} from '../../types';
 import React from 'react';
 import style from './ImagePreview.pcss';
 
