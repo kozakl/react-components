@@ -11,16 +11,12 @@ export const ImagePreview:FunctionComponent<Props> = (props)=>
     
     function onClickPrev() {
         const images = props.images;
-        setCurrent(
-            (current - 1 + images.length) % images.length
-        );
+        setCurrent((current - 1 + images.length) % images.length);
     }
     
     function onClickNext() {
         const images = props.images;
-        setCurrent(
-            (current + 1) % images.length
-        );
+        setCurrent((current + 1) % images.length);
     }
     
     const image = props.images[current];
