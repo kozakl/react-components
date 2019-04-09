@@ -22,6 +22,7 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
         if (password === 'abc') {
             props.onLogin();
         } else {
+            setErrorEmail('Incorrect email');
             setErrorPassword('Incorrect password');
         }
     }
@@ -53,9 +54,13 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
                 <InputGroup className={style.email}>
                     <Input
                         value={email}
+                        invalid={!!errorEmail}
                         onChange={onChangeEmail}
                         placeholder="Email"
                         bsSize="sm"/>
+                    <FormFeedback>
+                        {errorEmail}
+                    </FormFeedback>
                 </InputGroup>
                 <InputGroup className={style.password}>
                     <Input
