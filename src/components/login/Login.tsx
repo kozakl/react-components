@@ -1,9 +1,7 @@
-import {
-    ChangeEvent, FormEvent, FunctionComponent, MouseEvent,
-    PureComponent, useState
-} from 'react';
+import {FormEvent, FunctionComponent} from 'react';
 import {Button, FormFeedback,
         Input, InputGroup} from 'reactstrap';
+import {useTextFieldControl} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {isEmail, isFill} from '@kozakl/utils/validate';
 import React from 'react';
@@ -11,67 +9,57 @@ import style from './Login.pcss';
 
 const Sidebar2:FunctionComponent<Props> = (props)=>
 {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errorEmail, setErrorEmail] = useState(null);
-    const [errorPassword, setErrorPassword] = useState(null);
+    const email = useTextFieldControl(''),
+          password = useTextFieldControl('');
     
     function onSubmit(event:FormEvent<HTMLFormElement>)
     {
         event.preventDefault();
-        if (password === 'abc') {
+        if (password.value === 'abc') {
             props.onLogin();
         } else {
-            setErrorEmail('Incorrect email');
-            setErrorPassword('Incorrect password');
+            email.setError('Incorrect email');
+            password.setError('Incorrect password');
         }
     }
     
-    function onChangeEmail(event:ChangeEvent<HTMLInputElement>)
-    {
-        setEmail(event.target.value);
+    function onChangeForm() {
+        email.setError(null);
+        password.setError(null);
     }
     
-    function onChangePassword(event:ChangeEvent<HTMLInputElement>)
-    {
-        setPassword(event.target.value);
-        setErrorPassword(null);
-    }
-    
+    const enabled = isEmail(email.value) &&
+                    isFill(password.value);
     const loginClass = classNames(
         style.login,
         props.className
     );
-    const enabled = isEmail(email) &&
-                    isFill(password);
     return (
         <div className={loginClass}>
             <h5 className={style.headline}>
                 Logowanie
             </h5>
             
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} onChange={onChangeForm}>
                 <InputGroup className={style.email}>
                     <Input
-                        value={email}
-                        invalid={!!errorEmail}
-                        onChange={onChangeEmail}
+                        invalid={!!email.error}
                         placeholder="Email"
-                        bsSize="sm"/>
+                        bsSize="sm"
+                        {...email}/>
                     <FormFeedback>
-                        {errorEmail}
+                        {email.error}
                     </FormFeedback>
                 </InputGroup>
                 <InputGroup className={style.password}>
                     <Input
-                        value={password}
-                        invalid={!!errorPassword}
-                        onChange={onChangePassword}
+                        invalid={!!password.error}
                         type="password"
                         placeholder="Password"
-                        bsSize="sm"/>
+                        bsSize="sm"
+                        {...password}/>
                     <FormFeedback>
-                        {errorPassword}
+                        {password.error}
                     </FormFeedback>
                 </InputGroup>
                 
