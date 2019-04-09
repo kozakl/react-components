@@ -4,9 +4,9 @@ import {useCheckboxControl,
         useTextFieldControl} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {isFill} from '@kozakl/utils/validate';
-import {Checkbox} from './index';
-import {Modal} from './index';
-import {TextField} from './index';
+import {Checkbox} from '../checkbox';
+import {Modal} from '../modal';
+import {TextField} from '../text-field';
 import React from 'react';
 import style from './Sidebar2.pcss';
 
