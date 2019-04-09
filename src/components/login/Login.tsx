@@ -7,7 +7,7 @@ import {isEmail, isFill} from '@kozakl/utils/validate';
 import React from 'react';
 import style from './Login.pcss';
 
-const Sidebar2:FunctionComponent<Props> = (props)=>
+export const Login:FunctionComponent<Props> = (props)=>
 {
     const email = useTextFieldControl(''),
           password = useTextFieldControl('');
@@ -80,5 +80,3 @@ interface Props {
     className?:string;
     onLogin:()=> void;
 }
-
-export default Sidebar2;
