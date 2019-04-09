@@ -1,5 +1,7 @@
-import {ChangeEvent, FormEvent,
-        PureComponent} from 'react';
+import {
+    ChangeEvent, FormEvent, FunctionComponent, MouseEvent,
+    PureComponent, useState
+} from 'react';
 import {Button, FormFeedback,
         Input, InputGroup} from 'reactstrap';
 import {classNames} from '@kozakl/utils';
@@ -7,97 +9,83 @@ import {isEmail, isFill} from '@kozakl/utils/validate';
 import React from 'react';
 import style from './Login.pcss';
 
-export default class Login extends PureComponent<Props, State>
+const Sidebar2:FunctionComponent<Props> = (props)=>
 {
-    constructor(props:Props)
-    {
-        super(props);
-        
-        this.state = {
-            email: '',
-            password: '',
-            errorEmail: null,
-            errorPassword: null
-        };
-    }
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorEmail, setErrorEmail] = useState(null);
+    const [errorPassword, setErrorPassword] = useState(null);
     
-    onSubmit = (event:FormEvent<HTMLFormElement>)=>
+    function onSubmit(event:FormEvent<HTMLFormElement>)
     {
         event.preventDefault();
-        if (this.state.password === 'abc') {
-            this.props.onLogin();
-        } else
-            this.setState({errorPassword: 'Incorrect password'});
-    };
-    
-    onChangeEmail = (event:ChangeEvent<HTMLInputElement>)=> {
-        this.setState({email: event.target.value});
-    };
-    
-    onChangePassword = (event:ChangeEvent<HTMLInputElement>)=> {
-        this.setState({
-            password: event.target.value,
-            errorPassword: null
-        });
-    };
-    
-    render()
-    {
-        const loginClass = classNames(
-            style.login,
-            this.props.className
-        );
-        const enabled = isEmail(this.state.email) &&
-                        isFill(this.state.password);
-        return (
-            <div className={loginClass}>
-                <h5 className={style.headline}>
-                    Logowanie
-                </h5>
-                
-                <form onSubmit={this.onSubmit}>
-                    <InputGroup className={style.email}>
-                        <Input
-                            value={this.state.email}
-                            onChange={this.onChangeEmail}
-                            placeholder="Email"
-                            bsSize="sm"/>
-                    </InputGroup>
-                    <InputGroup className={style.password}>
-                        <Input
-                            value={this.state.password}
-                            invalid={!!this.state.errorPassword}
-                            onChange={this.onChangePassword}
-                            type="password"
-                            placeholder="Password"
-                            bsSize="sm"/>
-                        <FormFeedback>
-                            {this.state.errorPassword}
-                        </FormFeedback>
-                    </InputGroup>
-                    
-                    <Button
-                        className={style.confirm}
-                        disabled={!enabled}
-                        type="submit"
-                        color="success"
-                        size="sm">
-                        Login
-                    </Button>
-                </form>
-            </div>
-        );
+        if (password === 'abc') {
+            props.onLogin();
+        } else {
+            setErrorPassword('Incorrect password');
+        }
     }
-}
+    
+    function onChangeEmail(event:ChangeEvent<HTMLInputElement>)
+    {
+        setEmail(event.target.value);
+    }
+    
+    function onChangePassword(event:ChangeEvent<HTMLInputElement>)
+    {
+        setPassword(event.target.value);
+        setErrorPassword(null);
+    }
+    
+    const loginClass = classNames(
+        style.login,
+        props.className
+    );
+    const enabled = isEmail(email) &&
+                    isFill(password);
+    return (
+        <div className={loginClass}>
+            <h5 className={style.headline}>
+                Logowanie
+            </h5>
+            
+            <form onSubmit={onSubmit}>
+                <InputGroup className={style.email}>
+                    <Input
+                        value={email}
+                        onChange={onChangeEmail}
+                        placeholder="Email"
+                        bsSize="sm"/>
+                </InputGroup>
+                <InputGroup className={style.password}>
+                    <Input
+                        value={password}
+                        invalid={!!errorPassword}
+                        onChange={onChangePassword}
+                        type="password"
+                        placeholder="Password"
+                        bsSize="sm"/>
+                    <FormFeedback>
+                        {errorPassword}
+                    </FormFeedback>
+                </InputGroup>
+                
+                <Button
+                    className={style.confirm}
+                    disabled={!enabled}
+                    type="submit"
+                    color="success"
+                    size="sm">
+                    Login
+                </Button>
+            </form>
+        </div>
+    );
+};
 
 interface Props {
     className?:string;
     onLogin:()=> void;
 }
 
-interface State {
-    email:string;
-    password:string;
-    errorEmail:string;
-    errorPassword:string;
-}
+export default Sidebar2;
