@@ -43,21 +43,23 @@ export const Login:FunctionComponent<Props> = (props)=>
             <form onSubmit={onSubmit} onChange={onChangeForm}>
                 <InputGroup className={style.email}>
                     <Input
+                        value={email.value}
                         invalid={!!email.error}
+                        onChange={email.onChange}
                         placeholder="Email"
-                        bsSize="sm"
-                        {...email}/>
+                        bsSize="sm"/>
                     <FormFeedback>
                         {email.error}
                     </FormFeedback>
                 </InputGroup>
                 <InputGroup className={style.password}>
                     <Input
+                        value={password.value}
                         invalid={!!password.error}
+                        onChange={password.onChange}
                         type="password"
                         placeholder="Password"
-                        bsSize="sm"
-                        {...password}/>
+                        bsSize="sm"/>
                     <FormFeedback>
                         {password.error}
                     </FormFeedback>
