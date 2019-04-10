@@ -62,7 +62,7 @@
     "style-loader": "^0.21.0",
     "ts-jest": "^23.10.4",
     "ts-loader": "^4.4.2",
-    "typescript": "^3.2.1",
+    "typescript": "^3.4.5",
     "url-loader": "^1.0.1",
     "webpack": "^4.16.1",
     "webpack-bundle-analyzer": "^2.13.1",
