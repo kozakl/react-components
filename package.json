@@ -35,7 +35,7 @@
     "react-dom": "^16.4.1",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.3.1",
-    "reactstrap": "^6.5.0"
+    "reactstrap": "^8.0.0"
   },
   "devDependencies": {
     "@kozakl/node": "^1.0.1",
