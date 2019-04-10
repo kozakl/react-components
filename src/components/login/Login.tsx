@@ -15,11 +15,14 @@ export const Login:FunctionComponent<Props> = (props)=>
     function onSubmit(event:FormEvent<HTMLFormElement>)
     {
         event.preventDefault();
-        if (password.value === 'abc') {
-            props.onLogin();
-        } else {
-            email.setError('Incorrect email');
-            password.setError('Incorrect password');
+        if (validateForm())
+        {
+            if (password.value === 'abc') {
+                props.onLogin();
+            } else {
+                email.setError('Incorrect credentials');
+                password.setError('Incorrect credentials');
+            }
         }
     }
     
@@ -28,8 +31,28 @@ export const Login:FunctionComponent<Props> = (props)=>
         password.setError(null);
     }
     
-    const enabled = isEmail(email.value) &&
-                    isFill(password.value);
+    function validateForm()
+    {
+        let validate = true;
+        if (!isFill(email.value)) {
+            validate = false;
+            email.setError('Fill email');
+        } else if (!isEmail(email.value)) {
+            validate = false;
+            email.setError('Incorrect email');
+        } else {
+            email.setError(null);
+        }
+        if (!isFill(password.value)) {
+            validate = false;
+            password.setError('Fill password');
+        } else {
+            password.setError(null);
+        }
+        
+        return validate;
+    }
+    
     const loginClass = classNames(
         style.login,
         props.className
@@ -67,7 +90,6 @@ export const Login:FunctionComponent<Props> = (props)=>
                 
                 <Button
                     className={style.confirm}
-                    disabled={!enabled}
                     type="submit"
                     color="success"
                     size="sm">
