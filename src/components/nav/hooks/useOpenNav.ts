@@ -2,8 +2,8 @@ import {useLayoutEffect, useState} from 'react';
 
 export function useOpenNav(desktop:boolean)
 {
-    const [open, setOpen] = useState(desktop);
-    const [transit, setTransit] = useState();
+    const [open, setOpen] = useState(desktop),
+          [transit, setTransit] = useState();
     useLayoutEffect(()=> {
         setOpen(desktop);
         setTransit(false);
