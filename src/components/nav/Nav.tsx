@@ -28,7 +28,7 @@ export const Nav:FunctionComponent<Props> = (props)=>
                 <div className={style.top}>
                     <Toggle
                         className={style.toggle}
-                        open={open && !desktop}
+                        cross={open && !desktop}
                         onChange={()=> setOpen(!open)}/>
                     <div className={style.langSwitch}>
                         LANG

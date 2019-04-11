@@ -8,7 +8,7 @@ export const Toggle:FunctionComponent<Props> = (props)=>
     const toggleClass = classNames(
         style.toggle,
         props.className,
-        props.open && style.open
+        props.cross && style.cross
     );
     return (
         <svg
@@ -24,6 +24,6 @@ export const Toggle:FunctionComponent<Props> = (props)=>
 
 interface Props {
     className?:string;
-    open:boolean;
+    cross:boolean;
     onChange?:()=> void;
 }
