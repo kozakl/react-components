@@ -5,7 +5,7 @@ import React from 'react';
 
 export const NavLink:FunctionComponent<Props> = (props)=>
 {
-    const linkClass = classNames(
+    const navLinkClass = classNames(
         props.className,
         props.active === true &&
         props.activeClass,
@@ -14,7 +14,7 @@ export const NavLink:FunctionComponent<Props> = (props)=>
     );
     return (
         <a
-            className={linkClass}
+            className={navLinkClass}
             href={props.href}
             title={props.title}
             onClick={props.onClick}>
