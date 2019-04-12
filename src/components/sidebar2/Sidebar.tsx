@@ -10,7 +10,7 @@ import {TextField} from '../text-field';
 import React from 'react';
 import style from './Sidebar.pcss';
 
-const Sidebar:FunctionComponent<Props> = (props)=>
+export const Sidebar:FunctionComponent<Props> = (props)=>
 {
     const name = useTextFieldControl(''),
           tel = useTextFieldControl('', (value)=> !isNaN(+value)),
@@ -120,5 +120,3 @@ interface Props {
     active?:boolean;
     onClose?:()=> void;
 }
-
-export default Sidebar;
