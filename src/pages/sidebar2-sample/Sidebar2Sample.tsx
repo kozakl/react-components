@@ -1,7 +1,7 @@
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
-import {Sidebar2} from '../../components/sidebar2';
+import {Sidebar} from '../../components/sidebar2';
 import React from 'react';
 import style from './Sidebar2Sample.pcss';
 
@@ -73,7 +73,7 @@ export default class Sidebar2Sample extends PureComponent<{}, State>
                     onClose={this.onCloseSidebar}
                     visible={this.state.sidebar}
                     outTime={700}>
-                    <Sidebar2 className={style.sidebar}/>
+                    <Sidebar className={style.sidebar}/>
                 </Modal>
             </div>
         );

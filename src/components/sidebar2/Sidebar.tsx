@@ -8,9 +8,9 @@ import {Checkbox} from '../checkbox';
 import {Modal} from '../modal';
 import {TextField} from '../text-field';
 import React from 'react';
-import style from './Sidebar2.pcss';
+import style from './Sidebar.pcss';
 
-const Sidebar2:FunctionComponent<Props> = (props)=>
+const Sidebar:FunctionComponent<Props> = (props)=>
 {
     const name = useTextFieldControl(''),
           tel = useTextFieldControl('', (value)=> !isNaN(+value)),
@@ -39,23 +39,24 @@ const Sidebar2:FunctionComponent<Props> = (props)=>
     {
         let validate = true;
         if (!isFill(name.value)) {
+            validate = false;
             name.setError('Prosze podaj imie');
         } else {
-            validate = false;
             name.setError(null);
         }
         if (!isFill(tel.value)) {
+            validate = false;
             tel.setError('Prosze podaj telefon');
         } else if (tel.value.length != 9) {
+            validate = false;
             tel.setError('Nie poprawny numer');
         } else {
-            validate = false;
             tel.setError(null);
         }
         if (!statement.checked) {
+            validate = false;
             statement.setError('Musisz zakceptować regulamin');
         } else {
-            validate = false;
             statement.setError(null);
         }
         
@@ -120,4 +121,4 @@ interface Props {
     onClose?:()=> void;
 }
 
-export default Sidebar2;
+export default Sidebar;
