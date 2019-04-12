@@ -63,13 +63,13 @@ const Sidebar:FunctionComponent<Props> = (props)=>
         return validate;
     }
     
-    const sidebar2Class = classNames(
-        style.sidebar2,
+    const sidebarClass = classNames(
+        style.sidebar,
         props.className,
         props.active && style.active
     );
     return (
-        <div className={sidebar2Class}>
+        <div className={sidebarClass}>
             <a className={style.close} onClick={props.onClose}>
                 <img src={require('res/icons/close.svg')}/>
             </a>

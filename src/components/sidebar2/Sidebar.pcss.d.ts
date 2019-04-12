@@ -1,4 +1,4 @@
-export const sidebar2:string;
+export const sidebar:string;
 export const active:string;
 export const close:string;
 export const headline:string;
