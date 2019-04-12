@@ -4,7 +4,7 @@ import {MapCore} from './map-core';
 import React from 'react';
 import style from './Map.pcss';
 
-export const Map:FunctionComponent<Props> = (props)=>
+const Map:FunctionComponent<Props> = (props)=>
 {
     const mapClass = classNames(
         style.map,
@@ -39,3 +39,5 @@ interface Props {
         lng:number;
     };
 }
+
+export default Map;
