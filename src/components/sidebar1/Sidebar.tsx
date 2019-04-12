@@ -3,7 +3,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Sidebar.pcss';
 
-const Sidebar:FunctionComponent<Props> = (props)=>
+export const Sidebar:FunctionComponent<Props> = (props)=>
 {
     const sidebarClass = classNames(
         style.sidebar,
@@ -54,5 +54,3 @@ interface Props {
     active?:boolean;
     onClose?:()=> void;
 }
-
-export default Sidebar;
