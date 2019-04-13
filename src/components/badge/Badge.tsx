@@ -1,5 +1,4 @@
-import {AnchorHTMLAttributes,
-        FunctionComponent} from 'react';
+import {FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Badge.pcss';
@@ -22,8 +21,9 @@ const Badge:FunctionComponent<Props> = (props)=>
     );
 };
 
-interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface Props {
     className?:string;
+    href?:string;
     disabled?:boolean;
 }
 
