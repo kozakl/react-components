@@ -6,7 +6,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Carousel.pcss';
 
-export const Carousel:FunctionComponent<Props> = (props)=>
+const Carousel:FunctionComponent<Props> = (props)=>
 {
     const list = useRef<HTMLDivElement>(),
           [dot, setDot] = useState(0);
@@ -84,3 +84,5 @@ export const Carousel:FunctionComponent<Props> = (props)=>
 interface Props {
     className?:string;
 }
+
+export default Carousel;
