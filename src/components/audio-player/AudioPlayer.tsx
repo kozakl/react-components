@@ -4,7 +4,7 @@ import {clamp} from '@kozakl/utils/math';
 import React from 'react';
 import style from './AudioPlayer.pcss';
 
-export class AudioPlayer extends Component<Props, State>
+class AudioPlayer extends Component<Props, State>
 {
     private bar:HTMLSpanElement;
     private audio:HTMLAudioElement;
@@ -130,3 +130,5 @@ interface State {
     paused:boolean;
     percent:number;
 }
+
+export default AudioPlayer;
