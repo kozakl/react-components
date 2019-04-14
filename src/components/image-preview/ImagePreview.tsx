@@ -5,7 +5,7 @@ import {Image} from '../../types';
 import React from 'react';
 import style from './ImagePreview.pcss';
 
-export const ImagePreview:FunctionComponent<Props> = (props)=>
+const ImagePreview:FunctionComponent<Props> = (props)=>
 {
     const [current, setCurrent] = useState(props.current);
     
@@ -58,3 +58,5 @@ interface Props {
     current:number;
     onClose?:()=> void;
 }
+
+export default ImagePreview;
