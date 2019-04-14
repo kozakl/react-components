@@ -4,7 +4,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Checkbox.pcss';
 
-export const Checkbox:FunctionComponent<Props> = (props)=>
+const Checkbox:FunctionComponent<Props> = (props)=>
 {
     const checkboxClass = classNames(
         style.checkbox,
@@ -41,3 +41,5 @@ interface Props {
     error?:string;
     onChange?:ChangeEventHandler<HTMLInputElement>;
 }
+
+export default Checkbox;
