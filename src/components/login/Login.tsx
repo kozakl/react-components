@@ -7,7 +7,7 @@ import {isEmail, isFill} from '@kozakl/utils/validate';
 import React from 'react';
 import style from './Login.pcss';
 
-export const Login:FunctionComponent<Props> = (props)=>
+const Login:FunctionComponent<Props> = (props)=>
 {
     const email = useTextFieldControl(''),
           password = useTextFieldControl('');
@@ -104,3 +104,5 @@ interface Props {
     className?:string;
     onLogin:()=> void;
 }
+
+export default Login;
