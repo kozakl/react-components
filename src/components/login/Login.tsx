@@ -1,7 +1,7 @@
 import {FormEvent, FunctionComponent} from 'react';
 import {Button, FormFeedback,
         Input, InputGroup} from 'reactstrap';
-import {useTextFieldControl} from '@kozakl/hooks';
+import {useTextField} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {isEmail, isFill} from '@kozakl/utils/validate';
 import React from 'react';
@@ -9,8 +9,8 @@ import style from './Login.pcss';
 
 const Login:FunctionComponent<Props> = (props)=>
 {
-    const email = useTextFieldControl(''),
-          password = useTextFieldControl('');
+    const email = useTextField(''),
+          password = useTextField('');
     
     function onSubmit(event:FormEvent<HTMLFormElement>)
     {
