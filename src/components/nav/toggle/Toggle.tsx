@@ -3,7 +3,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Toggle.pcss';
 
-export const Toggle:FunctionComponent<Props> = (props)=>
+const Toggle:FunctionComponent<Props> = (props)=>
 {
     const toggleClass = classNames(
         style.toggle,
@@ -27,3 +27,5 @@ interface Props {
     cross:boolean;
     onChange?:()=> void;
 }
+
+export default Toggle;
