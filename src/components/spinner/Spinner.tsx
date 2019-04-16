@@ -3,7 +3,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Spinner.pcss';
 
-export const Spinner:FunctionComponent<Props> = (props)=>
+const Spinner:FunctionComponent<Props> = (props)=>
 {
     const spinnerClass = classNames(
         style.spinner,
@@ -44,3 +44,5 @@ interface Props {
     color?:string;
     size?:string;
 }
+
+export default Spinner;
