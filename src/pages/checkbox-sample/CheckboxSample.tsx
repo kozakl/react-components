@@ -1,13 +1,13 @@
-import {useCheckboxControl} from '@kozakl/hooks';
+import {useCheckbox} from '@kozakl/hooks';
 import {Checkbox} from '../../components/checkbox';
 import React from 'react';
 import style from './CheckboxSample.pcss';
 
 export default function CheckboxSample()
 {
-    const checkbox1 = useCheckboxControl(true),
-          checkbox2 = useCheckboxControl(false),
-          checkbox3 = useCheckboxControl(false);
+    const checkbox1 = useCheckbox(true),
+          checkbox2 = useCheckbox(false),
+          checkbox3 = useCheckbox(false);
     return (
         <div className={style.checkboxSample}>
             <Checkbox
