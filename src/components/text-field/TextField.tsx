@@ -73,3 +73,5 @@ interface Props {
     error?:string;
     onChange?:ChangeEventHandler<HTMLInputElement>;
 }
+
+export default TextField;
