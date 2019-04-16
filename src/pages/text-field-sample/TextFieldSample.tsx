@@ -1,15 +1,15 @@
-import {useTextFieldControl} from '@kozakl/hooks';
+import {useTextField} from '@kozakl/hooks';
 import {TextField} from '../../components/text-field';
 import React from 'react';
 import style from './TextFieldSample.pcss';
 
 export default function TextFieldSample()
 {
-    const textField1 = useTextFieldControl(''),
-          textField2 = useTextFieldControl(''),
-          textField3 = useTextFieldControl(''),
-          textField4 = useTextFieldControl(''),
-          textField5 = useTextFieldControl('');
+    const textField1 = useTextField(''),
+          textField2 = useTextField(''),
+          textField3 = useTextField(''),
+          textField4 = useTextField(''),
+          textField5 = useTextField('');
     return (
         <div className={style.textFieldSample}>
             <TextField
