@@ -1,11 +1,10 @@
-import {
-    ChangeEvent, FormEvent, FunctionComponent, useState
-} from 'react';
+import {ChangeEvent, FormEvent,
+        FunctionComponent, useState} from 'react';
 import {Button, CustomInput, Input} from 'reactstrap';
+import {useTextField} from '@kozakl/hooks';
 import {isFill} from '@kozakl/utils/validate';
 import React from 'react';
 import style from './Window.pcss';
-import {useTextField} from "@kozakl/hooks";
 
 const Window:FunctionComponent<Props> = (props)=>
 {
