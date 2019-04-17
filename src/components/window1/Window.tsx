@@ -1,6 +1,7 @@
 import {ChangeEvent, FormEvent,
         FunctionComponent, useState} from 'react';
-import {Button, CustomInput, Input} from 'reactstrap';
+import {Button, CustomInput,
+        FormFeedback, Input, InputGroup} from 'reactstrap';
 import {useTextField} from '@kozakl/hooks';
 import {isFill} from '@kozakl/utils/validate';
 import React from 'react';
@@ -8,16 +9,31 @@ import style from './Window.pcss';
 
 const Window:FunctionComponent<Props> = (props)=>
 {
-    const category1 = useSelect(1),
-          category2 = useSelect(1),
+    const category1 = useSelect(0),
+          category2 = useSelect(0),
           desc = useTextField('');
     
     function onSubmit(event:FormEvent<HTMLFormElement>)
     {
         event.preventDefault();
+        if (validateForm()) {
+            props.onAdd();
+        }
     }
     
-    const enabled = isFill(desc.value);
+    function validateForm()
+    {
+        let validate = true;
+        if (!isFill(desc.value)) {
+            validate = false;
+            desc.setError('Fill description');
+        } else {
+            desc.setError(null);
+        }
+        
+        return validate;
+    }
+    
     return (
         <div className={style.window1}>
             <h5 className={style.title}>Window1</h5>
@@ -43,7 +59,6 @@ const Window:FunctionComponent<Props> = (props)=>
                     onChange={category2.onChange}
                     id="category2"
                     type="select">
-                    {!category2 && <option>----</option>}
                     {props.categories2.map((category, index)=>
                         <option value={index} key={category}>
                             {category}
@@ -51,20 +66,23 @@ const Window:FunctionComponent<Props> = (props)=>
                 </CustomInput>
                 
                 <label className={style.label} htmlFor="desc">Description</label>
-                <Input
-                    className={style.desc}
-                    value={desc.value}
-                    onChange={desc.onChange}
-                    id="desc"
-                    type="textarea"
-                    bsSize="sm"/>
+                <InputGroup className={style.desc}>
+                    <Input
+                        value={desc.value}
+                        invalid={!!desc.error}
+                        onChange={desc.onChange}
+                        type="textarea"
+                        bsSize="sm"/>
+                    <FormFeedback>
+                        {desc.error}
+                    </FormFeedback>
+                </InputGroup>
                 
                 <div className={style.actions}>
                     <Button onClick={props.onCancel} size="sm" outline>
                         Cancel
                     </Button>
                     <Button
-                        disabled={!enabled}
                         type="submit"
                         color="success"
                         size="sm">
