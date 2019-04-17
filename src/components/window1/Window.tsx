@@ -1,7 +1,7 @@
 import {ChangeEvent, FormEvent,
         FunctionComponent, useState} from 'react';
-import {Button, CustomInput,
-        FormFeedback, Input, InputGroup} from 'reactstrap';
+import {Button, FormFeedback,
+        Input, InputGroup} from 'reactstrap';
 import {useTextField} from '@kozakl/hooks';
 import {isFill} from '@kozakl/utils/validate';
 import React from 'react';
@@ -40,7 +40,7 @@ const Window:FunctionComponent<Props> = (props)=>
             
             <form className={style.form} onSubmit={onSubmit}>
                 <label className={style.label} htmlFor="category1">Category1</label>
-                <CustomInput
+                <Input
                     className={style.category1}
                     value={category1.value}
                     onChange={category1.onChange}
@@ -50,10 +50,10 @@ const Window:FunctionComponent<Props> = (props)=>
                         <option value={index} key={category}>
                             {category}
                         </option>)}
-                </CustomInput>
+                </Input>
                 
                 <label className={style.label} htmlFor="category2">Category2</label>
-                <CustomInput
+                <Input
                     className={style.category2}
                     value={category2.value}
                     onChange={category2.onChange}
@@ -63,7 +63,7 @@ const Window:FunctionComponent<Props> = (props)=>
                         <option value={index} key={category}>
                             {category}
                         </option>)}
-                </CustomInput>
+                </Input>
                 
                 <label className={style.label} htmlFor="desc">Description</label>
                 <InputGroup className={style.desc}>
