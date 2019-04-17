@@ -1,7 +1,7 @@
 import {PureComponent} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
-import {Window1} from '../../components/window1';
+import {Window} from '../../components/window1';
 import React from 'react';
 import style from './Window1Sample.pcss';
 
@@ -36,7 +36,7 @@ export default class Window1Sample extends PureComponent<{}, State>
                 </Button>
                 
                 <Modal visible={this.state.window} interactive>
-                    <Window1
+                    <Window
                         onAdd={null}
                         onCancel={this.onCancelWindow}/>
                 </Modal>

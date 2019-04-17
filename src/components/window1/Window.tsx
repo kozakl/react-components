@@ -4,10 +4,10 @@ import {
 import {Button, CustomInput, Input} from 'reactstrap';
 import {isFill} from '@kozakl/utils/validate';
 import React from 'react';
-import style from './Window1.pcss';
+import style from './Window.pcss';
 import {useTextField} from "@kozakl/hooks";
 
-const Window1:FunctionComponent<Props> = (props)=>
+const Window:FunctionComponent<Props> = (props)=>
 {
     const category1 = useSelect(1),
           category2 = useSelect(1),
@@ -77,7 +77,7 @@ const Window1:FunctionComponent<Props> = (props)=>
     );
 };
 
-Window1.defaultProps = {
+Window.defaultProps = {
     categories1: [
         'Category1-1', 'Category1-2', 'Category1-3', 'Category1-4'
     ],
@@ -93,7 +93,7 @@ interface Props {
     onCancel:()=> void;
 }
 
-export default Window1;
+export default Window;
 
 function useSelect(initialValue:number)
 {
