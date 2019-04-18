@@ -6,13 +6,14 @@ import {ResponsiveImage} from '../responsive-image/index';
 import React from 'react';
 import style from './CrossfadeBg.pcss';
 
+let swapDelay:number;
+
 export const CrossfadeBg:FunctionComponent<Props> = (props)=>
 {
     const [current, setCurrent] = useState(0),
           [next, setNext] = useState(null),
           [loadedNext, setLoadedNext] = useState(null);
     const visibility = useVisibility();
-    let swapDelay:number;
     
     useTimeout(()=> {
         setNext((current + 1) % props.images.length);
@@ -27,6 +28,14 @@ export const CrossfadeBg:FunctionComponent<Props> = (props)=>
                 setNext(null), 1000);
         }, 1500);
     }
+    
+    useEffect(()=> {
+        
+        return ()=> {
+            console.log(swapDelay);
+            clearTimeout(swapDelay);
+        }
+    }, []);
     
     const nextClass = classNames(
         style.next,
