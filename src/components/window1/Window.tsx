@@ -1,8 +1,7 @@
-import {ChangeEvent, FormEvent,
-        FunctionComponent, useState} from 'react';
+import {FormEvent, FunctionComponent} from 'react';
 import {Button, FormFeedback,
         Input, InputGroup} from 'reactstrap';
-import {useTextField} from '@kozakl/hooks';
+import {useSelect, useTextField} from '@kozakl/hooks';
 import {isFill} from '@kozakl/utils/validate';
 import React from 'react';
 import style from './Window.pcss';
@@ -111,16 +110,3 @@ interface Props {
 }
 
 export default Window;
-
-function useSelect(initialValue:number)
-{
-    const [value, setValue] = useState(initialValue),
-          [error, setError] = useState();
-    return {
-        value,
-        error,
-        onChange: (event:ChangeEvent<HTMLInputElement>)=>
-            setValue(+event.target.value),
-        setError: (error:string)=> setError(error)
-    }
-}
