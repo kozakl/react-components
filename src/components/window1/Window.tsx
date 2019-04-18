@@ -34,7 +34,7 @@ const Window:FunctionComponent<Props> = (props)=>
     }
     
     return (
-        <div className={style.window1}>
+        <div className={style.window}>
             <h5 className={style.title}>Window1</h5>
             
             <form className={style.form} onSubmit={onSubmit}>

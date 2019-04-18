@@ -1,4 +1,4 @@
-export const window1:string;
+export const window:string;
 export const title:string;
 export const form:string;
 export const label:string;
