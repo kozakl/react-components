@@ -17,15 +17,17 @@ export const CrossfadeBg:FunctionComponent<Props> = (props)=>
     
     useTimeout(()=> {
         setNext((current + 1) % props.images.length);
-    }, visibility && 1000, current);
+    }, visibility && 5000, current);
     
     function onLoadNext()
     {
         setLoadedNext(true);
         swapDelay = window.setTimeout(()=> {
             setCurrent(next);
-            swapDelay = window.setTimeout(()=>
-                setNext(null), 1000);
+            swapDelay = window.setTimeout(()=> {
+                setNext(null);
+                setLoadedNext(false);
+            }, 1000);
         }, 1500);
     }
     
