@@ -1,6 +1,6 @@
 import {FunctionComponent,
-        useEffect, useRef, useState} from 'react';
-import {useVisibility} from '@kozakl/hooks';
+        useEffect, useState} from 'react';
+import {useTimeout, useVisibility} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {ResponsiveImage} from '../responsive-image/index';
 import React from 'react';
@@ -62,23 +62,4 @@ export const CrossfadeBg:FunctionComponent<Props> = (props)=>
 interface Props {
     className?:string;
     images:string[];
-}
-
-function useTimeout(callback:Function, timeout?:number,
-                                       ...deps:any) {
-    const lastCallback = useRef<Function>();
-    useEffect(()=> {
-        lastCallback.current = callback;
-    }, [callback]);
-    
-    useEffect(()=> {
-        function onInterval() {
-            lastCallback.current();
-        }
-        if (timeout) {
-            let interval = setTimeout(onInterval, timeout);
-            return ()=>
-                clearTimeout(interval);
-        }
-    }, [timeout, ...deps]);
 }
