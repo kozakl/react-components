@@ -6,38 +6,30 @@ import {ResponsiveImage} from '../responsive-image/index';
 import React from 'react';
 import style from './CrossfadeBg.pcss';
 
-let swapDelay:number;
-
 export const CrossfadeBg:FunctionComponent<Props> = (props)=>
 {
+    const visibility = useVisibility();
     const [current, setCurrent] = useState(0),
           [next, setNext] = useState(null),
           [loadedNext, setLoadedNext] = useState(null);
-    const visibility = useVisibility();
     
     useTimeout(()=> {
         setNext((current + 1) % props.images.length);
     }, visibility && 5000, current);
     
-    function onLoadNext()
-    {
-        setLoadedNext(true);
-        swapDelay = window.setTimeout(()=> {
-            setCurrent(next);
-            swapDelay = window.setTimeout(()=> {
-                setNext(null);
-                setLoadedNext(false);
-            }, 1000);
-        }, 1500);
-    }
-    
     useEffect(()=> {
-        
-        return ()=> {
-            console.log(swapDelay);
-            clearTimeout(swapDelay);
+        if (loadedNext) {
+            let delay = window.setTimeout(()=> {
+                setCurrent(next);
+                delay = window.setTimeout(()=> {
+                    setNext(null);
+                    setLoadedNext(false);
+                }, 1000);
+            }, 1500);
+            return ()=>
+                clearTimeout(delay);
         }
-    }, []);
+    }, [loadedNext]);
     
     const nextClass = classNames(
         style.next,
@@ -62,7 +54,7 @@ export const CrossfadeBg:FunctionComponent<Props> = (props)=>
                              ${props.images[next]}/1200w.jpg 960w,
                              ${props.images[next]}/1366w.jpg 1366w,
                              ${props.images[next]}/1920w.jpg 1920w`}
-                    onLoadThumb={onLoadNext}/>}
+                    onLoadThumb={()=> setLoadedNext(true)}/>}
         </div>
     );
 };
