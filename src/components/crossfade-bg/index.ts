@@ -1,1 +1,1 @@
-export * from './CrossfadeBg';
+export {default as CrossfadeBg} from './CrossfadeBg';
