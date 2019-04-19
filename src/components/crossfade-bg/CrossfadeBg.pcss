@@ -7,14 +7,17 @@
 }
 
 .next {
-  @extend .current;
   position: absolute;
   opacity: 0;
+  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
   transition: opacity 1s;
   
+  & img {
+    object-fit: cover;
+  }
   &.show {
     opacity: 1;
   }
