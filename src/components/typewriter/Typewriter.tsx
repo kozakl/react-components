@@ -1,8 +1,8 @@
 import {FunctionComponent, useState} from 'react';
+import {useTimeout} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Typewriter.pcss';
-import {useTimeout} from "@kozakl/hooks";
 
 export const Typewriter:FunctionComponent<Props> = (props)=>
 {
