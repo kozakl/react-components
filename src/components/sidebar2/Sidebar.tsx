@@ -1,7 +1,6 @@
 import {FormEvent, FunctionComponent,
         MouseEvent, useState} from 'react';
-import {useCheckboxControl,
-        useTextFieldControl} from '@kozakl/hooks';
+import {useCheckbox, useTextField} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {isFill} from '@kozakl/utils/validate';
 import {Checkbox} from '../checkbox';
@@ -12,9 +11,9 @@ import style from './Sidebar.pcss';
 
 const Sidebar:FunctionComponent<Props> = (props)=>
 {
-    const name = useTextFieldControl(''),
-          tel = useTextFieldControl('', (value)=> !isNaN(+value)),
-          statement = useCheckboxControl(false);
+    const name = useTextField(''),
+          tel = useTextField('', (value)=> !isNaN(+value)),
+          statement = useCheckbox(false);
     const [terms, setTerms] = useState(false);
     
     function onSubmit(event:FormEvent<HTMLFormElement>)
