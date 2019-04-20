@@ -16,6 +16,7 @@ import {Sidebar1Sample} from '../../pages/sidebar1-sample';
 import {Sidebar2Sample} from '../../pages/sidebar2-sample';
 import {SpinnerSample} from '../../pages/spinner-sample';
 import {TextFieldSample} from '../../pages/text-field-sample';
+import {TypewriterSample} from '../../pages/typewriter-sample';
 import {Window1Sample} from '../../pages/window1-sample';
 import React from 'react';
 
@@ -45,6 +46,7 @@ export default function Content()
                     <option value="#/sidebar2">Sidebar2</option>
                     <option value="#/spinner">Spinner</option>
                     <option value="#/text-field">Text Field</option>
+                    <option value="#/typewriter">Typewriter</option>
                     <option value="#/window1">Window1</option>
                 </select>
                 <Switch>
@@ -65,6 +67,7 @@ export default function Content()
                     <Route path="/sidebar2" component={Sidebar2Sample}/>
                     <Route path="/spinner" component={SpinnerSample}/>
                     <Route path="/text-field" component={TextFieldSample}/>
+                    <Route path="/typewriter" component={TypewriterSample}/>
                     <Route path="/window1" component={Window1Sample}/>
                 </Switch>
             </>
