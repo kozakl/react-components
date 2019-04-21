@@ -45,22 +45,16 @@ export const AudioPlayer:FunctionComponent<Props> = (props)=>
         setPercent(0);
     }
     
-    function onUp(event:MouseEvent)
-    {
+    function onUp(event:MouseEvent) {
         if (drag.current) {
-            const rect = bar.current.getBoundingClientRect(),
-                  percent = clamp((event.clientX - rect.left) / rect.width, 0, 1);
-            audio.current.currentTime = audio.current.duration * percent;
+            drag.current = false;
+            audio.current.currentTime = audio.current.duration * (barPercent(event) / 100);
         }
-        drag.current = false;
     }
     
-    function onMove(event:MouseEvent)
-    {
+    function onMove(event:MouseEvent) {
         if (drag.current) {
-            const rect = bar.current.getBoundingClientRect(),
-                  percent = clamp((event.clientX - rect.left) / rect.width, 0, 1) * 100;
-            setPercent(percent)
+            setPercent(barPercent(event))
         }
     }
     
@@ -74,13 +68,14 @@ export const AudioPlayer:FunctionComponent<Props> = (props)=>
         setPaused(audio.current.paused);
     }
     
-    function onDownBar(event:React.MouseEvent<HTMLSpanElement>)
-    {
+    function onDownBar(event:React.MouseEvent<HTMLSpanElement>) {
         drag.current = true;
-        
-        const rect = bar.current.getBoundingClientRect(),
-              percent = clamp((event.clientX - rect.left) / rect.width, 0, 1) * 100;
-        setPercent(percent)
+        setPercent(barPercent(event))
+    }
+    
+    function barPercent(event:MouseEvent | React.MouseEvent) {
+        const rect = bar.current.getBoundingClientRect();
+        return clamp((event.clientX - rect.left) / rect.width, 0, 1) * 100;
     }
     
     const audioPlayerClass = classNames(
