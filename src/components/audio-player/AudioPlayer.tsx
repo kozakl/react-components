@@ -5,7 +5,7 @@ import {clamp} from '@kozakl/utils/math';
 import React from 'react';
 import style from './AudioPlayer.pcss';
 
-export const AudioPlayer:FunctionComponent<Props> = (props)=>
+const AudioPlayer:FunctionComponent<Props> = (props)=>
 {
     const audio = useRef<HTMLAudioElement>(),
           bar = useRef<HTMLSpanElement>(),
