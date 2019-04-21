@@ -1,134 +1,112 @@
-import {Component} from 'react';
+import {FunctionComponent, useEffect, useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
 import {clamp} from '@kozakl/utils/math';
 import React from 'react';
 import style from './AudioPlayer.pcss';
 
-class AudioPlayer extends Component<Props, State>
+export const AudioPlayer:FunctionComponent<Props> = (props)=>
 {
-    private bar:HTMLSpanElement;
-    private audio:HTMLAudioElement;
-    private drag = false;
+    const audio = useRef<HTMLAudioElement>(),
+          bar = useRef<HTMLSpanElement>(),
+          drag = useRef<boolean>();
+    const [paused, setPaused] = useState(true),
+          [percent, setPercent] = useState(0);
     
-    constructor(props:Props)
-    {
-        super(props);
+    useEffect(()=> {
+        audio.current = document.createElement('audio');
+        audio.current.src = 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3';
+        audio.current.addEventListener('timeupdate', onUpdateAudio);
+        audio.current.addEventListener('ended', onEndAudio);
+        audio.current.load();
         
-        this.state = {
-            paused: true,
-            percent: 0
-        };
-    }
-    
-    componentDidMount()
-    {
-        const audio = this.audio = document.createElement('audio');
-        audio.addEventListener('timeupdate', this.onUpdateAudio);
-        audio.addEventListener('ended', this.onEndAudio);
-        audio.src = 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3';
-        audio.load();
+        document.addEventListener('mouseup', onUp);
+        document.addEventListener('mousemove', onMove);
         
-        document.addEventListener('mouseup', this.onUp);
-        document.addEventListener('mousemove', this.onMove);
-    }
-    
-    onUpdateAudio = ()=>
-    {
-        if (!this.drag) {
-            this.setState({percent: this.audio.currentTime * 100 / this.audio.duration});
+        return ()=> {
+            audio.current.removeEventListener('timeupdate', onUpdateAudio);
+            audio.current.removeEventListener('ended', onEndAudio);
+            audio.current.pause();
+            audio.current = null;
+            
+            document.removeEventListener('mouseup', onUp);
+            document.removeEventListener('mousemove', onMove);
         }
-    };
+    }, []);
     
-    onEndAudio = ()=> {
-        this.setState({paused: true, percent: 0});
-    };
+    function onUpdateAudio() {
+        if (!drag.current) {
+            setPercent(audio.current.currentTime * 100 / audio.current.duration);
+        }
+    }
     
-    onUp = (event:MouseEvent)=>
+    function onEndAudio() {
+        setPaused(true);
+        setPercent(0);
+    }
+    
+    function onUp(event:MouseEvent)
     {
-        if (this.drag) {
-            const rect = this.bar.getBoundingClientRect(),
+        if (drag.current) {
+            const rect = bar.current.getBoundingClientRect(),
                   percent = clamp((event.clientX - rect.left) / rect.width, 0, 1);
-            this.audio.currentTime = this.audio.duration * percent;
+            audio.current.currentTime = audio.current.duration * percent;
         }
-        this.drag = false;
-    };
+        drag.current = false;
+    }
     
-    onMove = (event:MouseEvent)=>
+    function onMove(event:MouseEvent)
     {
-        if (this.drag) {
-            const rect = this.bar.getBoundingClientRect(),
+        if (drag.current) {
+            const rect = bar.current.getBoundingClientRect(),
                   percent = clamp((event.clientX - rect.left) / rect.width, 0, 1) * 100;
-            this.setState({percent});
+            setPercent(percent)
         }
-    };
+    }
     
-    onClickControl = ()=>
+    function onClickControl()
     {
-        if (this.audio.paused) {
-            this.audio.play();
+        if (audio.current.paused) {
+            audio.current.play();
         } else {
-            this.audio.pause();
+            audio.current.pause();
         }
-        this.setState({paused: this.audio.paused});
-    };
-    
-    onDownBar = (event:React.MouseEvent<HTMLSpanElement>)=>
-    {
-        this.drag = true;
-        
-        const rect = this.bar.getBoundingClientRect(),
-              percent = clamp((event.nativeEvent.clientX - rect.left) / rect.width, 0, 1) * 100;
-        this.setState({percent});
-    };
-    
-    setBarRef = (bar:HTMLDivElement)=> {
-        this.bar = bar;
-    };
-    
-    componentWillUnmount()
-    {
-        document.removeEventListener('mouseup', this.onUp);
-        document.removeEventListener('mousemove', this.onMove);
-        
-        this.audio.removeEventListener('timeupdate', this.onUpdateAudio);
-        this.audio.removeEventListener('ended', this.onEndAudio);
-        this.audio.pause();
-        this.audio = null;
+        setPaused(audio.current.paused);
     }
     
-    render()
+    function onDownBar(event:React.MouseEvent<HTMLSpanElement>)
     {
-        const audioPlayerClass = classNames(
-            style.audioPlayer,
-            this.props.className
-        );
-        return (
-            <div className={audioPlayerClass}>
-                <span
-                    className={style.control}
-                    onClick={this.onClickControl}>
-                    {this.state.paused ? '\ue901' : '\ue900'}
-                </span>
-                <span
-                    className={style.bar}
-                    ref={this.setBarRef}
-                    onMouseDown={this.onDownBar}>
-                    <span
-                        className={style.progress}
-                        style={{width: this.state.percent + '%'}}/>
-                </span>
-            </div>
-        );
+        drag.current = true;
+        
+        const rect = bar.current.getBoundingClientRect(),
+              percent = clamp((event.clientX - rect.left) / rect.width, 0, 1) * 100;
+        setPercent(percent)
     }
-}
+    
+    const audioPlayerClass = classNames(
+        style.audioPlayer,
+        props.className
+    );
+    return (
+        <div className={audioPlayerClass}>
+            <span
+                className={style.control}
+                onClick={onClickControl}>
+                {paused ? '\ue901' : '\ue900'}
+            </span>
+            <span
+                className={style.bar}
+                ref={bar}
+                onMouseDown={onDownBar}>
+                <span
+                    className={style.progress}
+                    style={{width: percent + '%'}}/>
+            </span>
+        </div>
+    );
+};
 
 interface Props {
     className?:string;
-}
-
-interface State {
-    paused:boolean;
-    percent:number;
 }
 
 export default AudioPlayer;
