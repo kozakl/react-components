@@ -24,6 +24,10 @@ export const Typewriter:FunctionComponent<Props> = (props)=>
     );
 };
 
+Typewriter.defaultProps = {
+    delay: 0.1
+};
+
 interface Props {
     className?:string;
     delay?:number;
