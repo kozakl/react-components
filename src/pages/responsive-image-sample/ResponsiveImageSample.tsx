@@ -1,9 +1,9 @@
-import {PureComponent} from 'react';
+import {Component} from 'react';
 import {ResponsiveImage} from '../../components/responsive-image';
 import React from 'react';
 import style from './ResponsiveImageSample.pcss';
 
-export default class ResponsiveImageSample extends PureComponent<{}, State>
+export default class ResponsiveImageSample extends Component<{}, State>
 {
     private images:Images = {
         'assets/room1/': {width: 4104, height: 2310},
@@ -25,7 +25,11 @@ export default class ResponsiveImageSample extends PureComponent<{}, State>
     };
     
     onClick = ()=> {
-        this.setState({path: 'assets/room2/'});
+        if (this.state.path === 'assets/room1/')
+            this.setState({path: 'assets/room2/'});
+        else {
+            this.setState({path: 'assets/room1/'});
+        }
     };
     
     render()
@@ -37,6 +41,7 @@ export default class ResponsiveImageSample extends PureComponent<{}, State>
                 {this.state.start && 
                     <div>
                         <ResponsiveImage
+                            
                             className={style.image}
                             ratio={this.images[this.state.path].height /
                                    this.images[this.state.path].width}

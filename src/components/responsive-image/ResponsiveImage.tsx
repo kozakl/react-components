@@ -48,7 +48,7 @@ ResponsiveImage.defaultProps = {
 interface Props {
     className?:string;
     id?:string;
-    ratio:number;
+    ratio?:number;
     thumb:string;
     srcSet:string;
     sizes?:string;
