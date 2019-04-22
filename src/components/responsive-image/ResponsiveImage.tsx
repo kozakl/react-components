@@ -19,9 +19,9 @@ const ResponsiveImage:FunctionComponent<Props> = React.memo((props)=>
         if (!init) {
             setInit(true);
         } else if (!loadedThumb) {
-            if (props.onLoadThumb)
+            if (props.onLoadThumb) {
                 props.onLoadThumb();
-            
+            }
             setLoadedThumb(true);
         }
     }
