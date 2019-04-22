@@ -1,5 +1,4 @@
-import {FunctionComponent,
-        useEffect, useState} from 'react';
+import {FunctionComponent, useState} from 'react';
 import React from 'react';
 import style from './ResponsiveImage.pcss';
 
@@ -8,11 +7,13 @@ const empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAw
 const ResponsiveImage:FunctionComponent<Props> = React.memo((props)=>
 {
     const [init, setInit] = useState(false),
+          [prevThumb, setPrevThumb] = useState(null),
           [loadedThumb, setLoadedThumb] = useState(false);
     
-    useEffect(()=>
-        setLoadedThumb(false),
-        [props.thumb]);
+    if (props.thumb !== prevThumb) {
+        setPrevThumb(props.thumb);
+        setLoadedThumb(false);
+    }
     
     function onLoadThumb() {
         if (!init) {
