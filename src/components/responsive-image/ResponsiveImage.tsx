@@ -1,64 +1,48 @@
-import {PureComponent} from 'react';
+import {FunctionComponent,
+        useEffect, useState} from 'react';
 import React from 'react';
 import style from './ResponsiveImage.pcss';
 
-export default class ResponsiveImage extends PureComponent<Props, State>
+const empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
+
+const ResponsiveImage:FunctionComponent<Props> = React.memo((props)=>
 {
-    public static defaultProps:Partial<Props> = {
-        ratio: 1
-    };
-    private empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
+    const [init, setInit] = useState(false),
+          [loadedThumb, setLoadedThumb] = useState(false);
     
-    constructor(props:Props)
-    {
-        super(props);
-        
-        this.state = {
-            thumb: props.thumb,
-            init: false,
-            loadedThumb: false
-        };
-    }
+    useEffect(()=>
+        setLoadedThumb(false),
+        [props.thumb]);
     
-    onLoadThumb = ()=>
-    {
-        if (!this.state.init) {
-            this.setState({init: true});
-        } else if (!this.state.loadedThumb) {
-            if (this.props.onLoadThumb)
-                this.props.onLoadThumb();
+    function onLoadThumb() {
+        if (!init) {
+            setInit(true);
+        } else if (!loadedThumb) {
+            if (props.onLoadThumb)
+                props.onLoadThumb();
             
-            this.setState({loadedThumb: true});
+            setLoadedThumb(true);
         }
-    };
-    
-    static getDerivedStateFromProps(props:Props, state:State)
-    {
-        if (props.thumb === state.thumb)
-            return null;
-        return {
-            thumb: props.thumb,
-            loadedThumb: false
-        };
     }
     
-    render()
-    {
-        return (
-            <div className={this.props.className} id={this.props.id}>
-                <div className={style.wrapper}
-                     style={{'paddingTop': `${this.props.ratio * 100}%`}}>
-                    <img
-                        className={style.image}
-                        src={this.state.init ? this.state.thumb : this.empty}
-                        srcSet={this.state.loadedThumb ? this.props.srcSet : ''}
-                        sizes={this.state.loadedThumb ? this.props.sizes : ''}
-                        onLoad={this.onLoadThumb}/>
-                </div>
+    return (
+        <div className={props.className} id={props.id}>
+            <div className={style.wrapper}
+                 style={{'paddingTop': `${props.ratio * 100}%`}}>
+                <img
+                    className={style.image}
+                    src={init ? props.thumb : empty}
+                    srcSet={loadedThumb ? props.srcSet : ''}
+                    sizes={loadedThumb ? props.sizes : ''}
+                    onLoad={onLoadThumb}/>
             </div>
-        );
-    }
-}
+        </div>
+    );
+});
+
+ResponsiveImage.defaultProps = {
+    ratio: 1
+};
 
 interface Props {
     className?:string;
@@ -70,8 +54,4 @@ interface Props {
     onLoadThumb?:()=> void;
 }
 
-interface State {
-    thumb:string;
-    init:boolean;
-    loadedThumb:boolean;
-}
+export default ResponsiveImage;
