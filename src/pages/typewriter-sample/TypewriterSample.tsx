@@ -5,7 +5,7 @@ import style from './TypewriterSample.pcss';
 export default function TypewriterSample()
 {
     return (
-        <div className={style.textFieldSample}>
+        <div className={style.typewriterSample}>
             <Typewriter delay={1000}>
                 <span>H</span>
                 <span>E</span>

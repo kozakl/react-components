@@ -1,2 +1,1 @@
-export const textFieldSample:string;
-export const textField:string;
+export const typewriterSample:string;
