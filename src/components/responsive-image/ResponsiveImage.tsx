@@ -2,10 +2,9 @@ import {FunctionComponent, useState} from 'react';
 import React from 'react';
 import style from './ResponsiveImage.pcss';
 
-const empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
-
 const ResponsiveImage:FunctionComponent<Props> = React.memo((props)=>
 {
+    const placeholder = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
     const [init, setInit] = useState(false),
           [prevThumb, setPrevThumb] = useState(null),
           [loadedThumb, setLoadedThumb] = useState(false);
@@ -32,7 +31,7 @@ const ResponsiveImage:FunctionComponent<Props> = React.memo((props)=>
                  style={{'paddingTop': `${props.ratio * 100}%`}}>
                 <img
                     className={style.image}
-                    src={init ? props.thumb : empty}
+                    src={init ? props.thumb : placeholder}
                     srcSet={loadedThumb ? props.srcSet : ''}
                     sizes={loadedThumb ? props.sizes : ''}
                     onLoad={onLoadThumb}/>
