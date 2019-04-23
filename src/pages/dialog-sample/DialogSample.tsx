@@ -7,8 +7,8 @@ import style from './DialogSample.pcss';
 
 export default function DialogSample()
 {
-    const [infoDialog, setInfoDialog] = useState(false);
-    const [deleteDialog, setDeleteDialog] = useState(false);
+    const [infoDialog, setInfoDialog] = useState(false),
+          [deleteDialog, setDeleteDialog] = useState(false);
     
     function onConfirmInfo() {
         setInfoDialog(false);
