@@ -1,8 +1,9 @@
-import {FunctionComponent, useState} from 'react';
+import {FunctionComponent,
+        memo, useState} from 'react';
 import React from 'react';
 import style from './ResponsiveImage.pcss';
 
-const ResponsiveImage:FunctionComponent<Props> = React.memo((props)=>
+const ResponsiveImage:FunctionComponent<Props> = memo((props)=>
 {
     const placeholder = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
     const [init, setInit] = useState(false),
