@@ -6,8 +6,7 @@ import style from './CheckboxSample.pcss';
 export default function CheckboxSample()
 {
     const checkbox1 = useCheckbox(true),
-          checkbox2 = useCheckbox(false),
-          checkbox3 = useCheckbox(false);
+          checkbox2 = useCheckbox(false);
     return (
         <div className={style.checkboxSample}>
             <Checkbox
@@ -22,8 +21,7 @@ export default function CheckboxSample()
             </Checkbox>
             <Checkbox
                 className={style.checkbox}
-                error="Error message"
-                {...checkbox3}>
+                error="Error message">
                 Error checkbox
             </Checkbox>
             <Checkbox
