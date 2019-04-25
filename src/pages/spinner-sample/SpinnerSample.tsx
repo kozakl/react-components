@@ -6,9 +6,15 @@ export default function SpinnerSample()
 {
     return (
         <div className={style.spinnerSample}>
-            <Spinner color="red" size="1.5em"/>
-            <Spinner background="white" size="2rem"/>
-            <Spinner/>
+            <Spinner
+                className={style.spinner}
+                color="red"
+                size="1.5em"/>
+            <Spinner
+                className={style.spinner}
+                background="white"
+                size="2rem"/>
+            <Spinner className={style.spinner}/>
         </div>
     );
 }
