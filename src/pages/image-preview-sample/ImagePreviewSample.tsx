@@ -25,8 +25,7 @@ export default function ImagePreviewSample()
         <div className={style.imagePreviewSample}>
             <Button
                 onClick={()=> setImagePreview(true)}
-                color="success"
-                size="sm">
+                color="success">
                 Show Image Preview
             </Button>
             <Modal
