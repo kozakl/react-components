@@ -17,10 +17,6 @@ export default function ImagePreviewSample()
             .then(setImages);
     }, []);
     
-    function onCloseImagePreview() {
-        setImagePreview(false);
-    }
-    
     return (
         <div className={style.imagePreviewSample}>
             <Button
@@ -30,7 +26,7 @@ export default function ImagePreviewSample()
             </Button>
             <Modal
                 visible={imagePreview}
-                onClose={onCloseImagePreview}
+                onClose={()=> setImagePreview(false)}
                 center>
                 <ImagePreview
                     images={images}
