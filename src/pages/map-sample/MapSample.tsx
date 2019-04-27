@@ -8,10 +8,6 @@ export default function MapSample()
 {
     const [infoWindow, setInfoWindow] = useState(false);
     
-    function onToggleInfo() {
-        setInfoWindow(!infoWindow);
-    }
-    
     const options = {
         fullscreenControl: false,
         mapTypeControl: false,
@@ -25,11 +21,11 @@ export default function MapSample()
             defaultCenter={{lat: 51.1080513, lng: 17.0251989}}>
             <Marker
                 position={{lat: 51.1098569, lng: 17.028251}}
-                onClick={onToggleInfo}
+                onClick={()=> setInfoWindow(true)}
                 label={{text: 'A'}}
                 title="Title Marker">
                 {infoWindow &&
-                    <InfoWindow onCloseClick={onToggleInfo}>
+                    <InfoWindow onCloseClick={()=> setInfoWindow(false)}>
                         <div className={style.info}>
                             <h6>Lublin downtown</h6>
                             Ruska 65<br/>
