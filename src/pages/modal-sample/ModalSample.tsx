@@ -30,8 +30,7 @@ export default class ModalSample extends PureComponent<{}, State>
                 <Button
                     className={style.show}
                     onClick={this.onClickShow}
-                    color="success"
-                    size="sm">
+                    color="success">
                     Show Modal
                 </Button>
                 <Modal visible={this.state.modal} onClose={this.onCloseModal}>
