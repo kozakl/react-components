@@ -5,8 +5,10 @@ import style from './LoginSample.pcss';
 export default function LoginSample()
 {
     return (
-        <Login
-            className={style.login}
-            onLogin={null}/>
+        <div className={style.loginSample}>
+            <Login
+                className={style.login}
+                onLogin={null}/>
+        </div>
     );
 }
