@@ -1,48 +1,26 @@
-import {PureComponent} from 'react';
+import {useState} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
 import React from 'react';
 import style from './ModalSample.pcss';
 
-export default class ModalSample extends PureComponent<{}, State>
+export default function ModalSample()
 {
-    constructor()
-    {
-        super(undefined);
-        
-        this.state = {
-            modal: false
-        };
-    }
-    
-    onClickShow = ()=> {
-        this.setState({modal: true});
-    };
-    
-    onCloseModal = ()=> {
-        this.setState({modal: false});
-    };
-    
-    render()
-    {
-        return (
-            <div className={style.dialogSample}>
-                <Button
-                    className={style.show}
-                    onClick={this.onClickShow}
-                    color="success">
-                    Show Modal
-                </Button>
-                <Modal visible={this.state.modal} onClose={this.onCloseModal}>
-                    <div className={style.modal}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
-                    </div>
-                </Modal>
-            </div>
-        );
-    }
-}
-
-interface State {
-    modal:boolean;
+    const [modal, setModal] = useState(false);
+    return (
+        <div className={style.modalSample}>
+            <Button
+                onClick={()=> setModal(true)}
+                color="success">
+                Show Modal
+            </Button>
+            <Modal
+                visible={modal}
+                onClose={()=> setModal(false)}>
+                <div className={style.modal}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et tortor id erat fermentum malesuada. Duis tincidunt nulla ipsum, et lobortis ante pretium nec.
+                </div>
+            </Modal>
+        </div>
+    );
 }
