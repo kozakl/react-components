@@ -36,6 +36,7 @@ export default function DialogSample()
                 Show Info Dialog
             </Button>
             <Button
+                className={style.show}
                 onClick={()=> setDeleteDialog(true)}
                 color="danger"
                 size="sm">
