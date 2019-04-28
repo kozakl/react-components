@@ -1,62 +1,52 @@
-import {Component} from 'react';
+import {useState} from 'react';
 import {ResponsiveImage} from '../../components/responsive-image';
 import React from 'react';
 import style from './ResponsiveImageSample.pcss';
 
-export default class ResponsiveImageSample extends Component<{}, State>
+export default function ResponsiveImageSample()
 {
-    private images:Images = {
+    const images:Images = {
         'assets/room1/': {width: 4104, height: 2310},
         'assets/room2/': {width: 1200, height: 900}
     };
     
-    constructor()
-    {
-        super(undefined);
-        
-        this.state = {
-            start: false,
-            path: 'assets/room1/'
-        };
+    
+    function onStart() {
+        setStart(true);
     }
     
-    onStart = ()=> {
-        this.setState({start: true});
-    };
-    
-    onClick = ()=> {
-        if (this.state.path === 'assets/room1/')
-            this.setState({path: 'assets/room2/'});
+    function onClick() {
+        if (path === 'assets/room1/')
+            setPath('assets/room2/');
         else {
-            this.setState({path: 'assets/room1/'});
+            setPath('assets/room1/');
         }
-    };
-    
-    render()
-    {
-        return (
-            <div className={style.responsiveImageSample}>
-                <button onClick={this.onStart}>on start</button>
-                <button onClick={this.onClick}>on load</button>
-                {this.state.start && 
-                    <div>
-                        <ResponsiveImage
-                            
-                            className={style.image}
-                            ratio={this.images[this.state.path].height /
-                                   this.images[this.state.path].width}
-                            thumb={`${this.state.path}/thumb.jpg`}
-                            srcSet={`${this.state.path}/700w.jpg 700w,
-                                     ${this.state.path}/525w.jpg 525w,
-                                     ${this.state.path}/400w.jpg 400w,
-                                     ${this.state.path}/1400w-2x.jpg 1400w`}
-                            sizes="(max-width: 700px) 700px,
-                                   (max-width: 1050px) 525px,
-                                   400px"/>
-                    </div>}
-            </div>
-        );
     }
+    
+    const [start, setStart] = useState(false);
+    const [path, setPath] = useState('assets/room1/');
+    return (
+        <div className={style.responsiveImageSample}>
+            <button onClick={onStart}>on start</button>
+            <button onClick={onClick}>on load</button>
+            {start && 
+                <div>
+                    <ResponsiveImage
+                        
+                        className={style.image}
+                        ratio={images[path].height /
+                               images[path].width}
+                        thumb={`${path}/thumb.jpg`}
+                        srcSet={`${path}/700w.jpg 700w,
+                                 ${path}/525w.jpg 525w,
+                                 ${path}/400w.jpg 400w,
+                                 ${path}/1400w-2x.jpg 1400w`}
+                        sizes="(max-width: 700px) 700px,
+                               (max-width: 1050px) 525px,
+                               400px"/>
+                </div>}
+        </div>
+    );
 }
 
 interface Images {
@@ -64,9 +54,4 @@ interface Images {
         width:number;
         height:number;
     }
-}
-
-interface State {
-    start:boolean;
-    path:string;
 }
