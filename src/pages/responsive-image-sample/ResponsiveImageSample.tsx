@@ -9,13 +9,10 @@ export default function ResponsiveImageSample()
         'assets/room1/': {width: 4104, height: 2310},
         'assets/room2/': {width: 1200, height: 900}
     };
+    const [load, setLoad] = useState(false),
+          [path, setPath] = useState('assets/room1/');
     
-    
-    function onStart() {
-        setStart(true);
-    }
-    
-    function onClick() {
+    function onClickNext() {
         if (path === 'assets/room1/')
             setPath('assets/room2/');
         else {
@@ -23,16 +20,18 @@ export default function ResponsiveImageSample()
         }
     }
     
-    const [start, setStart] = useState(false);
-    const [path, setPath] = useState('assets/room1/');
     return (
         <div className={style.responsiveImageSample}>
-            <button onClick={onStart}>on start</button>
-            <button onClick={onClick}>on load</button>
-            {start && 
+            <button onClick={()=> setLoad(true)}>
+                Load
+            </button>
+            <button
+                onClick={onClickNext}>
+                Next
+            </button>
+            {load && 
                 <div>
                     <ResponsiveImage
-                        
                         className={style.image}
                         ratio={images[path].height /
                                images[path].width}
