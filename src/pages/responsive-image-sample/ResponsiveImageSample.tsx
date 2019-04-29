@@ -9,7 +9,7 @@ export default function ResponsiveImageSample()
         'assets/room1/': {width: 4104, height: 2310},
         'assets/room2/': {width: 1200, height: 900}
     };
-    const [load, setLoad] = useState(false),
+    const [load, setLoad] = useState(true),
           [path, setPath] = useState('assets/room1/');
     
     function onClickNext() {
@@ -36,13 +36,15 @@ export default function ResponsiveImageSample()
                         ratio={images[path].height /
                                images[path].width}
                         thumb={`${path}/thumb.jpg`}
-                        srcSet={`${path}/700w.jpg 700w,
-                                 ${path}/525w.jpg 525w,
-                                 ${path}/400w.jpg 400w,
-                                 ${path}/1400w-2x.jpg 1400w`}
-                        sizes="(max-width: 700px) 700px,
-                               (max-width: 1050px) 525px,
-                               400px"/>
+                        srcSet={`${path}/480w.jpg 480w,
+                                 ${path}/512w.jpg 512w,
+                                 ${path}/768w.jpg 768w,
+                                 ${path}/960w-2x.jpg 960w,
+                                 ${path}/1024w-2x.jpg 1024w,
+                                 ${path}/1536w-2x.jpg 1536w`}
+                        sizes="(min-width: 1024px) 33vw,
+                               (min-width: 768px) 50vw,
+                               100vw"/> //zmienic na 1.5x ?
                 </div>}
         </div>
     );
