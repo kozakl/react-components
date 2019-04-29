@@ -52,12 +52,12 @@
     "dest": "public/assets/room1/",
     "quality": 85,
     "sizes": [
-      {"value": "400", "name": "400w"},
-      {"value": "525", "name": "525w"},
-      {"value": "700", "name": "700w"},
-      {"value": "800", "name": "800w-2x"},
-      {"value": "1050", "name": "1050w-2x"},
-      {"value": "1400", "name": "1400w-2x"},
+      {"value": "480", "name": "480w"},
+      {"value": "512", "name": "512w"},
+      {"value": "768", "name": "768w"},
+      {"value": "960", "name": "960w-2x"},
+      {"value": "1024", "name": "1024w-2x"},
+      {"value": "1536", "name": "1536w-2x"},
       {"value": "100", "name": "thumb", "blur": "0x1.5"}
     ]
   },
@@ -66,12 +66,12 @@
     "dest": "public/assets/room2/",
     "quality": 85,
     "sizes": [
-      {"value": "400", "name": "400w"},
-      {"value": "525", "name": "525w"},
-      {"value": "700", "name": "700w"},
-      {"value": "800", "name": "800w-2x"},
-      {"value": "1050", "name": "1050w-2x"},
-      {"value": "1400", "name": "1400w-2x"},
+      {"value": "480", "name": "480w"},
+      {"value": "512", "name": "512w"},
+      {"value": "768", "name": "768w"},
+      {"value": "960", "name": "960w-2x"},
+      {"value": "1024", "name": "1024w-2x"},
+      {"value": "1536", "name": "1536w-2x"},
       {"value": "100", "name": "thumb", "blur": "0x1.5"}
     ]
   }
