@@ -18,6 +18,7 @@ export default function Window1Sample()
             </Button>
             <Modal visible={window} interactive>
                 <Window
+                    className={style.window}
                     onAdd={null}
                     onCancel={()=> setWindow(false)}/>
             </Modal>
