@@ -2,6 +2,7 @@ import {FormEvent, FunctionComponent} from 'react';
 import {Button, FormFeedback,
         Input, InputGroup} from 'reactstrap';
 import {useSelect, useTextField} from '@kozakl/hooks';
+import {classNames} from '@kozakl/utils';
 import {isFill} from '@kozakl/utils/validate';
 import React from 'react';
 import style from './Window.pcss';
@@ -33,8 +34,12 @@ const Window:FunctionComponent<Props> = (props)=>
         return validate;
     }
     
+    const windowClass = classNames(
+        style.window,
+        props.className
+    );
     return (
-        <div className={style.window}>
+        <div className={windowClass}>
             <h5 className={style.title}>Window1</h5>
             
             <form className={style.form} onSubmit={onSubmit}>
@@ -104,6 +109,7 @@ Window.defaultProps = {
 };
 
 interface Props {
+    className?:string;
     categories1?:string[];
     categories2?:string[];
     onAdd:()=> void;
