@@ -70,6 +70,7 @@ const Window:FunctionComponent<Props> = (props)=>
                         value={desc.value}
                         invalid={!!desc.error}
                         onChange={desc.onChange}
+                        id="desc"
                         type="textarea"
                         bsSize="sm"/>
                     <FormFeedback>
