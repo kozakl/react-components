@@ -44,7 +44,7 @@ export default function ResponsiveImageSample()
                                  ${path}/1536w-2x.jpg 1536w`}
                         sizes="(min-width: 1024px) 33vw,
                                (min-width: 768px) 50vw,
-                               100vw"/> //zmienic na 1.5x ?
+                               100vw"/>
                 </div>}
         </div>
     );
