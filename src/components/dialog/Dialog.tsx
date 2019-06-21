@@ -34,7 +34,7 @@ const Dialog:FunctionComponent<Props> = (props)=>
                 </Button>
             </div>
         </div>
-    )
+    );
 };
 
 Dialog.defaultProps = {
