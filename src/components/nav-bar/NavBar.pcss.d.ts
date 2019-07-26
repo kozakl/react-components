@@ -1,0 +1,12 @@
+export const navBar:string;
+export const container:string;
+export const top:string;
+export const toggle:string;
+export const logo:string;
+export const links:string;
+export const close:string;
+export const transit:string;
+export const link:string;
+export const active:string;
+export const separator:string;
+export const modal:string;
