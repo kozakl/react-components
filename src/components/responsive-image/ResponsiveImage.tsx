@@ -7,6 +7,7 @@ const ResponsiveImage:FunctionComponent<Props> = memo((props)=>
 {
     const placeholder = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
     const [init, setInit] = useState(false),
+          [prevRatio, setPrevRatio] = useState(props.ratio),
           [prevThumb, setPrevThumb] = useState(null),
           [loadedThumb, setLoadedThumb] = useState(false);
     
@@ -24,14 +25,18 @@ const ResponsiveImage:FunctionComponent<Props> = memo((props)=>
             }
             setLoadedThumb(true);
         }
+        setPrevRatio(props.ratio);
     }
     
     return (
         <div className={props.className} id={props.id}>
             <div className={style.wrapper}
-                 style={{'paddingTop': `${props.ratio * 100}%`}}>
+                 style={{paddingTop: `${props.ratio * 100}%`}}>
                 <img
                     className={style.image}
+                    style={{visibility:
+                            !loadedThumb && (prevRatio !== props.ratio) ?
+                                'hidden' : 'visible'}}
                     src={init ? props.thumb : placeholder}
                     srcSet={loadedThumb ? props.srcSet : ''}
                     sizes={loadedThumb ? props.sizes : ''}
