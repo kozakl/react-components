@@ -9,8 +9,8 @@ import style from './ImagePreviewSample.pcss';
 
 export default function ImagePreviewSample()
 {
-    const [imagePreview, setImagePreview] = useState(false);
-    const [images, setImages] = useState<Image[]>([]);
+    const [imagePreview, setImagePreview] = useState(false),
+          [images, setImages] = useState<Image[]>([]);
     
     useEffect(()=> {
         getGalleryImages()
