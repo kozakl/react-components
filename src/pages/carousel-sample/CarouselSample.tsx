@@ -17,8 +17,8 @@ export default function CarouselSample()
                 <div className={style.card}>
                     <ResponsiveImage
                         className={style.cardImage}
-                        thumb={`assets/cards/card1/thumb.jpg`}
-                        srcSet={`assets/cards/card1/800w.jpg 800w`}/>
+                        thumb={`assets/cards/image1/thumb.jpg`}
+                        srcSet={`assets/cards/image1/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
                         <div className={style.cardTitle}>
                             <h3>Decyzja kredytowa przed podpisaniem umowy zakupy</h3>
@@ -32,8 +32,8 @@ export default function CarouselSample()
                 <div className={style.card}>
                     <ResponsiveImage
                         className={style.cardImage}
-                        thumb={`assets/cards/card2/thumb.jpg`}
-                        srcSet={`assets/cards/card2/800w.jpg 800w`}/>
+                        thumb={`assets/cards/image2/thumb.jpg`}
+                        srcSet={`assets/cards/image2/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
                         <div className={style.cardTitle}>
                             <h3>Ubezpieczenie na 5 lat</h3>
@@ -47,8 +47,8 @@ export default function CarouselSample()
                 <div className={style.card}>
                     <ResponsiveImage
                         className={style.cardImage}
-                        thumb={`assets/cards/card3/thumb.jpg`}
-                        srcSet={`assets/cards/card3/800w.jpg 800w`}/>
+                        thumb={`assets/cards/image3/thumb.jpg`}
+                        srcSet={`assets/cards/image3/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
                         <div className={style.cardTitle}>
                             <h3>Unikatowy projekt wnętrz</h3>
@@ -62,8 +62,8 @@ export default function CarouselSample()
                 <div className={style.card}>
                     <ResponsiveImage
                         className={style.cardImage}
-                        thumb={`assets/cards/card4/thumb.jpg`}
-                        srcSet={`assets/cards/card4/800w.jpg 800w`}/>
+                        thumb={`assets/cards/image4/thumb.jpg`}
+                        srcSet={`assets/cards/image4/800w.jpg 800w`}/>
                     <div className={style.cardBody}>
                         <div className={style.cardTitle}>
                             <h3>Voucher na zakupy w Leroy Merlin</h3>
