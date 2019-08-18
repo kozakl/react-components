@@ -41,16 +41,16 @@ const CrossfadeBg:FunctionComponent<Props> = (props)=>
                 className={style.current}
                 ratio={1080 / 1920}
                 thumb={`${props.images[current]}/thumb.jpg`}
-                srcSet={`${props.images[current]}/960w.jpg 661w,
-                         ${props.images[current]}/1440w.jpg 960w,
+                srcSet={`${props.images[current]}/960w.jpg 576w,
+                         ${props.images[current]}/1440w.jpg 1440w,
                          ${props.images[current]}/1920w.jpg 1920w`}/>
             {props.images[next] &&
                 <ResponsiveImage
                     className={nextClass}
                     ratio={1080 / 1920}
                     thumb={`${props.images[next]}/thumb.jpg`}
-                    srcSet={`${props.images[next]}/960w.jpg 661w,
-                             ${props.images[next]}/1440w.jpg 960w,
+                    srcSet={`${props.images[next]}/960w.jpg 576w,
+                             ${props.images[next]}/1440w.jpg 1440w,
                              ${props.images[next]}/1920w.jpg 1920w`}
                     onLoadThumb={()=> setLoadedNext(true)}/>}
         </div>
