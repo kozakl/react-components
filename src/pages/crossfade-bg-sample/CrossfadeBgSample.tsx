@@ -6,7 +6,8 @@ export default function CrossfadeBgSample()
     return (
         <CrossfadeBg
             images={[
-                'assets/bg1/', 'assets/bg2/'
+                'assets/backgrounds/image1/',
+                'assets/backgrounds/image2/'
             ]}/>
     );
 }

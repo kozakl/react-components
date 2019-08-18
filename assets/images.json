@@ -1,5 +1,17 @@
 [
   {
+    "src": "assets/backgrounds/",
+    "dest": "public/assets/backgrounds",
+    "destDir": true,
+    "quality": 80,
+    "sizes": [
+      {"value": "960", "name": "960w"},
+      {"value": "1440", "name": "1440w"},
+      {"value": "1920", "name": "1920w"},
+      {"value": "300", "name": "thumb", "blur": "0x1.5"}
+    ]
+  },
+  {
     "src": "assets/cards",
     "dest": "public/assets/cards/",
     "destDir": true,
@@ -21,28 +33,6 @@
       {"value": "1440", "name": "1440w"},
       {"value": "1920", "name": "1920w"},
       {"value": "100", "name": "thumb", "blur": "0x1.5"}
-    ]
-  },
-  {
-    "src": "assets/bg1.jpg",
-    "dest": "public/assets/bg1/",
-    "quality": 80,
-    "sizes": [
-      {"value": "960", "name": "960w"},
-      {"value": "1440", "name": "1440w"},
-      {"value": "1920", "name": "1920w"},
-      {"value": "300", "name": "thumb", "blur": "0x1.5"}
-    ]
-  },
-  {
-    "src": "assets/bg2.jpg",
-    "dest": "public/assets/bg2/",
-    "quality": 80,
-    "sizes": [
-      {"value": "960", "name": "960w"},
-      {"value": "1440", "name": "1440w"},
-      {"value": "1920", "name": "1920w"},
-      {"value": "300", "name": "thumb", "blur": "0x1.5"}
     ]
   },
   {
