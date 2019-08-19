@@ -31,12 +31,16 @@ const CrossfadeBg:FunctionComponent<Props> = (props)=>
         }
     }, [loadedNext]);
     
+    const crossfadeBgClass = classNames(
+        style.crossfadeBg,
+        props.className,
+    );
     const nextClass = classNames(
         style.next,
         loadedNext && style.show
     );
     return (
-        <div className={style.crossfadeBg}>
+        <div className={crossfadeBgClass}>
             <ResponsiveImage
                 className={style.current}
                 ratio={1080 / 1920}
@@ -58,6 +62,7 @@ const CrossfadeBg:FunctionComponent<Props> = (props)=>
 };
 
 interface Props {
+    className?:string;
     images:string[];
 }
 
