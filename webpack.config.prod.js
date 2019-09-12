@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: join(__dirname, 'public'),
         filename: 'bundle.js',
-        chunkFilename: '[chunkhash].js'
+        chunkFilename: 'chunks/[name].js'
     },
     mode: 'production',
     module: {
