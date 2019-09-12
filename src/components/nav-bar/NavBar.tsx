@@ -1,5 +1,5 @@
 import {FunctionComponent} from 'react';
-import {useLocation, useMatchMedia} from '@kozakl/hooks';
+import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {NavLink} from '../nav-link';
 import {Toggle} from './toggle';
@@ -9,8 +9,7 @@ import style from './NavBar.pcss';
 
 const NavBar:FunctionComponent = ()=>
 {
-    const desktop = useMatchMedia('(min-width: 768px)'),
-          location = useLocation();
+    const desktop = useMatchMedia('(min-width: 768px)');
     const {open, transit, setOpen} = useOpenNav(desktop);
     
     const linksClass = classNames(
@@ -40,14 +39,12 @@ const NavBar:FunctionComponent = ()=>
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        active={location.hash}
                         href={`#/events`}>
                         Wydarzenia
                     </NavLink>
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        active={location.hash}
                         href={`#/schedule`}>
                         Grafik
                     </NavLink>
@@ -56,7 +53,6 @@ const NavBar:FunctionComponent = ()=>
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        active={location.hash}
                         href={`#/calculator`}>
                         Wyloguj
                     </NavLink>
