@@ -28,6 +28,9 @@ const ImageLite:FunctionComponent<Props> = memo((props)=>
     return (
         <img
             className={props.className}
+            style={{visibility:
+                    !loadedThumb && props.cleanBetween ?
+                        'hidden' : 'visible'}}
             src={init ? props.thumb : placeholder}
             id={props.id}
             srcSet={loadedThumb ? props.srcSet : ''}
@@ -42,6 +45,7 @@ interface Props {
     thumb:string;
     srcSet:string;
     sizes?:string;
+    cleanBetween?:boolean;
     onLoadThumb?:()=> void;
 }
 
