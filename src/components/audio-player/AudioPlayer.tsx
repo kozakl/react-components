@@ -1,5 +1,5 @@
-import {FunctionComponent,
-        useEffect, useRef, useState} from 'react';
+import {FunctionComponent, useEffect,
+        useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
 import {clamp} from '@kozakl/utils/math';
 import React from 'react';
