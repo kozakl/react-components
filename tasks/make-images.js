@@ -1,9 +1,9 @@
-import gm from 'gm';
 import {existsSync, lstatSync,
         mkdirpSync, readFileSync} from 'fs-extra';
 import {basename, dirname,
         extname, join} from 'path';
 import {listFiles} from '@kozakl/node/file';
+import gm from 'gm';
 
 const filter = ['.jpg', '.png'],
       buffer = readFileSync(process.argv[2], 'utf8'),
@@ -12,10 +12,9 @@ makeImage(images.next().value);
 
 function makeImage(image)
 {
-    if (lstatSync(image.src).isFile())
+    if (lstatSync(image.src).isFile()) {
         makeSizes(image);
-    else
-    {
+    } else {
         listFiles(image.src, filter).forEach((src)=> {
             const diff = src.replace(image.src, ''),
                   dest = dirname(join(image.dest, diff));
@@ -27,8 +26,9 @@ function makeImage(image)
     }
     
     const next = images.next();
-    if (!next.done)
+    if (!next.done) {
         makeImage(next.value);
+    }
 }
 
 function makeSizes(image)
