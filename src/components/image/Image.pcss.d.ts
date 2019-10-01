@@ -1,2 +1,2 @@
 export const wrapper:string;
-export const image:string;
+export const img:string;

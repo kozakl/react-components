@@ -1,9 +1,9 @@
 import {FunctionComponent,
         memo, useState} from 'react';
 import React from 'react';
-import style from './ResponsiveImage.pcss';
+import style from './Image.pcss';
 
-const ResponsiveImage:FunctionComponent<Props> = memo((props)=>
+const Image:FunctionComponent<Props> = memo((props)=>
 {
     const placeholder = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
     const [init, setInit] = useState(false),
@@ -33,7 +33,7 @@ const ResponsiveImage:FunctionComponent<Props> = memo((props)=>
             <div className={style.wrapper}
                  style={{paddingTop: `${props.ratio * 100}%`}}>
                 <img
-                    className={style.image}
+                    className={style.img}
                     style={{visibility:
                             !loadedThumb && (prevRatio !== props.ratio) ?
                                 'hidden' : 'visible'}}
@@ -46,7 +46,7 @@ const ResponsiveImage:FunctionComponent<Props> = memo((props)=>
     );
 });
 
-ResponsiveImage.defaultProps = {
+Image.defaultProps = {
     ratio: 1
 };
 
@@ -60,4 +60,4 @@ interface Props {
     onLoadThumb?:()=> void;
 }
 
-export default ResponsiveImage;
+export default Image;
