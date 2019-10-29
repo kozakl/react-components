@@ -3,7 +3,6 @@ import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {NavLink} from '../nav-link';
 import {Toggle} from './toggle';
-import {logout} from '../../actions';
 import {useOpenNav} from './hooks';
 import React from 'react';
 import style from './NavBar.pcss';
@@ -54,7 +53,7 @@ const NavBar:FunctionComponent = ()=>
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        onClick={logout}
+                        onClick={null}
                         href="#/login">
                         Wyloguj
                     </NavLink>
