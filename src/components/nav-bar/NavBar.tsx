@@ -39,13 +39,13 @@ const NavBar:FunctionComponent = ()=>
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        href={`#/events`}>
+                        href="#/events">
                         Wydarzenia
                     </NavLink>
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        href={`#/schedule`}>
+                        href="#/schedule">
                         Grafik
                     </NavLink>
                     {desktop &&
@@ -53,7 +53,7 @@ const NavBar:FunctionComponent = ()=>
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        href={`#/calculator`}>
+                        href="#/calculator">
                         Wyloguj
                     </NavLink>
                 </div>
