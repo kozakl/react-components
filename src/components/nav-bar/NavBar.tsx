@@ -3,6 +3,7 @@ import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {NavLink} from '../nav-link';
 import {Toggle} from './toggle';
+import {logout} from '../../actions';
 import {useOpenNav} from './hooks';
 import React from 'react';
 import style from './NavBar.pcss';
@@ -39,21 +40,22 @@ const NavBar:FunctionComponent = ()=>
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        href="#/events">
-                        Wydarzenia
+                        href="#/films">
+                        Films
                     </NavLink>
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        href="#/schedule">
-                        Grafik
+                        href="#/photographs">
+                        Photographs
                     </NavLink>
                     {desktop &&
                         <span className={style.separator}>|</span>}
                     <NavLink
                         className={style.link}
                         activeClass={style.active}
-                        href="#/calculator">
+                        onClick={logout}
+                        href="#/login">
                         Wyloguj
                     </NavLink>
                 </div>
