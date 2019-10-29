@@ -19,6 +19,7 @@ const Checkbox:FunctionComponent<Props> = (props)=>
             <label className={labelClass}>
                 <input
                     className={style.input}
+                    id={props.id}
                     checked={props.checked}
                     disabled={props.disabled}
                     onChange={props.onChange}
@@ -36,6 +37,7 @@ const Checkbox:FunctionComponent<Props> = (props)=>
 
 interface Props {
     className?:string;
+    id?:string;
     checked?:boolean;
     disabled?:boolean;
     error?:string;
