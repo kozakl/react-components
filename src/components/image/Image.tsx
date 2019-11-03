@@ -1,4 +1,4 @@
-import {FunctionComponent,
+import {CSSProperties, FunctionComponent,
         memo, useState} from 'react';
 import React from 'react';
 import style from './Image.pcss';
@@ -29,7 +29,10 @@ const Image:FunctionComponent<Props> = memo((props)=>
     }
     
     return (
-        <div className={props.className} id={props.id}>
+        <div
+            className={props.className}
+            id={props.id}
+            style={props.style}>
             <div className={style.wrapper}
                  style={{paddingTop: `${props.ratio * 100}%`}}>
                 <img
@@ -53,6 +56,7 @@ Image.defaultProps = {
 interface Props {
     className?:string;
     id?:string;
+    style?:CSSProperties;
     ratio?:number;
     thumb:string;
     srcSet:string;
