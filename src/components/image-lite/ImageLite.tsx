@@ -1,5 +1,7 @@
-import {FunctionComponent,
-        memo, useState} from 'react';
+import {
+    CSSProperties, FunctionComponent,
+    memo, useState
+} from 'react';
 import React from 'react';
 
 const ImageLite:FunctionComponent<Props> = memo((props)=>
@@ -28,11 +30,13 @@ const ImageLite:FunctionComponent<Props> = memo((props)=>
     return (
         <img
             className={props.className}
-            style={{visibility:
+            id={props.id}
+            style={{
+                ...props.style,
+                visibility: 
                     !loadedThumb && props.cleanBetween ?
                         'hidden' : 'visible'}}
             src={init ? props.thumb : placeholder}
-            id={props.id}
             srcSet={loadedThumb ? props.srcSet : ''}
             sizes={loadedThumb ? props.sizes : ''}
             onLoad={onLoadThumb}/>
@@ -42,6 +46,7 @@ const ImageLite:FunctionComponent<Props> = memo((props)=>
 interface Props {
     className?:string;
     id?:string;
+    style?:CSSProperties;
     thumb:string;
     srcSet:string;
     sizes?:string;
