@@ -7,10 +7,9 @@ const NavLink:FunctionComponent<Props> = (props)=>
 {
     const navLinkClass = classNames(
         props.className,
-        props.active &&
-        props.activeClass ||
-        location.hash.startsWith(props.href) &&
-        props.activeClass
+        props.active && props.activeClass ||
+            location.hash.startsWith(props.href) &&
+                props.activeClass
     );
     return (
         <a
