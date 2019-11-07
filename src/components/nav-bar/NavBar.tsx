@@ -1,4 +1,3 @@
-import {FunctionComponent} from 'react';
 import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {NavLink} from '../nav-link';
@@ -7,7 +6,7 @@ import {useOpenNav} from './hooks';
 import React from 'react';
 import style from './NavBar.pcss';
 
-const NavBar:FunctionComponent = ()=>
+export default function NavBar()
 {
     const desktop = useMatchMedia('(min-width: 768px)');
     const {open, transit, setOpen} = useOpenNav(desktop);
@@ -66,5 +65,3 @@ const NavBar:FunctionComponent = ()=>
         </nav>
     );
 };
-
-export default NavBar;
