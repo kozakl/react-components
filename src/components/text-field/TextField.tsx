@@ -7,8 +7,8 @@ import style from './TextField.pcss';
 export const TextField:FunctionComponent<Props> = (props)=>
 {
     const textFieldClass = classNames(
-        props.className,
         style.textField,
+        props.className,
         props.disabled && style.disabled
     );
     const containerClass = classNames(
