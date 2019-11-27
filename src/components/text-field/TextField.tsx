@@ -41,6 +41,7 @@ export const TextField:FunctionComponent<Props> = (props)=>
                         </label>}
                     <input
                         className={style.input}
+                        id={props.id}
                         type={props.type}
                         value={props.value}
                         maxLength={props.maxLength}
@@ -62,6 +63,7 @@ export const TextField:FunctionComponent<Props> = (props)=>
 
 interface Props {
     className?:string;
+    id?:string;
     type?:string;
     value?:string;
     opened?:boolean;
