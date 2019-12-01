@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {ResponsiveImage} from '../../components/responsive-image';
+import {Image} from '../../components/image';
 import React from 'react';
 import style from './ResponsiveImageSample.pcss';
 
@@ -31,7 +31,7 @@ export default function ResponsiveImageSample()
             </button>
             {load && 
                 <div>
-                    <ResponsiveImage
+                    <Image
                         className={style.image}
                         ratio={images[path].height /
                                images[path].width}

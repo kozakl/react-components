@@ -2,7 +2,7 @@ import {FunctionComponent,
         useEffect, useState} from 'react';
 import {useTimeout, useVisibility} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
-import {ResponsiveImage} from '../responsive-image/index';
+import {Image} from '../image';
 import React from 'react';
 import style from './CrossfadeBg.pcss';
 
@@ -41,7 +41,7 @@ const CrossfadeBg:FunctionComponent<Props> = (props)=>
     );
     return (
         <div className={crossfadeBgClass}>
-            <ResponsiveImage
+            <Image
                 className={style.current}
                 ratio={1080 / 1920}
                 thumb={`${props.images[current]}/thumb.jpg`}
@@ -49,7 +49,7 @@ const CrossfadeBg:FunctionComponent<Props> = (props)=>
                          ${props.images[current]}/1440w.jpg 1440w,
                          ${props.images[current]}/1920w.jpg 1920w`}/>
             {props.images[next] &&
-                <ResponsiveImage
+                <Image
                     className={nextClass}
                     ratio={1080 / 1920}
                     thumb={`${props.images[next]}/thumb.jpg`}

@@ -1,6 +1,6 @@
 import {FunctionComponent, useState} from 'react';
 import {scaleDown} from '@kozakl/utils';
-import {ResponsiveImage} from '../responsive-image';
+import {Image} from '../image';
 import {Image} from '../../types';
 import React from 'react';
 import style from './ImagePreview.pcss';
@@ -31,7 +31,7 @@ const ImagePreview:FunctionComponent<Props> = (props)=>
                 <img src={require('res/icons/close.svg')}/>
             </a>
             <div className={style.imageContainer}>
-                <ResponsiveImage
+                <Image
                     ratio={image.height / image.width}
                     thumb={`${image.path}/thumb.jpg`}
                     srcSet={`${image.path}/425w.jpg 425w,

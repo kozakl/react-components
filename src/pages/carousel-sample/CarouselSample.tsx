@@ -1,5 +1,5 @@
 import {Carousel} from '../../components/carousel';
-import {ResponsiveImage} from '../../components/responsive-image';
+import {Image} from '../../components/image';
 import React from 'react';
 import style from './CarouselSample.pcss';
 
@@ -15,7 +15,7 @@ export default function CarouselSample()
             
             <Carousel>
                 <div className={style.card}>
-                    <ResponsiveImage
+                    <Image
                         className={style.cardImage}
                         thumb={`assets/cards/image1/thumb.jpg`}
                         srcSet={`assets/cards/image1/800w.jpg 800w`}/>
@@ -30,7 +30,7 @@ export default function CarouselSample()
                 </div>
                 
                 <div className={style.card}>
-                    <ResponsiveImage
+                    <Image
                         className={style.cardImage}
                         thumb={`assets/cards/image2/thumb.jpg`}
                         srcSet={`assets/cards/image2/800w.jpg 800w`}/>
@@ -45,7 +45,7 @@ export default function CarouselSample()
                 </div>
                 
                 <div className={style.card}>
-                    <ResponsiveImage
+                    <Image
                         className={style.cardImage}
                         thumb={`assets/cards/image3/thumb.jpg`}
                         srcSet={`assets/cards/image3/800w.jpg 800w`}/>
@@ -60,7 +60,7 @@ export default function CarouselSample()
                 </div>
                 
                 <div className={style.card}>
-                    <ResponsiveImage
+                    <Image
                         className={style.cardImage}
                         thumb={`assets/cards/image4/thumb.jpg`}
                         srcSet={`assets/cards/image4/800w.jpg 800w`}/>
