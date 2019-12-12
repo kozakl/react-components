@@ -43,6 +43,7 @@ const Image:FunctionComponent<Props> = memo((props)=>
                     src={init ? props.thumb : placeholder}
                     srcSet={loadedThumb ? props.srcSet : ''}
                     sizes={loadedThumb ? props.sizes : ''}
+                    loading={props.loading}
                     onLoad={onLoadThumb}/>
             </div>
         </div>
@@ -61,6 +62,7 @@ interface Props {
     thumb:string;
     srcSet:string;
     sizes?:string;
+    loading?:'auto' | 'lazy' | 'eager';
     onLoadThumb?:()=> void;
 }
 

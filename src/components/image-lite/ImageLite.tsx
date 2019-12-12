@@ -39,6 +39,7 @@ const ImageLite:FunctionComponent<Props> = memo((props)=>
             src={init ? props.thumb : placeholder}
             srcSet={loadedThumb ? props.srcSet : ''}
             sizes={loadedThumb ? props.sizes : ''}
+            loading={props.loading}
             onLoad={onLoadThumb}/>
     );
 });
@@ -50,6 +51,7 @@ interface Props {
     thumb:string;
     srcSet:string;
     sizes?:string;
+    loading?:'auto' | 'lazy' | 'eager';
     cleanBetween?:boolean;
     onLoadThumb?:()=> void;
 }
