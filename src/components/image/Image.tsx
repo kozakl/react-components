@@ -38,7 +38,9 @@ const Image:FunctionComponent<Props> = memo((props)=>
                 <img
                     className={style.img}
                     style={{visibility:
-                            !loadedThumb && (prevRatio !== props.ratio) ?
+                            !loadedThumb &&
+                                (prevRatio !== props.ratio ||
+                                    props.cleanBetween) ?
                                 'hidden' : 'visible'}}
                     src={init ? props.thumb : placeholder}
                     srcSet={loadedThumb ? props.srcSet : ''}
@@ -63,6 +65,7 @@ interface Props {
     srcSet:string;
     sizes?:string;
     loading?:'auto' | 'lazy' | 'eager';
+    cleanBetween?:boolean;
     onLoadThumb?:()=> void;
 }
 
