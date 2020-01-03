@@ -1,7 +1,5 @@
-import {
-    CSSProperties, FunctionComponent,
-    memo, useState
-} from 'react';
+import {CSSProperties, FunctionComponent,
+        memo, useState} from 'react';
 import React from 'react';
 
 const ImageLite:FunctionComponent<Props> = memo((props)=>
