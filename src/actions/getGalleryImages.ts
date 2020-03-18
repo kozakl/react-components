@@ -2,7 +2,7 @@ import {ErrorResult, Image} from '../types';
 
 export function getGalleryImages():Promise<Image[]>
 {
-    return fetch('./gallery.json')
+    return fetch('./data/gallery.json')
         .then((response)=> response.json())
         .then((result:Result)=> {
             if (result.error)
