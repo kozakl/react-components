@@ -1,0 +1,100 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js start
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  11.15.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /mnt/Internal-HD/Projects/react-components/package.json: Unexpected token } in JSON at position 2113
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "react-components",
+    "scripts": {
+      "start": "webpack-dev-server --config webpack.config.js",
+      "prebuild": "npm run clean-public && npm run make-images",
+      "build": "webpack --config webpack.config.prod.js",
+      "deploy": "node -r esm ./tasks/deploy.js ~/Public/kozakl.bitbucket.org/",
+      "make-images": "node -r esm ./tasks/make-images.js assets/images.json",
+      "clean-cache": "node -r esm ./tasks/clean-cache.js",
+      "clean-public": "node -r esm ./tasks/clean-public.js",
+      "test": "jest --coverage",
+      "test:watch": "npm run test -- --watchAll"
+    },
+    "jest": {
+      "transform": {
+        "^.+\\.tsx?$": "ts-jest"
+      },
+      "testRegex": "(/src/.*.test)\\.tsx?$",
+      "moduleFileExtensions": [
+        "js",
+        "ts",
+        "tsx"
+      ]
+    },
+    "dependencies": {
+      "@kozakl/hooks": "^2.0.0",
+      "@kozakl/utils": "^4.4.2",
+      "@types/googlemaps": "^3.30.16",
+      "@types/react": "^16.4.6",
+      "@types/react-dom": "^16.0.6",
+      "@types/react-router-dom": "^4.3.1",
+      "@types/reactstrap": "^6.4.2",
+      "bootstrap": "./dependencies/bootstrap/",
+      "react": "^16.4.1",
+      "react-dom": "^16.4.1",
+      "react-google-maps": "^9.4.5",
+      "react-router-dom": "^4.3.1",
+      "reactstrap": "^8.0.0"
+    },
+    "devDependencies": {
+      "@kozakl/node": "^2.1.0",
+      "@kozakl/webpack-dev-server": "^3.1.6",
+      "@types/fs-extra": "^5.0.4",
+      "@types/jest": "^23.3.0",
+      "css-loader": "^1.0.0",
+      "esm": "^3.0.84",
+      "file-loader": "^1.1.11",
+      "fs-extra": "^7.0.0",
+      "gm": "^1.23.1",
+      "jest": "^23.4.1",
+      "postcss-color-function": "^4.0.1",
+      "postcss-each": "^0.10.0",
+      "postcss-extend": "^1.0.5",
+      "postcss-for": "^2.1.1",
+      "postcss-import": "^11.1.0",
+      "postcss-loader": "^2.1.6",
+      "postcss-mixins": "^6.2.0",
+      "postcss-nested": "^3.0.0",
+      "postcss-preset-env": "^6.4.0",
+      "postcss-simple-vars": "^4.1.0",
+      "style-loader": "^0.21.0",
+      "ts-jest": "^23.10.4",
+      "ts-loader": "^4.4.2",
+      "typescript": "^3.4.5",
+      "url-loader": "^1.0.1",
+      "webpack": "^4.16.1",
+      "webpack-bundle-analyzer": "^3.3.2",
+      "webpack-cli": "^3.0.8",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
