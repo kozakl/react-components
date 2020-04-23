@@ -3,9 +3,9 @@ import {FormEvent, FunctionComponent,
 import {useCheckbox, useTextField} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {isFill} from '@kozakl/utils/validate';
-import {Checkbox} from '../checkbox';
-import {Modal} from '../modal';
-import {TextField} from '../text-field';
+import {Checkbox} from './index';
+import {Modal} from '../../modal/index';
+import {TextField} from './index';
 import React from 'react';
 import style from './Sidebar.pcss';
 

@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
-import {Sidebar} from '../../components/sidebar2';
+import {Sidebar} from '../../components/deprecated/sidebar2';
 import React from 'react';
 import style from './Sidebar2Sample.pcss';
 
