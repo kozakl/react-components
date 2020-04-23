@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {Button} from 'reactstrap';
 import {Modal} from '../../components/modal';
-import {Window} from '../../components/window1';
+import {Window} from '../../components/deprecated/window1';
 import React from 'react';
 import style from './Window1Sample.pcss';
 
