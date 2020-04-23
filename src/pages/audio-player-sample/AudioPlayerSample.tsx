@@ -1,4 +1,4 @@
-import {AudioPlayer} from '../../components/audio-player';
+import {AudioPlayer} from '../../components/deprecated/audio-player';
 import React from 'react';
 import style from './AudioPlayerSample.pcss';
 
