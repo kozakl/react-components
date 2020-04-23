@@ -3,10 +3,10 @@
     "module": "esnext",
     "moduleResolution": "node",
     "target": "es5",
+    "jsx": "react",
     "strict": true,
     "strictNullChecks": false,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react",
     "lib": [
       "dom",
       "es6",
