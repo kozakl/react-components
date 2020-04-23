@@ -1,4 +1,4 @@
-import {Login} from '../../components/login';
+import {Login} from '../../components/deprecated/login';
 import React from 'react';
 import style from './LoginSample.pcss';
 
