@@ -26,11 +26,6 @@ const Login:FunctionComponent<Props> = (props)=>
         }
     }
     
-    function onChangeForm() {
-        email.setError(null);
-        password.setError(null);
-    }
-    
     function validateForm()
     {
         let validate = true;
@@ -63,7 +58,7 @@ const Login:FunctionComponent<Props> = (props)=>
                 Logowanie
             </h5>
             
-            <form onSubmit={onSubmit} onChange={onChangeForm}>
+            <form onSubmit={onSubmit}>
                 <InputGroup className={style.email}>
                     <Input
                         value={email.value}
