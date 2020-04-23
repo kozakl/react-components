@@ -8,7 +8,7 @@
       {"value": "960", "name": "960w"},
       {"value": "1440", "name": "1440w"},
       {"value": "1920", "name": "1920w"},
-      {"value": "300", "name": "thumb", "blur": "0x1.5"}
+      {"value": "300", "name": "thumb", "blur": 1.5}
     ]
   },
   {
@@ -18,7 +18,7 @@
     "quality": 85,
     "sizes": [
       {"value": "800", "name": "800w"},
-      {"value": "100", "name": "thumb", "blur": "0x1.5"}
+      {"value": "100", "name": "thumb", "blur": 1.5}
     ]
   },
   {
@@ -32,7 +32,7 @@
       {"value": "1024", "name": "1024w"},
       {"value": "1440", "name": "1440w"},
       {"value": "1920", "name": "1920w"},
-      {"value": "100", "name": "thumb", "blur": "0x1.5"}
+      {"value": "100", "name": "thumb", "blur": 1.5}
     ]
   },
   {
@@ -46,7 +46,7 @@
       {"value": "960", "name": "960w-2x"},
       {"value": "1024", "name": "1024w-2x"},
       {"value": "1536", "name": "1536w-2x"},
-      {"value": "100", "name": "thumb", "blur": "0x1.5"}
+      {"value": "100", "name": "thumb", "blur": 1.5}
     ]
   },
   {
@@ -60,7 +60,7 @@
       {"value": "960", "name": "960w-2x"},
       {"value": "1024", "name": "1024w-2x"},
       {"value": "1536", "name": "1536w-2x"},
-      {"value": "100", "name": "thumb", "blur": "0x1.5"}
+      {"value": "100", "name": "thumb", "blur": 1.5}
     ]
   }
 ]

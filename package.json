@@ -38,7 +38,7 @@
     "reactstrap": "^8.0.0"
   },
   "devDependencies": {
-    "@kozakl/node": "^1.0.1",
+    "@kozakl/node": "^2.1.0",
     "@kozakl/webpack-dev-server": "^3.1.6",
     "@types/fs-extra": "^5.0.4",
     "@types/jest": "^23.3.0",

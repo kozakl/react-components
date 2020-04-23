@@ -1,74 +1,31 @@
-import {existsSync, lstatSync,
-        mkdirpSync, readFileSync} from 'fs-extra';
-import {basename, dirname,
-        extname, join} from 'path';
+import {lstatSync, readFileSync} from 'fs-extra';
+import {dirname, join} from 'path';
 import {listFiles} from '@kozakl/node/file';
-import gm from 'gm';
+import {makeImageSet} from '@kozakl/node/image';
 
 const filter = ['.jpg', '.png'],
       buffer = readFileSync(process.argv[2], 'utf8'),
       images = JSON.parse(buffer).values();
 makeImage(images.next().value);
 
-function makeImage(image)
+async function makeImage(image)
 {
     if (lstatSync(image.src).isFile()) {
-        makeSizes(image);
+        await makeImageSet(image);
     } else {
-        listFiles(image.src, filter).forEach((src)=> {
+        await listFiles(image.src, filter).reduce(async (promise, src)=> {
             const diff = src.replace(image.src, ''),
                   dest = dirname(join(image.dest, diff));
-            makeSizes({
+            await promise;
+            await makeImageSet({
                 ...image,
                 src, dest
-            });
-        });
+            }, process.argv.includes('--debug'));
+        }, Promise.resolve());
     }
     
     const next = images.next();
     if (!next.done) {
         makeImage(next.value);
     }
-}
-
-function makeSizes(image)
-{
-    if (!existsSync(image.dest))
-        mkdirpSync(image.dest);
-    
-    image.sizes.forEach((size)=> {
-        const imageName = basename(image.src, extname(image.src));
-        if (image.destDir)
-            mkdirpSync(join(image.dest, imageName));
-        
-        const dest = join(
-            image.dest,
-            image.destDir ? imageName : '' ,
-            (size.name || imageName) +
-            (size.suffix || '') +
-            (image.ext || extname(image.src))
-        );
-        if (!process.argv.includes('--debug')) {
-            gm(image.src)
-                .noProfile()
-                .resize(size.value)
-                .blur(size.blur || image.blur || '0x0.001')
-                .quality(size.quality || image.quality)
-                .write(dest, err => err && console.log(err));
-        } else {
-            gm(image.src)
-                .noProfile()
-                .resize(size.value)
-                .blur(size.blur || image.blur || '0x0.001')
-                .quality(size.quality || image.quality)
-                .fill('#FFFFFF')
-                .font('Helvetica', 0.1 * size.value)
-                .drawText(
-                    0.4 * size.value,
-                    0.11 * size.value,
-                    size.name
-                )
-                .write(dest, err => err && console.log(err));
-        }
-    });
 }
