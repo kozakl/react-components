@@ -20,7 +20,6 @@ const Dialog:FunctionComponent<Props> = (props)=>
                 <div className={style.message}>
                     {props.children}
                 </div>
-                
                 <div className={style.actions}>
                     <Button
                         onClick={props.onDismiss}
