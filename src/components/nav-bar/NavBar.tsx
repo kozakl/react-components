@@ -8,7 +8,7 @@ import style from './NavBar.pcss';
 
 export default function NavBar()
 {
-    const desktop = useMatchMedia('(min-width: 768px)');
+    const desktop = useMatchMedia(null, '(min-width: 768px)');
     const {open, transit, setOpen} = useOpenNav(desktop);
     
     const linksClass = classNames(
