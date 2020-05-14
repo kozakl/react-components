@@ -1,5 +1,7 @@
-import {CSSProperties, FunctionComponent,
-        memo, useState} from 'react';
+import {
+    CSSProperties, FunctionComponent,
+    memo, MouseEvent, useState
+} from 'react';
 import React from 'react';
 
 const ImageLite:FunctionComponent<Props> = memo((props)=>
@@ -38,6 +40,7 @@ const ImageLite:FunctionComponent<Props> = memo((props)=>
             srcSet={loadedThumb ? props.srcSet : ''}
             sizes={loadedThumb ? props.sizes : ''}
             loading={props.loading}
+            onClick={props.onClick}
             onLoad={onLoadThumb}/>
     );
 });
@@ -51,6 +54,7 @@ interface Props {
     sizes?:string;
     loading?:'auto' | 'lazy' | 'eager';
     cleanBetween?:boolean;
+    onClick?:(event:MouseEvent<HTMLDivElement>)=> void;
     onLoadThumb?:()=> void;
 }
 
