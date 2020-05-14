@@ -1,5 +1,5 @@
 import {CSSProperties, FunctionComponent,
-        memo, useState} from 'react';
+        memo, MouseEvent, useState} from 'react';
 import React from 'react';
 import style from './Image.pcss';
 
@@ -32,7 +32,8 @@ const Image:FunctionComponent<Props> = memo((props)=>
         <div
             className={props.className}
             id={props.id}
-            style={props.style}>
+            style={props.style}
+            onClick={props.onClick}>
             <div className={style.wrapper}
                  style={{paddingTop: `${props.ratio * 100}%`}}>
                 <img
@@ -66,6 +67,7 @@ interface Props {
     sizes?:string;
     loading?:'auto' | 'lazy' | 'eager';
     cleanBetween?:boolean;
+    onClick?:(event:MouseEvent<HTMLDivElement>)=> void;
     onLoadThumb?:()=> void;
 }
 
