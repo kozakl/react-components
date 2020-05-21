@@ -65,7 +65,7 @@ interface Props {
     thumb:string;
     srcSet:string;
     sizes?:string;
-    loading?:'auto' | 'lazy' | 'eager';
+    loading?:'lazy' | 'eager';
     cleanBetween?:boolean;
     onClick?:(event:MouseEvent<HTMLDivElement>)=> void;
     onLoadThumb?:()=> void;
