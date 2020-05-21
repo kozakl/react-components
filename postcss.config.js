@@ -5,13 +5,10 @@ module.exports = {
         },
         'postcss-each': {},
         'postcss-for': {},
-        'postcss-extend': {},
         'postcss-mixins': {},
         'postcss-simple-vars': {},
         'postcss-nested': {},
         'postcss-preset-env': {},
-        'postcss-color-function': {
-            preserveCustomProps: false
-        }
+        'postcss-color-mod-function': {}
     }
 };
