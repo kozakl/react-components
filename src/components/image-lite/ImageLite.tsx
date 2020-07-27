@@ -37,11 +37,16 @@ const ImageLite:FunctionComponent<Props> = memo((props)=>
             src={init ? props.thumb : placeholder}
             srcSet={loadedThumb ? props.srcSet : ''}
             sizes={loadedThumb ? props.sizes : ''}
+            alt={props.alt}
             loading={props.loading}
             onClick={props.onClick}
             onLoad={onLoadThumb}/>
     );
 });
+
+ImageLite.defaultProps = {
+    alt: ''
+};
 
 interface Props {
     className?:string;
@@ -50,6 +55,7 @@ interface Props {
     thumb:string;
     srcSet:string;
     sizes?:string;
+    alt?:string;
     loading?:'lazy' | 'eager';
     cleanBetween?:boolean;
     onClick?:(event:MouseEvent<HTMLDivElement>)=> void;
