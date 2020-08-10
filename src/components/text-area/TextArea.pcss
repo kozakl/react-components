@@ -1,8 +1,4 @@
 .textArea {
-  --error-color: #F44336;
-}
-
-.textArea {
   display: inline-block;
   position: relative;
   text-align: left;
@@ -28,7 +24,7 @@
     align-items: flex-start;
   }
   &.error {
-    border-bottom: solid 1px var(--error-color);
+    border-bottom: solid 1px var(--text-color-error);
   }
 }
 
@@ -77,7 +73,7 @@
 }
 
 .error:not(.adornmentContainer) {
-  color: var(--error-color);
+  color: var(--text-color-error);
   font-size: 0.75em;
   margin-top: 0.4em;
 }
