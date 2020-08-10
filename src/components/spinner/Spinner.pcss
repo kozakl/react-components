@@ -1,8 +1,8 @@
 @import 'animations.pcss';
 
 .spinner {
-  --bg-shadow: -1px 0 1.5px 0 rgba(0,0,0,.12),
-               -1px 0 1px 0 rgba(0,0,0,.24);
+  --shadow: -1px 0 1.5px 0 rgba(0,0,0,.12),
+            -1px 0 1px 0 rgba(0,0,0,.24);
 }
 
 .spinner {
@@ -12,8 +12,8 @@
 .wrapper {
   transform: rotate(-90deg);
   
-  &.bg {
-    box-shadow: var(--bg-shadow);
+  &.background {
+    box-shadow: var(--shadow);
     padding: 15%;
     border-radius: 50%;
   }

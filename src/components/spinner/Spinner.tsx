@@ -11,7 +11,7 @@ const Spinner:FunctionComponent<Props> = (props)=>
     );
     const wrapperClass = classNames(
         style.wrapper,
-        props.background && style.bg,
+        props.background && style.background,
     );
     return (
         <div
