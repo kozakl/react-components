@@ -1,12 +1,12 @@
 export const textField:string;
-export const container:string;
+export const disabled:string;
+export const adornmentContainer:string;
 export const flex:string;
+export const error:string;
 export const startAdornment:string;
-export const inputContainer:string;
+export const placeholderContainer:string;
 export const relative:string;
 export const placeholder:string;
-export const disabled:string;
 export const opened:string;
 export const input:string;
-export const error:string;
 export const endAdornment:string;

@@ -11,14 +11,14 @@ export const TextField:FunctionComponent<Props> = (props)=>
         props.className,
         props.disabled && style.disabled
     );
-    const containerClass = classNames(
-        style.container,
+    const adornmentContainerClass = classNames(
+        style.adornmentContainer,
         (props.startAdornment ||
             props.endAdornment) && style.flex,
         props.error && style.error
     );
-    const inputContainerClass = classNames(
-        style.inputContainer,
+    const placeholderContainerClass = classNames(
+        style.placeholderContainer,
         !props.startAdornment && style.relative
     );
     const placeholderClass = classNames(
@@ -29,12 +29,12 @@ export const TextField:FunctionComponent<Props> = (props)=>
     );
     return (
         <div className={textFieldClass}>
-            <div className={containerClass}>
+            <div className={adornmentContainerClass}>
                 {props.startAdornment &&
                     <div className={style.startAdornment}>
                         {props.startAdornment}
                     </div>}
-                <div className={inputContainerClass}>
+                <div className={placeholderContainerClass}>
                     {props.placeholder &&
                         <label className={placeholderClass}>
                             {props.placeholder}
@@ -67,9 +67,9 @@ interface Props {
     type?:string;
     value?:string;
     opened?:boolean;
-    maxLength?:number;
     disabled?:boolean;
     placeholder?:ReactNode;
+    maxLength?:number;
     startAdornment?:ReactNode;
     endAdornment?:ReactNode;
     error?:string;

@@ -1,7 +1,3 @@
-:root {
-  --error-color: #F44336;
-}
-
 .textField {
   display: inline-block;
   position: relative;
@@ -19,16 +15,16 @@
   }
 }
 
-.container {
+.adornmentContainer {
   border-bottom: solid 1px;
   padding-bottom: 0.25em;
   
   &.flex {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
   }
   &.error {
-    border-bottom: solid 1px var(--error-color);
+    border-bottom: solid 1px var(--text-color-error);
   }
 }
 
@@ -36,7 +32,7 @@
   margin-right: 0.4em;
 }
 
-.inputContainer {
+.placeholderContainer {
   flex: 1;
   
   &.relative {
@@ -62,6 +58,7 @@
 }
 
 .input {
+  display: block;
   background: none;
   color: inherit;
   outline: none;
@@ -74,8 +71,8 @@
   margin-left: 0.4em;
 }
 
-.error:not(.container) {
-  color: var(--error-color);
+.error:not(.adornmentContainer) {
+  color: var(--text-color-error);
   font-size: 0.75em;
   margin-top: 0.4em;
 }
