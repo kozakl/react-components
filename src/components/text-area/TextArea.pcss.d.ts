@@ -1,0 +1,12 @@
+export const textArea:string;
+export const disabled:string;
+export const adornmentContainer:string;
+export const flex:string;
+export const error:string;
+export const startAdornment:string;
+export const placeholderContainer:string;
+export const relative:string;
+export const placeholder:string;
+export const opened:string;
+export const area:string;
+export const endAdornment:string;
