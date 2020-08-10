@@ -35,7 +35,8 @@ export const TextField:FunctionComponent<Props> = (props)=>
                         {props.startAdornment}
                     </div>}
                 <div className={placeholderContainerClass}>
-                    {props.placeholder &&
+                    {props.openable &&
+                     props.placeholder &&
                         <label className={placeholderClass}>
                             {props.placeholder}
                         </label>}
@@ -44,6 +45,8 @@ export const TextField:FunctionComponent<Props> = (props)=>
                         id={props.id}
                         type={props.type}
                         value={props.value}
+                        placeholder={!props.openable &&
+                            props.placeholder.toString()}
                         maxLength={props.maxLength}
                         disabled={props.disabled}
                         onChange={props.onChange}/>
@@ -61,14 +64,19 @@ export const TextField:FunctionComponent<Props> = (props)=>
     );
 };
 
+TextField.defaultProps = {
+    openable: true
+};
+
 interface Props {
     className?:string;
     id?:string;
     type?:string;
     value?:string;
     opened?:boolean;
+    openable?:boolean;
     disabled?:boolean;
-    placeholder?:ReactNode;
+    placeholder?:ReactNode|string;
     maxLength?:number;
     startAdornment?:ReactNode;
     endAdornment?:ReactNode;
