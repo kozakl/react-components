@@ -25,7 +25,7 @@ const Checkbox:FunctionComponent<Props> = (props)=>
                     onChange={props.onChange}
                     type="checkbox"/>
                 <span className={style.box}/>
-                {props.children}
+                <span>{props.children}</span>
             </label>
             {props.error &&
                 <div className={style.error}>

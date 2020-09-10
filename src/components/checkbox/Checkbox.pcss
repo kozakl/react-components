@@ -9,9 +9,12 @@
 .label {
   display: inline-block;
   position: relative;
-  padding-left: 1.3rem;
+  padding-left: 1.3em;
   margin: 0;
   
+  & > * {
+    display: inline-block;
+  }
   &.disabled {
     opacity: 0.45;
   }
@@ -31,25 +34,26 @@
 .box {
   position: absolute;
   border: 1px solid;
-  width: 1rem;
-  height: 1rem;
+  width: 1em;
+  height: 1em;
+  top: 0.1em;
   left: 0;
   
   &::after {
     content: none;
     position: absolute;
-    border-bottom: 2px solid;
-    border-left: 2px solid;
-    width: 9px;
-    height: 5px;
-    top: 0.2rem;
-    left: 0.15rem;
+    border-bottom: 0.125em solid;
+    border-left: 0.125em solid;
+    width: 0.56em;
+    height: 0.31em;
+    top: 0.2em;
+    left: 0.15em;
     transform: rotate(-45deg);
   }
 }
 
 .error {
   color: var(--error-color);
-  padding-left: 1.3rem;
+  padding-left: 1.3em;
   margin-top: 0.4em;
 }
