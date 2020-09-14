@@ -1,5 +1,4 @@
 import {FunctionComponent} from 'react';
-import {Button} from 'reactstrap';
 import {classNames} from '@kozakl/utils';
 import {Modal} from '../modal';
 import React from 'react';
@@ -21,27 +20,18 @@ const Dialog:FunctionComponent<Props> = (props)=>
                     {props.children}
                 </div>
                 <div className={style.actions}>
-                    <Button
-                        onClick={props.onDismiss}
-                        size="sm"
-                        outline>
-                        {props.dismiss}
-                    </Button>
-                    <Button
-                        onClick={props.onConfirm}
-                        color="success"
-                        size="sm">
-                        {props.confirm}
-                    </Button>
+                    {props.dismiss &&
+                        <button onClick={props.onDismiss}>
+                            {props.dismiss}
+                        </button>}
+                    {props.confirm &&
+                        <button onClick={props.onConfirm}>
+                            {props.confirm}
+                        </button>}
                 </div>
             </div>
         </Modal>
     );
-};
-
-Dialog.defaultProps = {
-    confirm: 'OK',
-    dismiss: 'Cancel'
 };
 
 interface Props {
