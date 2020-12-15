@@ -1,5 +1,6 @@
 import {FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
+import {Button} from '../button';
 import {Modal} from '../modal';
 import React from 'react';
 import style from './Dialog.pcss';
@@ -21,13 +22,13 @@ const Dialog:FunctionComponent<Props> = (props)=>
                 </div>
                 <div className={style.actions}>
                     {props.dismiss &&
-                        <button onClick={props.onDismiss}>
+                        <Button onClick={props.onDismiss}>
                             {props.dismiss}
-                        </button>}
+                        </Button>}
                     {props.confirm &&
-                        <button onClick={props.onConfirm}>
+                        <Button onClick={props.onConfirm}>
                             {props.confirm}
-                        </button>}
+                        </Button>}
                 </div>
             </div>
         </Modal>
