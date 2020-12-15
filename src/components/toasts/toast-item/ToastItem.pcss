@@ -1,0 +1,85 @@
+:root {
+  --success-color: #5CB85C;
+  --danger-color: #D9534F;
+  --info-color: #5BC0DE;
+  --warning-color: #F0AD4E;
+}
+
+.toast {
+  --shadow: 0 0 0.5em #999;
+  --text-color: #FFFFFF;
+}
+
+.toast {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-color);
+  box-shadow: var(--shadow);
+  border-radius: 0.25em;
+  transform: translateX(150%);
+  transition: transform ease-in 0.4s;
+  
+  &.success {
+    background: color-mod(var(--success-color) a(0.9));
+  }
+  &.danger {
+    background: color-mod(var(--danger-color) a(0.9));
+  }
+  &.info {
+    background: color-mod(var(--info-color) a(0.9));
+  }
+  &.warning {
+    background: color-mod(var(--warning-color) a(0.9));
+  }
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+.container {
+  display: flex;
+}
+
+.icon {
+  align-self: center;
+  margin: 0.85em;
+  
+  & > img {
+    width: 1.85em;
+  }
+}
+
+.body {
+  margin: 1em 0;
+}
+
+.title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.message {
+  font-size: 0.9em;
+  white-space: pre;
+  margin: 0;
+}
+
+.close {
+  cursor: pointer;
+  margin-left: 0.5em;
+  transition: background 0.25s;
+  
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+  & > img {
+    margin: 0 0.4em;
+    width: 1.25em;
+  }
+  &:hover {
+    background: color-mod(#000 a(0.15));
+  }
+}
