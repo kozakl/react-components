@@ -47,6 +47,8 @@ export const TextField:FunctionComponent<Props> = (props)=>
                         value={props.value}
                         placeholder={!props.openable &&
                             props.placeholder.toString()}
+                        min={props.min}
+                        max={props.max}
                         maxLength={props.maxLength}
                         disabled={props.disabled}
                         onChange={props.onChange}/>
@@ -77,6 +79,8 @@ interface Props {
     openable?:boolean;
     disabled?:boolean;
     placeholder?:ReactNode|string;
+    min?:number;
+    max?:number;
     maxLength?:number;
     startAdornment?:ReactNode;
     endAdornment?:ReactNode;
