@@ -45,8 +45,8 @@ export const TextField:FunctionComponent<Props> = (props)=>
                         id={props.id}
                         type={props.type}
                         value={props.value}
-                        placeholder={!props.openable &&
-                            props.placeholder.toString()}
+                        placeholder={!props.openable ?
+                            props.placeholder.toString() : null}
                         min={props.min}
                         max={props.max}
                         maxLength={props.maxLength}
