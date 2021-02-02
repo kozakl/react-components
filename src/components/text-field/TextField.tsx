@@ -35,16 +35,12 @@ export const TextField:FunctionComponent<Props> = (props)=>
                         {props.startAdornment}
                     </div>}
                 <div className={placeholderContainerClass}>
-                    {props.openable &&
-                     props.placeholder &&
-                        <label className={placeholderClass}>
-                            {props.placeholder}
-                        </label>}
                     <input
                         className={style.input}
                         id={props.id}
                         type={props.type}
                         value={props.value}
+                        autoComplete={props.autoComplete}
                         placeholder={!props.openable ?
                             props.placeholder.toString() : null}
                         min={props.min}
@@ -52,6 +48,11 @@ export const TextField:FunctionComponent<Props> = (props)=>
                         maxLength={props.maxLength}
                         disabled={props.disabled}
                         onChange={props.onChange}/>
+                    {props.openable &&
+                     props.placeholder &&
+                        <label className={placeholderClass}>
+                            {props.placeholder}
+                        </label>}
                 </div>
                 {props.endAdornment &&
                     <div className={style.endAdornment}>
@@ -77,11 +78,12 @@ interface Props {
     value?:string;
     opened?:boolean;
     openable?:boolean;
-    disabled?:boolean;
+    autoComplete?:string;
     placeholder?:ReactNode|string;
     min?:number;
     max?:number;
     maxLength?:number;
+    disabled?:boolean;
     startAdornment?:ReactNode;
     endAdornment?:ReactNode;
     error?:string;

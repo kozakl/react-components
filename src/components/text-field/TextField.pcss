@@ -4,10 +4,10 @@
   text-align: left;
   margin: 1.75em 0;
   
-  &:focus-within {
-    .placeholder {
-      font-size: 0.75em;
-      top: -1.5em;
+  & input:-webkit-autofill,
+  & input:focus {
+    & +.placeholder {
+      @extend .placeholder.opened;
     }
   }
   &.disabled {
