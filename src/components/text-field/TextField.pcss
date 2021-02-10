@@ -4,9 +4,8 @@
   text-align: left;
   margin: 1.75em 0;
   
-  & input:-webkit-autofill,
-  & input:focus {
-    & +.placeholder {
+  &:focus-within {
+    .placeholder {
       font-size: 0.75em;
       top: -1.5em;
     }
@@ -66,10 +65,6 @@
   border: none;
   padding: 0;
   width: 100%;
-  
-  &:-webkit-autofill {
-    -webkit-background-clip: text;
-  }
 }
 
 .endAdornment {
