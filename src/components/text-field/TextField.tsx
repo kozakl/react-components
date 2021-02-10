@@ -27,6 +27,10 @@ export const TextField:FunctionComponent<Props> = (props)=>
             props.opened ||
             props.startAdornment) && style.opened
     );
+    const errorClass = classNames(
+        style.error,
+        props.error && style.display
+    );
     return (
         <div className={textFieldClass}>
             <div className={adornmentContainerClass}>
@@ -58,10 +62,9 @@ export const TextField:FunctionComponent<Props> = (props)=>
                         {props.endAdornment}
                     </div>}
             </div>
-            {props.error &&
-                <div className={style.error}>
-                    {props.error}
-                </div>}
+            <div className={errorClass}>
+                {props.error}
+            </div>
         </div>
     );
 };

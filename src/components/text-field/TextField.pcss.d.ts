@@ -10,3 +10,4 @@ export const placeholder:string;
 export const opened:string;
 export const input:string;
 export const endAdornment:string;
+export const display:string;

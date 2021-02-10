@@ -34,6 +34,10 @@ export const TextArea:FunctionComponent<Props> = (props)=>
             props.opened ||
             props.startAdornment) && style.opened
     );
+    const errorClass = classNames(
+        style.error,
+        props.error && style.display
+    );
     return (
         <div className={textAreaClass}>
             <div className={adornmentContainerClass}>
@@ -42,7 +46,8 @@ export const TextArea:FunctionComponent<Props> = (props)=>
                         {props.startAdornment}
                     </div>}
                 <div className={placeholderContainerClass}>
-                    {props.placeholder &&
+                   {props.openable &&
+                    props.placeholder &&
                         <label className={placeholderClass}>
                             {props.placeholder}
                         </label>}
@@ -51,6 +56,8 @@ export const TextArea:FunctionComponent<Props> = (props)=>
                         id={props.id}
                         ref={areaRef}
                         value={props.value}
+                        placeholder={!props.openable ?
+                            props.placeholder.toString() : null}
                         disabled={props.disabled}
                         rows={props.rows}
                         maxLength={props.maxLength}
@@ -61,10 +68,9 @@ export const TextArea:FunctionComponent<Props> = (props)=>
                         {props.endAdornment}
                     </div>}
             </div>
-            {props.error &&
-                <div className={style.error}>
-                    {props.error}
-                </div>}
+            <div className={errorClass}>
+                {props.error}
+            </div>
         </div>
     );
 };
@@ -74,6 +80,7 @@ interface Props {
     id?:string;
     value?:string;
     opened?:boolean;
+    openable?:boolean;
     disabled?:boolean;
     placeholder?:ReactNode;
     rows?: number;
