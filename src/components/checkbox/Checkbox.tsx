@@ -20,10 +20,10 @@ const Checkbox:FunctionComponent<Props> = (props)=>
                 <input
                     className={style.input}
                     id={props.id}
+                    type="checkbox"
                     checked={props.checked}
                     disabled={props.disabled}
-                    onChange={props.onChange}
-                    type="checkbox"/>
+                    onChange={props.onChange}/>
                 <span className={style.box}/>
                 <span>{props.children}</span>
             </label>
