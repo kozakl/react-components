@@ -107,7 +107,7 @@ export default class Modal extends PureComponent<Props, State>
             ReactDOM.createPortal(
                 React.cloneElement(
                     Children.only(this.props.children) as ReactElement, {
-                        active: this.state.active,
+                        active: this.state.active.toString(),
                         onClose: this.props.onClose,
                         ...(this.props.children as ReactElement).props
                     }
