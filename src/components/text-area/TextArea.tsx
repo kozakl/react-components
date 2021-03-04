@@ -79,10 +79,10 @@ interface Props {
     className?:string;
     id?:string;
     value?:string;
+    placeholder?:ReactNode;
     opened?:boolean;
     openable?:boolean;
     disabled?:boolean;
-    placeholder?:ReactNode;
     rows?: number;
     maxLength?:number;
     startAdornment?:ReactNode;
