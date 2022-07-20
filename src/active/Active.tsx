@@ -5,13 +5,12 @@ import style from './Active.module.css';
 
 const Active = (props:Props)=>
 {
-    const activeClass = classNames(
-        style.active,
-        props.className
-    );
     return (
         <label
-            className={activeClass}
+            className={classNames(
+                style.active,
+                props.className
+            )}
             title={props.title}>
             <input
                 className={style.input}
