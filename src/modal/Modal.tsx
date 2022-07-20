@@ -110,7 +110,7 @@ Modal.defaultProps = {
     autoOverflow: true
 };
 
-interface Props extends PropsWithChildren {
+interface Props extends PropsWithChildren<{}> {
     visible?:boolean;
     outTime?:number;
     transparent?:boolean;
