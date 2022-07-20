@@ -26,4 +26,10 @@
     padding-top: 1em;
     min-width: 17.5em;
   }
+  .error {
+    color: var(--color-error);
+    font-size: 0.875rem;
+    white-space: pre;
+    margin-top: 0.4em;
+  }
 }

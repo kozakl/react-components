@@ -38,6 +38,10 @@ const CalendarPopover = (props:Props)=>
                             setOpen(false);
                             props.onChange(date);
                         }}/>}
+            {props.error &&
+                <div className={style.error}>
+                    {props.error}
+                </div>}
         </div>
     );
 };
@@ -46,6 +50,7 @@ interface Props {
     className?:string;
     date?:Date;
     locale?:Locale;
+    error?:string;
     disabled?:boolean;
     onChange?:(date:Date)=> void;
 }
