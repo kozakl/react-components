@@ -1,0 +1,46 @@
+.active {
+  .input {
+    position: absolute;
+    opacity: 0;
+    
+    &:checked {
+      +.content {
+        border: 2px solid var(--color-active);
+        
+        &::before {
+          background: var(--color-active);
+        }
+      }
+    }
+    &:disabled {
+      +.content {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+  }
+  .content {
+    position: relative;
+    opacity: 0.75;
+    cursor: pointer;
+    border: 2px solid var(--color-inactive);
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      background: var(--color-inactive);
+      border-radius: 50%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: scale(0.5);
+    }
+    &:hover {
+     opacity: 1; 
+    }
+  }
+}
