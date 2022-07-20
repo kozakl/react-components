@@ -17,7 +17,7 @@ const Image:FunctionComponent<Props> = memo((props)=>
     }
     
     useEffect(()=> {
-        let timeout:NodeJS.Timeout;
+        let timeout:number;
         if (img.current.complete) {
             timeout = setTimeout(()=>
                 onLoadThumb(), 75);
