@@ -23,7 +23,9 @@ const CalendarPopover = (props:Props)=>
                 )}
                 onClick={()=>
                     setOpen(!open)}>
-                {format(props.date, 'PP', {locale: props.locale})}
+                {props.date ?
+                    format(props.date, 'PP', {locale: props.locale}) :
+                    '---- -- --'}
             </div>
             {!props.disabled &&
                 open &&
