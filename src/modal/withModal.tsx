@@ -1,5 +1,6 @@
 import {FunctionComponent} from 'react';
 import {default as Modal} from './Modal';
+import React from 'react';
 
 export function withModal<P>(
     Component:FunctionComponent<P>,
