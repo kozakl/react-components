@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {format, Locale} from 'date-fns';
 import {classNames} from '@kozakl/utils';
 import {Calendar} from '../calendar';
+import React from 'react';
 import style from './CalendarPopover.module.css';
 
 const CalendarPopover = (props:Props)=>
