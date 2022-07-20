@@ -1,11 +1,11 @@
 import {Children, cloneElement,
-        FunctionComponent, ReactElement,
+        PropsWithChildren, ReactElement,
         useEffect, useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
 import ReactDOM from 'react-dom';
 import style from './Modal.module.css';
 
-const Modal:FunctionComponent<Props> = (props)=>
+const Modal = (props:Props)=>
 {
     const modal = useRef<HTMLDivElement>(),
           container = useRef<HTMLDivElement>();
@@ -110,7 +110,7 @@ Modal.defaultProps = {
     autoOverflow: true
 };
 
-interface Props {
+interface Props extends PropsWithChildren {
     visible?:boolean;
     outTime?:number;
     transparent?:boolean;
