@@ -6,6 +6,8 @@
   .date {
     color: var(--color-primary);
     cursor: pointer;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.25em;
     
     &.disabled {
       opacity: 0.75;
