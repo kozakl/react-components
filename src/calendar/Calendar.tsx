@@ -2,6 +2,7 @@ import {ReactNode} from 'react';
 import {Calendar as CalendarInternal} from 'react-date-range';
 import {Locale} from 'date-fns';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
 import style from './Calendar.module.css';
 
 const Calendar = (props:Props)=>
