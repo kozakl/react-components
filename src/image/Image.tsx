@@ -37,13 +37,12 @@ const Image:FunctionComponent<Props> = memo((props)=>
         setPrevRatio(props.ratio);
     }
     
-    const imageClass = classNames(
-        style.image,
-        props.className
-    );
     return (
         <div
-            className={imageClass}
+            className={classNames(
+                style.image,
+                props.className
+            )}
             id={props.id}
             style={props.style}
             onClick={props.onClick}>
