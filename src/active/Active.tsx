@@ -1,5 +1,6 @@
 import {ChangeEventHandler} from 'react';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
 import style from './Active.module.css';
 
 const Active = (props:Props)=>
