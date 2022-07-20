@@ -2,7 +2,8 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node",
-    "target": "es5",
+    "jsx": "react-jsx",
+    "target": "es2021",
     "strict": true,
     "strictNullChecks": false,
     "declaration": true,
