@@ -23,7 +23,9 @@ const CalendarPopover = (props:Props)=>
                 )}
                 onClick={()=>
                     setOpen(!open)}>
-                {format(props.date, 'PP', {locale: props.locale})}
+                {props.date ?
+                    format(props.date, 'PP', {locale: props.locale}) :
+                    '---- -- --'}
             </div>
             {!props.disabled &&
                 open &&
@@ -36,6 +38,10 @@ const CalendarPopover = (props:Props)=>
                             setOpen(false);
                             props.onChange(date);
                         }}/>}
+            {props.error &&
+                <div className={style.error}>
+                    {props.error}
+                </div>}
         </div>
     );
 };
@@ -44,6 +50,7 @@ interface Props {
     className?:string;
     date?:Date;
     locale?:Locale;
+    error?:string;
     disabled?:boolean;
     onChange?:(date:Date)=> void;
 }
