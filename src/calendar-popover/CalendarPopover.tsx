@@ -6,8 +6,7 @@ import {Calendar} from '../calendar';
 import React from 'react';
 import style from './CalendarPopover.module.css';
 
-const CalendarPopover = (props:Props)=>
-{
+const CalendarPopover = (props:Props)=> {
     const calendarPopover = useRef();
     const [open, setOpen] = useState(false);
     
