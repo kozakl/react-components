@@ -14,7 +14,7 @@ const ImageLite:FunctionComponent<Props> = memo((props)=> {
     }
     
     useEffect(()=> {
-        let timeout:number;
+        let timeout:NodeJS.Timeout;
         if (img.current.complete) {
             timeout = setTimeout(()=>
                 onLoadThumb(), 75);
