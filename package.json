@@ -24,12 +24,14 @@
     "@types/react": "^17.0.2",
     "@types/react-date-range": "^1.4.4",
     "@types/react-dom": "^17.0.2",
+    "@types/react-draft-wysiwyg": "^1.13.3",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
     "html-to-draftjs": "^1.5.0",
     "react": "^17.0.2",
     "react-date-range": "^1.4.0",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-draft-wysiwyg": "^1.15.0"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
