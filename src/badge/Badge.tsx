@@ -1,9 +1,9 @@
-import {FunctionComponent} from 'react';
+import {PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Badge.module.css';
 
-const Badge:FunctionComponent<Props> = (props)=>
+const Badge = (props:Props)=>
 {
     return (
         <a
@@ -20,7 +20,7 @@ const Badge:FunctionComponent<Props> = (props)=>
     );
 };
 
-interface Props {
+interface Props extends PropsWithChildren<{}> {
     className?:string;
     title?:string;
     href?:string;
