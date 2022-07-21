@@ -5,16 +5,15 @@ import style from './Button.module.css';
 
 const Button:FunctionComponent<Props> = (props)=>
 {
-    const buttonClass = classNames(
-        style.button,
-        props.size == 'small' &&
-            style.small,
-        props.reversed && style.reversed,
-        props.className
-    );
     return (
         <button
-            className={buttonClass}
+            className={classNames(
+                style.button,
+                props.size == 'small' &&
+                    style.small,
+                props.reversed && style.reversed,
+                props.className
+            )}
             id={props.id}
             type={props.type}
             title={props.title}
