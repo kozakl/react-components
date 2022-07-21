@@ -1,6 +1,7 @@
 import {ChangeEventHandler, KeyboardEventHandler,
         MouseEventHandler, ReactNode} from 'react';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
 import style from './TextField.module.css';
 
 const TextField = (props:Props)=>
