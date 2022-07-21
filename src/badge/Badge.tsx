@@ -3,8 +3,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Badge.module.css';
 
-const Badge = (props:Props)=>
-{
+const Badge = (props:Props)=> {
     return (
         <a
             className={classNames(
