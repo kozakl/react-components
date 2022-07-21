@@ -1,6 +1,6 @@
 {
   "name": "@kozakl/components",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "sideEffects": false,
   "author": {
     "name": "Luke Kozak",
@@ -35,6 +35,7 @@
     "react-draft-wysiwyg": "^1.15.0"
   },
   "devDependencies": {
+    "@types/node": "^18.0.6",
     "copyfiles": "^2.4.1",
     "typescript": "^4.7.0"
   }
