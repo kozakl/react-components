@@ -3,8 +3,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Button.module.css';
 
-const Button = (props:Props)=>
-{
+const Button = (props:Props)=> {
     return (
         <button
             className={classNames(

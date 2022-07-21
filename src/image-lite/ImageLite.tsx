@@ -3,8 +3,7 @@ import {CSSProperties, FunctionComponent, memo,
         useEffect, useRef, useState} from 'react';
 import React from 'react';
 
-const ImageLite:FunctionComponent<Props> = memo((props)=>
-{
+const ImageLite:FunctionComponent<Props> = memo((props)=> {
     const img = useRef<HTMLImageElement>();
     const [prevThumb, setPrevThumb] = useState(null),
           [loadedThumb, setLoadedThumb] = useState(false);
