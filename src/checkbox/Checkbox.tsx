@@ -5,18 +5,18 @@ import style from './Checkbox.module.css';
 
 const Checkbox:FunctionComponent<Props> = (props)=>
 {
-    const checkboxClass = classNames(
-        style.checkbox,
-        props.reversed && style.reversed,
-        props.className
-    );
-    const labelClass = classNames(
-        style.label,
-        props.disabled && style.disabled
-    );
     return (
-        <div className={checkboxClass}>
-            <label className={labelClass}>
+        <div
+            className={classNames(
+                style.checkbox,
+                props.reversed && style.reversed,
+                props.className
+            )}>
+            <label
+                className={classNames(
+                    style.label,
+                    props.disabled && style.disabled
+                )}>
                 <input
                     className={style.input}
                     id={props.id}
