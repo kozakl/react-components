@@ -13,9 +13,7 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && tsc && copyfiles -u 1 src/**/*.css dist/",
-    "publish-dist": "npm run build && cp package.json ./dist && npm publish ./dist --access=public",
-    "test": "jest --coverage",
-    "test:watch": "npm run test -- --watchAll"
+    "publish-dist": "npm run build && cp package.json ./dist && npm publish ./dist --access=public"
   },
   "peerDependencies": {
     "@kozakl/hooks": "^4.2.1",
