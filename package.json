@@ -18,6 +18,7 @@
     "test:watch": "npm run test -- --watchAll"
   },
   "peerDependencies": {
+    "@kozakl/hooks": "^4.2.1",
     "@kozakl/utils": "^9.1.0",
     "@types/draft-js": "^0.10.44",
     "@types/draftjs-to-html": "^0.8.0",
