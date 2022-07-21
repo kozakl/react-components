@@ -17,10 +17,17 @@ const Modal = (props:Props)=> {
                   document.body.style.overflowY : '');
     
     useEffect(()=> {
+        function onClickModal(event:MouseEvent) {
+            if (event.target == event.currentTarget) {
+                if (props.onClose) {
+                    props.onClose();
+                }
+            }
+        }
+        
         modal.current = document.querySelector('#modal');
         container.current = document.createElement('div');
         container.current.addEventListener('click', onClickModal);
-        
         return ()=> {
             clearTimeout(visibleDelay);
             clearTimeout(activeDelay);
@@ -66,14 +73,6 @@ const Modal = (props:Props)=> {
             }, props.outTime));
         }
     }, [props.visible]);
-    
-    function onClickModal(event:MouseEvent) {
-        if (event.target == event.currentTarget) {
-            if (props.onClose) {
-                props.onClose();
-            }
-        }
-    }
     
     container.current &&
         (container.current.className = classNames(
