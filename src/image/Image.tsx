@@ -5,8 +5,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Image.module.css';
 
-const Image:FunctionComponent<Props> = memo((props)=>
-{
+const Image:FunctionComponent<Props> = memo((props)=> {
     const img = useRef<HTMLImageElement>();
     const [prevRatio, setPrevRatio] = useState(props.ratio),
           [prevThumb, setPrevThumb] = useState(null),
