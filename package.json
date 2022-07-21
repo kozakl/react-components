@@ -28,6 +28,7 @@
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
     "html-to-draftjs": "^1.5.0",
+    "next": "^12.2.2",
     "react": "^17.0.2",
     "react-date-range": "^1.4.0",
     "react-dom": "^17.0.2",
