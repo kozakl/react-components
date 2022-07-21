@@ -1,5 +1,6 @@
 import {FunctionComponent, MouseEvent} from 'react';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
 import style from './Button.module.css';
 
 const Button:FunctionComponent<Props> = (props)=>
