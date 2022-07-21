@@ -12,19 +12,13 @@ const Editor = dynamic<EditorProps>(()=>
     {ssr: false}
 );
 
-const TextRichArea = (props:Props)=>
-{
-    const richTextAreaClass = classNames(
-        style.textRichArea,
-        props.className
-    );
-    const borderClass = classNames(
-        style.border,
-        props.error && style.error
-    );
+const TextRichArea = (props:Props)=> {
     return (
         <div
-            className={richTextAreaClass}
+            className={classNames(
+                style.textRichArea,
+                props.className
+            )}
             id={props.id}>
             <div className={style.container}>
                 <Editor
@@ -61,7 +55,11 @@ const TextRichArea = (props:Props)=>
                         }
                     }}/>
             </div>
-            <div className={borderClass}/>
+            <div
+                className={classNames(
+                    style.border,
+                    props.error && style.error
+                )}/>
             {props.error &&
                 <div className={style.error}>
                     {props.error}
