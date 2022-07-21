@@ -5,8 +5,7 @@ import {classNames} from '@kozakl/utils';
 import ReactDOM from 'react-dom';
 import style from './Modal.module.css';
 
-const Modal = (props:Props)=>
-{
+const Modal = (props:Props)=> {
     const modal = useRef<HTMLDivElement>(),
           container = useRef<HTMLDivElement>();
     const [visible, setVisible] = useState(false),
