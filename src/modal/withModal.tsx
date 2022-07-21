@@ -14,7 +14,7 @@ export function withModal<P>(
     }
 }
 
-interface ModalProps {
+export interface ModalProps {
     visible?:boolean;
     outTime?:number;
     transparent?:boolean;
