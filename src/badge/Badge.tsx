@@ -4,13 +4,12 @@ import style from './Badge.module.css';
 
 const Badge:FunctionComponent<Props> = (props)=>
 {
-    const badgeClass = classNames(
-        style.badge,
-        props.className,
-    );
     return (
         <a
-            className={badgeClass}
+            className={classNames(
+                style.badge,
+                props.className,
+            )}
             title={props.title}
             href={props.href}>
             <label className={style.label}>
