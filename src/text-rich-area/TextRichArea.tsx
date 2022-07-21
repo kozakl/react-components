@@ -1,6 +1,7 @@
 import {default as dynamic} from 'next/dynamic'
 import {EditorProps, EditorState} from 'react-draft-wysiwyg'
 import {classNames} from '@kozakl/utils';
+import React from 'react';
 import style from './TextRichArea.module.css';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
