@@ -1,9 +1,9 @@
-import {ChangeEventHandler, FunctionComponent} from 'react';
+import {ChangeEventHandler, PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Checkbox.module.css';
 
-const Checkbox:FunctionComponent<Props> = (props)=>
+const Checkbox = (props:Props)=>
 {
     return (
         <div
@@ -37,7 +37,7 @@ const Checkbox:FunctionComponent<Props> = (props)=>
     );
 };
 
-interface Props {
+interface Props extends PropsWithChildren<{}> {
     className?:string;
     id?:string;
     name?:string;
