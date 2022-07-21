@@ -7,7 +7,7 @@ const Loading = (props:Props)=>
     return (
         <div
             className={classNames(
-                style.spinner,
+                style.loading,
                 props.className
             )}
             style={{width: props.size}}>
