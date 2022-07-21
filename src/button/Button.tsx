@@ -1,9 +1,9 @@
-import {FunctionComponent, MouseEvent} from 'react';
+import {MouseEvent, PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Button.module.css';
 
-const Button:FunctionComponent<Props> = (props)=>
+const Button = (props:Props)=>
 {
     return (
         <button
@@ -28,7 +28,7 @@ Button.defaultProps = {
     type: 'button',
 };
 
-interface Props {
+interface Props extends PropsWithChildren<{}> {
     className?:string;
     id?:string;
     type?:'submit' | 'reset' | 'button';
