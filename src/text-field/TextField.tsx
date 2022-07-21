@@ -63,10 +63,13 @@ const TextField = (props:Props)=> {
                         {props.endAdornment}
                     </div>}
             </div>
-            {props.error &&
-                <div className={style.error}>
-                    {props.error}
-                </div>}
+            <div
+                className={classNames(
+                    style.error,
+                    props.error && style.display
+                )}>
+                {props.error}
+            </div>
         </div>
     );
 };
