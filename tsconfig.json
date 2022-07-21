@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node",
+    "target": "es2021",
     "jsx": "react",
     "strict": true,
     "strictNullChecks": false,
@@ -13,7 +14,8 @@
       "dom",
       "es6",
       "es7",
-      "es2017"
+      "es2017",
+      "es2021"
     ]
   },
   "include": [

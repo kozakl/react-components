@@ -1,0 +1,32 @@
+.textRichArea {
+  position: relative;
+  z-index: 0;
+}
+
+.textRichArea {
+  .container {
+    min-height: inherit;
+    
+    & div {
+      margin-bottom: 0.125em;
+    }
+    & ul {
+      max-height: 8.5em;
+    }
+    & > div:last-child > div:first-child {
+      color: #000;
+    }
+  }
+  .border {
+    border-bottom: solid 1px;
+    
+    &.error {
+      border-bottom: solid 1px var(--color-error);
+    }
+  }
+  .error {
+    color: var(--color-error);
+    font-size: 0.875rem;
+    margin-top: 0.4em;
+  }
+}
