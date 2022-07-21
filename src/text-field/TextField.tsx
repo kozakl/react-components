@@ -4,8 +4,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './TextField.module.css';
 
-const TextField = (props:Props)=>
-{
+const TextField = (props:Props)=> {
     return (
         <div
             className={classNames(
