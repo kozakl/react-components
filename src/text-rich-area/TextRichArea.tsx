@@ -15,7 +15,7 @@ const Editor = dynamic<EditorProps>(()=>
 const TextRichArea = (props:Props)=>
 {
     const richTextAreaClass = classNames(
-        style.richTextArea,
+        style.textRichArea,
         props.className
     );
     const borderClass = classNames(
