@@ -6,41 +6,30 @@ import style from './TextField.module.css';
 
 const TextField = (props:Props)=>
 {
-    const textFieldClass = classNames(
-        style.textField,
-        props.className,
-        props.disabled && style.disabled
-    );
-    const adornmentContainerClass = classNames(
-        style.adornmentContainer,
-        (props.startAdornment ||
-            props.endAdornment) && style.flex,
-        props.outlined && style.outlined,
-        props.error && style.error
-    );
-    const placeholderContainerClass = classNames(
-        style.placeholderContainer,
-        !props.startAdornment && style.relative
-    );
-    const placeholderClass = classNames(
-        style.placeholder,
-        (props.value ||
-            props.opened ||
-            props.startAdornment) && style.opened
-    );
-    const errorClass = classNames(
-        style.error,
-        props.error && style.display
-    );
     return (
-        <div className={textFieldClass}>
-            <div className={adornmentContainerClass}>
+        <div
+            className={classNames(
+                style.textField,
+                props.className,
+                props.disabled && style.disabled
+            )}>
+            <div
+                className={classNames(
+                    style.adornmentContainer,
+                    (props.startAdornment ||
+                        props.endAdornment) && style.flex,
+                    props.outlined && style.outlined,
+                    props.error && style.error
+                )}>
                 {props.startAdornment &&
                     <div className={style.startAdornment}>
                         {props.startAdornment}
                     </div>}
                 <div
-                    className={placeholderContainerClass}
+                    className={classNames(
+                        style.placeholderContainer,
+                        !props.startAdornment && style.relative
+                    )}
                     onClick={props.onClick}>
                     <input
                         className={style.input}
@@ -60,7 +49,13 @@ const TextField = (props:Props)=>
                         onKeyUp={props.onKeyUp}/>
                     {props.openable &&
                      props.placeholder &&
-                        <label className={placeholderClass}>
+                        <label
+                            className={classNames(
+                                style.placeholder,
+                                (props.value ||
+                                    props.opened ||
+                                    props.startAdornment) && style.opened
+                            )}>
                             {props.placeholder}
                         </label>}
                 </div>
@@ -69,9 +64,10 @@ const TextField = (props:Props)=>
                         {props.endAdornment}
                     </div>}
             </div>
-            <div className={errorClass}>
-                {props.error}
-            </div>
+            {props.error &&
+                <div className={style.error}>
+                    {props.error}
+                </div>}
         </div>
     );
 };

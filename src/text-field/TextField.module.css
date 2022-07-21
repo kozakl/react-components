@@ -85,13 +85,8 @@
     margin-left: 0.4em;
   }
   .error:not(.adornmentContainer) {
-    display: none;
     color: var(--color-error);
     font-size: 0.875rem;
     margin-top: 0.4em;
-    
-    &.display {
-      display: block;
-    }
   }
 }
