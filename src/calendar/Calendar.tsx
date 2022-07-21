@@ -5,8 +5,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Calendar.module.css';
 
-const Calendar = (props:Props)=>
-{
+const Calendar = (props:Props)=> {
     return (
         <CalendarInternal
             className={classNames(
