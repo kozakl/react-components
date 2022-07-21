@@ -3,8 +3,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Checkbox.module.css';
 
-const Checkbox = (props:Props)=>
-{
+const Checkbox = (props:Props)=> {
     return (
         <div
             className={classNames(

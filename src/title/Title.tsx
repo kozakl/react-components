@@ -1,7 +1,7 @@
-import {FunctionComponent} from 'react';
+import {PropsWithChildren} from 'react';
 import React from 'react';
 
-const Title:FunctionComponent<Props> = (props)=> {
+const Title = (props:Props)=> {
     return (
         <span title={props.title || props.children.toString()}>
             {props.children}
@@ -9,7 +9,7 @@ const Title:FunctionComponent<Props> = (props)=> {
     );
 };
 
-interface Props {
+interface Props extends PropsWithChildren<{}> {
     title?:string;
 }
 

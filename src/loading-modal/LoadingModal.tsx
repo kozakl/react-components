@@ -4,8 +4,7 @@ import {withModal} from '../modal';
 import React from 'react';
 import style from './SpinnerModal.module.css';
 
-const LoadingModal = (props:Props)=>
-{
+const LoadingModal = (props:Props)=> {
     return (
         <Loading
             className={classNames(

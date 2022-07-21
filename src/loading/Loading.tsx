@@ -2,8 +2,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Loading.module.css';
 
-const Loading = (props:Props)=>
-{
+const Loading = (props:Props)=> {
     return (
         <div
             className={classNames(
