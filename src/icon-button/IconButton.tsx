@@ -1,19 +1,18 @@
-import {FunctionComponent, MouseEventHandler} from 'react';
+import {MouseEventHandler, PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './IconButton.module.css';
 
-const IconButton:FunctionComponent<Props> = (props)=>
+const IconButton = (props:Props)=>
 {
-    const iconButtonClass = classNames(
-        style.iconButton,
-        props.className,
-        props.active &&
-            style.active
-    );
     return (
         <button
-            className={iconButtonClass}
+            className={classNames(
+                style.iconButton,
+                props.className,
+                props.active &&
+                    style.active
+            )}
             title={props.title}
             type={props.type}
             disabled={props.disabled}
@@ -27,7 +26,7 @@ IconButton.defaultProps = {
     type: 'button'
 }
 
-interface Props {
+interface Props extends PropsWithChildren<{}> {
     className?:string;
     title?:string;
     type?:'button' | 'submit' | 'reset';
