@@ -1,0 +1,57 @@
+.switch {
+  display: inline-block;
+  
+  &.reversed {
+    color: var(--color-secondary);
+    
+    .input {
+      background: rgba(var(--background-primary-rgb), 0.5);
+    }
+    .thumb {
+      background: var(--background-primary);
+    }
+  }
+}
+
+.switch {
+  .label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    
+    &.disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
+  }
+  .input {
+    background: rgba(var(--background-secondary-rgb), 0.5);
+    appearance: none;
+    border-radius: 0.5em;
+    width: 1.5em;
+    height: 0.5em;
+    
+    &:focus-visible {
+      outline: solid 2px white;
+    }
+    &:checked {
+      +.thumb {
+        left: 1em;
+      }
+    }
+  }
+  .thumb {
+    position: absolute;
+    background: var(--background-secondary);
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  .error {
+    color: var(--color-error);
+    padding-left: 1.3em;
+    margin-top: 0.4em;
+  }
+}
