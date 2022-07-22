@@ -1,0 +1,6 @@
+.searchField {
+  & > :last-child {
+    position: absolute;
+    padding-left: 0.25rem;
+  }
+}
