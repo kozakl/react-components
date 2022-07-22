@@ -1,22 +1,22 @@
-import {ChangeEventHandler, FunctionComponent} from 'react';
+import {ChangeEventHandler, PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Switch.module.css';
 
-const Switch:FunctionComponent<Props> = (props)=>
+const Switch = (props:Props)=>
 {
-    const switchClass = classNames(
-        style.switch,
-        props.reversed && style.reversed,
-        props.className
-    );
-    const labelClass = classNames(
-        style.label,
-        props.disabled && style.disabled
-    );
     return (
-        <div className={switchClass}>
-            <label className={labelClass}>
+        <div
+            className={classNames(
+                style.switch,
+                props.reversed && style.reversed,
+                props.className
+            )}>
+            <label
+                className={classNames(
+                    style.label,
+                    props.disabled && style.disabled
+                )}>
                 <input
                     className={style.input}
                     id={props.id}
@@ -37,7 +37,7 @@ const Switch:FunctionComponent<Props> = (props)=>
     );
 };
 
-interface Props {
+interface Props extends PropsWithChildren<{}> {
     className?:string;
     id?:string;
     name?:string;
