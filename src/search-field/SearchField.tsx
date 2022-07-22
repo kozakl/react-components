@@ -1,9 +1,10 @@
 import {ChangeEventHandler, KeyboardEvent,
         MouseEventHandler, ReactNode} from 'react';
-import {TextField} from '@kozakl/components/text-field';
 import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
 import {Close} from '../icons';
+import {TextField} from '../text-field';
+import React from 'react';
 import style from './SearchField.module.css';
 
 const SearchField = (props:Props)=>
@@ -30,13 +31,12 @@ const SearchField = (props:Props)=>
         }
     }
     
-    const searchFieldClass = classNames(
-        style.searchField,
-        props.className
-    );
     return (
         <TextField
-            className={searchFieldClass}
+            className={classNames(
+                style.searchField,
+                props.className
+            )}
             id={props.id}
             value={props.value}
             placeholder={props.placeholder}
