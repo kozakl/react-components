@@ -1,5 +1,6 @@
 import {FunctionComponent, MouseEventHandler} from 'react';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
 import style from './IconButton.module.css';
 
 const IconButton:FunctionComponent<Props> = (props)=>
