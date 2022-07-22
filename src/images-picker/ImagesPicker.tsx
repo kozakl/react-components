@@ -8,17 +8,12 @@ import React from 'react';
 import style from './ImagesPicker.module.css';
 
 const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
-    const imagesPickerClass = classNames(
-        style.imagesPicker,
-        props.className
-    );
-    const errorClass = classNames(
-        style.error,
-        props.error &&
-            style.display
-    );
     return (
-        <div className={imagesPickerClass}>
+        <div
+            className={classNames(
+                style.imagesPicker,
+                props.className
+            )}>
             <input
                 id={props.id}
                 ref={ref}
@@ -102,7 +97,12 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                         width="3em"/>
                 </label>
             </div>
-            <div className={errorClass}>
+            <div
+                className={classNames(
+                    style.error,
+                    props.error &&
+                        style.display
+                )}>
                 {props.error}
             </div>
         </div>
