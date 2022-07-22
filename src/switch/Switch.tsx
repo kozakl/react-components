@@ -1,5 +1,6 @@
 import {ChangeEventHandler, FunctionComponent} from 'react';
 import {classNames} from '@kozakl/utils';
+import React from 'react';
 import style from './Switch.module.css';
 
 const Switch:FunctionComponent<Props> = (props)=>
