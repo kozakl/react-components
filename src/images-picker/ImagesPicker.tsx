@@ -4,6 +4,7 @@ import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
         Download, Plus, Remove} from '../icons';
+import React from 'react';
 import style from './ImagesPicker.module.css';
 
 const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
