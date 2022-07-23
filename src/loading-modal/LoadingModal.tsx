@@ -2,7 +2,7 @@ import {classNames} from '@kozakl/utils';
 import {Loading} from '../loading';
 import {withModal} from '../modal';
 import React from 'react';
-import style from './SpinnerModal.module.css';
+import style from './LoadingModal.module.css';
 
 const LoadingModal = (props:Props)=> {
     return (
