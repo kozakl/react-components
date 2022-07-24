@@ -1,6 +1,6 @@
 {
   "name": "@kozakl/components",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "sideEffects": false,
   "author": {
     "name": "Luke Kozak",
@@ -17,6 +17,7 @@
   },
   "peerDependencies": {
     "@kozakl/hooks": "^4.2.1",
+    "@kozakl/states": "^0.0.2",
     "@kozakl/utils": "^9.1.0",
     "@types/draft-js": "^0.10.44",
     "@types/draftjs-to-html": "^0.8.0",
