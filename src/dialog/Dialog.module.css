@@ -1,0 +1,37 @@
+.dialog {
+  background: var(--background-secondary);
+  color: var(--color-secondary);
+  box-shadow: var(--shadow-secondary);
+  border-radius: 0.125em;
+  padding: 1.5em;
+  margin: 5em auto 0;
+  max-width: 30em;
+  width: 90vw;
+  
+  &.reversed {
+    background: var(--background-primary);
+    color: var(--color-primary);
+    box-shadow: unset;
+    border: 1px solid var(--color-primary);
+    border-radius: 0.5em;
+  }
+}
+
+.dialog {
+  .title {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    margin-bottom: 1em;
+  }
+  .message {
+    margin-bottom: 1.5em;
+    min-height: 3em;
+  }
+  .actions {
+    text-align: right;
+    
+    & :first-child {
+      margin-right: 0.5em;
+    }
+  }
+}
