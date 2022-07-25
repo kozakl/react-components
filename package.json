@@ -1,6 +1,6 @@
 {
   "name": "@kozakl/components",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sideEffects": false,
   "author": {
     "name": "Luke Kozak",
@@ -12,13 +12,13 @@
     "url": "https://github.com/kozakl/react-components"
   },
   "scripts": {
-    "build": "rm -rf ./dist && tsc && copyfiles -u 1 src/**/*.css dist/",
+    "build": "rm -rf ./dist && tsc && copyfiles -u 1 './src/**/*.css' dist/",
     "publish-dist": "npm run build && cp package.json ./dist && npm publish ./dist --access=public"
   },
   "peerDependencies": {
-    "@kozakl/hooks": "^4.2.1",
-    "@kozakl/states": "^0.0.2",
-    "@kozakl/utils": "^9.1.0",
+    "@kozakl/hooks": "^4.x",
+    "@kozakl/states": "^1.x",
+    "@kozakl/utils": "^9.x",
     "@types/draft-js": "^0.10.44",
     "@types/draftjs-to-html": "^0.8.0",
     "@types/html-to-draftjs": "^1.4.0",
