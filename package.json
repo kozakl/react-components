@@ -16,7 +16,7 @@
     "publish-dist": "npm run build && cp package.json ./dist && npm publish ./dist --access=public"
   },
   "peerDependencies": {
-    "@kozakl/hooks": "^4.2.1",
+    "@kozakl/hooks": "^4.x",
     "@kozakl/states": "^1.x",
     "@kozakl/utils": "^9.1.0",
     "@types/draft-js": "^0.10.44",
