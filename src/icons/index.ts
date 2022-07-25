@@ -1,3 +1,4 @@
+export * from './arrow-down';
 export * from './chevron-left';
 export * from './chevron-right';
 export * from './close';
