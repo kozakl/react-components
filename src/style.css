@@ -1,0 +1,42 @@
+:root {
+  --font-primary: sans-serif;
+  --font-secondary: serif;
+  
+  --background-primary: #181818;
+  --background-primary-rgb: 0, 0, 0;
+  --background-secondary: #EDEDED;
+  --background-secondary-rgb: 237, 237, 237;
+  
+  --color-primary: #EDEDED;
+  --color-primary-rgb: 237, 237, 237;
+  --color-secondary: #000000;
+  --color-secondary-rgb: 0, 0, 0;
+  --color-error: #F44336;
+  --color-error-rgb: 244, 67, 54;
+  --color-info: #4CAF50;
+  --color-info-rgb: 76, 175, 80;
+  --color-active: #4CAF50;
+  --color-active-rgb: 76, 175, 80;
+  --color-inactive: #F44336;
+  --color-inactive-rgb: 244, 67, 54;
+  
+  --shadow-primary: 0 2px 2px 0 rgba(0, 0, 0, 0.5),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.5),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  --shadow-secondary: 0 0 8px rgba(0, 0, 0, 0.5),
+                      0 8px 8px rgba(0, 0, 0, 0.5);
+  --shadow-tertiary: 0 0 8px rgba(0, 0, 0, 0.25),
+                     0 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+[appearance='light'] {
+  --background-primary: #EDEDED;
+  --background-primary-rgb: 237, 237, 237;
+  --background-secondary: #181818;
+  --background-secondary-rgb: 0, 0, 0;
+  
+  --color-primary: #000000;
+  --color-primary-rgb: 0, 0, 0;
+  --color-secondary: #EDEDED;
+  --color-secondary-rgb: 237, 237, 237;
+}
