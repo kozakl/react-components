@@ -3,8 +3,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Switch.module.css';
 
-const Switch = (props:Props)=>
-{
+const Switch = (props:Props)=> {
     return (
         <div
             className={classNames(
