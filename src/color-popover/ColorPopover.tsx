@@ -3,9 +3,9 @@ import {HexColorPicker} from 'react-colorful';
 import {useClickOutside} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
-import style from './ColorPicker.module.css';
+import style from './ColorPopover.module.css';
 
-const ColorPicker = (props:Props)=> {
+const ColorPopover = (props:Props)=> {
     const colorPopover = useRef();
     const [open, setOpen] = useState(false);
     
@@ -15,7 +15,7 @@ const ColorPicker = (props:Props)=> {
     return (
         <div
             className={classNames(
-                style.colorPicker,
+                style.colorPopover,
                 props.className
             )}
             ref={colorPopover}>
@@ -46,4 +46,4 @@ interface Props {
     onChange?:(color:string)=> void;
 }
 
-export default ColorPicker;
+export default ColorPopover;
