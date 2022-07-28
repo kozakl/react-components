@@ -21,7 +21,7 @@ const ColorPicker = (props:Props)=> {
             ref={colorPopover}>
             <div
                 className={classNames(
-                    style.swatch,
+                    style.color,
                     props.disabled &&
                         style.disabled
                 )}
