@@ -7,8 +7,7 @@ import {TextField} from '../text-field';
 import React from 'react';
 import style from './SearchField.module.css';
 
-const SearchField = (props:Props)=>
-{
+const SearchField = (props:Props)=> {
     function onDown(event:KeyboardEvent<HTMLInputElement>) {
         if (event.key == 'Enter') {
             event.preventDefault();
