@@ -35,6 +35,10 @@ const ColorPopover = (props:Props)=> {
                             color={props.color}
                             onChange={props.onChange} />
                     </div>}
+            {props.error &&
+                <div className={style.error}>
+                    {props.error}
+                </div>}
         </div>
     );
 };
@@ -42,6 +46,7 @@ const ColorPopover = (props:Props)=> {
 interface Props {
     className?:string;
     color:string;
+    error?:string;
     disabled?:boolean;
     onChange?:(color:string)=> void;
 }
