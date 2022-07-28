@@ -1,4 +1,5 @@
 import {classNames} from '@kozakl/utils';
+import React from 'react';
 import style from './Toggle.module.css';
 
 const Toggle = (props:Props)=>
