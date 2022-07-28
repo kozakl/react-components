@@ -30,7 +30,7 @@ const ColorPopover = (props:Props)=> {
                     setOpen(!open)}/>
             {!props.disabled &&
                 open &&
-                    <div className={style.popup}>
+                    <div className={style.colorPicker}>
                         <HexColorPicker
                             color={props.color}
                             onChange={props.onChange} />

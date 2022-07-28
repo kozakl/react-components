@@ -16,7 +16,7 @@
       cursor: not-allowed;
     }
   }
-  .popup {
+  .colorPicker {
     position: absolute;
     box-shadow: var(--shadow-tertiary);
     top: calc(100% + 0.25em);
