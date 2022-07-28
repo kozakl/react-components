@@ -5,8 +5,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Toast.module.css';
 
-const Toast = (props:Props)=>
-{
+const Toast = (props:Props)=> {
     const [show, setShow] = useState(false);
     const {deleteToast} = useToastsState();
     
