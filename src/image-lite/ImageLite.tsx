@@ -1,7 +1,7 @@
 import {AnimationEvent, CSSProperties,
         FunctionComponent, memo, MouseEvent,
-        PropsWithChildren, TransitionEvent,
-        useEffect, useRef, useState} from 'react';
+        TransitionEvent, useEffect,
+        useRef, useState} from 'react';
 import React from 'react';
 
 const ImageLite:FunctionComponent<Props> = memo((props)=> {
@@ -70,7 +70,7 @@ ImageLite.defaultProps = {
     alt: ''
 };
 
-interface Props extends PropsWithChildren<{}> {
+interface Props {
     className?:string;
     id?:string;
     thumb:string;
