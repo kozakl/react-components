@@ -1,3 +1,5 @@
+import React from 'react';
+
 const SortDown = (props:Props)=> (
     <svg
         className={props.className}
