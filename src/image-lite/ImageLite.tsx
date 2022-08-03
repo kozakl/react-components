@@ -1,5 +1,6 @@
-import {CSSProperties, FunctionComponent, memo,
-        MouseEvent, AnimationEvent, TransitionEvent,
+import {AnimationEvent, CSSProperties,
+        FunctionComponent, memo, MouseEvent,
+        PropsWithChildren, TransitionEvent,
         useEffect, useRef, useState} from 'react';
 import React from 'react';
 
@@ -69,7 +70,7 @@ ImageLite.defaultProps = {
     alt: ''
 };
 
-interface Props {
+interface Props extends PropsWithChildren<{}> {
     className?:string;
     id?:string;
     thumb:string;
