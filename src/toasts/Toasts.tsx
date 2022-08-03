@@ -3,8 +3,7 @@ import {useToastsState} from '@kozakl/states';
 import React from 'react';
 import style from './Toasts.module.css';
 
-export const Toasts = ()=>
-{
+export const Toasts = ()=> {
     const toasts = useToastsState().get();
     return (
         <div className={style.toasts}>

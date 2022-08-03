@@ -1,6 +1,7 @@
-import {CSSProperties, FunctionComponent,
-        memo, MouseEvent, useEffect,
-        useRef, useState} from 'react';
+import {AnimationEvent, CSSProperties,
+        FunctionComponent, memo, MouseEvent,
+        PropsWithChildren, TransitionEvent,
+        useEffect, useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Image.module.css';
@@ -45,7 +46,9 @@ const Image:FunctionComponent<Props> = memo((props)=> {
             )}
             id={props.id}
             style={props.style}
-            onClick={props.onClick}>
+            onClick={props.onClick}
+            onAnimationEnd={props.onAnimationEnd}
+            onTransitionEnd={props.onTransitionEnd}>
             <div
                 className={style.wrapper}
                 style={{paddingTop: `${props.ratio * 100}%`}}>
@@ -62,6 +65,7 @@ const Image:FunctionComponent<Props> = memo((props)=> {
                     alt={props.alt}
                     loading={props.loading}
                     onLoad={onLoadThumb}/>
+                {props.children}
             </div>
         </div>
     );
@@ -71,7 +75,7 @@ Image.defaultProps = {
     ratio: 1
 };
 
-interface Props {
+interface Props extends PropsWithChildren<{}> {
     className?:string;
     id?:string;
     ratio?:number;
@@ -83,6 +87,8 @@ interface Props {
     loading?:'lazy' | 'eager';
     cleanBetween?:boolean;
     onClick?:(event:MouseEvent<HTMLDivElement>)=> void;
+    onAnimationEnd?:(event:AnimationEvent<HTMLImageElement>)=> void;
+    onTransitionEnd?:(event:TransitionEvent<HTMLImageElement>)=> void;
     onLoadThumb?:()=> void;
 }
 

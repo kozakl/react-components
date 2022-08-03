@@ -5,8 +5,7 @@ import {useMounted} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 
-const NavLink = (props:Props)=>
-{
+const NavLink = (props:Props)=> {
     const mounted = useMounted();
     const {asPath} = useRouter();
     

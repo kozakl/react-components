@@ -3,8 +3,7 @@ import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './IconButton.module.css';
 
-const IconButton = (props:Props)=>
-{
+const IconButton = (props:Props)=> {
     return (
         <button
             className={classNames(
