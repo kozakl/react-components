@@ -1,6 +1,6 @@
-import {CSSProperties, FunctionComponent,
-        memo, MouseEvent, useEffect,
-        useRef, useState} from 'react';
+import {CSSProperties, FunctionComponent, memo,
+        MouseEvent, PropsWithChildren,
+        useEffect, useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Image.module.css';
@@ -62,6 +62,7 @@ const Image:FunctionComponent<Props> = memo((props)=> {
                     alt={props.alt}
                     loading={props.loading}
                     onLoad={onLoadThumb}/>
+                {props.children}
             </div>
         </div>
     );
@@ -71,7 +72,7 @@ Image.defaultProps = {
     ratio: 1
 };
 
-interface Props {
+interface Props extends PropsWithChildren<{}> {
     className?:string;
     id?:string;
     ratio?:number;
