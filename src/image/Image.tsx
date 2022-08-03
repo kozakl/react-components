@@ -1,5 +1,6 @@
-import {CSSProperties, FunctionComponent, memo,
-        MouseEvent, PropsWithChildren,
+import {AnimationEvent, CSSProperties,
+        FunctionComponent, memo, MouseEvent,
+        PropsWithChildren, TransitionEvent,
         useEffect, useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
@@ -45,7 +46,9 @@ const Image:FunctionComponent<Props> = memo((props)=> {
             )}
             id={props.id}
             style={props.style}
-            onClick={props.onClick}>
+            onClick={props.onClick}
+            onAnimationEnd={props.onAnimationEnd}
+            onTransitionEnd={props.onTransitionEnd}>
             <div
                 className={style.wrapper}
                 style={{paddingTop: `${props.ratio * 100}%`}}>
@@ -84,6 +87,8 @@ interface Props extends PropsWithChildren<{}> {
     loading?:'lazy' | 'eager';
     cleanBetween?:boolean;
     onClick?:(event:MouseEvent<HTMLDivElement>)=> void;
+    onAnimationEnd?:(event:AnimationEvent<HTMLImageElement>)=> void;
+    onTransitionEnd?:(event:TransitionEvent<HTMLImageElement>)=> void;
     onLoadThumb?:()=> void;
 }
 
