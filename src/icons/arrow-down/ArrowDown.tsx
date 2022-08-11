@@ -21,7 +21,6 @@ const ArrowDown = (props:Props)=> (
             points="31.5,15.4 16.1,30.8 0.5,15.4"/>
         <line
             style={{
-                fill: 'none',
                 stroke: props.color,
                 strokeWidth: 2.1
             }}
