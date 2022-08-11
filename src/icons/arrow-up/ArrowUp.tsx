@@ -21,7 +21,6 @@ const ArrowUp = (props:Props)=> (
             points="0.5,16.6 16.1,1.2 31.5,16.6"/>
         <line
             style={{
-                fill: 'none',
                 stroke: props.color,
                 strokeWidth: 2.1
             }}
