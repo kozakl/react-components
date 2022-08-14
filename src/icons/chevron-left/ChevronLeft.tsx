@@ -3,7 +3,7 @@ import React from 'react';
 const ChevronLeft = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox="0 0 25 42.2"
+        viewBox="0 0 18.3 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -13,17 +13,20 @@ const ChevronLeft = (props:Props)=> (
             height: props.height
         }}>
         <path
-            d="M24.5,3.9c0,0.4-0.2,0.6-0.4,1L7.9,21.1l16.2,16.2c0.2,0.2,0.4,0.6,0.4,1s-0.2,0.6-0.4,1l-2,2c-0.2,0.2-0.6,0.4-1,0.4s-0.6-0.2-1-0.4L0.9,22.1c-0.2-0.4-0.4-0.6-0.4-1s0.2-0.6,0.4-1L20.1,0.9c0.2-0.2,0.6-0.4,1-0.4s0.6,0.2,1,0.4l2,2C24.3,3.3,24.5,3.5,24.5,3.9z"
+            d="M16,32c-0.6,0-1.2-0.2-1.6-0.7L0.7,17.6c-0.9-0.9-0.9-2.3,0-3.2L14.4,0.7c0.9-0.9,2.3-0.9,3.2,0s0.9,2.3,0,3.2L5.5,16l12.1,12.1c0.9,0.9,0.9,2.3,0,3.2C17.2,31.8,16.6,32,16,32z"
             style={{
-                fill: '#FFF',
-                stroke: '#000',
-                strokeMiterlimit: 10
+                fill: props.color
             }}/>
     </svg>
 );
 
+ChevronLeft.defaultProps = {
+    color: 'var(--color-primary)'
+}
+
 interface Props {
     className?:string;
+    color?:string;
     padding?:string;
     margin?:string;
     width?:string;
