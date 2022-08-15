@@ -3,6 +3,7 @@ export * from './arrow-left';
 export * from './arrow-right';
 export * from './arrow-up';
 export * from './caret-down';
+export * from './caret-left';
 export * from './caret-up';
 export * from './chevron-down';
 export * from './chevron-left';
