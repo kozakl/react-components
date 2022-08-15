@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Close = (props:Props)=> (
+const XMark = (props:Props)=> (
     <svg
         className={props.className}
         viewBox="0 0 32 32"
@@ -35,7 +35,7 @@ const Close = (props:Props)=> (
     </svg>
 );
 
-Close.defaultProps = {
+XMark.defaultProps = {
     color: 'var(--color-primary)'
 }
 
@@ -48,4 +48,4 @@ interface Props {
     height?:string;
 }
 
-export default Close;
+export default XMark;
