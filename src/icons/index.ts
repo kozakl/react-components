@@ -4,6 +4,7 @@ export * from './arrow-right';
 export * from './arrow-up';
 export * from './chevron-left';
 export * from './chevron-right';
+export * from './chevron-up';
 export * from './close';
 export * from './close-modal';
 export * from './dark-mode';
