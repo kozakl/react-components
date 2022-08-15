@@ -7,7 +7,6 @@ export * from './chevron-left';
 export * from './chevron-right';
 export * from './chevron-up';
 export * from './close';
-export * from './close-modal';
 export * from './dark-mode';
 export * from './download';
 export * from './plus';
