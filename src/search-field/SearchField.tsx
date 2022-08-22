@@ -2,7 +2,7 @@ import {ChangeEventHandler, KeyboardEvent,
         MouseEventHandler, ReactNode} from 'react';
 import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
-import {Close} from '../icons';
+import {XMark} from '../icons';
 import {TextField} from '../text-field';
 import React from 'react';
 import style from './SearchField.module.css';
@@ -47,7 +47,7 @@ const SearchField = (props:Props)=> {
                     title="Close searching"
                     disabled={!props.enabledClose}
                     onClick={props.onClickClose}>
-                    <Close
+                    <XMark
                         padding="0.25em"
                         width="1.25em"/>
                 </IconButton>}
