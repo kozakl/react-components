@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ChevronLeft = (props:Props)=> (
+const XMark = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox="0 0 18.1 32"
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -12,17 +12,30 @@ const ChevronLeft = (props:Props)=> (
             width: props.width,
             height: props.height
         }}>
-        <polyline
+        <line
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: 3
+                strokeWidth: 2
             }}
-            points="17,1 2,15.9 17,31"/>
+            x1="1"
+            y1="31"
+            x2="31"
+            y2="1"/>
+        <line
+            style={{
+                fill: 'none',
+                stroke: props.color,
+                strokeWidth: 2
+            }}
+            x1="1"
+            y1="1"
+            x2="31"
+            y2="31"/>
     </svg>
 );
 
-ChevronLeft.defaultProps = {
+XMark.defaultProps = {
     color: 'var(--color-primary)'
 }
 
@@ -35,4 +48,4 @@ interface Props {
     height?:string;
 }
 
-export default ChevronLeft;
+export default XMark;

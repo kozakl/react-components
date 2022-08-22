@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ChevronLeft = (props:Props)=> (
+const ChevronDown = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox="0 0 18.1 32"
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -18,11 +18,11 @@ const ChevronLeft = (props:Props)=> (
                 stroke: props.color,
                 strokeWidth: 3
             }}
-            points="17,1 2,15.9 17,31"/>
+            points="1,8 15.9,23 31,8"/>
     </svg>
 );
 
-ChevronLeft.defaultProps = {
+ChevronDown.defaultProps = {
     color: 'var(--color-primary)'
 }
 
@@ -35,4 +35,4 @@ interface Props {
     height?:string;
 }
 
-export default ChevronLeft;
+export default ChevronDown;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SortDown = (props:Props)=> (
+const CaretLeft = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox="0 0 7.5 3.8"
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -16,11 +16,11 @@ const SortDown = (props:Props)=> (
             style={{
                 fill: props.color
             }}
-            d="M0,0l3.8,3.8L7.5,0H0z"/>
+            d="M24,32L8,16L24,0V32z"/>
     </svg>
 );
 
-SortDown.defaultProps = {
+CaretLeft.defaultProps = {
     color: 'var(--color-primary)'
 }
 
@@ -33,4 +33,4 @@ interface Props {
     height?:string;
 }
 
-export default SortDown;
+export default CaretLeft;

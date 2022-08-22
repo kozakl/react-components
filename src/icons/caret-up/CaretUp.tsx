@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CloseModal = (props:Props)=> (
+const CaretUp = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox='0 0 27.7 15.1'
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -14,15 +14,13 @@ const CloseModal = (props:Props)=> (
         }}>
         <path
             style={{
-                fill: 'none',
-                stroke: props.color,
-                strokeMiterlimit: 10
+                fill: props.color
             }}
-            d='m.4 14.7 14-14 13 14'/>
+            d="M0,24L16,8l16,16H0z"/>
     </svg>
 );
 
-CloseModal.defaultProps = {
+CaretUp.defaultProps = {
     color: 'var(--color-primary)'
 }
 
@@ -35,4 +33,4 @@ interface Props {
     height?:string;
 }
 
-export default CloseModal;
+export default CaretUp;

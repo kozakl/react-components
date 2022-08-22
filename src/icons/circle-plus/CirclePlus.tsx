@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ChevronLeft = (props:Props)=> (
+const CirclePlus = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox="0 0 18.1 32"
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -12,17 +12,15 @@ const ChevronLeft = (props:Props)=> (
             width: props.width,
             height: props.height
         }}>
-        <polyline
+        <path
             style={{
-                fill: 'none',
-                stroke: props.color,
-                strokeWidth: 3
+                fill: props.color
             }}
-            points="17,1 2,15.9 17,31"/>
+            d="M16,0C7.2,0,0,7.2,0,16s7.2,16,16,16s16-7.2,16-16S24.8,0,16,0z M25.6,16.8h-8.8v8.8h-1.6v-8.8H6.3v-1.6h8.9V6.3h1.6v8.9h8.8V16.8z"/>
     </svg>
 );
 
-ChevronLeft.defaultProps = {
+CirclePlus.defaultProps = {
     color: 'var(--color-primary)'
 }
 
@@ -35,4 +33,4 @@ interface Props {
     height?:string;
 }
 
-export default ChevronLeft;
+export default CirclePlus;

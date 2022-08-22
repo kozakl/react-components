@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Close = (props:Props)=> (
+const ArrowRight = (props:Props)=> (
     <svg
         className={props.className}
         viewBox="0 0 32 32"
@@ -12,30 +12,26 @@ const Close = (props:Props)=> (
             width: props.width,
             height: props.height
         }}>
-        <line
+        <polyline
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: 2
+                strokeWidth: 2.1
             }}
-            x1="1"
-            y1="31"
-            x2="31"
-            y2="1"/>
+            points="15.4,0.5 30.8,15.9 15.4,31.5"/>
         <line
             style={{
-                fill: 'none',
                 stroke: props.color,
-                strokeWidth: 2
+                strokeWidth: 2.1
             }}
-            x1="1"
-            y1="1"
+            x1="0"
+            y1="15.9"
             x2="31"
-            y2="31"/>
+            y2="15.9"/>
     </svg>
 );
 
-Close.defaultProps = {
+ArrowRight.defaultProps = {
     color: 'var(--color-primary)'
 }
 
@@ -48,4 +44,4 @@ interface Props {
     height?:string;
 }
 
-export default Close;
+export default ArrowRight;
