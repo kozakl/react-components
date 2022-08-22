@@ -16,19 +16,21 @@ const ChevronDown = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: 3
+                strokeWidth: props.stroke
             }}
             points="1,8 15.9,23 31,8"/>
     </svg>
 );
 
 ChevronDown.defaultProps = {
-    color: 'var(--color-primary)'
+    color: 'var(--color-primary)',
+    stroke: 2
 }
 
 interface Props {
     className?:string;
     color?:string;
+    stroke?:number;
     padding?:string;
     margin?:string;
     width?:string;
