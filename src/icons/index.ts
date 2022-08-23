@@ -13,6 +13,5 @@ export * from './chevron-up';
 export * from './circle-plus';
 export * from './dark-mode';
 export * from './download';
-export * from './plus';
 export * from './remove';
 export * from './xmark';
