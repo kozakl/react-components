@@ -3,7 +3,7 @@ import {ImagePicker} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
-        Download, CirclePlus, Remove} from '../icons';
+        CircleDownload, CirclePlus, Remove} from '../icons';
 import React from 'react';
 import style from './ImagesPicker.module.css';
 
@@ -68,7 +68,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 title="Download"
                                 href={`${process.env.API}/${image.url}?download=true`}
                                 download>
-                                <Download
+                                <CircleDownload
                                     padding="0.25em"
                                     width="1.875em"/>
                             </a>}
