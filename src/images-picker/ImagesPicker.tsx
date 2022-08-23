@@ -3,7 +3,7 @@ import {ImagePicker} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
-        Download, Plus, Remove} from '../icons';
+        Download, CirclePlus, Remove} from '../icons';
 import React from 'react';
 import style from './ImagesPicker.module.css';
 
@@ -92,7 +92,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                     )}
                     title="Add Image/s"
                     htmlFor={props.id}>
-                    <Plus
+                    <CirclePlus
                         color="var(--background-primary)"
                         width="3em"/>
                 </label>
