@@ -3,7 +3,8 @@ import {ImagePicker} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
-        CircleDownload, CirclePlus, Remove} from '../icons';
+        CircleDownload, CircleMinus,
+        CirclePlus} from '../icons';
 import React from 'react';
 import style from './ImagesPicker.module.css';
 
@@ -78,7 +79,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                             active
                             onClick={()=>
                                 props.remove(index)}>
-                            <Remove
+                            <CircleMinus
                                 padding="0.25em"
                                 width="1.875em"/>
                         </IconButton>
