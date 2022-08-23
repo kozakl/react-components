@@ -16,7 +16,7 @@ const ChevronUp = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: props.stroke
+                strokeWidth: 2 * props.stroke
             }}
             points="1,24 15.9,9 31,24"/>
     </svg>
@@ -24,7 +24,7 @@ const ChevronUp = (props:Props)=> (
 
 ChevronUp.defaultProps = {
     color: 'var(--color-primary)',
-    stroke: 2
+    stroke: 1
 }
 
 interface Props {
