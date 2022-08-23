@@ -16,7 +16,7 @@ const CirclePlus = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: props.stroke
+                strokeWidth: 1.5 * props.stroke
             }}
             r="15.2"
             cx="16"
@@ -25,7 +25,7 @@ const CirclePlus = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: props.stroke
+                strokeWidth: 1.5 * props.stroke
             }}
             x1="16"
             y1="6.8"
@@ -35,7 +35,7 @@ const CirclePlus = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: props.stroke
+                strokeWidth: 1.5 * props.stroke
             }}
             x1="25.2"
             y1="16"
@@ -46,7 +46,7 @@ const CirclePlus = (props:Props)=> (
 
 CirclePlus.defaultProps = {
     color: 'var(--color-primary)',
-    stroke: 1.5
+    stroke: 1
 }
 
 interface Props {
