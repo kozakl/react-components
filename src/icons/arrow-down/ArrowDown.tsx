@@ -16,13 +16,13 @@ const ArrowDown = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: 2.1
+                strokeWidth: 2 * props.stroke
             }}
             points="31.5,15.4 16.1,30.8 0.5,15.4"/>
         <line
             style={{
                 stroke: props.color,
-                strokeWidth: 2.1
+                strokeWidth: 2 * props.stroke
             }}
             x1="16.1"
             y1="0"
@@ -32,12 +32,14 @@ const ArrowDown = (props:Props)=> (
 );
 
 ArrowDown.defaultProps = {
-    color: 'var(--color-primary)'
+    color: 'var(--color-primary)',
+    stroke: 1
 }
 
 interface Props {
     className?:string;
     color?:string;
+    stroke?:number;
     padding?:string;
     margin?:string;
     width?:string;

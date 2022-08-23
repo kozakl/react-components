@@ -12,21 +12,49 @@ const CirclePlus = (props:Props)=> (
             width: props.width,
             height: props.height
         }}>
-        <path
+        <circle
             style={{
-                fill: props.color
+                fill: props.background,
+                stroke: props.color,
+                strokeWidth: 1.5 * props.stroke
             }}
-            d="M16,0C7.2,0,0,7.2,0,16s7.2,16,16,16s16-7.2,16-16S24.8,0,16,0z M25.6,16.8h-8.8v8.8h-1.6v-8.8H6.3v-1.6h8.9V6.3h1.6v8.9h8.8V16.8z"/>
+            r="15.2"
+            cx="16"
+            cy="16"/>
+        <line
+            style={{
+                fill: 'none',
+                stroke: props.color,
+                strokeWidth: 1.5 * props.stroke
+            }}
+            x1="16"
+            y1="6.8"
+            x2="16"
+            y2="25.2"/>
+	    <line
+            style={{
+                fill: 'none',
+                stroke: props.color,
+                strokeWidth: 1.5 * props.stroke
+            }}
+            x1="25.2"
+            y1="16"
+            x2="6.8"
+            y2="16"/>
     </svg>
 );
 
 CirclePlus.defaultProps = {
-    color: 'var(--color-primary)'
+    background: 'none',
+    color: 'var(--color-primary)',
+    stroke: 1
 }
 
 interface Props {
     className?:string;
+    background?:string;
     color?:string;
+    stroke?:number;
     padding?:string;
     margin?:string;
     width?:string;
