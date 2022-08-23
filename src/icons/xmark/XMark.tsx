@@ -16,7 +16,7 @@ const XMark = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: 2
+                strokeWidth: props.stroke
             }}
             x1="1"
             y1="31"
@@ -26,7 +26,7 @@ const XMark = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: 2
+                strokeWidth: props.stroke
             }}
             x1="1"
             y1="1"
@@ -36,12 +36,14 @@ const XMark = (props:Props)=> (
 );
 
 XMark.defaultProps = {
-    color: 'var(--color-primary)'
+    color: 'var(--color-primary)',
+    stroke: 2
 }
 
 interface Props {
     className?:string;
     color?:string;
+    stroke?:number;
     padding?:string;
     margin?:string;
     width?:string;
