@@ -14,7 +14,7 @@ const CirclePlus = (props:Props)=> (
         }}>
         <circle
             style={{
-                fill: 'none',
+                fill: props.background,
                 stroke: props.color,
                 strokeWidth: 1.5 * props.stroke
             }}
@@ -45,12 +45,14 @@ const CirclePlus = (props:Props)=> (
 );
 
 CirclePlus.defaultProps = {
+    background: 'none',
     color: 'var(--color-primary)',
     stroke: 1
 }
 
 interface Props {
     className?:string;
+    background?:string;
     color?:string;
     stroke?:number;
     padding?:string;
