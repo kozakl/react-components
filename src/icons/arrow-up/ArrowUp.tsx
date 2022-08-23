@@ -16,13 +16,13 @@ const ArrowUp = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.color,
-                strokeWidth: props.stroke
+                strokeWidth: 2 * props.stroke
             }}
             points="0.5,16.6 16.1,1.2 31.5,16.6"/>
         <line
             style={{
                 stroke: props.color,
-                strokeWidth: props.stroke
+                strokeWidth: 2 * props.stroke
             }}
             x1="16.1"
             y1="1"
@@ -33,7 +33,7 @@ const ArrowUp = (props:Props)=> (
 
 ArrowUp.defaultProps = {
     color: 'var(--color-primary)',
-    stroke: 2
+    stroke: 1
 }
 
 interface Props {
