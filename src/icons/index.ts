@@ -11,6 +11,7 @@ export * from './chevron-left';
 export * from './chevron-right';
 export * from './chevron-up';
 export * from './circle-download';
+export * from './circle-minus';
 export * from './circle-plus';
 export * from './remove';
 export * from './xmark';
