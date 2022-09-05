@@ -70,6 +70,8 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 href={`${process.env.API}/${image.url}?download=true`}
                                 download>
                                 <CircleDownload
+                                    background="var(--background-primary)"
+                                    color="var(--color-primary)"
                                     padding="0.25em"
                                     width="1.875em"/>
                             </a>}
@@ -80,6 +82,8 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                             onClick={()=>
                                 props.remove(index)}>
                             <CircleMinus
+                                background="var(--background-primary)"
+                                color="var(--color-primary)"
                                 padding="0.25em"
                                 width="1.875em"/>
                         </IconButton>
