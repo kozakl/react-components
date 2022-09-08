@@ -21,6 +21,8 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                 type="file"
                 accept="image/*"
                 multiple={props.multiple}
+                disabled={!props.multiple &&
+                    !!props.images.length}
                 onChange={props.onChange}/>
             <div className={style.images}>
                 {props.images.map((image, index)=>
