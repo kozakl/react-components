@@ -1,5 +1,6 @@
 import {PropsWithChildren, useState} from 'react';
 import {Range as RangeCore} from 'react-range';
+import React from 'react';
 import style from './Range.module.css';
 
 export const Range = (props:Props)=> {
