@@ -33,6 +33,8 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                             image.url}>
                         <img
                             className={style.image}
+                            style={{
+                                aspectRatio: (image.width / image.height).toString()}}
                             title={image.name}
                             alt={null}
                             src={image.file ?
