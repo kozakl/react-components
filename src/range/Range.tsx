@@ -1,5 +1,6 @@
 import {PropsWithChildren, useState} from 'react';
 import {Range as RangeCore} from 'react-range';
+import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Range.module.css';
 
@@ -7,7 +8,11 @@ export const Range = (props:Props)=> {
     const [values, setValues] = useState(props.values);
     
     return (
-        <div className={style.range}>
+        <div
+            className={classNames(
+                style.range,
+                props.className
+            )}>
             <RangeCore
                 values={values}
                 step={props.step}
@@ -57,6 +62,7 @@ Range.defaultProps = {
 };
 
 interface Props extends PropsWithChildren<{}> {
+    className?:string;
     values:number[];
     step?:number;
     min:number;
