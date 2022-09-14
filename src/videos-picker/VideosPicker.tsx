@@ -35,12 +35,12 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                         <div className={style.videoContainer}>
                             <video
                                 className={style.video}
-                                style={{
-                                    aspectRatio: (video.width / video.height).toString()}}
                                 title={video.name}
                                 src={video.file ?
                                     video.url :
                                     `${process.env.API}/${video.url}?w=152`}
+                                style={{
+                                    aspectRatio: (video.width / video.height).toString()}}
                                 onLoadedMetadata={(event)=> {
                                     const target = event.target as HTMLVideoElement;
                                     target.currentTime = video.start;
@@ -61,6 +61,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                             {props.multiple &&
                                 <div className={style.arrows}>
                                     <IconButton
+                                        className={style.moveLeft}
                                         title="Move left"
                                         active
                                         disabled={
@@ -73,6 +74,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                             height="100%"/>
                                     </IconButton>
                                     <IconButton
+                                        className={style.moveRight}
                                         title="Move right"
                                         active
                                         disabled={
@@ -114,7 +116,9 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                             <Range
                                 values={[
                                     video.start,
-                                    video.end
+                                    !video.file ?
+                                        video.end :
+                                        +video.duration.toFixed(1)
                                 ]}
                                 step={0.1}
                                 min={0}
