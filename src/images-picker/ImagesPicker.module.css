@@ -44,6 +44,11 @@
     bottom: 0.125em;
     left: 0;
   }
+  .moveLeft,
+  .moveRight {
+    background: rgba(var(--background-primary-rgb), 0.5);
+    border-radius: 0.25em;
+  }
   .download {
     position: absolute;
     visibility: hidden;
