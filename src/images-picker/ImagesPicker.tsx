@@ -43,6 +43,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                         {props.multiple &&
                             <div className={style.arrows}>
                                 <IconButton
+                                    className={style.moveLeft}
                                     title="Move left"
                                     active
                                     disabled={
@@ -55,6 +56,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                         height="100%"/>
                                 </IconButton>
                                 <IconButton
+                                    className={style.moveRight}
                                     title="Move right"
                                     active
                                     disabled={
