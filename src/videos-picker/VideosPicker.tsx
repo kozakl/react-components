@@ -118,7 +118,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                     video.start,
                                     !video.file ?
                                         video.end :
-                                        +video.duration.toFixed(1)
+                                        video.duration | 0
                                 ]}
                                 step={0.1}
                                 min={0}
