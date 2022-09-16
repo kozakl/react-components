@@ -1,11 +1,11 @@
 import {ChangeEvent, forwardRef} from 'react';
+import {VideoPicker} from '@kozakl/hooks';
+import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
         CircleDownload, CircleMinus,
         CirclePlus} from '../icons';
 import {Range} from '../range';
-import {VideoPicker} from '@kozakl/hooks';
-import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './VideosPicker.module.css';
 
