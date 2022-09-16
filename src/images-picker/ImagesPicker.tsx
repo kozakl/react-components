@@ -34,13 +34,12 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                         <div className={style.imageContainer}>
                             <img
                                 className={style.image}
-                                style={{
-                                    aspectRatio: (image.width / image.height).toString()}}
                                 title={image.name}
                                 alt={null}
-                                src={image.file ?
-                                    image.url :
-                                    `${process.env.API}/${image.url}?w=152`}/>
+                                src={image.file ? 
+                                    image.url : `${process.env.API}/${image.url}?w=152`}
+                                style={{
+                                    aspectRatio: (image.width / image.height).toString()}}/>
                             {props.multiple &&
                                 <div className={style.arrows}>
                                     <IconButton
