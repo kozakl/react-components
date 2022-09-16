@@ -13,7 +13,7 @@
     margin: 0.25em;
     min-width: 7em;
   }
-  .videoContainer {
+  .imageContainer {
     position: relative;
     background: rgba(var(--background-secondary-rgb), 0.075);
     border-radius: 0.375em;
