@@ -37,8 +37,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 className={style.video}
                                 title={video.name}
                                 src={video.file ?
-                                    video.url :
-                                    `${process.env.API}/${video.url}?w=152`}
+                                    video.url : `${process.env.API}/${video.url}?w=152`}
                                 style={{
                                     aspectRatio: (video.width / video.height).toString()}}
                                 onLoadedMetadata={(event)=> {
