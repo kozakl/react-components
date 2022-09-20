@@ -8,6 +8,7 @@ import {ChevronLeft, ChevronRight,
 import {Range} from '../range';
 import React from 'react';
 import style from './VideosPicker.module.css';
+import {format} from 'date-fns';
 
 const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
     return (
@@ -125,7 +126,8 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 onChange={(values)=>
                                     props.cut(index, values[0], values[1])}/>
                             <div className={style.rangeValues}>
-                                {video.start.toFixed(1)}–{video.end.toFixed(1)}
+                                {format(video.start * 1000, 'mm:ss:S')}–
+                                {format(video.end * 1000, 'mm:ss:S')}
                             </div>
                         </div>
                     </div>)}
