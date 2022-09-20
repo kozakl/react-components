@@ -1,4 +1,5 @@
 import {ChangeEvent, forwardRef} from 'react';
+import {format} from 'date-fns';
 import {VideoPicker} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
@@ -8,7 +9,6 @@ import {ChevronLeft, ChevronRight,
 import {Range} from '../range';
 import React from 'react';
 import style from './VideosPicker.module.css';
-import {format} from 'date-fns';
 
 const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
     return (
