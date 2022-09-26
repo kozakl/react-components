@@ -27,7 +27,14 @@ const TextRichArea = (props:Props)=> {
                     onEditorStateChange={props.onChange}
                     stripPastedStyles
                     toolbar={{
-                        options: props.toolbarOptions,
+                        options: props.toolbar == 'tiny' ? [
+                            'inline',
+                            'fontSize',
+                            'colorPicker',
+                            'link',
+                            'remove',
+                            'history'
+                        ] : props.toolbarOptions,
                         inline: props.inlineOptions
                     }}/>
             </div>
@@ -45,6 +52,7 @@ const TextRichArea = (props:Props)=> {
 };
 
 TextRichArea.defaultProps = {
+    toolbar: 'tiny',
     toolbarOptions: [
         'inline',
         'blockType',
@@ -76,6 +84,7 @@ interface Props {
     id:string;
     state?:EditorState;
     placeholder?:string;
+    toolbar?:'tiny' | 'full';
     toolbarOptions?:string[];
     inlineOptions?:string[];
     error?:string;
