@@ -27,32 +27,8 @@ const TextRichArea = (props:Props)=> {
                     onEditorStateChange={props.onChange}
                     stripPastedStyles
                     toolbar={{
-                        options: [
-                            'inline',
-                            'blockType',
-                            'fontSize',
-                            'fontFamily',
-                            'list',
-                            'textAlign',
-                            'colorPicker',
-                            'link',
-                            'embedded',
-                            'emoji',
-                            'image',
-                            'remove',
-                            'history'
-                        ],
-                        inline: {
-                            options: [
-                                'bold',
-                                'italic',
-                                'underline',
-                                'strikethrough',
-                                'monospace',
-                                'superscript',
-                                'subscript'
-                            ]
-                        }
+                        options: props.toolbarOptions,
+                        inline: props.inlineOptions
                     }}/>
             </div>
             <div
@@ -68,11 +44,40 @@ const TextRichArea = (props:Props)=> {
     );
 };
 
+TextRichArea.defaultProps = {
+    toolbarOptions: [
+        'inline',
+        'blockType',
+        'fontSize',
+        'fontFamily',
+        'list',
+        'textAlign',
+        'colorPicker',
+        'link',
+        'embedded',
+        'emoji',
+        'image',
+        'remove',
+        'history'
+    ],
+    inlineOptions: [
+        'bold',
+        'italic',
+        'underline',
+        'strikethrough',
+        'monospace',
+        'superscript',
+        'subscript'
+    ]
+}
+
 interface Props {
     className?:string;
     id:string;
     state?:EditorState;
     placeholder?:string;
+    toolbarOptions?:string[];
+    inlineOptions?:string[];
     error?:string;
     onChange?:(state:EditorState)=> void;
 }
