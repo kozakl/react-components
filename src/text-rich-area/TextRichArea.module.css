@@ -16,6 +16,14 @@
     & > div:last-child > div:first-child {
       color: #000;
     }
+    &.hideToolbar {
+      & > div:first-child {
+        margin-top: -1em;
+      }
+      & > div > div:first-child {
+        display: none;
+      }
+    }
   }
   .border {
     border-bottom: solid 1px;

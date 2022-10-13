@@ -20,7 +20,12 @@ const TextRichArea = (props:Props)=> {
                 props.className
             )}
             id={props.id}>
-            <div className={style.container}>
+            <div
+                className={classNames(
+                    style.container,
+                    !props.toolbar &&
+                        style.hideToolbar
+                )}>
                 <Editor
                     editorState={props.state}
                     placeholder={props.placeholder}
