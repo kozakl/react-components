@@ -1,8 +1,8 @@
 import {ArrowDown, ArrowLeft, ArrowRight,
         ArrowUp, CaretDown, CaretLeft,
-        CircleDownload, CaretRight, CaretUp,
-        ChevronDown, CircleMinus, ChevronLeft,
-        ChevronRight, ChevronUp, CirclePlus,
+        CaretRight, CaretUp, ChevronDown,
+        ChevronLeft, ChevronRight, ChevronUp,
+        CircleDownload, CircleMinus, CirclePlus,
         XMark} from '@kozakl/components/icons'
 import style from './Icons.module.css';
 
@@ -58,10 +58,6 @@ const Icons = ()=> {
                 <span>chevron-right</span>
             </div>
             <div>
-                <XMark height="1.5em"/>
-                <span>xmark</span>
-            </div>
-            <div>
                 <CircleDownload height="1.5em"/>
                 <span>circle-download</span>
             </div>
@@ -72,6 +68,10 @@ const Icons = ()=> {
             <div>
                 <CirclePlus height="1.5em"/>
                 <span>circle-plus</span>
+            </div>
+            <div>
+                <XMark height="1.5em"/>
+                <span>xmark</span>
             </div>
         </div>
     );
