@@ -12,7 +12,7 @@
     "url": "https://github.com/kozakl/react-components"
   },
   "scripts": {
-    "watch": "copy-and-watch --watch 'src/**/*.{css,}' 'dist' & tsc --watch",
+    "watch": "copy-and-watch --watch 'src/**/*.{css,}' 'dist' & tsc --watch & cp package.json ./dist",
     "build": "rm -rf ./dist && tsc && copyfiles -u 1 './src/**/*.css' dist/",
     "publish-dist": "npm run build && cp package.json ./dist && npm publish ./dist --access=public"
   },
