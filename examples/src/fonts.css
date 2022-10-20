@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Basier Square';
+  font-display: block;
+  font-style: normal;
+  font-weight: normal;
+  src: url('/admin/fonts/basierSquare-regular.woff2')
+       format('woff2');
+}
+@font-face {
+  font-family: 'Basier Square';
+  font-display: block;
+  font-style: normal;
+  font-weight: bold;
+  src: url('/admin/fonts/basierSquare-bold.woff2')
+       format('woff2');
+}
