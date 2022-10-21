@@ -3,7 +3,11 @@ import React from 'react';
 const ChevronDown = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox="0 0 32 32"
+        viewBox={`
+            ${-2 * (props.stroke - 1) / 2}
+            ${-2 * (props.stroke - 1) / 2}
+            ${32 + 2 * (props.stroke - 1)}
+            ${32 + 2 * (props.stroke - 1)}`}
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
