@@ -95,7 +95,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                     download>
                                     <CircleDownload
                                         background="var(--background-primary)"
-                                        color="var(--color-primary)"
+                                        colorPrimary="var(--color-primary)"
                                         padding="0.25em"
                                         width="1.875em"/>
                                 </a>}
@@ -107,7 +107,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                     props.remove(index)}>
                                 <CircleMinus
                                     background="var(--background-primary)"
-                                    color="var(--color-primary)"
+                                    colorPrimary="var(--color-primary)"
                                     padding="0.25em"
                                     width="1.875em"/>
                             </IconButton>
@@ -141,7 +141,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                     title="Add Video/s"
                     htmlFor={props.id}>
                     <CirclePlus
-                        color="var(--background-primary)"
+                        colorPrimary="var(--background-primary)"
                         width="3em"/>
                 </label>
             </div>
