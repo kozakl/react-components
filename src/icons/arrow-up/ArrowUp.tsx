@@ -19,13 +19,13 @@ const ArrowUp = (props:Props)=> (
         <polyline
             style={{
                 fill: 'none',
-                stroke: props.color,
+                stroke: props.colorPrimary,
                 strokeWidth: 2 * props.stroke
             }}
             points="0.5,16.6 16.1,1.2 31.5,16.6"/>
         <line
             style={{
-                stroke: props.color,
+                stroke: props.colorPrimary,
                 strokeWidth: 2 * props.stroke
             }}
             x1="16.1"
@@ -36,13 +36,13 @@ const ArrowUp = (props:Props)=> (
 );
 
 ArrowUp.defaultProps = {
-    color: 'var(--color-primary)',
+    colorPrimary: 'var(--color-primary)',
     stroke: 1
 }
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
     stroke?:number;
     padding?:string;
     margin?:string;
