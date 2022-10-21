@@ -14,19 +14,19 @@ const CaretLeft = (props:Props)=> (
         }}>
         <path
             style={{
-                fill: props.color
+                fill: props.colorPrimary
             }}
             d="M24,32L8,16L24,0V32z"/>
     </svg>
 );
 
 CaretLeft.defaultProps = {
-    color: 'var(--color-primary)'
+    colorPrimary: 'var(--color-primary)'
 }
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
     padding?:string;
     margin?:string;
     width?:string;
