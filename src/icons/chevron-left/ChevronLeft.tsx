@@ -22,7 +22,7 @@ const ChevronLeft = (props:Props)=> (
                 stroke: props.color,
                 strokeWidth: 2 * props.stroke
             }}
-            points="17,1 2,15.9 17,31"/>
+            points="24,1 8.9,15.9 24,31"/>
     </svg>
 );
 
