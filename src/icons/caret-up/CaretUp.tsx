@@ -14,19 +14,19 @@ const CaretUp = (props:Props)=> (
         }}>
         <path
             style={{
-                fill: props.color
+                fill: props.colorPrimary
             }}
             d="M0,24L16,8l16,16H0z"/>
     </svg>
 );
 
 CaretUp.defaultProps = {
-    color: 'var(--color-primary)'
+    colorPrimary: 'var(--color-primary)'
 }
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
     padding?:string;
     margin?:string;
     width?:string;
