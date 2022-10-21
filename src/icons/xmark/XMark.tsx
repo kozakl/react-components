@@ -4,10 +4,10 @@ const XMark = (props:Props)=> (
     <svg
         className={props.className}
         viewBox={`
-            ${-1.5 * (props.outline - 1) / 2}
-            ${-1.5 * (props.outline - 1) / 2}
-            ${32 + 1.5 * (props.outline - 1)}
-            ${32 + 1.5 * (props.outline - 1)}`}
+            ${-2 * (props.stroke - 1) / 2}
+            ${-2 * (props.stroke - 1) / 2}
+            ${32 + 2 * (props.stroke - 1)}
+            ${32 + 2 * (props.stroke - 1)}`}
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
