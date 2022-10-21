@@ -36,7 +36,7 @@ const ArrowRight = (props:Props)=> (
 );
 
 ArrowRight.defaultProps = {
-    color: 'var(--color-primary)',
+    colorPrimary: 'var(--color-primary)',
     stroke: 1
 }
 
