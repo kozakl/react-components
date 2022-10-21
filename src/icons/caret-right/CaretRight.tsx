@@ -14,19 +14,19 @@ const CaretRight = (props:Props)=> (
         }}>
         <path
             style={{
-                fill: props.color
+                fill: props.colorPrimary
             }}
             d="M8,32l16-16L8,0V32z"/>
     </svg>
 );
 
 CaretRight.defaultProps = {
-    color: 'var(--color-primary)'
+    colorPrimary: 'var(--color-primary)'
 }
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
     padding?:string;
     margin?:string;
     width?:string;
