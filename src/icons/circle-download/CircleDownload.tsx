@@ -15,8 +15,8 @@ const CircleDownload = (props:Props)=> (
         <circle
             style={{
                 fill: props.background,
-                stroke: props.color,
-                strokeWidth: 1.5 * props.stroke
+                stroke: props.outline && props.colorSecondary,
+                strokeWidth: 1.5 * props.outline
             }}
             r="15.2"
             cx="16"
@@ -24,14 +24,14 @@ const CircleDownload = (props:Props)=> (
         <path
             style={{
                 fill: 'none',
-                stroke: props.color,
+                stroke: props.colorPrimary,
                 strokeWidth: 1.5 * props.stroke
             }}
             d="M22.5,14.5L16,20.9l-6.5-6.4 M16,8v13"/>
 	    <path
             style={{
                 fill: 'none',
-                stroke: props.color,
+                stroke: props.colorPrimary,
                 strokeWidth: 1.5 * props.stroke
             }}
             d="M22.2,24H9.8"/>
@@ -40,15 +40,19 @@ const CircleDownload = (props:Props)=> (
 
 CircleDownload.defaultProps = {
     background: 'none',
-    color: 'var(--color-primary)',
-    stroke: 1
+    colorPrimary: 'var(--color-primary)',
+    colorSecondary: 'var(--color-primary)',
+    stroke: 1,
+    outline: 1
 }
 
 interface Props {
     className?:string;
     background?:string;
-    color?:string;
+    colorPrimary?:string;
+    colorSecondary?:string;
     stroke?:number;
+    outline?:number;
     padding?:string;
     margin?:string;
     width?:string;
