@@ -3,7 +3,11 @@ import React from 'react';
 const CircleDownload = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox="0 0 32 32"
+        viewBox={`
+            ${-1.5 * (props.outline - 1) / 2}
+            ${-1.5 * (props.outline - 1) / 2}
+            ${32 + 1.5 * (props.outline - 1)}
+            ${32 + 1.5 * (props.outline - 1)}`}
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
