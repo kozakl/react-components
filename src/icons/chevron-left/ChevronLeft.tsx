@@ -3,7 +3,11 @@ import React from 'react';
 const ChevronLeft = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox="0 0 18.1 32"
+        viewBox={`
+            ${-2 * (props.stroke - 1) / 2}
+            ${-2 * (props.stroke - 1) / 2}
+            ${32 + 2 * (props.stroke - 1)}
+            ${32 + 2 * (props.stroke - 1)}`}
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -15,21 +19,21 @@ const ChevronLeft = (props:Props)=> (
         <polyline
             style={{
                 fill: 'none',
-                stroke: props.color,
+                stroke: props.colorPrimary,
                 strokeWidth: 2 * props.stroke
             }}
-            points="17,1 2,15.9 17,31"/>
+            points="24,1 8.9,15.9 24,31"/>
     </svg>
 );
 
 ChevronLeft.defaultProps = {
-    color: 'var(--color-primary)',
+    colorPrimary: 'var(--color-primary)',
     stroke: 1
 }
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
     stroke?:number;
     padding?:string;
     margin?:string;

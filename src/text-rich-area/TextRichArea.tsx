@@ -20,39 +20,27 @@ const TextRichArea = (props:Props)=> {
                 props.className
             )}
             id={props.id}>
-            <div className={style.container}>
+            <div
+                className={classNames(
+                    style.container,
+                    !props.toolbar &&
+                        style.hideToolbar
+                )}>
                 <Editor
                     editorState={props.state}
                     placeholder={props.placeholder}
                     onEditorStateChange={props.onChange}
                     stripPastedStyles
                     toolbar={{
-                        options: [
+                        options: props.toolbar == 'tiny' ? [
                             'inline',
-                            'blockType',
                             'fontSize',
-                            'fontFamily',
-                            'list',
-                            'textAlign',
                             'colorPicker',
                             'link',
-                            'embedded',
-                            'emoji',
-                            'image',
                             'remove',
                             'history'
-                        ],
-                        inline: {
-                            options: [
-                                'bold',
-                                'italic',
-                                'underline',
-                                'strikethrough',
-                                'monospace',
-                                'superscript',
-                                'subscript'
-                            ]
-                        }
+                        ] : props.toolbarOptions,
+                        inline: props.inlineOptions
                     }}/>
             </div>
             <div
@@ -68,11 +56,42 @@ const TextRichArea = (props:Props)=> {
     );
 };
 
+TextRichArea.defaultProps = {
+    toolbar: 'tiny',
+    toolbarOptions: [
+        'inline',
+        'blockType',
+        'fontSize',
+        'fontFamily',
+        'list',
+        'textAlign',
+        'colorPicker',
+        'link',
+        'embedded',
+        'emoji',
+        'image',
+        'remove',
+        'history'
+    ],
+    inlineOptions: [
+        'bold',
+        'italic',
+        'underline',
+        'strikethrough',
+        'monospace',
+        'superscript',
+        'subscript'
+    ]
+}
+
 interface Props {
     className?:string;
     id:string;
     state?:EditorState;
     placeholder?:string;
+    toolbar?:'tiny' | 'full';
+    toolbarOptions?:string[];
+    inlineOptions?:string[];
     error?:string;
     onChange?:(state:EditorState)=> void;
 }

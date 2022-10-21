@@ -1,11 +1,12 @@
 import {ChangeEvent, forwardRef} from 'react';
+import {format} from 'date-fns';
+import {VideoPicker} from '@kozakl/hooks';
+import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
         CircleDownload, CircleMinus,
         CirclePlus} from '../icons';
 import {Range} from '../range';
-import {VideoPicker} from '@kozakl/hooks';
-import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './VideosPicker.module.css';
 
@@ -37,8 +38,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 className={style.video}
                                 title={video.name}
                                 src={video.file ?
-                                    video.url :
-                                    `${process.env.API}/${video.url}?w=152`}
+                                    video.url : `${process.env.API}/${video.url}?w=152`}
                                 style={{
                                     aspectRatio: (video.width / video.height).toString()}}
                                 onLoadedMetadata={(event)=> {
@@ -126,7 +126,8 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 onChange={(values)=>
                                     props.cut(index, values[0], values[1])}/>
                             <div className={style.rangeValues}>
-                                {video.start.toFixed(1)}–{video.end.toFixed(1)}
+                                {format(video.start * 1000, 'mm:ss:S')}–
+                                {format(video.end * 1000, 'mm:ss:S')}
                             </div>
                         </div>
                     </div>)}

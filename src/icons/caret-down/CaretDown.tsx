@@ -14,7 +14,7 @@ const CaretDown = (props:Props)=> (
         }}>
         <path
             style={{
-                fill: props.color
+                fill: props.colorPrimary
             }}
             d="M0,8l16,16L32,8H0z"/>
     </svg>
@@ -26,7 +26,7 @@ CaretDown.defaultProps = {
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
     padding?:string;
     margin?:string;
     width?:string;

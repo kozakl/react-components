@@ -1,0 +1,26 @@
+@import 'fonts.css';
+@import 'style.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: scroll;
+  background: var(--background-primary);
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  font-weight: 300;
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}

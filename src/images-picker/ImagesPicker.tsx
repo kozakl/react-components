@@ -27,72 +27,73 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
             <div className={style.images}>
                 {props.images.map((image, index)=>
                     <div
-                        className={style.imageContainer}
+                        className={style.container}
                         key={image.file ?
                             image.name + image.file.size :
                             image.url}>
-                        <img
-                            className={style.image}
-                            style={{
-                                aspectRatio: (image.width / image.height).toString()}}
-                            title={image.name}
-                            alt={null}
-                            src={image.file ?
-                                image.url :
-                                `${process.env.API}/${image.url}?w=152`}/>
-                        {props.multiple &&
-                            <div className={style.arrows}>
-                                <IconButton
-                                    className={style.moveLeft}
-                                    title="Move left"
-                                    active
-                                    disabled={
-                                        props.images.length <= 1 ||
-                                        index <= 0}
-                                    onClick={()=>
-                                        props.moveLeft(index)}>
-                                    <ChevronLeft
+                        <div className={style.imageContainer}>
+                            <img
+                                className={style.image}
+                                title={image.name}
+                                alt={null}
+                                src={image.file ? 
+                                    image.url : `${process.env.API}/${image.url}?w=152`}
+                                style={{
+                                    aspectRatio: (image.width / image.height).toString()}}/>
+                            {props.multiple &&
+                                <div className={style.arrows}>
+                                    <IconButton
+                                        className={style.moveLeft}
+                                        title="Move left"
+                                        active
+                                        disabled={
+                                            props.images.length <= 1 ||
+                                            index <= 0}
+                                        onClick={()=>
+                                            props.moveLeft(index)}>
+                                        <ChevronLeft
+                                            padding="0.25em"
+                                            height="100%"/>
+                                    </IconButton>
+                                    <IconButton
+                                        className={style.moveRight}
+                                        title="Move right"
+                                        active
+                                        disabled={
+                                            props.images.length <= 1 ||
+                                            index >= props.images.length - 1}
+                                        onClick={()=>
+                                            props.moveRight(index)}>
+                                        <ChevronRight
+                                            padding="0.25em"
+                                            height="100%"/>
+                                    </IconButton>
+                                </div>}
+                            {!image.file &&
+                                <a
+                                    className={style.download}
+                                    title="Download"
+                                    href={`${process.env.API}/${image.url}?download=true`}
+                                    download>
+                                    <CircleDownload
+                                        background="var(--background-primary)"
+                                        color="var(--color-primary)"
                                         padding="0.25em"
-                                        height="100%"/>
-                                </IconButton>
-                                <IconButton
-                                    className={style.moveRight}
-                                    title="Move right"
-                                    active
-                                    disabled={
-                                        props.images.length <= 1 ||
-                                        index >= props.images.length - 1}
-                                    onClick={()=>
-                                        props.moveRight(index)}>
-                                    <ChevronRight
-                                        padding="0.25em"
-                                        height="100%"/>
-                                </IconButton>
-                            </div>}
-                        {!image.file &&
-                            <a
-                                className={style.download}
-                                title="Download"
-                                href={`${process.env.API}/${image.url}?download=true`}
-                                download>
-                                <CircleDownload
+                                        width="1.875em"/>
+                                </a>}
+                            <IconButton
+                                className={style.remove}
+                                title="Remove"
+                                active
+                                onClick={()=>
+                                    props.remove(index)}>
+                                <CircleMinus
                                     background="var(--background-primary)"
                                     color="var(--color-primary)"
                                     padding="0.25em"
                                     width="1.875em"/>
-                            </a>}
-                        <IconButton
-                            className={style.remove}
-                            title="Remove"
-                            active
-                            onClick={()=>
-                                props.remove(index)}>
-                            <CircleMinus
-                                background="var(--background-primary)"
-                                color="var(--color-primary)"
-                                padding="0.25em"
-                                width="1.875em"/>
-                        </IconButton>
+                            </IconButton>
+                        </div>
                     </div>)}
                 <label
                     className={classNames(

@@ -3,7 +3,11 @@ import React from 'react';
 const CircleMinus = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox="0 0 32 32"
+        viewBox={`
+            ${-1.5 * (props.outline - 1) / 2}
+            ${-1.5 * (props.outline - 1) / 2}
+            ${32 + 1.5 * (props.outline - 1)}
+            ${32 + 1.5 * (props.outline - 1)}`}
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -15,8 +19,8 @@ const CircleMinus = (props:Props)=> (
         <circle
             style={{
                 fill: props.background,
-                stroke: props.color,
-                strokeWidth: 1.5 * props.stroke
+                stroke: props.outline && props.colorSecondary,
+                strokeWidth: 1.5 * props.outline
             }}
             r="15.2"
             cx="16"
@@ -24,7 +28,7 @@ const CircleMinus = (props:Props)=> (
 	    <line
             style={{
                 fill: 'none',
-                stroke: props.color,
+                stroke: props.colorPrimary,
                 strokeWidth: 1.5 * props.stroke
             }}
             x1="25.2"
@@ -36,15 +40,19 @@ const CircleMinus = (props:Props)=> (
 
 CircleMinus.defaultProps = {
     background: 'none',
-    color: 'var(--color-primary)',
-    stroke: 1
+    colorPrimary: 'var(--color-primary)',
+    colorSecondary: 'var(--color-primary)',
+    stroke: 1,
+    outline: 1
 }
 
 interface Props {
     className?:string;
     background?:string;
-    color?:string;
+    colorPrimary?:string;
+    colorSecondary?:string;
     stroke?:number;
+    outline?:number;
     padding?:string;
     margin?:string;
     width?:string;

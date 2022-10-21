@@ -9,6 +9,10 @@
     display: flex;
     flex-flow: wrap;
   }
+  .container {
+    margin: 0.25em;
+    min-width: 7em;
+  }
   .imageContainer {
     position: relative;
     background: rgba(var(--background-secondary-rgb), 0.075);
@@ -31,7 +35,7 @@
   .image {
     display: block;
     border-radius: 0.375em;
-    width: 100%;
+    margin: 0 auto;
     height: 100%;
   }
   .arrows {
