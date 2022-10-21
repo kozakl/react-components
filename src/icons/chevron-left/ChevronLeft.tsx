@@ -19,7 +19,7 @@ const ChevronLeft = (props:Props)=> (
         <polyline
             style={{
                 fill: 'none',
-                stroke: props.color,
+                stroke: props.colorPrimary,
                 strokeWidth: 2 * props.stroke
             }}
             points="24,1 8.9,15.9 24,31"/>
@@ -27,13 +27,13 @@ const ChevronLeft = (props:Props)=> (
 );
 
 ChevronLeft.defaultProps = {
-    color: 'var(--color-primary)',
+    colorPrimary: 'var(--color-primary)',
     stroke: 1
 }
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
     stroke?:number;
     padding?:string;
     margin?:string;
