@@ -37,6 +37,7 @@ export const Dialog = (props:Props)=> {
                 {props.confirm &&
                     <Button
                         reversed={props.reversed}
+                        disabled={props.confirmDisabled}
                         onClick={()=> {
                             deleteDialog(props.id);
                             if (props.onConfirm) {
@@ -63,6 +64,7 @@ interface Props {
     reversed?:boolean;
     confirm?:string;
     dismiss?:string;
+    confirmDisabled?:boolean;
     onConfirm?:()=> void;
     onDismiss?:()=> void;
 }
