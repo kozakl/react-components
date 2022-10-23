@@ -14,6 +14,7 @@ export * from './circle-check';
 export * from './circle-download';
 export * from './circle-minus';
 export * from './circle-plus';
+export * from './circle-url';
 export * from './circle-xmark';
 export * from './url';
 export * from './xmark';
