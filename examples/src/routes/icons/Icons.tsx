@@ -78,9 +78,7 @@ const Icons = ()=> {
                 <span>circle-xmark</span>
             </div>
             <div>
-                <URL
-                    
-                    height="1.5em"/>
+                <URL height="1.5em"/>
                 <span>url</span>
             </div>
             <div>
