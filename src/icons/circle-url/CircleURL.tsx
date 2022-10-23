@@ -34,7 +34,6 @@ CircleURL.defaultProps = {
     background: 'none',
     colorPrimary: 'var(--color-primary)',
     colorSecondary: 'var(--color-primary)',
-    stroke: 1,
     outline: 1
 }
 
@@ -43,7 +42,6 @@ interface Props {
     background?:string;
     colorPrimary?:string;
     colorSecondary?:string;
-    stroke?:number;
     outline?:number;
     padding?:string;
     margin?:string;
