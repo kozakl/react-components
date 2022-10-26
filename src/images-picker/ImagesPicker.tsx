@@ -89,7 +89,8 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                     props.remove(index)}>
                                 <CircleMinus
                                     background="var(--background-primary)"
-                                    colorPrimary="var(--color-primary)"
+                                    colorPrimary="var(--background-primary)"
+                                    colorSecondary="var(--background-primary)"
                                     padding="0.25em"
                                     width="1.875em"/>
                             </IconButton>
