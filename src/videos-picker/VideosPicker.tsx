@@ -1,16 +1,25 @@
-import {ChangeEvent, forwardRef} from 'react';
+import {ChangeEvent, forwardRef,
+        useState} from 'react';
 import {format} from 'date-fns';
-import {VideoPicker} from '@kozakl/hooks';
+import {useTextField, VideoPicker} from '@kozakl/hooks';
+import {useDialogsState, useSpinnerState} from '@kozakl/states';
 import {classNames} from '@kozakl/utils';
+import {isURL} from '@kozakl/utils/validate';
+import {Dialog} from '../dialog';
 import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
         CircleDownload, CircleMinus,
         CirclePlus} from '../icons';
 import {Range} from '../range';
+import {TextField} from '../text-field';
 import React from 'react';
 import style from './VideosPicker.module.css';
 
 const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
+    const directLink = useTextField();
+    const [directLinkDialog, setDirectLinkDialog] = useState(false);
+    const {showSpinner, hideSpinner} = useSpinnerState(),
+          {createDialog} = useDialogsState();
     return (
         <div
             className={classNames(
@@ -142,7 +151,19 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                     htmlFor={props.id}>
                     <CirclePlus
                         colorPrimary="var(--background-primary)"
-                        width="3em"/>
+                        colorSecondary="var(--background-primary)"
+                        width="2.25em"/>
+                    <IconButton
+                        className={style.directLink}
+                        title="Add .mp4 video file direct link"
+                        onClick={(event)=> {
+                            event.preventDefault();
+                            setDirectLinkDialog(true);
+                        }}>
+                        <URL
+                            colorPrimary="var(--background-primary)"
+                            width="1em"/>
+                    </IconButton>
                 </label>
             </div>
             <div
@@ -153,6 +174,44 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                 )}>
                 {props.error}
             </div>
+            <Dialog
+                className={classNames(
+                    style.videosPicker,
+                    style.directLinkDialog
+                )}
+                visible={directLinkDialog}
+                title="Add .mp4 video file direct link"
+                message={
+                    <div>
+                        <TextField
+                            opened
+                            outlined
+                            {...directLink}/>
+                    </div>
+                }
+                reversed
+                confirm="Add"
+                confirmDisabled={!isURL(directLink.getValue())}
+                onConfirm={()=> {
+                    setDirectLinkDialog(false);
+                    showSpinner();
+                    props.addURL(directLink.getValue())
+                        .then(()=>
+                            hideSpinner())
+                        .catch((error:Error)=> {
+                            hideSpinner();
+                            if (error.cause == 'cross-domain') {
+                                createDialog({
+                                    title: 'Error!',
+                                    message: error.message,
+                                    reversed: true,
+                                    dismiss: null
+                                });
+                            }
+                        })
+                }}
+                onDismiss={()=>
+                    setDirectLinkDialog(false)}/>
         </div>
     );
 });
@@ -171,6 +230,7 @@ interface Props {
     moveRight:(index:number)=> void;
     cut:(index:number, start:number, end:number)=> void;
     remove:(index:number)=> void;
+    addURL:(url:string)=> Promise<Error>;
     onChange:(event:ChangeEvent<HTMLInputElement>)=> void;
 }
 
