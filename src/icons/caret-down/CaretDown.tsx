@@ -21,7 +21,7 @@ const CaretDown = (props:Props)=> (
 );
 
 CaretDown.defaultProps = {
-    color: 'var(--color-primary)'
+    colorPrimary: 'var(--color-primary)'
 }
 
 interface Props {
