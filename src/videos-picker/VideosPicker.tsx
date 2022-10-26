@@ -9,7 +9,7 @@ import {Dialog} from '../dialog';
 import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
         CircleDownload, CircleMinus,
-        CirclePlus} from '../icons';
+        CirclePlus, URL} from '../icons';
 import {Range} from '../range';
 import {TextField} from '../text-field';
 import React from 'react';
