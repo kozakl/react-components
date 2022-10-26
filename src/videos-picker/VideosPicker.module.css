@@ -74,6 +74,7 @@
     user-select: none;
   }
   .add {
+    position: relative;
     background: var(--background-secondary);
     text-align: center;
     cursor: pointer;
@@ -90,6 +91,16 @@
     }
     &.disabled {
       display: none;
+    }
+  }
+  .directLink {
+    position: absolute;
+    top: 0.25em;
+    right: 0.25em;
+  }
+  &.directLinkDialog {
+    & > div:first-of-type div {
+      width: 100%;
     }
   }
   .error {
