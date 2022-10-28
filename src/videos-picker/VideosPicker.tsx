@@ -200,7 +200,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                             hideSpinner())
                         .catch((error:Error)=> {
                             hideSpinner();
-                            if (error.cause == 'cross-domain') {
+                            if (error) {
                                 createDialog({
                                     title: 'Error!',
                                     message: error.message,
