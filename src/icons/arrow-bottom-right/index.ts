@@ -1,1 +1,1 @@
-export {default as ArrowBottomLeft} from './ArrowBottomLeft';
+export {default as ArrowBottomRight} from './ArrowBottomRight';
