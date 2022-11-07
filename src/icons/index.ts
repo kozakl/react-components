@@ -1,4 +1,5 @@
 export * from './arrow-bottom-left';
+export * from './arrow-bottom-right';
 export * from './arrow-down';
 export * from './arrow-left';
 export * from './arrow-right';
