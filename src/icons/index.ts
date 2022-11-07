@@ -1,6 +1,7 @@
 export * from './arrow-down';
 export * from './arrow-left';
 export * from './arrow-right';
+export * from './arrow-top-left';
 export * from './arrow-top-right';
 export * from './arrow-up';
 export * from './caret-down';
