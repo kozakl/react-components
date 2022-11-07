@@ -1,4 +1,5 @@
 import {ArrowDown, ArrowLeft, ArrowRight,
+        ArrowBottomLeft, ArrowBottomRight,
         ArrowTopLeft, ArrowTopRight, ArrowUp,
         CaretDown, CaretLeft, CaretRight,
         CaretUp, ChevronDown, ChevronLeft,
@@ -35,6 +36,14 @@ const Icons = ()=> {
                 <div>
                     <ArrowTopRight height="1.5em"/>
                     <span>arrow-top-right</span>
+                </div>
+                <div>
+                    <ArrowBottomLeft height="1.5em"/>
+                    <span>arrow-bottom-left</span>
+                </div>
+                <div>
+                    <ArrowBottomRight height="1.5em"/>
+                    <span>arrow-bottom-right</span>
                 </div>
                 <div>
                     <CaretUp height="1.5em"/>
