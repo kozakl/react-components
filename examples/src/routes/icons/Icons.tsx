@@ -1,10 +1,10 @@
 import {ArrowDown, ArrowLeft, ArrowRight,
-        ArrowUp, CaretDown, CaretLeft,
-        CaretRight, CaretUp, ChevronDown,
-        ChevronLeft, ChevronRight, ChevronUp,
-        CircleCheck, CircleDownload, CircleMinus,
-        CirclePlus, CircleURL, CircleXMark, URL,
-        XMark} from '@kozakl/components/icons'
+        ArrowTopRight, ArrowUp, CaretDown,
+        CaretLeft, CaretRight, CaretUp,
+        ChevronDown, ChevronLeft, ChevronRight,
+        ChevronUp, CircleCheck, CircleDownload,
+        CircleMinus, CirclePlus, CircleURL,
+        CircleXMark, URL, XMark} from '@kozakl/components/icons'
 import {Layout} from '../../components/layout';
 import style from './Icons.module.css';
 
@@ -27,6 +27,10 @@ const Icons = ()=> {
                 <div>
                     <ArrowRight height="1.5em"/>
                     <span>arrow-right</span>
+                </div>
+                <div>
+                    <ArrowTopRight height="1.5em"/>
+                    <span>arrow-top-right</span>
                 </div>
                 <div>
                     <CaretUp height="1.5em"/>
