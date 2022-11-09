@@ -14,6 +14,7 @@ import {Range} from '../range';
 import {TextField} from '../text-field';
 import React from 'react';
 import style from './VideosPicker.module.css';
+import {isAbsolute} from '@kozakl/utils/path';
 
 const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
     const directLink = useTextField();
@@ -47,7 +48,10 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 className={style.video}
                                 title={video.name}
                                 src={video.file ?
-                                    video.url : `${process.env.API}/${video.url}?w=152`}
+                                    video.url :
+                                    isAbsolute(video.url) ?
+                                        `${video.url}?w=152` :
+                                        `${process.env.API}/${video.url}?w=152`}
                                 style={{
                                     aspectRatio: (video.width / video.height).toString()}}
                                 onLoadedMetadata={(event)=> {
@@ -97,17 +101,18 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                     </IconButton>
                                 </div>}
                             {!video.file &&
-                                <a
-                                    className={style.download}
-                                    title="Download"
-                                    href={`${process.env.API}/${video.url}?download=true`}
-                                    download>
-                                    <CircleDownload
-                                        background="var(--background-primary)"
-                                        colorPrimary="var(--color-primary)"
-                                        padding="0.25em"
-                                        width="1.875em"/>
-                                </a>}
+                                !isAbsolute(video.url) &&
+                                    <a
+                                        className={style.download}
+                                        title="Download"
+                                        href={`${process.env.API}/${video.url}?download=true`}
+                                        download>
+                                        <CircleDownload
+                                            background="var(--background-primary)"
+                                            colorPrimary="var(--color-primary)"
+                                            padding="0.25em"
+                                            width="1.875em"/>
+                                    </a>}
                             <IconButton
                                 className={style.remove}
                                 title="Remove"
