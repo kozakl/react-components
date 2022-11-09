@@ -39,7 +39,7 @@ const TopBar = (props:Props)=> {
                             router.push('/')}>
                         <Logo
                             color="var(--color-secondary)"
-                            height="1em"/>
+                            height="2em"/>
                     </IconButton>
                     {!mobile &&
                         <div className={style.appearance}>
