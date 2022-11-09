@@ -11,7 +11,7 @@ import style from './Icons.module.css';
 
 const Icons = ()=> {
     return (
-        <Layout title="Shop - Mikromusic CMS">
+        <Layout title="Icons - React Components">
             <div className={style.icons}>
                 <div>
                     <ArrowUp height="1.5em"/>
