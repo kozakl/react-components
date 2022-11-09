@@ -95,7 +95,7 @@ const Sidebar = (props:Props)=> {
                 startWith>
                 Users
             </NavLink>
-            {/*mobile &&
+            {mobile &&
                 <div className={style.appearance}>
                     <LightMode
                         color="var(--color-primary)"
@@ -115,7 +115,7 @@ const Sidebar = (props:Props)=> {
                         color="var(--color-primary)"
                         margin="0 0 0 0.25em"
                         width="1.25em"/>
-                </div>*/}
+                </div>}
         </nav>
     );
 };
