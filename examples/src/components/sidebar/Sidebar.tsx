@@ -31,11 +31,11 @@ const Sidebar = (props:Props)=> {
                 Concerts
                 {concertsNav ?
                     <ArrowUp
-                        color="var(--color-secondary)"
+                        colorPrimary="var(--color-secondary)"
                         margin="0 0 0.1em 0.5em"
                         height="0.625em"/> :
                     <ArrowDown
-                        color="var(--color-primary)"
+                        colorPrimary="var(--color-primary)"
                         margin="0 0 0.1em 0.5em"
                         height="0.625em"/>}
             </NavLink>
@@ -62,39 +62,11 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
-                href="/concerts/list"
+                href="/icons"
                 startWith>
-                Concerts
-            </NavLink>
-            <NavLink
-                className={style.link}
-                activeClass={style.active}
-                href="/gallery"
-                startWith>
-                Gallery
-            </NavLink>
-            <NavLink
-                className={style.link}
-                activeClass={style.active}
-                href="/products"
-                startWith>
-                Shop
-            </NavLink>
-            <NavLink
-                className={style.link}
-                activeClass={style.active}
-                href="/concerts/fields"
-                startWith>
-                Headlines
+                Icons
             </NavLink>
             <div className={style.spacer}/>
-            <NavLink
-                className={style.link}
-                activeClass={style.active}
-                href="/users"
-                startWith>
-                Users
-            </NavLink>
             {mobile &&
                 <div className={style.appearance}>
                     <LightMode
