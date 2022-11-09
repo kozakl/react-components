@@ -66,6 +66,13 @@ const Sidebar = (props:Props)=> {
                 startWith>
                 Icons
             </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
+                href="/videos-picker"
+                startWith>
+                Videos Picker
+            </NavLink>
             <div className={style.spacer}/>
             {mobile &&
                 <div className={style.appearance}>
