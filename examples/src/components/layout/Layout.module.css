@@ -11,6 +11,7 @@
   @media (min-width: 1440px) {
     .container {
       display: flex;
+      align-items: flex-start;
     }
     .sidebar {
       display: block;
