@@ -1,6 +1,7 @@
 import {ChangeEvent, forwardRef} from 'react';
 import {ImagePicker} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
+import {isAbsolute} from '@kozakl/utils/path';
 import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
         CircleDownload, CircleMinus,
@@ -37,7 +38,10 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 title={image.name}
                                 alt={null}
                                 src={image.file ? 
-                                    image.url : `${process.env.API}/${image.url}?w=152`}
+                                    image.url :
+                                    isAbsolute(image.url) ?
+                                        `${image.url}?w=152` :
+                                        `${process.env.API}/${image.url}?w=152`}
                                 style={{
                                     aspectRatio: (image.width / image.height).toString()}}/>
                             {props.multiple &&
