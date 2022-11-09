@@ -111,7 +111,8 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                     htmlFor={props.id}>
                     <CirclePlus
                         colorPrimary="var(--background-primary)"
-                        width="3em"/>
+                        colorSecondary="var(--background-primary)"
+                        width="2.25em"/>
                 </label>
             </div>
             <div
