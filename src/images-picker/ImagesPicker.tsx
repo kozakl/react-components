@@ -132,7 +132,7 @@ ImagesPicker.defaultProps = {
 
 interface Props {
     className?:string;
-    id:string;
+    id?:string;
     images:ImagePicker[];
     multiple?:boolean;
     error:string;
