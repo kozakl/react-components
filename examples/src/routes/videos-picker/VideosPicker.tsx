@@ -5,10 +5,10 @@ import {Layout} from '../../components/layout';
 import style from './VideosPicker.module.css';
 
 const Index = ()=> {
-    const videoShortPicker = useVideosPicker();
+    const videoPicker = useVideosPicker();
     
     useEffect(()=> {
-        videoShortPicker.setInitial([
+        videoPicker.setInitial([
             {
                 'name': 'Flower.mp4',
                 'url': 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
@@ -33,7 +33,7 @@ const Index = ()=> {
     return (
         <Layout title="Videos Picker - React Components">
             <div className={style.videosPicker}>
-                <VideosPicker {...videoShortPicker}/>
+                <VideosPicker {...videoPicker}/>
             </div>
         </Layout>
     );
