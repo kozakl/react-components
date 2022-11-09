@@ -69,6 +69,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/images-picker"
+                startWith>
+                Images Picker
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/videos-picker"
                 startWith>
                 Videos Picker
