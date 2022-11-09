@@ -4,6 +4,7 @@ import {format} from 'date-fns';
 import {useTextField, VideoPicker} from '@kozakl/hooks';
 import {useDialogsState, useSpinnerState} from '@kozakl/states';
 import {classNames} from '@kozakl/utils';
+import {isAbsolute} from '@kozakl/utils/path';
 import {isURL} from '@kozakl/utils/validate';
 import {Dialog} from '../dialog';
 import {IconButton} from '../icon-button';
@@ -14,7 +15,6 @@ import {Range} from '../range';
 import {TextField} from '../text-field';
 import React from 'react';
 import style from './VideosPicker.module.css';
-import {isAbsolute} from '@kozakl/utils/path';
 
 const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
     const directLink = useTextField();
