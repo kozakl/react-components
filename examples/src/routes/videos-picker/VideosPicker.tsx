@@ -8,7 +8,7 @@ const Index = ()=> {
     const videosPicker = useVideosPicker();
     
     useEffect(()=> {
-        videoPicker.setInitial([
+        videosPicker.setInitial([
             {
                 'name': 'Flower.mp4',
                 'url': 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
