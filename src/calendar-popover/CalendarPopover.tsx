@@ -23,8 +23,10 @@ const CalendarPopover = (props:Props)=> {
             tabIndex={0}
             onKeyDown={(event)=> {
                 if (event.code == 'Enter') {
+                    event.stopPropagation();
                     setOpen(true);
                 } else if (event.code == 'Escape') {
+                    event.stopPropagation();
                     setOpen(false);
                 }
             }}>
