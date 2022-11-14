@@ -19,7 +19,15 @@ const CalendarPopover = (props:Props)=> {
                 style.calendarPopover,
                 props.className
             )}
-            ref={calendarPopover}>
+            ref={calendarPopover}
+            tabIndex={0}
+            onKeyDown={(event)=> {
+                if (event.code == 'Enter') {
+                    setOpen(true);
+                } else if (event.code == 'Escape') {
+                    setOpen(false);
+                }
+            }}>
             <div
                 className={classNames(
                     style.date,
