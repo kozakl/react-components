@@ -33,7 +33,9 @@ const Index = ()=> {
     return (
         <Layout title="Videos Picker - React Components">
             <div className={style.videosPicker}>
-                <VideosPicker {...videoPicker}/>
+                <VideosPicker
+                    {...videoPicker}
+                    id="videosPicker"/>
             </div>
         </Layout>
     );

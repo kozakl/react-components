@@ -227,7 +227,7 @@ VideosPicker.defaultProps = {
 
 interface Props {
     className?:string;
-    id?:string;
+    id:string;
     videos:VideoPicker[];
     multiple?:boolean;
     error:string;
