@@ -5,7 +5,7 @@ import {Layout} from '../../components/layout';
 import style from './VideosPicker.module.css';
 
 const Index = ()=> {
-    const videoPicker = useVideosPicker();
+    const videosPicker = useVideosPicker();
     
     useEffect(()=> {
         videoPicker.setInitial([
@@ -34,7 +34,7 @@ const Index = ()=> {
         <Layout title="Videos Picker - React Components">
             <div className={style.videosPicker}>
                 <VideosPicker
-                    {...videoPicker}
+                    {...videosPicker}
                     id="videosPicker"/>
             </div>
         </Layout>
