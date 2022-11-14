@@ -22,10 +22,10 @@ const ColorPopover = (props:Props)=> {
             tabIndex={0}
             onKeyDown={(event)=> {
                 if (event.code == 'Enter') {
-                    event.stopPropagation();
+                    event.preventDefault();
                     setOpen(true);
                 } else if (event.code == 'Escape') {
-                    event.stopPropagation();
+                    event.preventDefault();
                     setOpen(false);
                 }
             }}>
