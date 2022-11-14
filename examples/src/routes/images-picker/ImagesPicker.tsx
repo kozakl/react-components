@@ -27,7 +27,9 @@ const Index = ()=> {
     return (
         <Layout title="Images Picker - React Components">
             <div className={style.imagesPicker}>
-                <ImagesPicker {...imagesPicker}/>
+                <ImagesPicker
+                    {...imagesPicker}
+                    id="imagesPicker"/>
             </div>
         </Layout>
     );
