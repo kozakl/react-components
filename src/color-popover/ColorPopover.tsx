@@ -18,7 +18,15 @@ const ColorPopover = (props:Props)=> {
                 style.colorPopover,
                 props.className
             )}
-            ref={colorPopover}>
+            ref={colorPopover}
+            tabIndex={0}
+            onKeyDown={(event)=> {
+                if (event.code == 'Enter') {
+                    setOpen(true);
+                } else if (event.code == 'Escape') {
+                    setOpen(false);
+                }
+            }}>
             <div
                 className={classNames(
                     style.color,
