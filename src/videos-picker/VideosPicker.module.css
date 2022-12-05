@@ -15,7 +15,12 @@
   }
   .videoContainer {
     position: relative;
-    background: rgba(var(--background-secondary-rgb), 0.075);
+    background: rgba(
+      var(--background-secondary-r),
+      var(--background-secondary-g),
+      var(--background-secondary-b),
+      0.075
+    );
     border-radius: 0.375em;
     max-width: 9.5em;
     height: 4.75em;
@@ -50,7 +55,12 @@
   }
   .moveLeft,
   .moveRight {
-    background: rgba(var(--background-primary-rgb), 0.5);
+    background: rgba(
+      var(--background-primary-r),
+      var(--background-primary-g),
+      var(--background-primary-b),
+      0.5
+    );
     border-radius: 0.25em;
   }
   .download {
