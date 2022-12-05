@@ -61,9 +61,9 @@
   --background-primary-g: 237;
   --background-primary-b: 237;
   --background-secondary: #181818;
-  --background-secondary-r: 0;
-  --background-secondary-g: 0;
-  --background-secondary-b: 0;
+  --background-secondary-r: 24;
+  --background-secondary-g: 24;
+  --background-secondary-b: 24;
   
   --color-primary: #000000;
   --color-primary-r: 0;
