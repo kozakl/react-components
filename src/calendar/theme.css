@@ -48,7 +48,12 @@
   width: 100%;
 }
 .rdrWeekDay {
-  color: rgba(var(--color-primary-rgb), 0.5);
+  color: rgba(
+    var(--color-primary-r),
+    var(--color-primary-g),
+    var(--color-primary-b),
+    0.5
+  );
   font-size: 0.875em;
   line-height: 2.5em;
 }
@@ -139,7 +144,12 @@
 .rdrDayInPreview,
 .rdrDayEndPreview {
   position: absolute;
-  background: rgba(var(--color-primary-rgb), 0.1);
+  background: rgba(
+    var(--color-primary-r),
+    var(--color-primary-g),
+    var(--color-primary-b),
+    0.1
+  );
   pointer-events: none;
   border: 0 solid currentColor;
   top: 3px;
@@ -183,7 +193,12 @@
   display: none;
 }
 .rdrDayDisabled .rdrDayNumber span {
-  color: rgba(var(--color-primary-rgb), 0.3);
+  color: rgba(
+    var(--color-primary-r),
+    var(--color-primary-g),
+    var(--color-primary-b),
+    0.3
+  );
 }
 .rdrDayNumber span {
   color: var(--color-primary);
