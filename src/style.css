@@ -1,4 +1,9 @@
 :root {
+  --appearance-dark: 1;
+  --appearance-light: 0;
+  --appearance-dark-r: 0;
+  --appearance-light-r: 1;
+  
   --font-primary: sans-serif;
   --font-secondary: serif;
   
@@ -46,6 +51,11 @@
 }
 
 [appearance='light'] {
+  --appearance-dark: 0;
+  --appearance-light: 1;
+  --appearance-dark-r: 1;
+  --appearance-light-r: 0;
+  
   --background-primary: #EDEDED;
   --background-primary-r: 237;
   --background-primary-g: 237;
