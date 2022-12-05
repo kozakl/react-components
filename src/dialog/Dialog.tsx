@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {ComponentProps, ReactNode} from 'react';
 import {Button} from '../button';
 import {withModal} from '../modal';
 import {useDialogsState} from '@kozakl/states';
@@ -31,7 +31,8 @@ export const Dialog = (props:Props)=> {
                             if (props.onDismiss) {
                                 props.onDismiss();
                             }
-                        }}>
+                        }}
+                        {...props.buttonProps}>
                         {props.dismiss}
                     </Button>}
                 {props.confirm &&
@@ -43,7 +44,8 @@ export const Dialog = (props:Props)=> {
                             if (props.onConfirm) {
                                 props.onConfirm();
                             }
-                        }}>
+                        }}
+                        {...props.buttonProps}>
                         {props.confirm}
                     </Button>}
             </div>
@@ -65,6 +67,7 @@ interface Props {
     confirm?:string;
     dismiss?:string;
     confirmDisabled?:boolean;
+    buttonProps?:ComponentProps<typeof Button>;
     onConfirm?:()=> void;
     onDismiss?:()=> void;
 }
