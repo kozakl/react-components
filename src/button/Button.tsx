@@ -30,7 +30,7 @@ Button.defaultProps = {
 
 interface Props extends PropsWithChildren<{}> {
     className?:string;
-    theme?:any;
+    theme?:{[key:string]:string};
     id?:string;
     type?:'submit' | 'reset' | 'button';
     size?:'normal' | 'small';
