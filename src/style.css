@@ -1,29 +1,29 @@
 :root {
-  --appearance-dark: 1;
-  --appearance-light: 0;
-  --appearance-dark-r: 0;
-  --appearance-light-r: 1;
+  --appearance-dark: 0;
+  --appearance-light: 1;
+  --appearance-dark-r: 1;
+  --appearance-light-r: 0;
   
   --font-primary: sans-serif;
   --font-secondary: serif;
   
-  --background-primary: #181818;
-  --background-primary-r: 24;
-  --background-primary-g: 24;
-  --background-primary-b: 24;
-  --background-secondary: #EDEDED;
-  --background-secondary-r: 237;
-  --background-secondary-g: 237;
-  --background-secondary-b: 237;
+  --background-primary: #EDEDED;
+  --background-primary-r: 237;
+  --background-primary-g: 237;
+  --background-primary-b: 237;
+  --background-secondary: #181818;
+  --background-secondary-r: 24;
+  --background-secondary-g: 24;
+  --background-secondary-b: 24;
   
-  --color-primary: #EDEDED;
-  --color-primary-r: 237;
-  --color-primary-g: 237;
-  --color-primary-b: 237;
-  --color-secondary: #000000;
-  --color-secondary-r: 0;
-  --color-secondary-g: 0;
-  --color-secondary-b: 0;
+  --color-primary: #000000;
+  --color-primary-r: 0;
+  --color-primary-g: 0;
+  --color-primary-b: 0;
+  --color-secondary: #EDEDED;
+  --color-secondary-r: 237;
+  --color-secondary-g: 237;
+  --color-secondary-b: 237;
   --color-error: #F44336;
   --color-error-r: 244;
   --color-error-g: 67;
@@ -50,27 +50,27 @@
                      0 8px 8px rgba(0, 0, 0, 0.25);
 }
 
-[appearance='light'] {
-  --appearance-dark: 0;
-  --appearance-light: 1;
-  --appearance-dark-r: 1;
-  --appearance-light-r: 0;
+[appearance='dark'] {
+  --appearance-dark: 1;
+  --appearance-light: 0;
+  --appearance-dark-r: 0;
+  --appearance-light-r: 1;
   
-  --background-primary: #EDEDED;
-  --background-primary-r: 237;
-  --background-primary-g: 237;
-  --background-primary-b: 237;
-  --background-secondary: #181818;
-  --background-secondary-r: 24;
-  --background-secondary-g: 24;
-  --background-secondary-b: 24;
+  --background-primary: #181818;
+  --background-primary-r: 24;
+  --background-primary-g: 24;
+  --background-primary-b: 24;
+  --background-secondary: #EDEDED;
+  --background-secondary-r: 237;
+  --background-secondary-g: 237;
+  --background-secondary-b: 237;
   
-  --color-primary: #000000;
-  --color-primary-r: 0;
-  --color-primary-g: 0;
-  --color-primary-b: 0;
-  --color-secondary: #EDEDED;
-  --color-secondary-r: 237;
-  --color-secondary-g: 237;
-  --color-secondary-b: 237;
+  --color-primary: #EDEDED;
+  --color-primary-r: 237;
+  --color-primary-g: 237;
+  --color-primary-b: 237;
+  --color-secondary: #000000;
+  --color-secondary-r: 0;
+  --color-secondary-g: 0;
+  --color-secondary-b: 0;
 }
