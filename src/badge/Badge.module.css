@@ -16,9 +16,9 @@
 
 .badge {
   .label {
-    color: var(--color-primary);
-    font-size: 0.8125em;
-    vertical-align: middle;
+    color: var(--color-secondary);
+    font-size: 0.75em;
+    vertical-align: top;
     pointer-events: none;
     margin: 0;
   }

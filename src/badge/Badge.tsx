@@ -1,4 +1,3 @@
-import {PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
 import React from 'react';
 import style from './Badge.module.css';
@@ -13,15 +12,16 @@ const Badge = (props:Props)=> {
             title={props.title}
             href={props.href}>
             <label className={style.label}>
-                {props.children}
+                {props.value}
             </label>
         </a>
     );
 };
 
-interface Props extends PropsWithChildren<{}> {
+interface Props {
     className?:string;
     title?:string;
+    value?:number;
     href?:string;
 }
 
