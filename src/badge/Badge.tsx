@@ -1,17 +1,18 @@
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './Badge.module.css';
 
 const Badge = (props:Props)=> {
+    const theme = useTheme('badge');
     return (
         <a
             className={classNames(
-                style.badge,
+                theme.badge,
                 props.className,
             )}
             title={props.title}
             href={props.href}>
-            <label className={style.label}>
+            <label className={theme.label}>
                 {props.value}
             </label>
         </a>
