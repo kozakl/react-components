@@ -10,6 +10,7 @@ import {queryClient} from '../query';
 import 'react-date-range/dist/styles.css';
 import '@kozakl/components/calendar/theme.css';
 import '@kozakl/components/style.css';
+import '../theme';
 import '../main.css';
 
 const App = ({Component, pageProps}:AppProps)=> {
