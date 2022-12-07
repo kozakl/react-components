@@ -3,25 +3,26 @@ import {Button} from '../button';
 import {withModal} from '../modal';
 import {useDialogsState} from '@kozakl/states';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './Dialog.module.css';
 
 export const Dialog = (props:Props)=> {
+    const theme = useTheme('dialog');
     const {deleteDialog} = useDialogsState();
     
     return (
         <div
             className={classNames(
-                style.dialog,
+                theme.dialog,
                 props.className
             )}>
-            <h3 className={style.title}>
+            <h3 className={theme.title}>
                 {props.title}
             </h3>
-            <div className={style.message}>
+            <div className={theme.message}>
                 {props.message}
             </div>
-            <div className={style.actions}>
+            <div className={theme.actions}>
                 {props.dismiss &&
                     <Button
                         onClick={()=> {
@@ -35,6 +36,7 @@ export const Dialog = (props:Props)=> {
                     </Button>}
                 {props.confirm &&
                     <Button
+                        secondary
                         disabled={props.confirmDisabled}
                         onClick={()=> {
                             deleteDialog(props.id);
