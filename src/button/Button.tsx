@@ -1,18 +1,20 @@
 import {MouseEvent, PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
 
 const Button = (props:Props)=> {
+    const theme = useTheme('button');
     return (
         <button
             className={classNames(
                 props.small &&
-                    props.theme.small,
+                    theme.small,
                 props.secondary &&
-                    props.theme.secondary,
+                    theme.secondary,
                 props.tertiary &&
-                    props.theme.tertiary,
-                props.theme.button,
+                    theme.tertiary,
+                theme.button,
                 props.className
             )}
             id={props.id}
@@ -26,13 +28,11 @@ const Button = (props:Props)=> {
 };
 
 Button.defaultProps = {
-    theme: {},
     type: 'button'
 };
 
 interface Props extends PropsWithChildren<{}> {
     className?:string;
-    theme?:{[key:string]:string};
     id?:string;
     type?:'submit' | 'reset' | 'button';
     title?:string;
