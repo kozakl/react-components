@@ -13,7 +13,6 @@ export const Dialog = (props:Props)=> {
         <div
             className={classNames(
                 style.dialog,
-                props.reversed && style.reversed,
                 props.className
             )}>
             <h3 className={style.title}>
@@ -25,7 +24,6 @@ export const Dialog = (props:Props)=> {
             <div className={style.actions}>
                 {props.dismiss &&
                     <Button
-                        reversed={props.reversed}
                         onClick={()=> {
                             deleteDialog(props.id);
                             if (props.onDismiss) {
@@ -37,7 +35,6 @@ export const Dialog = (props:Props)=> {
                     </Button>}
                 {props.confirm &&
                     <Button
-                        reversed={props.reversed}
                         disabled={props.confirmDisabled}
                         onClick={()=> {
                             deleteDialog(props.id);
@@ -63,7 +60,6 @@ interface Props {
     id?:number;
     title:string;
     message:ReactNode;
-    reversed?:boolean;
     confirm?:string;
     dismiss?:string;
     confirmDisabled?:boolean;
