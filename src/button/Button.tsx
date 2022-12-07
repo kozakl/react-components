@@ -10,6 +10,8 @@ const Button = (props:Props)=> {
                     props.theme.small,
                 props.secondary &&
                     props.theme.secondary,
+                props.tertiary &&
+                    props.theme.tertiary,
                 props.theme.button,
                 props.className
             )}
@@ -36,6 +38,7 @@ interface Props extends PropsWithChildren<{}> {
     title?:string;
     small?:boolean;
     secondary?:boolean;
+    tertiary?:boolean;
     disabled?:boolean;
     onClick?:(event:MouseEvent<HTMLButtonElement>)=> void;
 }
