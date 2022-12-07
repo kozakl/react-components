@@ -1,8 +1,6 @@
 :root {
   --appearance-dark: 0;
   --appearance-light: 1;
-  --appearance-dark-r: 1;
-  --appearance-light-r: 0;
   
   --font-primary: sans-serif;
   --font-secondary: serif;
@@ -53,8 +51,6 @@
 [appearance='dark'] {
   --appearance-dark: 1;
   --appearance-light: 0;
-  --appearance-dark-r: 0;
-  --appearance-light-r: 1;
   
   --background-primary: #181818;
   --background-primary-r: 24;
