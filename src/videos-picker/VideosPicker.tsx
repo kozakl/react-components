@@ -194,7 +194,6 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                             {...directLink}/>
                     </div>
                 }
-                reversed
                 confirm="Add"
                 confirmDisabled={!isURL(directLink.getValue())}
                 onConfirm={()=> {
