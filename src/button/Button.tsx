@@ -8,8 +8,8 @@ const Button = (props:Props)=> {
             className={classNames(
                 props.size == 'small' &&
                     props.theme.small,
-                props.reversed &&
-                    props.theme.reversed,
+                props.secondary &&
+                    props.theme.secondary,
                 props.theme.button,
                 props.className
             )}
@@ -35,7 +35,7 @@ interface Props extends PropsWithChildren<{}> {
     type?:'submit' | 'reset' | 'button';
     size?:'normal' | 'small';
     title?:string;
-    reversed?:boolean;
+    secondary?:boolean;
     disabled?:boolean;
     onClick?:(event:MouseEvent<HTMLButtonElement>)=> void;
 }
