@@ -83,6 +83,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/dialog"
+                startWith>
+                Dialog
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/icons"
                 startWith>
                 Icons
