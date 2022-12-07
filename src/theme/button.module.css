@@ -1,4 +1,16 @@
 .button {
+  --background-secondary: #3971A3;
+  --background-secondary-r: 57;
+  --background-secondary-g: 113;
+  --background-secondary-b: 163;
+  
+  --color-secondary: #EDEDED;
+  --color-secondary-r: 237;
+  --color-secondary-g: 237;
+  --color-secondary-b: 237;
+}
+
+.button {
   background: var(--background-primary);
   color: var(--color-primary);
   font-size: 0.875em;
@@ -10,27 +22,36 @@
     0.25
   );
   border-radius: 0.5em;
-  padding: 0.375em 0.875em;
+  padding: 0.5em 0.875em;
   
   &.small {
     font-size: 0.75em;
   }
-  &.reversed {
-    background: var(--background-secondary);
+  &.secondary {
+    background: #3971A3;
     color: var(--color-secondary);
-    border: 1px solid rgba(
-      var(--color-secondary-r),
-      var(--color-secondary-g),
-      var(--color-secondary-b),
-      0.25
+    border: 1px solid rgb(
+      calc(var(--background-secondary-r) * 1.5),
+      calc(var(--background-secondary-g) * 1.5),
+      calc(var(--background-secondary-b) * 1.5)
     );
     
     &:hover {
       background: rgb(
-        calc(var(--background-secondary-r) * (var(--appearance-light-r) * 0.95 + var(--appearance-dark-r) * 1.5)), 
-        calc(var(--background-secondary-g) * (var(--appearance-light-r) * 0.95 + var(--appearance-dark-r) * 1.5)), 
-        calc(var(--background-secondary-b) * (var(--appearance-light-r) * 0.95 + var(--appearance-dark-r) * 1.5))
+        calc(var(--background-secondary-r) * 1.25), 
+        calc(var(--background-secondary-g) * 1.25), 
+        calc(var(--background-secondary-b) * 1.25)
       );
+    }
+  }
+  &.tertiary {
+    background: unset;
+    color: var(--color-primary);
+    text-decoration: underline;
+    border:unset;
+    
+    &:hover {
+      background: unset;
     }
   }
   &:hover {
