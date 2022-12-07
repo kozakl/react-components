@@ -6,7 +6,7 @@ const Button = (props:Props)=> {
     return (
         <button
             className={classNames(
-                props.size == 'small' &&
+                props.small &&
                     props.theme.small,
                 props.secondary &&
                     props.theme.secondary,
@@ -33,8 +33,8 @@ interface Props extends PropsWithChildren<{}> {
     theme?:{[key:string]:string};
     id?:string;
     type?:'submit' | 'reset' | 'button';
-    size?:'normal' | 'small';
     title?:string;
+    small?:boolean;
     secondary?:boolean;
     disabled?:boolean;
     onClick?:(event:MouseEvent<HTMLButtonElement>)=> void;
