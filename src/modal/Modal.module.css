@@ -1,8 +1,4 @@
 .modal {
-  --background: rgba(0, 0, 0, 0.25);
-}
-
-.modal {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
@@ -10,11 +6,7 @@
   height: 100%;
   z-index: 100;
   top: 0;
-  transition: background 0.2s ease-out;
   
-  &.active:not(.transparent):not(.interactive) {
-    background: var(--background);
-  }
   &.interactive {
     pointer-events: none;
     

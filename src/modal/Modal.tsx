@@ -2,11 +2,13 @@ import {Children, cloneElement,
         PropsWithChildren, ReactElement,
         useEffect, useRef, useState} from 'react';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import ReactDOM from 'react-dom';
 import style from './Modal.module.css';
 
 const Modal = (props:Props)=> {
-    const modal = useRef<HTMLDivElement>(),
+    const theme = useTheme('modal'),
+          modal = useRef<HTMLDivElement>(),
           container = useRef<HTMLDivElement>();
     const [visible, setVisible] = useState(false),
           [active, setActive] = useState(false),
@@ -77,10 +79,19 @@ const Modal = (props:Props)=> {
     container.current &&
         (container.current.className = classNames(
             style.modal,
-            active && style.active,
-            props.transparent && style.transparent,
-            props.interactive && style.interactive,
-            props.center && style.center
+            theme.modal,
+            active &&
+                theme.active,
+            props.transparent &&
+                style.transparent,
+            props.transparent &&
+                theme.transparent,
+            props.interactive &&
+                style.interactive,
+            props.interactive &&
+                theme.interactive,
+            props.center &&
+                style.center
         ));
     return !!container.current && visible &&
         ReactDOM.createPortal(
