@@ -1,0 +1,11 @@
+.modal {
+  --background: rgba(0, 0, 0, 0.25);
+}
+
+.modal {
+  transition: background 0.2s ease-out;
+  
+  &.active:not(.transparent):not(.interactive) {
+    background: var(--background);
+  }
+}
