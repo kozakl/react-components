@@ -22,8 +22,8 @@ const Active = (props:Props)=> {
                 id={props.id}
                 type="checkbox"
                 name={props.name}
-                disabled={props.disabled}
                 checked={props.checked}
+                disabled={props.disabled}
                 onChange={props.onChange}/>
             <div className={theme.content}/>
         </label>
