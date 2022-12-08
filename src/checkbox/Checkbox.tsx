@@ -8,7 +8,6 @@ const Checkbox = (props:Props)=> {
         <div
             className={classNames(
                 style.checkbox,
-                props.reversed && style.reversed,
                 props.className
             )}>
             <label
@@ -42,7 +41,6 @@ interface Props extends PropsWithChildren<{}> {
     name?:string;
     defaultChecked?:boolean;
     checked?:boolean;
-    reversed?:boolean;
     disabled?:boolean;
     error?:string;
     onChange?:ChangeEventHandler<HTMLInputElement>;

@@ -1,9 +1,5 @@
 .checkbox {
   display: inline-block;
-  
-  &.reversed {
-    color: var(--color-secondary);
-  }
 }
 
 .checkbox {
