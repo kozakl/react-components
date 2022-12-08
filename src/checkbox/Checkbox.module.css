@@ -1,6 +1,8 @@
 .checkbox {
   display: inline-block;
-  
+}
+
+.checkbox {
   .input {
     position: absolute;
     opacity: 0;
