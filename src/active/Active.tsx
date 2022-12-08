@@ -22,6 +22,7 @@ const Active = (props:Props)=> {
                 id={props.id}
                 type="checkbox"
                 name={props.name}
+                defaultChecked={props.defaultChecked}
                 checked={props.checked}
                 disabled={props.disabled}
                 onChange={props.onChange}/>
@@ -35,6 +36,7 @@ interface Props {
     id?:string;
     name?:string;
     title?:string;
+    defaultChecked?:boolean;
     checked?:boolean;
     disabled?:boolean;
     onChange?:ChangeEventHandler<HTMLInputElement>;
