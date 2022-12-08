@@ -6,24 +6,28 @@ const Index = ()=> {
     return (
         <Layout title="Checkbox - React Components">
             <div className={style.checkbox}>
-                <div>Checked</div>
-                <br/>
-                <Checkbox defaultChecked/>
-                <br/>
-                <br/>
-                <div>Unchecked</div>
-                <br/>
-                <Checkbox/>
+                <Checkbox defaultChecked>
+                    Checked
+                </Checkbox>
                 <br/>
                 <br/>
-                <div>Checked disabled</div>
+                <Checkbox>
+                    Unchecked
+                </Checkbox>
                 <br/>
-                <Checkbox checked disabled/>
+                <br/>
+                <Checkbox
+                    checked
+                    disabled>
+                    Checked disabled
+                </Checkbox>
                 <br/>
                 <br/>
-                <div>Unchecked disabled</div>
-                <br/>
-                <Checkbox defaultChecked={false} disabled/>
+                <Checkbox
+                    defaultChecked={false}
+                    disabled>
+                    Unchecked disabled
+                </Checkbox>
             </div>
         </Layout>
     );
