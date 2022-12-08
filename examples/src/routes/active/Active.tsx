@@ -8,7 +8,7 @@ const Index = ()=> {
             <div className={style.active}>
                 <div>Checked</div>
                 <br/>
-                <Active checked/>
+                <Active defaultChecked/>
                 <br/>
                 <br/>
                 <div>Unchecked</div>
@@ -23,7 +23,7 @@ const Index = ()=> {
                 <br/>
                 <div>Unchecked disabled</div>
                 <br/>
-                <Active checked={false} disabled/>
+                <Active defaultChecked={false} disabled/>
             </div>
         </Layout>
     );
