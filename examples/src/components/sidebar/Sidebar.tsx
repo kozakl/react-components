@@ -62,6 +62,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/active"
+                startWith>
+                Active
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/badge"
                 startWith>
                 Badge
