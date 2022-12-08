@@ -1,0 +1,9 @@
+.modal {
+  padding: 6em 2em 2em;
+}
+
+.modalContent {
+  text-align: center;
+  margin: 10em auto 0 auto;
+  max-width: 32em;
+}
