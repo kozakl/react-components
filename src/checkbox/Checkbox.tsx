@@ -1,22 +1,29 @@
 import {ChangeEventHandler, PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
 import style from './Checkbox.module.css';
 
 const Checkbox = (props:Props)=> {
+    const theme = useTheme('checkbox');
     return (
         <div
             className={classNames(
                 style.checkbox,
+                theme.checkbox,
                 props.className
             )}>
             <label
                 className={classNames(
-                    style.label,
-                    props.disabled && style.disabled
+                    theme.label,
+                    props.disabled &&
+                        theme.disabled
                 )}>
                 <input
-                    className={style.input}
+                    className={classNames(
+                        style.input,
+                        theme.input
+                    )}
                     id={props.id}
                     name={props.name}
                     type="checkbox"
@@ -24,11 +31,11 @@ const Checkbox = (props:Props)=> {
                     checked={props.checked}
                     disabled={props.disabled}
                     onChange={props.onChange}/>
-                <span className={style.box}/>
+                <span className={theme.box}/>
                 <span>{props.children}</span>
             </label>
             {props.error &&
-                <div className={style.error}>
+                <div className={theme.error}>
                     {props.error}
                 </div>}
         </div>
