@@ -5,6 +5,7 @@ import button from '@kozakl/components/theme/button.module.css';
 import checkbox from '@kozakl/components/theme/checkbox.module.css';
 import dialog from '@kozakl/components/theme/dialog.module.css';
 import modal from '@kozakl/components/theme/modal.module.css';
+import paginate from '@kozakl/components/theme/paginate.module.css';
 
 Object.assign(themes, {
     active,
@@ -12,5 +13,6 @@ Object.assign(themes, {
     button,
     checkbox,
     dialog,
-    modal
+    modal,
+    paginate
 });
