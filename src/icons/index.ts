@@ -21,4 +21,5 @@ export * from './circle-plus';
 export * from './circle-url';
 export * from './circle-xmark';
 export * from './url';
+export * from './wait';
 export * from './xmark';
