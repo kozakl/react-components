@@ -5,8 +5,8 @@ import {ArrowDown, ArrowLeft, ArrowRight,
         CaretUp, ChevronDown, ChevronLeft,
         ChevronRight, ChevronUp, CircleCheck,
         CircleDownload, CircleMinus, CirclePlus,
-        CircleURL, CircleXMark, URL, Wait,
-        XMark} from '@kozakl/components/icons'
+        CircleURL, CircleXMark, Eye, URL,
+        Wait, XMark} from '@kozakl/components/icons'
 import {Layout} from '../../components/layout';
 import style from './Icons.module.css';
 
@@ -101,6 +101,10 @@ const Icons = ()=> {
                 <div>
                     <CircleXMark height="1.5em"/>
                     <span>circle-xmark</span>
+                </div>
+                <div>
+                    <Eye width="1.5em"/>
+                    <span>eye</span>
                 </div>
                 <div>
                     <URL height="1.5em"/>
