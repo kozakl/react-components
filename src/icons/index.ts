@@ -22,6 +22,7 @@ export * from './circle-url';
 export * from './circle-xmark';
 export * from './eye';
 export * from './pen';
+export * from './trash';
 export * from './url';
 export * from './wait';
 export * from './xmark';
