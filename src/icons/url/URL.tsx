@@ -26,8 +26,7 @@ const URL = (props:Props)=> (
 );
 
 URL.defaultProps = {
-    colorPrimary: 'var(--color-primary)',
-    stroke: 1
+    colorPrimary: 'var(--color-primary)'
 }
 
 interface Props {
