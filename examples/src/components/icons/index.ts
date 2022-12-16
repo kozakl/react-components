@@ -1,5 +1,4 @@
 export * from './dark-mode';
-export * from './deleted';
 export * from './edit';
 export * from './external';
 export * from './eye';
