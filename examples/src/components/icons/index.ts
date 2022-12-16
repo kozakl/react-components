@@ -1,6 +1,5 @@
 export * from './dark-mode';
 export * from './edit';
-export * from './external';
 export * from './ligh-mode';
 export * from './logo';
 export * from './logout';
