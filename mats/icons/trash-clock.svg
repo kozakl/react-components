@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-	<polyline points="29.5,5.7 29.5,1 2.5,1 2.5,5.7" fill="none" stroke="black" stroke-width="2"/>
-	<polyline points="5.9,3.3 8,26.7 14.4,26.7" fill="none" stroke="black" stroke-width="2"/>
-	<line fill="none" stroke="black" stroke-width="2" x1="24.8" y1="17.1" x2="26.1" y2="3.3"/>
-	<circle fill="none" stroke="black" stroke-width="1.5" cx="22.5" cy="25" r="6.3"/>
-	<line fill="none" stroke="black" stroke-width="1.5" x1="21.8" y1="26.2" x2="25.5" y2="26.2"/>
-	<line fill="none" stroke="black" stroke-width="1.5" x1="21.8" y1="26.3" x2="21.7" y2="22.6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 43.25">
+	<polyline points="31,12.7 31,7.5 1,7.5 1,12.7" fill="none" stroke="black" stroke-width="2"/>
+	<polyline points="4.8,10.1 7.1,36.1 14.2,36.1" fill="none" stroke="black" stroke-width="2"/>
+	<line fill="none" stroke="black" stroke-width="2" x1="25.8" y1="25.4" x2="27.2" y2="10.1"/>
+	<circle fill="none" stroke="black" stroke-width="1.5" r="7" cx="23.2" cy="34.2"/>
+	<line fill="none" stroke="black" stroke-width="1.5" x1="22.4" y1="35.5" x2="26.6" y2="35.5"/>
+	<line fill="none" stroke="black" stroke-width="1.5" x1="22.4" y1="35.6" x2="22.3" y2="31.5"/>
 </svg>
