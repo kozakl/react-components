@@ -8,4 +8,3 @@ export * from './logout';
 export * from './profile';
 export * from './restore';
 export * from './toggle';
-export * from './wait';
