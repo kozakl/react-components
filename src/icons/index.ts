@@ -23,6 +23,7 @@ export * from './circle-xmark';
 export * from './eye';
 export * from './pen';
 export * from './trash';
+export * from './trash-arrow-right';
 export * from './trash-clock';
 export * from './url';
 export * from './wait';

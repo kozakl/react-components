@@ -6,7 +6,8 @@ import {ArrowDown, ArrowLeft, ArrowRight,
         ChevronRight, ChevronUp, CircleCheck,
         CircleDownload, CircleMinus, CirclePlus,
         CircleURL, CircleXMark, Eye, Pen, Trash,
-        TrashClock, URL, Wait, XMark} from '@kozakl/components/icons'
+        TrashArrowRight, TrashClock, URL, Wait,
+        XMark} from '@kozakl/components/icons'
 import {Layout} from '../../components/layout';
 import style from './Icons.module.css';
 
@@ -113,6 +114,10 @@ const Icons = ()=> {
                 <div>
                     <Trash height="1.5em"/>
                     <span>trash</span>
+                </div>
+                <div>
+                    <TrashArrowRight height="1.5em"/>
+                    <span>trash-arrow-right</span>
                 </div>
                 <div>
                     <TrashClock height="1.5em"/>
