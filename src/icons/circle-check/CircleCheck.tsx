@@ -4,10 +4,10 @@ const CircleCheck = (props:Props)=> (
     <svg
         className={props.className}
         viewBox={`
-            ${-1.5 * (props.outline - 1) / 2}
-            ${-1.5 * (props.outline - 1) / 2}
-            ${32 + 1.5 * (props.outline - 1)}
-            ${32 + 1.5 * (props.outline - 1)}`}
+            ${-2 * (props.outline - 1) / 2}
+            ${-2 * (props.outline - 1) / 2}
+            ${32 + 2 * (props.outline - 1)}
+            ${32 + 2 * (props.outline - 1)}`}
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,16 +20,16 @@ const CircleCheck = (props:Props)=> (
             style={{
                 fill: props.background,
                 stroke: props.outline && props.colorSecondary,
-                strokeWidth: 1.5 * props.outline
+                strokeWidth: 2 * props.outline
             }}
-            r="15.2"
+            r="15"
             cx="16"
             cy="16"/>
         <polyline
             style={{
                 fill: props.background,
                 stroke: props.colorPrimary,
-                strokeWidth: 1.5 * props.stroke
+                strokeWidth: 2 * props.stroke
             }}
             points="6.3,16 12.8,22.5 25.7,9.5"/>
     </svg>
