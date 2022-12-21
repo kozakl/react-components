@@ -13,6 +13,23 @@ const Editor = dynamic<EditorProps>(()=>
 );
 
 const TextRichArea = (props:Props)=> {
+    const toolbarDefault = {
+        options: [
+            'inline',
+            'fontSize',
+            'colorPicker',
+            'link',
+            'remove'
+        ],
+        inline: {
+            options: [
+                'bold',
+                'italic',
+                'underline',
+                'strikethrough'
+            ]
+        }
+    };
     return (
         <div
             className={classNames(
@@ -29,19 +46,9 @@ const TextRichArea = (props:Props)=> {
                 <Editor
                     editorState={props.state}
                     placeholder={props.placeholder}
-                    onEditorStateChange={props.onChange}
+                    toolbar={{...toolbarDefault, ...props.toolbar}}
                     stripPastedStyles
-                    toolbar={{
-                        options: props.toolbar == 'tiny' ? [
-                            'inline',
-                            'fontSize',
-                            'colorPicker',
-                            'link',
-                            'remove',
-                            'history'
-                        ] : props.toolbarOptions,
-                        inline: props.inlineOptions
-                    }}/>
+                    onEditorStateChange={props.onChange}/>
             </div>
             <div
                 className={classNames(
@@ -57,31 +64,7 @@ const TextRichArea = (props:Props)=> {
 };
 
 TextRichArea.defaultProps = {
-    toolbar: 'tiny',
-    toolbarOptions: [
-        'inline',
-        'blockType',
-        'fontSize',
-        'fontFamily',
-        'list',
-        'textAlign',
-        'colorPicker',
-        'link',
-        'embedded',
-        'emoji',
-        'image',
-        'remove',
-        'history'
-    ],
-    inlineOptions: [
-        'bold',
-        'italic',
-        'underline',
-        'strikethrough',
-        'monospace',
-        'superscript',
-        'subscript'
-    ]
+    toolbar: {}
 }
 
 interface Props {
@@ -89,11 +72,11 @@ interface Props {
     id:string;
     state?:EditorState;
     placeholder?:string;
-    toolbar?:'tiny' | 'full';
-    toolbarOptions?:string[];
-    inlineOptions?:string[];
+    toolbar?:object;
     error?:string;
     onChange?:(state:EditorState)=> void;
 }
 
 export default TextRichArea;
+
+//https://jpuri.github.io/react-draft-wysiwyg/#/docs?_k=jjqinp
