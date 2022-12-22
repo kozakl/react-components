@@ -1,0 +1,7 @@
+.textRichArea {
+  padding: 6em 2em 2em;
+  
+  & > :first-child {
+    margin-bottom: 2em;
+  }
+}
