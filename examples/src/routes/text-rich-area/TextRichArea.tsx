@@ -10,7 +10,7 @@ const Index = ()=> {
         <Layout title="Text Rich Area - React Components">
             <div className={style.textRichArea}>
                 <TextRichArea
-                    id="textRichArea"
+                    id="textRichArea1"
                     toolbar={{
                         options: [
                             'inline',
@@ -24,7 +24,7 @@ const Index = ()=> {
                     }}
                     {...textRichArea1}/>
                 <TextRichArea
-                    id="textRichArea"
+                    id="textRichArea2"
                     {...textRichArea2}/>
             </div>
         </Layout>
