@@ -132,6 +132,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/text-rich-area"
+                startWith>
+                Text Rich Area
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/videos-picker"
                 startWith>
                 Videos Picker
