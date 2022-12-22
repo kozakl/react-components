@@ -6,6 +6,7 @@ import checkbox from '@kozakl/components/theme/checkbox.module.css';
 import dialog from '@kozakl/components/theme/dialog.module.css';
 import modal from '@kozakl/components/theme/modal.module.css';
 import paginate from '@kozakl/components/theme/paginate.module.css';
+import textRichArea from '@kozakl/components/theme/textRichArea.module.css';
 
 Object.assign(themes, {
     active,
@@ -14,5 +15,6 @@ Object.assign(themes, {
     checkbox,
     dialog,
     modal,
-    paginate
+    paginate,
+    textRichArea
 });

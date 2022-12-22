@@ -1,7 +1,8 @@
+import React from 'react';
 import {default as dynamic} from 'next/dynamic'
 import {EditorProps, EditorState} from 'react-draft-wysiwyg'
 import {classNames} from '@kozakl/utils';
-import React from 'react';
+import {useTheme} from '../theme';
 import style from './TextRichArea.module.css';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
@@ -13,6 +14,7 @@ const Editor = dynamic<EditorProps>(()=>
 );
 
 const TextRichArea = (props:Props)=> {
+    const theme = useTheme('textRichArea');
     const toolbarDefault = {
         options: [
             'inline',
@@ -34,14 +36,15 @@ const TextRichArea = (props:Props)=> {
         <div
             className={classNames(
                 style.textRichArea,
+                theme.textRichArea,
                 props.className
             )}
             id={props.id}>
             <div
                 className={classNames(
-                    style.container,
+                    theme.container,
                     !props.toolbar &&
-                        style.hideToolbar
+                        theme.hideToolbar
                 )}>
                 <Editor
                     editorState={props.state}
@@ -52,11 +55,12 @@ const TextRichArea = (props:Props)=> {
             </div>
             <div
                 className={classNames(
-                    style.border,
-                    props.error && style.error
+                    theme.border,
+                    props.error &&
+                        theme.error
                 )}/>
             {props.error &&
-                <div className={style.error}>
+                <div className={theme.error}>
                     {props.error}
                 </div>}
         </div>
@@ -79,4 +83,4 @@ interface Props {
 
 export default TextRichArea;
 
-//https://jpuri.github.io/react-draft-wysiwyg/#/docs?_k=jjqinp
+//editor doc https://jpuri.github.io/react-draft-wysiwyg/#/docs?_k=jjqinp

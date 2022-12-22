@@ -1,0 +1,41 @@
+.textRichArea {
+  .container {
+    min-height: inherit;
+    
+    & div {
+      margin-bottom: 0.125em;
+    }
+    & ul {
+      max-height: 8.5em;
+    }
+    & > div:last-child
+      > div:first-child {
+      color: #000;
+    }
+    &.hideToolbar {
+      & > div:first-child {
+        margin-top: -1em;
+      }
+      & > div > div:first-child {
+        display: none;
+      }
+    }
+  }
+  .border {
+    border-bottom: 1px solid rgba(
+      var(--color-primary-r),
+      var(--color-primary-g),
+      var(--color-primary-b),
+      0.375
+    );
+    
+    &.error {
+      border-bottom: solid 1px var(--color-error);
+    }
+  }
+  .error {
+    color: var(--color-error);
+    font-size: 0.875rem;
+    margin-top: 0.4em;
+  }
+}
