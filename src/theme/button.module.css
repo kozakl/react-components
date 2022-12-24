@@ -24,6 +24,13 @@
   border-radius: 0.5em;
   padding: 0.5em 0.875em;
   
+  &:hover {
+    background: rgb(
+      calc(var(--background-primary-r) * (var(--appearance-light) * 0.95 + var(--appearance-dark) * 1.5)), 
+      calc(var(--background-primary-g) * (var(--appearance-light) * 0.95 + var(--appearance-dark) * 1.5)), 
+      calc(var(--background-primary-b) * (var(--appearance-light) * 0.95 + var(--appearance-dark) * 1.5))
+    );
+  }
   &.small {
     font-size: 0.75em;
   }
@@ -53,13 +60,6 @@
     &:hover {
       background: unset;
     }
-  }
-  &:hover {
-    background: rgb(
-      calc(var(--background-primary-r) * (var(--appearance-light) * 0.95 + var(--appearance-dark) * 1.5)), 
-      calc(var(--background-primary-g) * (var(--appearance-light) * 0.95 + var(--appearance-dark) * 1.5)), 
-      calc(var(--background-primary-b) * (var(--appearance-light) * 0.95 + var(--appearance-dark) * 1.5))
-    );
   }
   &:disabled {
     opacity: 0.5;
