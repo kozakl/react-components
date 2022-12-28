@@ -9,8 +9,8 @@ const NavLink = (props:Props)=> {
     const mounted = useMounted();
     const {asPath} = useRouter();
     
-    return (
-        <Link href={props.href}>
+    function renderAnchor() {
+        return (
             <a
                 className={classNames(
                     props.className,
@@ -25,7 +25,15 @@ const NavLink = (props:Props)=> {
                 onClick={props.onClick}>
                 {props.children}
             </a>
-        </Link>
+        );
+    }
+    
+    return (
+        props.href ?
+            <Link href={props.href}>
+                {renderAnchor()}
+            </Link> :
+            renderAnchor()
     );
 };
 
