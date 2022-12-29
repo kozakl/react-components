@@ -1,0 +1,13 @@
+.calendar {
+  padding: 6em 2em 2em;
+}
+
+.calendar {
+  .calendarDay {
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 2em;
+    width: 2em;
+    height: 2em;
+  }
+}
