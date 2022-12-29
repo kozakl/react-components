@@ -20,6 +20,7 @@ const Calendar = (props:Props)=> {
             direction="horizontal"
             monthDisplayFormat="LLLL yyyy"
             showDateDisplay={false}
+            showPreview={props.showPreview}
             calendarFocus={props.calendarFocus}
             disabledDates={props.disabledDates}
             dayContentRenderer={props.dayContentRenderer}
@@ -29,6 +30,7 @@ const Calendar = (props:Props)=> {
 
 Calendar.defaultProps = {
     date: new Date(),
+    showPreview: true,
     calendarFocus: 'forwards'
 };
 
@@ -37,6 +39,7 @@ interface Props {
     date?:Date;
     months?:number;
     locale?:Locale;
+    showPreview?:boolean;
     hideSelects?:boolean;
     calendarFocus?:'forwards' | 'backwards';
     disabledDates?:Date[];
