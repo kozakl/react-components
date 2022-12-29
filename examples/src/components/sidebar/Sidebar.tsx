@@ -83,6 +83,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/calendar"
+                startWith>
+                Calendar
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/calendar-popover"
                 startWith>
                 Calendar Popover
