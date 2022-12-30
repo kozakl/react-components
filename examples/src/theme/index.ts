@@ -7,6 +7,7 @@ import dialog from '@kozakl/components/theme/dialog.module.css';
 import modal from '@kozakl/components/theme/modal.module.css';
 import paginate from '@kozakl/components/theme/paginate.module.css';
 import textRichArea from '@kozakl/components/theme/textRichArea.module.css';
+import '@kozakl/components/theme/calendar.css';
 
 Object.assign(themes, {
     active,

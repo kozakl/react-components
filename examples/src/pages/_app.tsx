@@ -7,8 +7,6 @@ import {LoadingModal} from '@kozakl/components/loading-modal';
 import {useDialogsState, useSpinnerState} from '@kozakl/states';
 import {Toasts} from '@kozakl/components/toasts';
 import {queryClient} from '../query';
-import 'react-date-range/dist/styles.css';
-import '@kozakl/components/calendar/theme.css';
 import '@kozakl/components/style.css';
 import '../theme';
 import '../main.css';
