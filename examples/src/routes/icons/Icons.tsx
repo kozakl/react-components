@@ -5,9 +5,9 @@ import {ArrowDown, ArrowLeft, ArrowRight,
         CaretUp, ChevronDown, ChevronLeft,
         ChevronRight, ChevronUp, CircleCheck,
         CircleDownload, CircleMinus, CirclePlus,
-        CircleURL, CircleXMark, Eye, Pen, Trash,
-        TrashArrowRight, TrashClock, URL, Wait,
-        XMark} from '@kozakl/components/icons'
+        CircleURL, CircleUser, CircleXMark, Eye,
+        Pen, Trash, TrashArrowRight, TrashClock,
+        URL, Wait, XMark} from '@kozakl/components/icons'
 import {Layout} from '../../components/layout';
 import style from './Icons.module.css';
 
@@ -98,6 +98,10 @@ const Icons = ()=> {
                 <div>
                     <CircleURL height="1.5em"/>
                     <span>circle-url</span>
+                </div>
+                <div>
+                    <CircleUser height="1.5em"/>
+                    <span>circle-user</span>
                 </div>
                 <div>
                     <CircleXMark height="1.5em"/>
