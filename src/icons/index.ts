@@ -19,6 +19,7 @@ export * from './circle-download';
 export * from './circle-minus';
 export * from './circle-plus';
 export * from './circle-url';
+export * from './circle-user';
 export * from './circle-xmark';
 export * from './eye';
 export * from './pen';
