@@ -18,6 +18,7 @@ export * from './circle-check';
 export * from './circle-download';
 export * from './circle-minus';
 export * from './circle-plus';
+export * from './circle-right-from-bracket';
 export * from './circle-url';
 export * from './circle-user';
 export * from './circle-xmark';
