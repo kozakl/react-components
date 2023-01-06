@@ -23,6 +23,7 @@ export * from './circle-url';
 export * from './circle-user';
 export * from './circle-xmark';
 export * from './eye';
+export * from './moon';
 export * from './pen';
 export * from './sun';
 export * from './trash';
