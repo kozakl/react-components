@@ -6,7 +6,7 @@ import {ArrowDown, ArrowLeft, ArrowRight,
         ChevronRight, ChevronUp, CircleCheck,
         CircleDownload, CircleMinus, CirclePlus,
         CircleRightFromBracket, CircleURL,
-        CircleUser, CircleXMark, Eye, Pen,
+        CircleUser, CircleXMark, Eye, Moon, Pen,
         Sun, Trash, TrashArrowRight, TrashClock,
         URL, Wait, XMark} from '@kozakl/components/icons'
 import {Layout} from '../../components/layout';
@@ -115,6 +115,10 @@ const Icons = ()=> {
                 <div>
                     <Eye height="1.5em"/>
                     <span>eye</span>
+                </div>
+                <div>
+                    <Moon height="1.5em"/>
+                    <span>moon</span>
                 </div>
                 <div>
                     <Pen height="1.5em"/>
