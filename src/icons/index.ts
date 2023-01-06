@@ -24,6 +24,7 @@ export * from './circle-user';
 export * from './circle-xmark';
 export * from './eye';
 export * from './pen';
+export * from './sun';
 export * from './trash';
 export * from './trash-arrow-right';
 export * from './trash-clock';
