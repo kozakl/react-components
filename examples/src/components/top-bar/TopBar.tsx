@@ -1,11 +1,11 @@
 import {useState} from 'react';
 import {useRouter} from 'next/router';
 import {IconButton} from '@kozakl/components/icon-button';
-import {Moon, Sun} from '@kozakl/components/icons';
+import {Menu, Moon, Sun} from '@kozakl/components/icons';
 import {Switch} from '@kozakl/components/switch';
 import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
-import {Logo, Toggle} from '../icons';
+import {Logo} from '../icons';
 import {Sidebar} from '../sidebar';
 import style from './TopBar.module.css';
 
@@ -29,8 +29,8 @@ const TopBar = (props:Props)=> {
                     <IconButton
                         onClick={()=>
                             setSidebar(!sidebar)}>
-                        <Toggle
-                            color="var(--color-secondary)"
+                        <Menu
+                            colorPrimary="var(--color-secondary)"
                             cross={sidebar}
                             width="2em"/>
                     </IconButton>
