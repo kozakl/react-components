@@ -6,7 +6,7 @@ const Menu = (props:Props)=> {
     return (
         <svg
             className={classNames(
-                style.toggle,
+                style.menu,
                 props.className,
                 props.cross &&
                     style.cross
