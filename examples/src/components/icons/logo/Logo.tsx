@@ -12,7 +12,7 @@ const Logo = (props:Props)=> (
         }}>
         <circle
             style={{
-                fill: props.color
+                fill: props.colorPrimary
             }}
             r="2.9"
             cx="16"
@@ -21,7 +21,7 @@ const Logo = (props:Props)=> (
             <ellipse
                 style={{
                     fill: 'none',
-                    stroke: props.color
+                    stroke: props.colorPrimary
                 }}
                 cx="16"
                 cy="16"
@@ -30,7 +30,7 @@ const Logo = (props:Props)=> (
             <ellipse
                 style={{
                     fill: 'none',
-                    stroke: props.color
+                    stroke: props.colorPrimary
                 }}
                 transform="matrix(0.866 -0.5 0.5 0.866 -5.8564 10.1436)"
                 cx="16"
@@ -40,7 +40,7 @@ const Logo = (props:Props)=> (
             <ellipse
                 style={{
                     fill: 'none',
-                    stroke: props.color
+                    stroke: props.colorPrimary
                 }}
                 transform="matrix(0.5 -0.866 0.866 0.5 -5.8564 21.8564)"
                 cx="16"
@@ -57,7 +57,7 @@ Logo.defaultProps = {
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
     padding?:string;
     margin?:string;
     width?:string;
