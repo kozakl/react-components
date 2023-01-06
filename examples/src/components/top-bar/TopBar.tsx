@@ -38,7 +38,7 @@ const TopBar = (props:Props)=> {
                         onClick={()=>
                             router.push('/')}>
                         <Logo
-                            color="var(--color-secondary)"
+                            colorPrimary="var(--color-secondary)"
                             height="2em"/>
                     </IconButton>
                     {!mobile &&
