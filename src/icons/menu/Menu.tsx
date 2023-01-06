@@ -23,19 +23,19 @@ const Menu = (props:Props)=> {
             <path
                 className={style.line1}
                 style={{
-                    fill: props.color
+                    fill: props.colorPrimary
                 }}
                 d="M5 13h90v6H5z"/>
             <path
                 className={style.line2}
                 style={{
-                    fill: props.color
+                    fill: props.colorPrimary
                 }}
                 d="M5 43h90v6H5z"/>
             <path
                 className={style.line3}
                 style={{
-                    fill: props.color
+                    fill: props.colorPrimary
                 }}
                 d="M5 73h90v6H5z"/>
         </svg>
@@ -43,12 +43,12 @@ const Menu = (props:Props)=> {
 };
 
 Menu.defaultProps = {
-    color: 'var(--color-primary)'
+    colorPrimary: 'var(--color-primary)'
 }
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
     cross:boolean;
     padding?:string;
     margin?:string;
