@@ -1,0 +1,61 @@
+.carousel {
+  position: relative;
+}
+
+.carousel {
+  .list {
+    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    
+    &::-webkit-scrollbar {
+      background: transparent;
+    }
+    & > * {
+      display: inline-block;
+      scroll-snap-align: center;
+      white-space: normal;
+    }
+    & > :first-child {
+      margin-left: 0;
+    }
+    & > :last-child {
+      margin-right: 0;
+    }
+  }
+  .indicator {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 2em;
+  }
+  .dotContainer {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.75em;
+  }
+  .dot {
+    background: rgba(
+      var(--background-secondary-r),
+      var(--background-secondary-g),
+      var(--background-secondary-b),
+      0.5
+    );
+    outline: 1px solid rgba(
+      var(--background-primary-r),
+      var(--background-primary-g),
+      var(--background-primary-b),
+      0.5
+    );
+    pointer-events: none;
+    border-radius: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    
+    &.active {
+      background: var(--background-secondary);
+    }
+  }
+}
