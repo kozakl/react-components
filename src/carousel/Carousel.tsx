@@ -30,6 +30,7 @@ const Carousel:FunctionComponent<Props> = (props)=> {
         <div
             className={classNames(
                 style.carousel,
+                theme.carousel,
                 props.className
             )}>
             <div
