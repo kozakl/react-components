@@ -2,10 +2,12 @@ import {Children, FunctionComponent,
         ReactNode, useRef, useState} from 'react';
 import {useResize} from '@kozakl/hooks/useResize';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
 import style from './Carousel.module.css';
 
 const Carousel:FunctionComponent<Props> = (props)=> {
+    const theme = useTheme('carousel');
     const list = useRef<HTMLDivElement>(),
           [dot, setDot] = useState(0);
     
@@ -46,7 +48,7 @@ const Carousel:FunctionComponent<Props> = (props)=> {
                 {props.children}
             </div>
             <div
-                className={style.indicator}
+                className={theme.indicator}
                 onClick={(event)=> {
                     const dot = parseFloat((event.target as HTMLSpanElement).id);
                     if (!isNaN(dot)) {
@@ -59,13 +61,13 @@ const Carousel:FunctionComponent<Props> = (props)=> {
                 }}>
                 {Children.map(props.children, (child, index)=>
                     <div
-                        className={style.dotContainer}
+                        className={theme.dotContainer}
                         id={index.toString()}>
                         <div
                             className={classNames(
-                                style.dot,
+                                theme.dot,
                                 dot == index &&
-                                    style.active
+                                    theme.active
                             )}/>
                     </div>)}
             </div>
