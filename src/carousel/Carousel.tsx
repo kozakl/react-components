@@ -12,8 +12,8 @@ const Carousel:FunctionComponent<Props> = (props)=> {
           [dot, setDot] = useState(0);
     
     useResize(()=> {
-        list.current.style.paddingLeft = listPaddingLeft() + 'px';
-        list.current.style.paddingRight = listPaddingRight() + 'px';
+        list.current.style.setProperty('--padding-left', listPaddingLeft() + 'px')
+        list.current.style.setProperty('--padding-right', listPaddingRight() + 'px')
     }, true);
     
     function listPaddingLeft() {

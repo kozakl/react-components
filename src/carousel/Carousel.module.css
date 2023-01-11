@@ -4,6 +4,10 @@
 
 .carousel {
   .list {
+    --padding-left: 0;
+    --padding-right: 0;
+  }
+  .list {
     position: relative;
     overflow-x: scroll;
     scroll-behavior: smooth;
@@ -24,6 +28,12 @@
     }
     & > :last-child {
       margin-right: 0;
+    }
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      width: var(--padding-left);
     }
   }
 }
