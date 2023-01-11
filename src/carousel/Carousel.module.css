@@ -12,7 +12,7 @@
     white-space: nowrap;
     
     &::-webkit-scrollbar {
-      background: transparent;
+      height: 0;
     }
     & > * {
       display: inline-block;
