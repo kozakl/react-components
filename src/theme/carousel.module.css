@@ -1,9 +1,8 @@
 .carousel {
   .indicator {
-    position: absolute;
     text-align: center;
+    margin-top: 0.5em;
     width: 100%;
-    bottom: 2em;
   }
   .dotContainer {
     display: inline-block;
