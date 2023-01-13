@@ -36,10 +36,4 @@
       width: var(--padding-left);
     }
   }
-  
-  @media (min-width: 768px) {
-    .list {
-      scroll-snap-type: unset;
-    }
-  }
 }
