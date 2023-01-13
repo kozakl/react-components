@@ -1,7 +1,7 @@
 import {Children, FunctionComponent,
         ReactNode, useRef, useState} from 'react';
-import {useInterval, useLoad,
-        useResize, useVisibility} from '@kozakl/hooks';
+import {useLoad, useResize,
+        useTimeout, useVisibility} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {useTheme} from '../theme';
 import React from 'react';
@@ -19,7 +19,7 @@ const Carousel:FunctionComponent<Props> = (props)=> {
         list.current.style.setProperty('--padding-right', listPaddingRight() + 'px')
     }, true);
     
-    useInterval(()=> {
+    useTimeout(()=> {
         const width = list.current.scrollWidth -
             listPaddingLeft() -
             listPaddingRight();
@@ -28,7 +28,8 @@ const Carousel:FunctionComponent<Props> = (props)=> {
     },
         load &&
         visibility &&
-        Math.max(750, props.speed));
+        props.speed,
+        [dot]);
     
     function listPaddingLeft() {
         return list.current.clientWidth * 0.5 -
