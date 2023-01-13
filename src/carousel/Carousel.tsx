@@ -1,13 +1,16 @@
 import {Children, FunctionComponent,
         ReactNode, useRef, useState} from 'react';
-import {useResize} from '@kozakl/hooks/useResize';
+import {useInterval, useLoad,
+        useResize, useVisibility} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {useTheme} from '../theme';
 import React from 'react';
 import style from './Carousel.module.css';
 
 const Carousel:FunctionComponent<Props> = (props)=> {
-    const theme = useTheme('carousel');
+    const load = useLoad(),
+          theme = useTheme('carousel'),
+          visibility = useVisibility();
     const list = useRef<HTMLDivElement>(),
           [dot, setDot] = useState(0);
     
@@ -15,6 +18,17 @@ const Carousel:FunctionComponent<Props> = (props)=> {
         list.current.style.setProperty('--padding-left', listPaddingLeft() + 'px')
         list.current.style.setProperty('--padding-right', listPaddingRight() + 'px')
     }, true);
+    
+    useInterval(()=> {
+        const width = list.current.scrollWidth -
+            listPaddingLeft() -
+            listPaddingRight();
+        const count = (props.children as ReactNode[]).length;
+        list.current.scrollLeft = width / count * ((dot + 1) % count);
+    },
+        load &&
+        visibility &&
+        Math.max(750, props.speed));
     
     function listPaddingLeft() {
         return list.current.clientWidth * 0.5 -
@@ -76,8 +90,13 @@ const Carousel:FunctionComponent<Props> = (props)=> {
     );
 };
 
+Carousel.defaultProps = {
+    speed: 5000
+};
+
 interface Props {
     className?:string;
+    speed?:number;
 }
 
 export default Carousel;
