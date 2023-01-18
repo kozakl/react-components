@@ -63,20 +63,20 @@ const Carousel:FunctionComponent<Props> = (props)=> {
                 }}>
                 {props.children}
             </div>
-            {Children.count(props.children) > 1 &&
-                <div
-                    className={theme.indicator}
-                    onClick={(event)=> {
-                        const dot = parseFloat((event.target as HTMLSpanElement).id);
-                        if (!isNaN(dot)) {
-                            const width = list.current.scrollWidth -
-                                listPaddingLeft() -
-                                listPaddingRight();
-                            const count = (props.children as ReactNode[]).length;
-                            list.current.scrollLeft = width / count * dot;
-                        }
-                    }}>
-                    {Children.map(props.children, (child, index)=>
+            <div
+                className={theme.indicator}
+                onClick={(event)=> {
+                    const dot = parseFloat((event.target as HTMLSpanElement).id);
+                    if (!isNaN(dot)) {
+                        const width = list.current.scrollWidth -
+                            listPaddingLeft() -
+                            listPaddingRight();
+                        const count = (props.children as ReactNode[]).length;
+                        list.current.scrollLeft = width / count * dot;
+                    }
+                }}>
+                {Children.count(props.children) > 1 &&
+                    Children.map(props.children, (child, index)=>
                         <div
                             className={theme.dotContainer}
                             id={index.toString()}>
@@ -87,7 +87,7 @@ const Carousel:FunctionComponent<Props> = (props)=> {
                                         theme.active
                                 )}/>
                         </div>)}
-                </div>}
+            </div>
         </div>
     );
 };
