@@ -11,6 +11,7 @@ const ChevronRight = (props:Props)=> (
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
+            strokeLinecap: props.strokeLinecap,
             padding: props.padding,
             margin: props.margin,
             width: props.width,
@@ -44,6 +45,7 @@ interface Props {
     colorPrimary?:string;
     colorSecondary?:string;
     stroke?:number;
+    strokeLinecap?:'butt' | 'round' | 'square',
     outline?:number;
     padding?:string;
     margin?:string;
