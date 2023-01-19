@@ -5,11 +5,11 @@ import {useLoad, useResize,
 import {classNames} from '@kozakl/utils';
 import {useTheme} from '../theme';
 import React from 'react';
-import style from './Carousel.module.css';
+import style from './CarouselSlider.module.css';
 
-const Carousel:FunctionComponent<Props> = (props)=> {
+const CarouselSlider:FunctionComponent<Props> = (props)=> {
     const load = useLoad(),
-          theme = useTheme('carousel'),
+          theme = useTheme('carouselSlider'),
           visibility = useVisibility();
     const list = useRef<HTMLDivElement>(),
           [dot, setDot] = useState(0);
@@ -44,8 +44,8 @@ const Carousel:FunctionComponent<Props> = (props)=> {
     return (
         <div
             className={classNames(
-                style.carousel,
-                theme.carousel,
+                style.carouselSlider,
+                theme.carouselSlider,
                 props.className
             )}>
             <div
@@ -92,7 +92,7 @@ const Carousel:FunctionComponent<Props> = (props)=> {
     );
 };
 
-Carousel.defaultProps = {
+CarouselSlider.defaultProps = {
     speed: 5000
 };
 
@@ -101,4 +101,4 @@ interface Props {
     speed?:number;
 }
 
-export default Carousel;
+export default CarouselSlider;

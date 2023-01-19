@@ -1,17 +1,50 @@
 import {Carousel} from '@kozakl/components/carousel';
+import {ChevronLeft, ChevronRight} from '@kozakl/components/icons';
 import {Image} from '@kozakl/components/image';
 import {Layout} from '../../components/layout';
 import style from './Carousel.module.css';
+import {CarouselTransition} from '@kozakl/components/carousel-transition';
+import {fade, moveLeft} from '@kozakl/transitions';
+import {moveRight} from '@kozakl/transitions';
+import React from 'react';
 
 const Index = ()=> {
     return (
         <Layout title="Carousel - React Components">
             <div className={style.index}>
-                <Carousel className={style.carousel1}>
+                {/*<Carousel className={style.carousel1}>
                     <div className={style.item}>A</div>
                     <div className={style.item}>B</div>
                     <div className={style.item}>C</div>
-                </Carousel>
+                </Carousel>*/}
+                
+                <CarouselTransition
+                    transitionPrev={fade}
+                    transitionNext={moveLeft}
+                    iconPrev={
+                        ()=> <ChevronLeft
+                            colorPrimary="var(--color-secondary)"
+                            colorSecondary="green"
+                            stroke={2}
+                            strokeLinecap="round"
+                            outline={4}
+                            width="1.5em"/>
+                    }
+                    iconNext={
+                        ()=> <ChevronRight
+                            colorPrimary="var(--color-secondary)"
+                            colorSecondary="green"
+                            stroke={2}
+                            strokeLinecap="round"
+                            outline={4}
+                            width="1.5em"/>
+                    }
+                    
+                    className={style.carousel1}>
+                    <div className={style.x}>A</div>
+                    <div className={style.x}>B</div>
+                    <div className={style.x}>C</div>
+                </CarouselTransition>
                 {/*
                 <Carousel>
                     <div className={style.card}>

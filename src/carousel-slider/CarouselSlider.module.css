@@ -1,8 +1,8 @@
-.carousel {
+.carouselSlider {
   position: relative;
 }
 
-.carousel {
+.carouselSlider {
   .list {
     --padding-left: 0;
     --padding-right: 0;
