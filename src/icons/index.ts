@@ -14,6 +14,7 @@ export * from './chevron-down';
 export * from './chevron-left';
 export * from './chevron-right';
 export * from './chevron-up';
+export * from './circle-arrow-right';
 export * from './circle-check';
 export * from './circle-download';
 export * from './circle-minus';
