@@ -1,0 +1,36 @@
+.carouselTransition {
+  position: relative;
+}
+
+.carouselTransition {
+  .element {
+    position: relative;
+    padding-bottom: 100%;
+  }
+  .nav {
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .prev,
+  .next {
+    width: 50%;
+    
+    &::before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+  .prev {
+    text-align: left;
+  }
+  .next {
+    text-align: right;
+  }
+}
