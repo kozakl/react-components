@@ -31,15 +31,15 @@ const CircleArrowRight = (props:Props)=> (
                 stroke: props.colorPrimary,
                 strokeWidth: 2 * props.stroke
             }}
-            points="15.4,4.6 26.7,15.9 15.4,27.4"/>
+            points="15.8,6.2 25.5,15.9 15.8,25.8"/>
         <line
             style={{
                 stroke: props.colorSecondary,
                 strokeWidth: 2 * props.outline
             }}
-            x1="4.1"
+            x1="6"
             y1="15.9"
-            x2="26.9"
+            x2="25.7"
             y2="15.9"/>
     </svg>
 );
