@@ -1,5 +1,6 @@
 .carouselTransition {
   position: relative;
+  overflow: hidden;
 }
 
 .carouselTransition {
