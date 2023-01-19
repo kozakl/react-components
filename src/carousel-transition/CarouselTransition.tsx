@@ -30,6 +30,7 @@ const CarouselTransition:FunctionComponent<Props> = (props)=> {
         <div
             className={classNames(
                 style.carouselTransition,
+                theme.carouselTransition,
                 props.className
             )}>
             <div>
@@ -48,9 +49,9 @@ const CarouselTransition:FunctionComponent<Props> = (props)=> {
                 </div>
             </div>
             {children.length > 1 &&
-                <nav className={style.nav}>
+                <nav className={theme.nav}>
                     <IconButton
-                        className={style.prev}
+                        className={theme.prev}
                         onClick={()=> {
                             setElements({
                                 transition: props.transitionPrev,
@@ -60,7 +61,7 @@ const CarouselTransition:FunctionComponent<Props> = (props)=> {
                         <props.iconPrev/>
                     </IconButton>
                     <IconButton
-                        className={style.next}
+                        className={theme.next}
                         onClick={()=> {
                             setElements({
                                 transition: props.transitionNext,

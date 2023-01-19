@@ -3,6 +3,7 @@ import active from '@kozakl/components/theme/active.module.css';
 import badge from '@kozakl/components/theme/badge.module.css';
 import button from '@kozakl/components/theme/button.module.css';
 import carouselSlider from '@kozakl/components/theme/carouselSlider.module.css';
+import carouselTransition from '@kozakl/components/theme/carouselTransition.module.css';
 import checkbox from '@kozakl/components/theme/checkbox.module.css';
 import dialog from '@kozakl/components/theme/dialog.module.css';
 import modal from '@kozakl/components/theme/modal.module.css';
@@ -15,6 +16,7 @@ Object.assign(themes, {
     badge,
     button,
     carouselSlider,
+    carouselTransition,
     checkbox,
     dialog,
     modal,
