@@ -35,7 +35,7 @@ const CircleArrowRight = (props:Props)=> (
         <line
             style={{
                 stroke: props.colorSecondary,
-                strokeWidth: 2 * props.outline
+                strokeWidth: 2 * props.stroke
             }}
             x1="6"
             y1="15.9"
