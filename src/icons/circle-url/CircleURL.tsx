@@ -22,7 +22,7 @@ const CircleURL = (props:Props)=> (
                 stroke: props.outline && props.colorSecondary,
                 strokeWidth: 2 * props.outline
             }}
-            r="15.2"
+            r="15"
             cx="16"
             cy="16"/>
         <path
