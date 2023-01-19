@@ -3,12 +3,13 @@ import {ArrowDown, ArrowLeft, ArrowRight,
         ArrowTopLeft, ArrowTopRight, ArrowUp,
         CaretDown, CaretLeft, CaretRight,
         CaretUp, ChevronDown, ChevronLeft,
-        ChevronRight, ChevronUp, CircleCheck,
-        CircleDownload, CircleMinus, CirclePlus,
-        CircleRightFromBracket, CircleURL,
-        CircleUser, CircleXMark, Eye, Menu,
-        Moon, Pen, Sun, Trash, TrashArrowRight,
-        TrashClock, URL, Wait, XMark} from '@kozakl/components/icons'
+        ChevronRight, ChevronUp, CircleArrowRight,
+        CircleCheck, CircleDownload, CircleMinus,
+        CirclePlus, CircleRightFromBracket,
+        CircleURL, CircleUser, CircleXMark,
+        Eye, Menu, Moon, Pen, Sun, Trash,
+        TrashArrowRight, TrashClock, URL,
+        Wait, XMark} from '@kozakl/components/icons'
 import {Layout} from '../../components/layout';
 import style from './Icons.module.css';
 
@@ -79,6 +80,10 @@ const Icons = ()=> {
                 <div>
                     <ChevronRight height="1.5em"/>
                     <span>chevron-right</span>
+                </div>
+                <div>
+                    <CircleArrowRight height="1.5em"/>
+                    <span>circle-arrow-right</span>
                 </div>
                 <div>
                     <CircleCheck height="1.5em"/>
