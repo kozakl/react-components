@@ -24,7 +24,7 @@ const ChevronUp = (props:Props)=> (
                     stroke: props.colorSecondary,
                     strokeWidth: 2 * props.outline
                 }}
-                points="1,8 15.9,23 31,8"/>}
+                points="1,24 15.9,9 31,24"/>}
         <polyline
             style={{
                 fill: 'none',
