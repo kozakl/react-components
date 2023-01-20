@@ -1,0 +1,26 @@
+.calendarRange {
+  text-align: center;
+  
+  & > div {
+    margin: 0 0 1em 0;
+    
+    & > div > :first-child {
+      display: none;
+    }
+  }
+  &.hideSelects {
+    padding-top: 3em;
+    
+    & > div {
+      margin-top: -3em;
+      
+      & > span {
+        display: none;
+      }
+      & > div > :first-child {
+        display: block;
+        margin-bottom: 1.75em;
+      }
+    }
+  }
+}
