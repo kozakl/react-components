@@ -81,7 +81,7 @@ CalendarRange.defaultProps = {
     calendarFocus: 'forwards'
 };
 
-interface Props {
+export interface Props {
     className?:string;
     date?:Date;
     startDate:Date;
