@@ -3,7 +3,7 @@
   align-items: end;
   flex-direction: column;
   position: fixed;
-  z-index: 2;
+  z-index: 110;
   bottom: 2em;
   right: 2em;
 }
