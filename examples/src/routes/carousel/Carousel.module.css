@@ -12,7 +12,7 @@
 .index {
   .carousel1 {
     background: red;
-    //width: 20em;
+    width: 20em;
     
     
     & > :nth-child(1) {
@@ -66,4 +66,27 @@
   font-size: 0.9em;
 }
 
+}
+
+.carouselArrows {
+  width: 100%;
+    
+  & > nav {
+    height: 15em;
+  }
+  & > nav > :first-child,
+  & > nav > :last-child {
+    pointer-events: auto;
+    
+    & > svg {
+      width: 1.75em;
+    }
+  }
+}
+
+.card1 {
+  text-align: center;
+  padding: 0 1em;
+  width: 33.3%;
+  vertical-align: top;
 }
