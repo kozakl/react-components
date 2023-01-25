@@ -3,6 +3,7 @@ import {Children, FunctionComponent,
 import {useLoad, useResize,
         useTimeout, useVisibility} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
+import {IconButton} from '../icon-button';
 import {useTheme} from '../theme';
 import React from 'react';
 import style from './CarouselSlider.module.css';
@@ -12,24 +13,35 @@ const CarouselSlider:FunctionComponent<Props> = (props)=> {
           theme = useTheme('carouselSlider'),
           visibility = useVisibility();
     const list = useRef<HTMLDivElement>(),
-          [dot, setDot] = useState(0);
+          [index, setIndex] = useState(0);
     
     useResize(()=> {
-        list.current.style.setProperty('--padding-left', listPaddingLeft() + 'px')
-        list.current.style.setProperty('--padding-right', listPaddingRight() + 'px')
+        if (props.moveBlock) {
+            list.current.scrollLeft = list.current.clientWidth * index;
+        } else {
+            list.current.style.setProperty('--padding-left', listPaddingLeft() + 'px');
+            list.current.style.setProperty('--padding-right', listPaddingRight() + 'px');
+        }
     }, true);
     
     useTimeout(()=> {
-        const width = list.current.scrollWidth -
-            listPaddingLeft() -
-            listPaddingRight();
-        const count = (props.children as ReactNode[]).length;
-        list.current.scrollLeft = width / count * ((dot + 1) % count);
+        if (props.moveBlock) {
+            const currentIndex = (index + 1) %
+                Math.ceil(list.current.scrollWidth / list.current.clientWidth);
+            list.current.scrollLeft = list.current.clientWidth * currentIndex;
+            setIndex(currentIndex);
+        } else {
+            const width = list.current.scrollWidth -
+                listPaddingLeft() -
+                listPaddingRight();
+            const count = (props.children as ReactNode[]).length;
+            list.current.scrollLeft = width / count * ((index + 1) % count);
+        }
     },
         load &&
         visibility &&
         props.speed,
-        [dot]);
+        [index]);
     
     function listPaddingLeft() {
         return list.current.clientWidth * 0.5 -
@@ -52,42 +64,72 @@ const CarouselSlider:FunctionComponent<Props> = (props)=> {
                 className={style.list}
                 ref={list}
                 onScroll={()=> {
-                    const width = list.current.scrollWidth -
-                        listPaddingLeft() -
-                        listPaddingRight();
-                    const count = (props.children as ReactNode[]).length,
-                          currentDot = list.current.scrollLeft / width * count  + 0.5 | 0;
-                    if (currentDot != dot) {
-                        setDot(currentDot);
+                    if (!props.moveBlock) {
+                        const width = list.current.scrollWidth -
+                            listPaddingLeft() -
+                            listPaddingRight();
+                        const count = (props.children as ReactNode[]).length,
+                              currentDot = list.current.scrollLeft / width * count  + 0.5 | 0;
+                        if (currentDot != index) {
+                            setIndex(currentDot);
+                        }
                     }
                 }}>
                 {props.children}
             </div>
-            <div
-                className={theme.indicator}
-                onClick={(event)=> {
-                    const dot = parseFloat((event.target as HTMLSpanElement).id);
-                    if (!isNaN(dot)) {
-                        const width = list.current.scrollWidth -
-                            listPaddingLeft() -
-                            listPaddingRight();
-                        const count = (props.children as ReactNode[]).length;
-                        list.current.scrollLeft = width / count * dot;
-                    }
-                }}>
-                {Children.count(props.children) > 1 &&
-                    Children.map(props.children, (child, index)=>
-                        <div
-                            className={theme.dotContainer}
-                            id={index.toString()}>
+            {props.arrows &&
+                <nav className={theme.arrows}>
+                    <IconButton
+                        disabled={index <= 0}
+                        onClick={()=> {
+                            const currentIndex = index > 0 ? 
+                                index - 1 :
+                                index;
+                            list.current.scrollLeft = list.current.clientWidth * currentIndex;
+                            setIndex(currentIndex);
+                        }}>
+                        <props.iconPrev/>
+                    </IconButton>
+                        <IconButton
+                            disabled={
+                                index >= Math.ceil(list.current?.scrollWidth / list.current?.clientWidth) - 1}
+                            onClick={()=> {
+                                const currentIndex = index <
+                                    Math.ceil(list.current.scrollWidth / list.current.clientWidth) - 1 ?
+                                    index + 1 :
+                                    index;
+                                list.current.scrollLeft = list.current.clientWidth * currentIndex;
+                                setIndex(currentIndex);
+                            }}>
+                        <props.iconNext/>
+                    </IconButton>
+                </nav>}
+            {props.dots && !props.moveBlock &&
+                <nav
+                    className={theme.dots}
+                    onClick={(event)=> {
+                        const dot = parseFloat((event.target as HTMLSpanElement).id);
+                        if (!isNaN(dot)) {
+                            const width = list.current.scrollWidth -
+                                listPaddingLeft() -
+                                listPaddingRight();
+                            const count = (props.children as ReactNode[]).length;
+                            list.current.scrollLeft = width / count * dot;
+                        }
+                    }}>
+                    {Children.count(props.children) > 1 &&
+                        Children.map(props.children, (child, index)=>
                             <div
-                                className={classNames(
-                                    theme.dot,
-                                    dot == index &&
-                                        theme.active
-                                )}/>
-                        </div>)}
-            </div>
+                                className={theme.dotContainer}
+                                id={index.toString()}>
+                                <div
+                                    className={classNames(
+                                        theme.dot,
+                                        index == index &&
+                                            theme.active
+                                    )}/>
+                            </div>)}
+                </nav>}
         </div>
     );
 };
@@ -99,6 +141,11 @@ CarouselSlider.defaultProps = {
 interface Props {
     className?:string;
     speed?:number;
+    arrows?:boolean;
+    dots?:boolean;
+    moveBlock?:boolean;
+    iconPrev?:FunctionComponent;
+    iconNext?:FunctionComponent;
 }
 
 export default CarouselSlider;
