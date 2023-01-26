@@ -118,14 +118,14 @@ const CarouselSlider:FunctionComponent<Props> = (props)=> {
                         }
                     }}>
                     {Children.count(props.children) > 1 &&
-                        Children.map(props.children, (child, index)=>
+                        Children.map(props.children, (child, dotIndex)=>
                             <div
                                 className={theme.dotContainer}
                                 id={index.toString()}>
                                 <div
                                     className={classNames(
                                         theme.dot,
-                                        index == index &&
+                                        dotIndex == index &&
                                             theme.active
                                     )}/>
                             </div>)}
