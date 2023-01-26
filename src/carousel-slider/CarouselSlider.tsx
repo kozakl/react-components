@@ -121,7 +121,7 @@ const CarouselSlider:FunctionComponent<Props> = (props)=> {
                         Children.map(props.children, (child, dotIndex)=>
                             <div
                                 className={theme.dotContainer}
-                                id={index.toString()}>
+                                id={dotIndex.toString()}>
                                 <div
                                     className={classNames(
                                         theme.dot,
