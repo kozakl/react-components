@@ -131,6 +131,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/modal"
+                startWith>
+                Modal
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/paginate"
                 startWith>
                 Paginate
