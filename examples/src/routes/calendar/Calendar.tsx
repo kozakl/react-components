@@ -4,12 +4,11 @@ import {pl} from '@kozakl/date-fns/locale';
 import {Layout} from '../../components/layout';
 import style from './Calendar.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     return (
         <Layout title="Calendar - React Components">
-            <div className={style.calendar}>
+            <div className={style.main}>
                 <Calendar
-                    className={style.calendarComponent}
                     date={null}
                     months={3}
                     locale={pl}
@@ -25,7 +24,7 @@ const Index = ()=> {
                         }
                         return (
                             <span
-                                className={style.calendarDay}
+                                className={style.day}
                                 style={{background}}>
                                 {format(day, 'd')}
                             </span>
@@ -36,4 +35,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;

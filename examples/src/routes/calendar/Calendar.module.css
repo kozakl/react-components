@@ -1,9 +1,9 @@
-.calendar {
+.main {
   padding: 6em 2em 2em;
 }
 
-.calendar {
-  .calendarDay {
+.main {
+  .day {
     display: inline-block;
     border-radius: 50%;
     line-height: 2em;
