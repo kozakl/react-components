@@ -3,12 +3,12 @@ import {useTextRichArea} from '@kozakl/hooks';
 import {Layout} from '../../components/layout';
 import style from './TextRichArea.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     const textRichArea1 = useTextRichArea('Example text'),
           textRichArea2 = useTextRichArea();
     return (
         <Layout title="Text Rich Area - React Components">
-            <div className={style.textRichArea}>
+            <div className={style.main}>
                 <TextRichArea
                     id="textRichArea1"
                     toolbar={{
@@ -31,4 +31,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
