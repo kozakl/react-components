@@ -2,10 +2,10 @@ import {Paginate} from '@kozakl/components/paginate';
 import {Layout} from '../../components/layout';
 import style from './Paginate.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     return (
         <Layout title="Paginate - React Components">
-            <div className={style.paginate}>
+            <div className={style.main}>
                 <Paginate
                     total={100}
                     current={50}/>
@@ -14,4 +14,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
