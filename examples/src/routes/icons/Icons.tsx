@@ -4,8 +4,8 @@ import {ArrowDown, ArrowLeft, ArrowRight,
         CaretDown, CaretLeft, CaretRight,
         CaretUp, ChevronDown, ChevronLeft,
         ChevronRight, ChevronUp, CircleArrowRight,
-        CircleCheck, CircleDownload, CircleMinus,
-        CirclePlus, CircleRightFromBracket,
+        CircleCart, CircleCheck, CircleDownload,
+        CircleMinus, CirclePlus, CircleRightFromBracket,
         CircleURL, CircleUser, CircleXMark,
         Eye, Menu, Moon, Pen, Sun, Trash,
         TrashArrowRight, TrashClock, URL,
@@ -84,6 +84,10 @@ const Icons = ()=> {
                 <div>
                     <CircleArrowRight height="1.5em"/>
                     <span>circle-arrow-right</span>
+                </div>
+                <div>
+                    <CircleCart height="1.5em"/>
+                    <span>circle-cart</span>
                 </div>
                 <div>
                     <CircleCheck height="1.5em"/>
