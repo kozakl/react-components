@@ -4,11 +4,11 @@ import {Modal} from '@kozakl/components/modal';
 import {Layout} from '../../components/layout';
 import style from './Modal.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     const [modal, setModal] = useState(false);
     return (
         <Layout title="Modal - React Components">
-            <div className={style.modal}>
+            <div className={style.main}>
                 <Button
                     onClick={()=>
                         setModal(true)}>
@@ -29,4 +29,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
