@@ -1,10 +1,9 @@
 import {useState} from 'react';
-import {ArrowDown, ArrowUp} from '@kozakl/components/icons';
+import {Moon, Sun} from '@kozakl/components/icons';
 import {NavLink} from '@kozakl/components/nav-link';
 import {Switch} from '@kozakl/components/switch';
 import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
-import {DarkMode, LightMode} from '../icons';
 import style from './Sidebar.module.css';
 
 const Sidebar = (props:Props)=> {
@@ -153,24 +152,25 @@ const Sidebar = (props:Props)=> {
             <div className={style.spacer}/>
             {mobile &&
                 <div className={style.appearance}>
-                    <LightMode
-                        color="var(--color-primary)"
+                    <Sun
+                        colorPrimary="var(--color-secondary)"
                         margin="0 0.25em 0 0"
-                        width="1.25em"/>
+                        width="0.875em"/>
                     <Switch
                         defaultChecked={
                             typeof window != 'undefined' &&
                                 localStorage.getItem('appearance') != 'light'}
+                        reversed
                         onChange={(event)=> {
                             const appearance = event.target.checked ?
                                 'dark' : 'light';
                             localStorage.setItem('appearance', appearance);
                             document.documentElement.setAttribute('appearance', appearance);
                         }}/>
-                    <DarkMode
-                        color="var(--color-primary)"
+                    <Moon
+                        colorPrimary="var(--color-secondary)"
                         margin="0 0 0 0.25em"
-                        width="1.25em"/>
+                        width="0.875em"/>
                 </div>}
         </nav>
     );
