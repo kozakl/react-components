@@ -27,6 +27,7 @@ const CircleCheck = (props:Props)=> (
             cy="16"/>
         <polyline
             style={{
+                fill: 'none',
                 stroke: props.colorPrimary,
                 strokeWidth: 2 * props.stroke
             }}
