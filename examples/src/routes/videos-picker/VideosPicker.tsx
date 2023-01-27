@@ -4,7 +4,7 @@ import {useVideosPicker} from '@kozakl/hooks';
 import {Layout} from '../../components/layout';
 import style from './VideosPicker.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     const videosPicker = useVideosPicker();
     
     useEffect(()=> {
@@ -32,7 +32,7 @@ const Index = ()=> {
     
     return (
         <Layout title="Videos Picker - React Components">
-            <div className={style.videosPicker}>
+            <div className={style.main}>
                 <VideosPicker
                     {...videosPicker}
                     id="videosPicker"/>
@@ -41,4 +41,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
