@@ -27,7 +27,12 @@
     }
   }
   .spacer {
-    border-bottom: 2px solid rgba(var(--color-primary-rgb), 0.125);
+    border-bottom: 2px solid rgba(
+      var(--color-primary-r),
+      var(--color-primary-g),
+      var(--color-primary-b),
+      0.125
+    );
   }
   .subNav {
     overflow: hidden;
