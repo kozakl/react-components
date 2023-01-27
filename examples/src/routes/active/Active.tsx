@@ -5,7 +5,7 @@ import style from './Active.module.css';
 const Index = ()=> {
     return (
         <Layout title="Active - React Components">
-            <div className={style.active}>
+            <div className={style.index}>
                 <div>Checked</div>
                 <br/>
                 <Active defaultChecked/>
