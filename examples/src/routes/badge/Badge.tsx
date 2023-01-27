@@ -2,10 +2,10 @@ import {Badge} from '@kozakl/components/badge';
 import {Layout} from '../../components/layout';
 import style from './Badge.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     return (
         <Layout title="Badge - React Components">
-            <div className={style.badge}>
+            <div className={style.main}>
                 <Badge
                     title="+99"
                     value={999}/>
@@ -14,4 +14,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
