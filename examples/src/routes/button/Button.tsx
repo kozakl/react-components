@@ -2,10 +2,10 @@ import {Button} from '@kozakl/components/button';
 import {Layout} from '../../components/layout';
 import style from './Button.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     return (
         <Layout title="Button - React Components">
-            <div className={style.button}>
+            <div className={style.main}>
                 <Button small>
                     Small Button
                 </Button>
@@ -34,4 +34,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
