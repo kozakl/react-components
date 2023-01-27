@@ -4,7 +4,7 @@ import {useImagesPicker} from '@kozakl/hooks';
 import {Layout} from '../../components/layout';
 import style from './ImagesPicker.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     const imagesPicker = useImagesPicker();
     
     useEffect(()=> {
@@ -26,7 +26,7 @@ const Index = ()=> {
     
     return (
         <Layout title="Images Picker - React Components">
-            <div className={style.imagesPicker}>
+            <div className={style.main}>
                 <ImagesPicker
                     {...imagesPicker}
                     id="imagesPicker"/>
@@ -35,4 +35,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
