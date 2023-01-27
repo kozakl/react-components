@@ -2,10 +2,10 @@ import {Active} from '@kozakl/components/active';
 import {Layout} from '../../components/layout';
 import style from './Active.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     return (
         <Layout title="Active - React Components">
-            <div className={style.index}>
+            <div className={style.main}>
                 <div>Checked</div>
                 <br/>
                 <Active defaultChecked/>
@@ -29,4 +29,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
