@@ -32,6 +32,20 @@ const CircleCart = (props:Props)=> (
                 strokeWidth: 1.5 * props.stroke
             }}
             points="6.6,10.7 9.8,10.7 13.1,21.2 22.3,21.2 25.3,13.9 16,13.9"/>
+        <circle
+            style={{
+                fill: props.colorPrimary
+            }}
+            r="1.25"
+            cx="12.3"
+            cy="25"/>
+	    <circle
+            style={{
+                fill: props.colorPrimary
+            }}
+            r="1.25"
+            cx="22.3"
+            cy="25"/>
     </svg>
 );
 
