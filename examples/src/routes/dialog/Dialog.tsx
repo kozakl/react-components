@@ -5,13 +5,13 @@ import {useDialogsState} from '@kozakl/states';
 import {Layout} from '../../components/layout';
 import style from './Dialog.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     const [dialog, setDialog] = useState({visible: false});
     const {createDialog} = useDialogsState();
     
     return (
         <Layout title="Dialog - React Components">
-            <div className={style.dialog}>
+            <div className={style.main}>
                 <Button
                     onClick={()=> 
                         createDialog({
@@ -42,4 +42,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
