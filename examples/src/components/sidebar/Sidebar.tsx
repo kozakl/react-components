@@ -96,6 +96,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/carousel"
+                startWith>
+                Carousel
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/checkbox"
                 startWith>
                 Checkbox
