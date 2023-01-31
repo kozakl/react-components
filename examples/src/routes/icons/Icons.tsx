@@ -13,10 +13,10 @@ import {ArrowDown, ArrowLeft, ArrowRight,
 import {Layout} from '../../components/layout';
 import style from './Icons.module.css';
 
-const Icons = ()=> {
+const Main = ()=> {
     return (
         <Layout title="Icons - React Components">
-            <div className={style.icons}>
+            <div className={style.main}>
                 <div>
                     <ArrowUp height="1.5em"/>
                     <span>arrow-up</span>
@@ -172,4 +172,4 @@ const Icons = ()=> {
     );
 };
 
-export default Icons;
+export default Main;
