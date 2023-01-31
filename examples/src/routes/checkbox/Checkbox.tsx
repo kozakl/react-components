@@ -2,10 +2,10 @@ import {Checkbox} from '@kozakl/components/checkbox';
 import {Layout} from '../../components/layout';
 import style from './Checkbox.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     return (
         <Layout title="Checkbox - React Components">
-            <div className={style.checkbox}>
+            <div className={style.main}>
                 <Checkbox defaultChecked>
                     Checked
                 </Checkbox>
@@ -33,4 +33,4 @@ const Index = ()=> {
     );
 };
 
-export default Index;
+export default Main;
