@@ -20,10 +20,24 @@
     min-height: 3em;
   }
   .actions {
-    text-align: right;
-    
+    & > button {
+      width: 100%;
+    }
     & :first-child {
-      margin-right: 0.5em;
+      margin-bottom: 0.25em;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .actions {
+      text-align: right;
+      
+      & > :first-child {
+        margin-right: 0.5em;
+      }
+      & > button {
+        width: unset;
+      }
     }
   }
 }
