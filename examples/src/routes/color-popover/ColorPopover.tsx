@@ -3,16 +3,16 @@ import {useColorPopover} from '@kozakl/hooks';
 import {Layout} from '../../components/layout';
 import style from './ColorPopover.module.css';
 
-const Index = ()=> {
+const Main = ()=> {
     const color = useColorPopover('#FF0000');
     
     return (
         <Layout title="Color Popover - React Components">
-            <div className={style.colorPopover}>
+            <div className={style.main}>
                 <ColorPopover {...color}/>
             </div>
         </Layout>
     );
 };
 
-export default Index;
+export default Main;
