@@ -1,0 +1,116 @@
+.main {
+  --card-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1),
+                 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.main {
+  padding: 6em 2em 2em;
+  width: 100%;
+}
+
+.main {
+  .carousel1 {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 1em;
+    width: 20em;
+    
+    & > :nth-child(1) {
+      margin: auto;
+      max-width: 10em;
+    }
+    .item {
+      background: yellowgreen;
+      margin: 0 1em;
+      width: 7.5em;
+      height: 10em;
+    }
+  }
+  .carousel2 {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 1em;
+    width: 100%;
+    
+    .item {
+      text-align: center;
+      margin: 1em;
+      width: 15em;
+    }
+    .container {
+      box-shadow: var(--card-shadow);
+      padding: 0.75em;
+    }
+    .title {
+      line-height: 5em;
+      height: 5em;
+      
+      & > h3 {
+        display:inline-block;
+        font-size: 1.25em;
+        font-weight: normal;
+        vertical-align:middle;
+        margin: 0;
+        line-height: normal;
+      }
+    }
+    .text {
+      font-size: 1em;
+    }
+  }
+  .carousel3 {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 1em;
+    width: 100%;
+    
+    & > nav {
+      height: 100%;
+    }
+    & > nav > :first-child,
+    & > nav > :last-child {
+      pointer-events: auto;
+      
+      & > svg {
+        width: 1.75em;
+      }
+    }
+    & > :first-child {
+      margin: 0 -2em;
+    }
+    & > :last-child {
+      z-index: 1;
+    }
+    .slide {
+      position: relative;
+      width: 100vw;
+      height: 37.5em;
+    }
+    .background {
+      height: 100%;
+      
+      & > img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .text {
+      position: absolute;
+      padding: 0 2em;
+      margin: 0 auto;
+      max-width: 75em;
+      left: 0;
+      right: 0;
+      bottom: 5em;
+      
+      & > h2 {
+        color: var(--color-secondary);
+        font-family: var(--font-secondary);
+        font-size: 3em;
+        font-weight: 400;
+        line-height: 1em;
+        margin-top: 0.25em;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
