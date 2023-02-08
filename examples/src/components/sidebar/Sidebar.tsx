@@ -103,6 +103,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/carousel-transition"
+                startWith>
+                Carousel Transition
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/checkbox"
                 startWith>
                 Checkbox
