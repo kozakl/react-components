@@ -1,6 +1,6 @@
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import {Children, cloneElement,
-        FunctionComponent, useState} from 'react';
+import {cloneElement, FunctionComponent,
+        ReactNode, useState} from 'react';
 import {useLoad, useTimeout, useVisibility} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
@@ -25,7 +25,7 @@ const CarouselTransition:FunctionComponent<Props> = (props)=> {
         props.speed,
         [elements.index]);
     
-    const children = Children.toArray(props.children);
+    const children = props.children as ReactNode[];
     return (
         <div
             className={classNames(
