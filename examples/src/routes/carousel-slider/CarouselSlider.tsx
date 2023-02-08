@@ -99,7 +99,7 @@ const Main = ()=> {
                                 srcSet={`https://eu2allwebext.blob.core.windows.net/suburbansquare/www/resources/images/pages/default/i_home_about.jpg 800w`}/>
                         </div>
                         <p className={style.text}>
-                            <h2>Voucher na zakupy w Leroy Merlin</h2>
+                            <span>Voucher na zakupy w Leroy Merlin</span>
                         </p>
                     </div>
                     <div className={style.slide}>
@@ -109,7 +109,7 @@ const Main = ()=> {
                                 srcSet={`https://eu2allwebext.blob.core.windows.net/suburbansquare/www/resources/images/pages/default/i_home_about.jpg 800w`}/>
                         </div>
                         <p className={style.text}>
-                            <h2>Voucher na zakupy w Leroy Merlin</h2>
+                            <span>Voucher na zakupy w Leroy Merlin</span>
                         </p>
                     </div>
                     <div className={style.slide}>
@@ -119,7 +119,7 @@ const Main = ()=> {
                                 srcSet={`https://eu2allwebext.blob.core.windows.net/suburbansquare/www/resources/images/pages/default/i_home_about.jpg 800w`}/>
                         </div>
                         <p className={style.text}>
-                            <h2>Voucher na zakupy w Leroy Merlin</h2>
+                            <span>Voucher na zakupy w Leroy Merlin</span>
                         </p>
                     </div>
                     <div className={style.slide}>
@@ -129,7 +129,7 @@ const Main = ()=> {
                                 srcSet={`https://eu2allwebext.blob.core.windows.net/suburbansquare/www/resources/images/pages/default/i_home_about.jpg 800w`}/>
                         </div>
                         <p className={style.text}>
-                            <h2>Voucher na zakupy w Leroy Merlin</h2>
+                            <span>Voucher na zakupy w Leroy Merlin</span>
                         </p>
                     </div>
                 </CarouselSlider>

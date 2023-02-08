@@ -99,7 +99,7 @@
       right: 0;
       bottom: 5em;
       
-      & > h2 {
+      & > span {
         color: var(--color-secondary);
         font-family: var(--font-secondary);
         font-size: 3em;
