@@ -61,9 +61,6 @@
     border-radius: 1em;
     width: 100%;
     
-    & > nav {
-      height: 100%;
-    }
     & > nav > :first-child,
     & > nav > :last-child {
       pointer-events: auto;
