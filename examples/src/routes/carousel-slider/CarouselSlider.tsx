@@ -3,7 +3,7 @@ import {ChevronLeft, ChevronRight} from '@kozakl/components/icons';
 import {Image} from '@kozakl/components/image';
 import {ImageLite} from '@kozakl/components/image-lite';
 import {Layout} from '../../components/layout';
-import style from './Carousel.module.css';
+import style from './CarouselSlider.module.css';
 import React from 'react';
 
 const Main = ()=> {
