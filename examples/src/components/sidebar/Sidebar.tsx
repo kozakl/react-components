@@ -96,9 +96,9 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
-                href="/carousel"
+                href="/carousel-slider"
                 startWith>
-                Carousel
+                Carousel Slider
             </NavLink>
             <NavLink
                 className={style.link}
