@@ -18,10 +18,12 @@ const Calendar = (props:Props)=> {
             months={props.months}
             locale={props.locale}
             direction="horizontal"
-            monthDisplayFormat="LLLL yyyy"
             showDateDisplay={false}
             showPreview={props.showPreview}
             calendarFocus={props.calendarFocus}
+            dateDisplayFormat={props.dateDisplayFormat}
+            dayDisplayFormat={props.dayDisplayFormat}
+            weekdayDisplayFormat={props.weekdayDisplayFormat}
             disabledDates={props.disabledDates}
             dayContentRenderer={props.dayContentRenderer}
             onChange={props.onChange}/>
@@ -31,7 +33,10 @@ const Calendar = (props:Props)=> {
 Calendar.defaultProps = {
     date: new Date(),
     showPreview: true,
-    calendarFocus: 'forwards'
+    calendarFocus: 'forwards',
+    dateDisplayFormat: 'MMM d, yyyy',
+    dayDisplayFormat: 'd',
+    weekdayDisplayFormat: 'E',
 };
 
 interface Props {
@@ -42,6 +47,9 @@ interface Props {
     showPreview?:boolean;
     hideSelects?:boolean;
     calendarFocus?:'forwards' | 'backwards';
+    dateDisplayFormat?:string;
+    dayDisplayFormat?:string;
+    weekdayDisplayFormat?:string;
     disabledDates?:Date[];
     dayContentRenderer?:(day:Date)=> ReactNode;
     onChange?:(date:Date)=> void;
