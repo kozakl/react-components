@@ -92,7 +92,7 @@ const CarouselSlider:FunctionComponent<Props> = (props)=> {
                     </IconButton>
                         <IconButton
                             disabled={
-                                index >= Math.ceil(list.current?.scrollWidth / list.current?.clientWidth) - 1}
+                                index >= Math.round(list.current?.scrollWidth / list.current?.clientWidth) - 1}
                             onClick={()=> {
                                 const currentIndex = index <
                                     Math.ceil(list.current.scrollWidth / list.current.clientWidth) - 1 ?
