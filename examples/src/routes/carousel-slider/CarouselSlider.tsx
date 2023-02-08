@@ -4,7 +4,6 @@ import {Image} from '@kozakl/components/image';
 import {ImageLite} from '@kozakl/components/image-lite';
 import {Layout} from '../../components/layout';
 import style from './CarouselSlider.module.css';
-import React from 'react';
 
 const Main = ()=> {
     return (
