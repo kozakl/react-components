@@ -25,6 +25,7 @@ const Calendar = (props:Props)=> {
             dayDisplayFormat={props.dayDisplayFormat}
             weekdayDisplayFormat={props.weekdayDisplayFormat}
             monthDisplayFormat={props.monthDisplayFormat}
+            weekStartsOn={props.weekStartsOn}
             disabledDates={props.disabledDates}
             dayContentRenderer={props.dayContentRenderer}
             onChange={props.onChange}/>
@@ -53,6 +54,7 @@ interface Props {
     dayDisplayFormat?:string;
     weekdayDisplayFormat?:string;
     monthDisplayFormat?:string;
+    weekStartsOn?:0 | 1 | 2 | 3 | 4 | 5 | 6 | undefined;
     disabledDates?:Date[];
     dayContentRenderer?:(day:Date)=> ReactNode;
     onChange?:(date:Date)=> void;
