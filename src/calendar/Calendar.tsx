@@ -8,7 +8,7 @@ import style from './Calendar.module.css';
 const Calendar = (props:Props)=> {
     useEffect(()=> {
         if (props.onShownDateChange) {
-            props.onShownDateChange(props.date);
+            props.onShownDateChange(props.date || new Date());
         }
     }, [props.date]);
     
