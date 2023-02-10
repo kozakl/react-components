@@ -29,7 +29,8 @@ const Calendar = (props:Props)=> {
             fixedHeight={props.fixedHeight}
             disabledDates={props.disabledDates}
             dayContentRenderer={props.dayContentRenderer}
-            onChange={props.onChange}/>
+            onChange={props.onChange}
+            onShownDateChange={props.onShownDateChange}/>
     );
 };
 
@@ -60,6 +61,7 @@ interface Props {
     disabledDates?:Date[];
     dayContentRenderer?:(day:Date)=> ReactNode;
     onChange?:(date:Date)=> void;
+    onShownDateChange?:(date:Date)=> void;
 }
 
 export default Calendar;
