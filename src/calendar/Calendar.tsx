@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {ReactNode, useEffect} from 'react';
 import {Calendar as CalendarInternal} from 'react-date-range';
 import {Locale} from 'date-fns';
 import {classNames} from '@kozakl/utils';
@@ -6,6 +6,12 @@ import React from 'react';
 import style from './Calendar.module.css';
 
 const Calendar = (props:Props)=> {
+    useEffect(()=> {
+        if (props.onShownDateChange) {
+            props.onShownDateChange(props.date);
+        }
+    }, [props.date]);
+    
     return (
         <CalendarInternal
             className={classNames(
