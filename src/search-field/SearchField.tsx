@@ -48,7 +48,7 @@ const SearchField = (props:Props)=> {
                     disabled={!props.enabledClose}
                     onClick={props.onClickClose}>
                     <XMark
-                        colorPrimary="inherit"
+                        colorPrimary="var(--color-primary)"
                         padding="0.25em"
                         width="1.25em"/>
                 </IconButton>}
