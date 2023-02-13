@@ -159,6 +159,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/search-field"
+                startWith>
+                Search Field
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/text-rich-area"
                 startWith>
                 Text Rich Area
