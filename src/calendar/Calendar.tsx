@@ -21,6 +21,7 @@ const Calendar = (props:Props)=> {
                 props.className
             )}
             date={props.date}
+            maxDate={props.maxDate}
             months={props.months}
             locale={props.locale}
             direction="horizontal"
@@ -53,6 +54,7 @@ Calendar.defaultProps = {
 interface Props {
     className?:string;
     date?:Date;
+    maxDate?:Date;
     months?:number;
     locale?:Locale;
     showPreview?:boolean;
