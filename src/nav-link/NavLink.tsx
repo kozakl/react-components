@@ -30,7 +30,9 @@ const NavLink = (props:Props)=> {
     
     return (
         props.href ?
-            <Link href={props.href}>
+            <Link
+                href={props.href}
+                legacyBehavior>
                 {renderAnchor()}
             </Link> :
             renderAnchor()
