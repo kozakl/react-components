@@ -2,6 +2,10 @@
   background: var(--background-primary);
   padding-top: 2em;
   border-right: 1px solid var(--color-primary);
+  
+  & > a:last-of-type {
+    border-bottom: unset;
+  }
 }
 
 .sidebar {
@@ -12,18 +16,22 @@
     letter-spacing: 0.075em;
     white-space: nowrap;
     cursor: pointer;
+    border-bottom: 1px solid rgba(
+      var(--color-primary-r),
+      var(--color-primary-g),
+      var(--color-primary-b),
+      0.125
+    );
     padding: 0.5em 2em;
-    margin: 0.1em 0.5em;
+    margin: 0 0.75em;
     
     &:hover,
     &.active {
-      background: var(--color-primary);
-      color: var(--background-primary);
-      text-decoration: inherit;
-      
-      & svg * {
-        stroke: var(--background-primary) !important;
-      }
+      background: rgb(
+        calc(var(--background-primary-r) * (var(--appearance-light) * 0.925 + var(--appearance-dark) * 1.75)), 
+        calc(var(--background-primary-g) * (var(--appearance-light) * 0.925 + var(--appearance-dark) * 1.75)), 
+        calc(var(--background-primary-b) * (var(--appearance-light) * 0.925 + var(--appearance-dark) * 1.75))
+      );
     }
   }
   .spacer {
@@ -31,7 +39,7 @@
       var(--color-primary-r),
       var(--color-primary-g),
       var(--color-primary-b),
-      0.125
+      0.25
     );
   }
   .subNav {

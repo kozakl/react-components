@@ -79,6 +79,7 @@ const Sidebar = (props:Props)=> {
                 startWith>
                 Button
             </NavLink>
+            <div className={style.spacer}/>
             <NavLink
                 className={style.link}
                 activeClass={style.active}
@@ -93,6 +94,7 @@ const Sidebar = (props:Props)=> {
                 startWith>
                 Calendar Popover
             </NavLink>
+            <div className={style.spacer}/>
             <NavLink
                 className={style.link}
                 activeClass={style.active}
@@ -107,6 +109,7 @@ const Sidebar = (props:Props)=> {
                 startWith>
                 Carousel Transition
             </NavLink>
+            <div className={style.spacer}/>
             <NavLink
                 className={style.link}
                 activeClass={style.active}
@@ -177,7 +180,6 @@ const Sidebar = (props:Props)=> {
                 startWith>
                 Videos Picker
             </NavLink>
-            <div className={style.spacer}/>
             {mobile &&
                 <div className={style.appearance}>
                     <Sun
