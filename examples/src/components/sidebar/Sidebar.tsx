@@ -181,14 +181,14 @@ const Sidebar = (props:Props)=> {
             {mobile &&
                 <div className={style.appearance}>
                     <Sun
-                        colorPrimary="var(--color-secondary)"
+                        colorPrimary="var(--color-primary)"
                         margin="0 0.25em 0 0"
                         width="0.875em"/>
                     <Switch
                         defaultChecked={
                             typeof window != 'undefined' &&
+                                localStorage.getItem('appearance') != null &&
                                 localStorage.getItem('appearance') != 'light'}
-                        reversed
                         onChange={(event)=> {
                             const appearance = event.target.checked ?
                                 'dark' : 'light';
@@ -196,7 +196,7 @@ const Sidebar = (props:Props)=> {
                             document.documentElement.setAttribute('appearance', appearance);
                         }}/>
                     <Moon
-                        colorPrimary="var(--color-secondary)"
+                        colorPrimary="var(--color-primary)"
                         margin="0 0 0 0.25em"
                         width="0.875em"/>
                 </div>}
