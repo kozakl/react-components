@@ -1,6 +1,7 @@
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import {cloneElement, FunctionComponent,
-        ReactNode, useState} from 'react';
+        PropsWithChildren, ReactNode,
+        useState} from 'react';
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import {useLoad, useTimeout, useVisibility} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
@@ -8,7 +9,7 @@ import {useTheme} from '../theme';
 import React from 'react';
 import style from './CarouselTransition.module.css';
 
-const CarouselTransition:FunctionComponent<Props> = (props)=> {
+const CarouselTransition = (props:Props)=> {
     const load = useLoad(),
           theme = useTheme('carouselTransition'),
           visibility = useVisibility();
@@ -79,7 +80,7 @@ CarouselTransition.defaultProps = {
     speed: 5000
 };
 
-interface Props {
+interface Props extends PropsWithChildren {
     className?:string;
     speed?:number;
     transitionPrev:{};
