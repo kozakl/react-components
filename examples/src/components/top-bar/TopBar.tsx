@@ -27,6 +27,7 @@ const TopBar = (props:Props)=> {
             <div className={style.container}>
                 <div className={style.left}>
                     <IconButton
+                        className={style.toggle}
                         onClick={()=>
                             setSidebar(!sidebar)}>
                         <Menu
@@ -39,7 +40,7 @@ const TopBar = (props:Props)=> {
                             router.push('/')}>
                         <Logo
                             colorPrimary="var(--color-secondary)"
-                            height="2em"/>
+                            height="1.75em"/>
                     </IconButton>
                     {!mobile &&
                         <div className={style.appearance}>
@@ -50,6 +51,7 @@ const TopBar = (props:Props)=> {
                             <Switch
                                 defaultChecked={
                                     typeof window != 'undefined' &&
+                                        localStorage.getItem('appearance') != null &&
                                         localStorage.getItem('appearance') != 'light'}
                                 reversed
                                 onChange={(event)=> {
