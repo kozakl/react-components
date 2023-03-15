@@ -1,5 +1,6 @@
 import {Children, FunctionComponent,
-        ReactNode, useRef, useState} from 'react';
+        PropsWithChildren, ReactNode,
+        useRef, useState} from 'react';
 import {useLoad, useResize,
         useTimeout, useVisibility} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
@@ -8,7 +9,7 @@ import {useTheme} from '../theme';
 import React from 'react';
 import style from './CarouselSlider.module.css';
 
-const CarouselSlider:FunctionComponent<Props> = (props)=> {
+const CarouselSlider = (props:Props)=> {
     const load = useLoad(),
           theme = useTheme('carouselSlider'),
           visibility = useVisibility();
@@ -138,7 +139,7 @@ CarouselSlider.defaultProps = {
     speed: 5000
 };
 
-interface Props {
+interface Props extends PropsWithChildren {
     className?:string;
     speed?:number;
     arrows?:boolean;
