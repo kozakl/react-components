@@ -2,7 +2,7 @@ import {ChangeEvent, forwardRef,
         useState} from 'react';
 import {format} from 'date-fns';
 import {useTextField, VideoPicker} from '@kozakl/hooks';
-import {useDialogsState, useSpinnerState} from '@kozakl/states';
+import {useDialogsState, useLoadingState} from '@kozakl/states';
 import {classNames} from '@kozakl/utils';
 import {isAbsolute} from '@kozakl/utils/path';
 import {isURL} from '@kozakl/utils/validate';
@@ -19,7 +19,7 @@ import style from './VideosPicker.module.css';
 const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
     const directLink = useTextField();
     const [directLinkDialog, setDirectLinkDialog] = useState(false);
-    const {showSpinner, hideSpinner} = useSpinnerState(),
+    const {showLoading, hideLoading} = useLoadingState(),
           {createDialog} = useDialogsState();
     return (
         <div
@@ -198,12 +198,12 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                 confirmDisabled={!isURL(directLink.getValue())}
                 onConfirm={()=> {
                     setDirectLinkDialog(false);
-                    showSpinner();
+                    showLoading();
                     props.addURL(directLink.getValue())
                         .then(()=>
-                            hideSpinner())
+                            hideLoading())
                         .catch((error:Error)=> {
-                            hideSpinner();
+                            hideLoading();
                             if (error) {
                                 createDialog({
                                     title: 'Error!',
