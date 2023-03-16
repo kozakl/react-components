@@ -1,6 +1,6 @@
 import {Button} from '@kozakl/components/button';
 import {Layout} from '../../components/layout';
-import style from './Button.module.css';
+import style from './ButtonExample.module.css';
 
 const ButtonExample = ()=> {
     return (
