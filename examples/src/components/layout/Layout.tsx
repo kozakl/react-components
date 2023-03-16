@@ -21,7 +21,7 @@ export const Layout = (props:Props)=> {
     );
 };
 
-interface Props extends PropsWithChildren<{}> {
+interface Props extends PropsWithChildren {
     title?:string;
 }
 
