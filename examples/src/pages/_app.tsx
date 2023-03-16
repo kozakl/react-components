@@ -4,7 +4,7 @@ import {AppProps} from 'next/app'
 import {default as Head} from 'next/dist/shared/lib/head';
 import {Dialog} from '@kozakl/components/dialog';
 import {LoadingModal} from '@kozakl/components/loading-modal';
-import {useDialogsState, useSpinnerState} from '@kozakl/states';
+import {useDialogsState, useLoadingState} from '@kozakl/states';
 import {Toasts} from '@kozakl/components/toasts';
 import {queryClient} from '../query';
 import '@kozakl/components/style.css';
@@ -13,7 +13,7 @@ import '../main.css';
 
 const App = ({Component, pageProps}:AppProps)=> {
     const dialogs = useDialogsState().get(),
-          spinner = useSpinnerState().get();
+          loading = useLoadingState().get();
     
     useEffect(()=> {
         document.documentElement.setAttribute(
@@ -41,7 +41,7 @@ const App = ({Component, pageProps}:AppProps)=> {
                     key={dialog.id}
                     {...dialog}/>)}
             <Toasts/>
-            <LoadingModal visible={spinner}/>
+            <LoadingModal {...loading}/>
             <div id="modal"/>
         </QueryClientProvider>
     );
