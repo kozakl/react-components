@@ -1,3 +1,3 @@
-import {Badge} from '../routes/badge';
+import {BadgeExample} from '../routes/badge-example';
 
-export default Badge;
+export default BadgeExample;

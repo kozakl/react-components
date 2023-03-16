@@ -1,11 +1,11 @@
 import {Badge} from '@kozakl/components/badge';
 import {Layout} from '../../components/layout';
-import style from './Badge.module.css';
+import style from './BadgeExample.module.css';
 
-const Main = ()=> {
+const BadgeExample = ()=> {
     return (
         <Layout title="Badge - React Components">
-            <div className={style.main}>
+            <div className={style.badgeExample}>
                 <Badge
                     title="+99"
                     value={999}/>
@@ -14,4 +14,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default BadgeExample;
