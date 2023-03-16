@@ -7,7 +7,7 @@ import style from './Calendar.module.css';
 const Main = ()=> {
     return (
         <Layout title="Calendar - React Components">
-            <div className={style.main}>
+            <div className={style.calendarExample}>
                 <Calendar
                     date={null}
                     months={3}

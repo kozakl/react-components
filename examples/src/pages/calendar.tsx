@@ -1,3 +1,3 @@
-import {Calendar} from '../routes/calendar';
+import {CalendarExample} from '../routes/calendar-example';
 
-export default Calendar;
+export default CalendarExample;
