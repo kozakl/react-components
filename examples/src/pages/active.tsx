@@ -1,3 +1,3 @@
-import {Active} from '../routes/active';
+import {ActiveExample} from '../routes/active-example';
 
-export default Active;
+export default ActiveExample;

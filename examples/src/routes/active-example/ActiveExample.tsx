@@ -1,11 +1,11 @@
 import {Active} from '@kozakl/components/active';
 import {Layout} from '../../components/layout';
-import style from './Active.module.css';
+import style from './ActiveExample.module.css';
 
-const Main = ()=> {
+const ActiveExample = ()=> {
     return (
         <Layout title="Active - React Components">
-            <div className={style.main}>
+            <div className={style.activeExample}>
                 <div>Checked</div>
                 <br/>
                 <Active defaultChecked/>
@@ -29,4 +29,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default ActiveExample;
