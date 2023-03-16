@@ -2,9 +2,9 @@ import {format} from 'date-fns';
 import {Calendar} from '@kozakl/components/calendar';
 import {pl} from '@kozakl/date-fns/locale';
 import {Layout} from '../../components/layout';
-import style from './Calendar.module.css';
+import style from './CalendarExample.module.css';
 
-const Main = ()=> {
+const CalendarExample = ()=> {
     return (
         <Layout title="Calendar - React Components">
             <div className={style.calendarExample}>
@@ -35,4 +35,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default CalendarExample;
