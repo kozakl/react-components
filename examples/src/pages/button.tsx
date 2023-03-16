@@ -1,3 +1,3 @@
-import {Button} from '../routes/button';
+import {ButtonExample} from '../routes/button-example';
 
-export default Button;
+export default ButtonExample;
