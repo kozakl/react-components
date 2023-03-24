@@ -29,7 +29,7 @@ const ArrowBottomRight = (props:Props)=> (
 ArrowBottomRight.defaultProps = {
     colorPrimary: 'var(--color-primary)',
     stroke: 1
-}
+};
 
 interface Props {
     className?:string;
