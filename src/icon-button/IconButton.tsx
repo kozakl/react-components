@@ -15,7 +15,8 @@ const IconButton = (props:Props)=> {
             title={props.title}
             type={props.type}
             disabled={props.disabled}
-            onClick={props.onClick}>
+            onClick={props.onClick}
+            {...props.dataAttributes}>
             {props.children}
         </button>
     );
@@ -31,6 +32,9 @@ interface Props extends PropsWithChildren<{}> {
     type?:'button' | 'submit' | 'reset';
     active?:boolean;
     disabled?:boolean;
+    dataAttributes?: {
+        [attribute:`data-${string}`]:string | number | boolean
+    };
     onClick?:MouseEventHandler<HTMLButtonElement>;
 }
 
