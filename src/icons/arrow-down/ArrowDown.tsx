@@ -38,7 +38,7 @@ const ArrowDown = (props:Props)=> (
 ArrowDown.defaultProps = {
     colorPrimary: 'var(--color-primary)',
     stroke: 1
-}
+};
 
 interface Props {
     className?:string;
