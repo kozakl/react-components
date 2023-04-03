@@ -77,8 +77,7 @@ const CalendarRange = (props:Props)=> {
 CalendarRange.defaultProps = {
     date: new Date(),
     minDate: new Date(),
-    showPreview: true,
-    calendarFocus: 'forwards'
+    showPreview: true
 };
 
 export interface Props {
