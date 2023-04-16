@@ -1,3 +1,3 @@
-import {CarouselSlider} from '../routes/carousel-slider';
+import {CarouselSliderExample} from '../routes/carousel-slider-example';
 
-export default CarouselSlider;
+export default CarouselSliderExample;

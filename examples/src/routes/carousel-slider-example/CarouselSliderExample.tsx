@@ -3,12 +3,12 @@ import {ChevronLeft, ChevronRight} from '@kozakl/components/icons';
 import {Image} from '@kozakl/components/image';
 import {ImageLite} from '@kozakl/components/image-lite';
 import {Layout} from '../../components/layout';
-import style from './CarouselSlider.module.css';
+import style from './CarouselSliderExample.module.css';
 
-const Main = ()=> {
+const CarouselSliderExample = ()=> {
     return (
         <Layout title="Carousel Slider - React Components">
-            <div className={style.main}>
+            <div className={style.carouselSliderExample}>
                 <CarouselSlider
                     className={style.carousel1}
                     dots>
@@ -138,4 +138,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default CarouselSliderExample;
