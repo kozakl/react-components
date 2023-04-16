@@ -1,3 +1,3 @@
-import {CalendarPopover} from '../routes/calendar-popover';
+import {CalendarPopoverExample} from '../routes/calendar-popover-example';
 
-export default CalendarPopover;
+export default CalendarPopoverExample;

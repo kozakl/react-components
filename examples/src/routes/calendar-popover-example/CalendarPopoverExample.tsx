@@ -1,18 +1,18 @@
 import {CalendarPopover} from '@kozakl/components/calendar-popover';
 import {useCalendarPopover} from '@kozakl/hooks';
 import {Layout} from '../../components/layout';
-import style from './CalendarPopover.module.css';
+import style from './CalendarPopoverExample.module.css';
 
-const Main = ()=> {
+const CalendarPopoverExample = ()=> {
     const calendar = useCalendarPopover();
     
     return (
         <Layout title="Calendar Popover - React Components">
-            <div className={style.main}>
+            <div className={style.calendarPopoverExample}>
                 <CalendarPopover {...calendar}/>
             </div>
         </Layout>
     );
 };
 
-export default Main;
+export default CalendarPopoverExample;
