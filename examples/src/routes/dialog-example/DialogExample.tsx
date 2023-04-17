@@ -3,15 +3,15 @@ import {Button} from '@kozakl/components/button';
 import {Dialog} from '@kozakl/components/dialog';
 import {useDialogsState} from '@kozakl/states';
 import {Layout} from '../../components/layout';
-import style from './Dialog.module.css';
+import style from './DialogExample.module.css';
 
-const Main = ()=> {
+const DialogExample = ()=> {
     const [dialog, setDialog] = useState({visible: false});
     const {createDialog} = useDialogsState();
     
     return (
         <Layout title="Dialog - React Components">
-            <div className={style.main}>
+            <div className={style.dialogExample}>
                 <Button
                     onClick={()=> 
                         createDialog({
@@ -42,4 +42,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default DialogExample;

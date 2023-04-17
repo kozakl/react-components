@@ -1,3 +1,3 @@
-import {Dialog} from '../routes/dialog';
+import {DialogExample} from '../routes/dialog-example';
 
-export default Dialog;
+export default DialogExample;
