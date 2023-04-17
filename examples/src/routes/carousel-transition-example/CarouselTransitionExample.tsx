@@ -2,12 +2,12 @@ import {CarouselTransition} from '@kozakl/components/carousel-transition';
 import {ChevronLeft, ChevronRight} from '@kozakl/components/icons';
 import {fade, moveLeft} from '@kozakl/transitions';
 import {Layout} from '../../components/layout';
-import style from './CarouselTransition.module.css';
+import style from './CarouselTransitionExample.module.css';
 
-const Main = ()=> {
+const CarouselTransitionExample = ()=> {
     return (
         <Layout title="Carousel Transition - React Components">
-            <div className={style.main}>
+            <div className={style.carouselTransitionExample}>
                 <CarouselTransition
                     className={style.carousel1}
                     transitionPrev={fade}
@@ -35,4 +35,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default CarouselTransitionExample;

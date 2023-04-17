@@ -1,3 +1,3 @@
-import {CarouselTransition} from '../routes/carousel-transition';
+import {CarouselTransitionExample} from '../routes/carousel-transition-example';
 
-export default CarouselTransition;
+export default CarouselTransitionExample;
