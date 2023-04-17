@@ -16,7 +16,7 @@ const ArrowBottomLeft = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
             d="M24,24H8 M8,24V8 M8,24L24,8"/>
     </svg>
