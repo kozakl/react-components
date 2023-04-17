@@ -3,11 +3,7 @@ import React from 'react';
 const ArrowBottomRight = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.stroke - 1) / 2}
-            ${-2 * (props.stroke - 1) / 2}
-            ${32 + 2 * (props.stroke - 1)}
-            ${32 + 2 * (props.stroke - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,9 +16,9 @@ const ArrowBottomRight = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            d="M2,30h28 M30,30V2 M30,30L2,2"/>
+            d="M8,24h16 M24,24V8 M24,24L8,8"/>
     </svg>
 );
 
