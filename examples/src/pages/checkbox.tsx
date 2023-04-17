@@ -1,3 +1,3 @@
-import {Checkbox} from '../routes/checkbox';
+import {CheckboxExample} from '../routes/checkbox-example';
 
-export default Checkbox;
+export default CheckboxExample;

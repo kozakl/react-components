@@ -1,11 +1,11 @@
 import {Checkbox} from '@kozakl/components/checkbox';
 import {Layout} from '../../components/layout';
-import style from './Checkbox.module.css';
+import style from './CheckboxExample.module.css';
 
-const Main = ()=> {
+const CheckboxExample = ()=> {
     return (
         <Layout title="Checkbox - React Components">
-            <div className={style.main}>
+            <div className={style.checkboxExample}>
                 <Checkbox defaultChecked>
                     Checked
                 </Checkbox>
@@ -33,4 +33,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default CheckboxExample;
