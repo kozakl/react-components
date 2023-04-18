@@ -3,11 +3,7 @@ import React from 'react';
 const ArrowLeft = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.stroke - 1) / 2}
-            ${-2 * (props.stroke - 1) / 2}
-            ${32 + 2 * (props.stroke - 1)}
-            ${32 + 2 * (props.stroke - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,17 +16,17 @@ const ArrowLeft = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="16.6,31.5 1.2,16.1 16.6,0.5"/>
+            points="16.6,24 8.6,16.1 16.6,8"/>
         <line
             style={{
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            x1="32"
+            x1="24.5"
             y1="16.1"
-            x2="1"
+            x2="8.5"
             y2="16.1"/>
     </svg>
 );
