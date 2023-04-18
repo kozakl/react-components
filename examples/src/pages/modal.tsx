@@ -1,3 +1,3 @@
-import {Modal} from '../routes/modal';
+import {ModalExample} from '../routes/modal-example';
 
-export default Modal;
+export default ModalExample;

@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {Button} from '@kozakl/components/button';
 import {Modal} from '@kozakl/components/modal';
 import {Layout} from '../../components/layout';
-import style from './Modal.module.css';
+import style from './ModalExample.module.css';
 
 const Main = ()=> {
     const [modal, setModal] = useState(false);
