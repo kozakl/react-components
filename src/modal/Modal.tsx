@@ -8,7 +8,7 @@ import style from './Modal.module.css';
 
 const Modal = (props:Props)=> {
     const theme = useTheme('modal'),
-          modal = useRef<HTMLDivElement>(),
+          ref = useRef<HTMLDivElement>(),
           container = useRef<HTMLDivElement>();
     const [visible, setVisible] = useState(false),
           [active, setActive] = useState(false),
@@ -27,7 +27,7 @@ const Modal = (props:Props)=> {
             }
         }
         
-        modal.current = document.querySelector('#modal');
+        ref.current = document.querySelector('#modal');
         container.current = document.createElement('div');
         container.current.addEventListener('click', onClickModal);
         return ()=> {
@@ -35,7 +35,7 @@ const Modal = (props:Props)=> {
             clearTimeout(activeDelay);
             container.current.removeEventListener('click', onClickModal);
             if (container.current.parentElement) {
-                modal.current.removeChild(container.current);
+                ref.current.removeChild(container.current);
                 if (props.autoOverflow) {
                     document.body.style.overflowY = bodyOverflow;
                 }
@@ -54,7 +54,7 @@ const Modal = (props:Props)=> {
             clearTimeout(visibleDelay);
             clearTimeout(activeDelay);
             
-            modal.current.appendChild(container.current);
+            ref.current.appendChild(container.current);
             setActiveDelay(window.setTimeout(()=>
                 setActive(true), 20));
             if (props.autoOverflow) {
@@ -66,7 +66,7 @@ const Modal = (props:Props)=> {
             
             setVisibleDelay(window.setTimeout(()=> {
                 if (container.current.parentElement) {
-                    modal.current.removeChild(container.current);
+                    ref.current.removeChild(container.current);
                     setVisible(false);
                     if (props.autoOverflow) {
                         document.body.style.overflowY = bodyOverflow;
