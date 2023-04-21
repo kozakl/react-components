@@ -8,10 +8,10 @@ import style from './ColorPopover.module.css';
 
 const ColorPopover = (props:Props)=> {
     const theme = useTheme('colorPopover'),
-          colorPopover = useRef();
+          ref = useRef();
     const [open, setOpen] = useState(false);
     
-    useClickOutside(colorPopover, ()=>
+    useClickOutside(ref, ()=>
         setOpen(false));
     
     return (
@@ -21,7 +21,7 @@ const ColorPopover = (props:Props)=> {
                 theme.colorPopover,
                 props.className
             )}
-            ref={colorPopover}
+            ref={ref}
             tabIndex={0}
             onKeyDown={(event)=> {
                 if (event.code == 'Enter') {
