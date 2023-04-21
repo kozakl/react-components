@@ -1,14 +1,14 @@
 import {TextRichArea} from '@kozakl/components/text-rich-area';
 import {useTextRichArea} from '@kozakl/hooks';
 import {Layout} from '../../components/layout';
-import style from './TextRichArea.module.css';
+import style from './TextRichAreaExample.module.css';
 
-const Main = ()=> {
+const TextRichAreaExample = ()=> {
     const textRichArea1 = useTextRichArea('Example text'),
           textRichArea2 = useTextRichArea();
     return (
         <Layout title="Text Rich Area - React Components">
-            <div className={style.main}>
+            <div className={style.textRichAreaExample}>
                 <TextRichArea
                     id="textRichArea1"
                     toolbar={{
@@ -31,4 +31,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default TextRichAreaExample;
