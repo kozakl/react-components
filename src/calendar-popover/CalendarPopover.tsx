@@ -3,11 +3,13 @@ import {format, Locale} from 'date-fns';
 import {useClickOutside} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {Calendar} from '../calendar';
+import {useTheme} from '../theme';
 import React from 'react';
 import style from './CalendarPopover.module.css';
 
 const CalendarPopover = (props:Props)=> {
-    const calendarPopover = useRef();
+    const theme = useTheme('calendarPopover'),
+          calendarPopover = useRef();
     const [open, setOpen] = useState(false);
     
     useClickOutside(calendarPopover, ()=>
@@ -17,6 +19,7 @@ const CalendarPopover = (props:Props)=> {
         <div
             className={classNames(
                 style.calendarPopover,
+                theme.calendarPopover,
                 props.className
             )}
             ref={calendarPopover}
@@ -32,9 +35,9 @@ const CalendarPopover = (props:Props)=> {
             }}>
             <div
                 className={classNames(
-                    style.date,
+                    theme.date,
                     props.disabled &&
-                        style.disabled
+                        theme.disabled
                 )}
                 onClick={()=>
                     setOpen(!open)}>
@@ -45,7 +48,7 @@ const CalendarPopover = (props:Props)=> {
             {!props.disabled &&
                 open &&
                     <Calendar
-                        className={style.calendar}
+                        className={theme.calendar}
                         date={props.date}
                         months={1}
                         locale={props.locale}
@@ -54,7 +57,7 @@ const CalendarPopover = (props:Props)=> {
                             props.onChange(date);
                         }}/>}
             {props.error &&
-                <div className={style.error}>
+                <div className={theme.error}>
                     {props.error}
                 </div>}
         </div>
