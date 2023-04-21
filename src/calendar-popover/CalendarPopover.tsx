@@ -9,10 +9,10 @@ import style from './CalendarPopover.module.css';
 
 const CalendarPopover = (props:Props)=> {
     const theme = useTheme('calendarPopover'),
-          calendarPopover = useRef();
+          ref = useRef();
     const [open, setOpen] = useState(false);
     
-    useClickOutside(calendarPopover, ()=>
+    useClickOutside(ref, ()=>
         setOpen(false));
     
     return (
@@ -22,7 +22,7 @@ const CalendarPopover = (props:Props)=> {
                 theme.calendarPopover,
                 props.className
             )}
-            ref={calendarPopover}
+            ref={ref}
             tabIndex={0}
             onKeyDown={(event)=> {
                 if (event.code == 'Enter') {
