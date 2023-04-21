@@ -2,9 +2,9 @@ import {useEffect} from 'react';
 import {VideosPicker} from '@kozakl/components/videos-picker';
 import {useVideosPicker} from '@kozakl/hooks';
 import {Layout} from '../../components/layout';
-import style from './VideosPicker.module.css';
+import style from './VideosPickerExample.module.css';
 
-const Main = ()=> {
+const VideosPickerExample = ()=> {
     const videosPicker = useVideosPicker();
     
     useEffect(()=> {
@@ -32,7 +32,7 @@ const Main = ()=> {
     
     return (
         <Layout title="Videos Picker - React Components">
-            <div className={style.main}>
+            <div className={style.videosPickerExample}>
                 <VideosPicker
                     {...videosPicker}
                     id="videosPicker"/>
@@ -41,4 +41,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default VideosPickerExample;

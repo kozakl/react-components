@@ -1,3 +1,3 @@
-import {VideosPicker} from '../routes/videos-picker';
+import {VideosPickerExample} from '../routes/videos-picker-example';
 
-export default VideosPicker;
+export default VideosPickerExample;
