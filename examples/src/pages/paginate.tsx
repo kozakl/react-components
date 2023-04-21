@@ -1,3 +1,3 @@
-import {Paginate} from '../routes/paginate';
+import {PaginateExample} from '../routes/paginate-example';
 
-export default Paginate;
+export default PaginateExample;
