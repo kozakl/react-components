@@ -3,11 +3,7 @@ import React from 'react';
 const TrashArrowRight = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.stroke - 1) / 2}
-            ${-2 * (props.stroke - 1) / 2}
-            ${32 + 2 * (props.stroke - 1)}
-            ${32 + 2 * (props.stroke - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,54 +16,54 @@ const TrashArrowRight = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="31,6.9 31,1.7 1,1.7 1,6.9"/>
+            points="24,11.1 24,8.4 8,8.4 8,11.1"/>
         <polyline
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="4.7,4.3 7.1,30.3 14.2,30.3"/>
+            points="10,9.8 11.3,23.6 15,23.6"/>
         <polyline
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="27.3,4.3 24.9,30.3 10.8,30.3"/>
+            points="22,9.8 20.7,23.6 13.2,23.6"/>
         <g>
             <line
                 style={{
                     fill: 'none',
                     stroke: props.colorPrimary,
-                    strokeWidth: 1.5 * props.stroke
+                    strokeWidth: 0.75 * props.stroke
                 }}
-                x1="13.5"
-                y1="8.7"
-                x2="21"
-                y2="16.4"/>
+                x1="14.7"
+                y1="12.1"
+                x2="18.7"
+                y2="16.2"/>
             <line
                 style={{
                     fill: 'none',
                     stroke: props.colorPrimary,
-                    strokeWidth: 1.5 * props.stroke
+                    strokeWidth: 0.75 * props.stroke
                 }}
-                x1="13.5"
-                y1="23.5"
-                x2="21"
+                x1="14.7"
+                y1="20"
+                x2="18.7"
                 y2="16.1"/>
             <line
                 style={{
                     fill: 'none',
                     stroke: props.colorPrimary,
-                    strokeWidth: 1.5 * props.stroke
+                    strokeWidth: 0.75 * props.stroke
                 }}
-                x1="1"
-                y1="16.3"
-                x2="20.6"
-                y2="16.3"/>
+                x1="8"
+                y1="16.2"
+                x2="18.5"
+                y2="16.2"/>
         </g>
     </svg>
 );
