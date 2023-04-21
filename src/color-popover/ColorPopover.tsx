@@ -2,11 +2,13 @@ import {useRef, useState} from 'react';
 import {HexColorPicker, HexColorInput} from 'react-colorful';
 import {useClickOutside} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
 import style from './ColorPopover.module.css';
 
 const ColorPopover = (props:Props)=> {
-    const colorPopover = useRef();
+    const theme = useTheme('colorPopover'),
+          colorPopover = useRef();
     const [open, setOpen] = useState(false);
     
     useClickOutside(colorPopover, ()=>
@@ -16,6 +18,7 @@ const ColorPopover = (props:Props)=> {
         <div
             className={classNames(
                 style.colorPopover,
+                theme.colorPopover,
                 props.className
             )}
             ref={colorPopover}
@@ -31,16 +34,16 @@ const ColorPopover = (props:Props)=> {
             }}>
             <div
                 className={classNames(
-                    style.color,
+                    theme.color,
                     props.disabled &&
-                        style.disabled
+                        theme.disabled
                 )}
                 style={{backgroundColor: props.color}}
                 onClick={()=>
                     setOpen(!open)}/>
             {!props.disabled &&
                 open &&
-                    <div className={style.colorPicker}>
+                    <div className={theme.colorPicker}>
                         <HexColorPicker
                             color={props.color}
                             onChange={props.onChange}/>
@@ -51,7 +54,7 @@ const ColorPopover = (props:Props)=> {
                                 onChange={props.onChange}/>}
                     </div>}
             {props.error &&
-                <div className={style.error}>
+                <div className={theme.error}>
                     {props.error}
                 </div>}
         </div>

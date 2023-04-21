@@ -1,0 +1,32 @@
+.colorPopover {
+  .color {
+    cursor: pointer;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25), inset
+                0 0 0 1px rgba(0, 0, 0, 0.25);
+    border-radius: 0.5em;
+    border: 0.125em solid #FFF;
+    width: 1.75em;
+    height: 1.75em;
+    
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+  .colorPicker {
+    position: absolute;
+    box-shadow: var(--shadow-tertiary);
+    top: calc(100% + 0.25em);
+    left: 0;
+    z-index: 1;
+    
+    & input {
+      width: 100%;
+    }
+  }
+  .error {
+    color: var(--color-error);
+    font-size: 0.875rem;
+    white-space: pre;
+    margin-top: 0.4em;
+  }
+}
