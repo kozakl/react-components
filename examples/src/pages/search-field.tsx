@@ -1,3 +1,3 @@
-import {SearchField} from '../routes/search-field';
+import {SearchFieldExample} from '../routes/search-field-example';
 
-export default SearchField;
+export default SearchFieldExample;
