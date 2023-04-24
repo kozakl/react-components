@@ -1,6 +1,6 @@
 import {forwardRef, useEffect,
         useRef, useState} from 'react';
-import {default as Player} from '@vimeo/player';
+import {default as Player, Options} from '@vimeo/player';
 import {useAsyncEffect} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {Loading} from '../loading';
@@ -17,9 +17,7 @@ const VimeoPlayer = forwardRef<HTMLDivElement, Props>((props, ref)=> {
         if (!playerRef.current) {
             playerRef.current = new Player(playerContainerRef.current, {
                 id: props.video.url as any,
-                transparent: false,
-                responsive: true,
-                portrait: false
+                ...props.options
             });
             try {
                 await playerRef.current.play();
@@ -66,13 +64,22 @@ const VimeoPlayer = forwardRef<HTMLDivElement, Props>((props, ref)=> {
     );
 });
 
+VimeoPlayer.defaultProps = {
+    options: {
+        transparent: false,
+        responsive: true,
+        portrait: false
+    }
+};
+
 interface Props {
     className?:string;
     video: {
         url:string;
         width:number;
         height:number;
-    }
+    },
+    options:Options;
 }
 
 export default VimeoPlayer;
