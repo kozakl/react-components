@@ -5,7 +5,6 @@ import style from './CalendarPopoverExample.module.css';
 
 const CalendarPopoverExample = ()=> {
     const calendar = useCalendarPopover();
-    
     return (
         <Layout title="Calendar Popover - React Components">
             <div className={style.calendarPopoverExample}>
