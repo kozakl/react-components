@@ -3,11 +3,7 @@ import React from 'react';
 const Trash = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.stroke - 1) / 2}
-            ${-2 * (props.stroke - 1) / 2}
-            ${32 + 2 * (props.stroke - 1)}
-            ${32 + 2 * (props.stroke - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,23 +16,23 @@ const Trash = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="31,6.9 31,1.7 1,1.7 1,6.9"/>
+            points="24,11.1 24,8.4 8,8.4 8,11.1"/>
         <polyline
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="4.7,4.3 7.1,30.3 14.2,30.3"/>
+            points="10,9.8 11.3,23.6 15,23.6"/>
         <polyline
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="27.3,4.3 24.9,30.3 10.8,30.3"/>
+            points="22,9.8 20.7,23.6 13.2,23.6"/>
     </svg>
 );
 
