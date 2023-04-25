@@ -1,16 +1,17 @@
 import {MouseEventHandler, PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './IconButton.module.css';
 
 const IconButton = (props:Props)=> {
+    const theme = useTheme('iconButton');
     return (
         <button
             className={classNames(
-                style.iconButton,
+                theme.iconButton,
                 props.className,
                 props.active &&
-                    style.active
+                    theme.active
             )}
             title={props.title}
             type={props.type}
