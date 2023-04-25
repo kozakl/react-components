@@ -3,11 +3,7 @@ import React from 'react';
 const Pen = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.stroke - 1) / 2}
-            ${-2 * (props.stroke - 1) / 2}
-            ${32 + 2 * (props.stroke - 1)}
-            ${32 + 2 * (props.stroke - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,16 +16,16 @@ const Pen = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="25.8,5.6 30.2,9.6 14,24.6 4,30.5 1.5,28.2"/>
+            points="21.4,10.3 23.8,12.5 14.9,20.7 9.4,24 8,22.7"/>
         <polyline
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="30.5,5.6 26.1,1.5 10,16.5"/>
+            points="24,10.3 21.6,8 12.7,16.3"/>
     </svg>
 );
 
