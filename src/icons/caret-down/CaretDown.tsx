@@ -16,7 +16,7 @@ const CaretDown = (props:Props)=> (
             style={{
                 fill: props.colorPrimary
             }}
-            d="M0,8l16,16L32,8H0z"/>
+            d="M8,12l8,8l8-8H8z"/>
     </svg>
 );
 
