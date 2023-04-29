@@ -13,11 +13,12 @@ import {ChevronLeft, ChevronRight,
         CirclePlus, URL} from '../icons';
 import {Range} from '../range';
 import {TextField} from '../text-field';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './VideosPicker.module.css';
 
 const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
-    const directLink = useTextField();
+    const theme = useTheme('videosPicker'),
+          directLink = useTextField();
     const [directLinkDialog, setDirectLinkDialog] = useState(false);
     const {showLoading, hideLoading} = useLoadingState(),
           {createDialog} = useDialogsState();
@@ -25,7 +26,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
     return (
         <div
             className={classNames(
-                style.videosPicker,
+                theme.videosPicker,
                 props.className
             )}>
             <input
@@ -37,16 +38,16 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                 disabled={!props.multiple &&
                     !!props.videos.length}
                 onChange={props.onChange}/>
-            <div className={style.videos}>
+            <div className={theme.videos}>
                 {props.videos.map((video, index)=>
                     <div
-                        className={style.container}
+                        className={theme.container}
                         key={video.file ?
                             video.name + video.file.size :
                             video.url}>
-                        <div className={style.videoContainer}>
+                        <div className={theme.videoContainer}>
                             <video
-                                className={style.video}
+                                className={theme.video}
                                 title={video.name}
                                 src={video.file ?
                                     video.url :
@@ -73,9 +74,9 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 }}
                                 muted/>
                             {props.multiple &&
-                                <div className={style.arrows}>
+                                <div className={theme.arrows}>
                                     <IconButton
-                                        className={style.moveLeft}
+                                        className={theme.moveLeft}
                                         title="Move left"
                                         active
                                         disabled={
@@ -88,7 +89,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                             height="100%"/>
                                     </IconButton>
                                     <IconButton
-                                        className={style.moveRight}
+                                        className={theme.moveRight}
                                         title="Move right"
                                         active
                                         disabled={
@@ -104,7 +105,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                             {!video.file &&
                                 !isAbsolute(video.url) &&
                                     <a
-                                        className={style.download}
+                                        className={theme.download}
                                         title="Download"
                                         href={`${process.env.API}/${video.url}?download=true`}
                                         download>
@@ -115,7 +116,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                             width="1.875em"/>
                                     </a>}
                             <IconButton
-                                className={style.remove}
+                                className={theme.remove}
                                 title="Remove"
                                 active
                                 onClick={()=>
@@ -127,7 +128,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                     width="1.875em"/>
                             </IconButton>
                         </div>
-                        <div className={style.rangeContainer}>
+                        <div className={theme.rangeContainer}>
                             <Range
                                 values={[
                                     video.start,
@@ -140,7 +141,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 max={video.duration}
                                 onChange={(values)=>
                                     props.cut(index, values[0], values[1])}/>
-                            <div className={style.rangeValues}>
+                            <div className={theme.rangeValues}>
                                 {format(video.start * 1000, 'mm:ss:S')}–
                                 {format(video.end * 1000, 'mm:ss:S')}
                             </div>
@@ -148,10 +149,10 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                     </div>)}
                 <label
                     className={classNames(
-                        style.add,
+                        theme.add,
                         !props.multiple &&
                             props.videos.length &&
-                                style.disabled
+                                theme.disabled
                     )}
                     title="Add Video/s"
                     htmlFor={props.id}>
@@ -160,7 +161,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                         colorSecondary="var(--background-primary)"
                         width="2.25em"/>
                     <IconButton
-                        className={style.directLink}
+                        className={theme.directLink}
                         title="Add .mp4 video file direct link"
                         onClick={(event)=> {
                             event.preventDefault();
@@ -174,16 +175,16 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
             </div>
             <div
                 className={classNames(
-                    style.error,
+                    theme.error,
                     props.error &&
-                        style.display
+                        theme.display
                 )}>
                 {props.error}
             </div>
             <Dialog
                 className={classNames(
-                    style.videosPicker,
-                    style.directLinkDialog
+                    theme.videosPicker,
+                    theme.directLinkDialog
                 )}
                 visible={directLinkDialog}
                 title="Add .mp4 video file direct link"
