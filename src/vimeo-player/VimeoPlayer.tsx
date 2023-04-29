@@ -4,11 +4,12 @@ import {default as Player, Options} from '@vimeo/player';
 import {useAsyncEffect} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {Loading} from '../loading';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './VimeoPlayer.module.css';
 
 const VimeoPlayer = forwardRef<HTMLDivElement, Props>((props, ref)=> {
-    const playerContainerRef = useRef<HTMLDivElement>(),
+    const theme = useTheme('vimeoPlayer'),
+          playerContainerRef = useRef<HTMLDivElement>(),
           playerRef = useRef<Player>();
     const [player, setPlayer] = useState({visible: true}),
           [loading, setLoading] = useState({visible: true});
@@ -43,13 +44,13 @@ const VimeoPlayer = forwardRef<HTMLDivElement, Props>((props, ref)=> {
         <div
             className={classNames(
                 props.className,
-                style.vimeoPlayer
+                theme.vimeoPlayer
             )}
             ref={ref}>
             <div style={{
                 paddingTop: `${props.video.height / props.video.width * 100}%`}}>
                 <div
-                    className={style.player}
+                    className={theme.player}
                     ref={playerContainerRef}
                     style={{
                         visibility: player.visible ?
@@ -57,7 +58,7 @@ const VimeoPlayer = forwardRef<HTMLDivElement, Props>((props, ref)=> {
                             'hidden'}}/>
                 {loading.visible &&
                     <Loading
-                        className={style.loading}
+                        className={theme.loading}
                         color="var(--color-primary)"/>}
             </div>
         </div>
