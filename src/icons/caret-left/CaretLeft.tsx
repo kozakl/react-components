@@ -16,7 +16,7 @@ const CaretLeft = (props:Props)=> (
             style={{
                 fill: props.colorPrimary
             }}
-            d="M24,32L8,16L24,0V32z"/>
+            d="M20,24l-8-8l8-8V24z"/>
     </svg>
 );
 
