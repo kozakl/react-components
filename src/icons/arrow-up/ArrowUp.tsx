@@ -3,11 +3,7 @@ import React from 'react';
 const ArrowUp = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.stroke - 1) / 2}
-            ${-2 * (props.stroke - 1) / 2}
-            ${32 + 2 * (props.stroke - 1)}
-            ${32 + 2 * (props.stroke - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,18 +16,18 @@ const ArrowUp = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="0.5,16.6 16.1,1.2 31.5,16.6"/>
+            points="8,16.6 16.1,8.6 24,16.6"/>
         <line
             style={{
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
             x1="16.1"
-            y1="1"
+            y1="8.5"
             x2="16.1"
-            y2="32"/>
+            y2="24.5"/>
     </svg>
 );
 
