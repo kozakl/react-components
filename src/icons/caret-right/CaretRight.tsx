@@ -16,7 +16,7 @@ const CaretRight = (props:Props)=> (
             style={{
                 fill: props.colorPrimary
             }}
-            d="M8,32l16-16L8,0V32z"/>
+            d="M12,24l8-8l-8-8V24z"/>
     </svg>
 );
 
