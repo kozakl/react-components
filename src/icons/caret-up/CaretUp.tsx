@@ -16,7 +16,7 @@ const CaretUp = (props:Props)=> (
             style={{
                 fill: props.colorPrimary
             }}
-            d="M0,24L16,8l16,16H0z"/>
+            d="M8,20l8-8l8,8H8z"/>
     </svg>
 );
 
