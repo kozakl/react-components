@@ -7,11 +7,35 @@ const XMark = (props:Props)=> (
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
+            strokeLinecap: props.strokeLinecap,
             padding: props.padding,
             margin: props.margin,
             width: props.width,
             height: props.height
         }}>
+        {props.outline &&
+            <>
+                <line
+                    style={{
+                        fill: 'none',
+                        stroke: props.colorSecondary,
+                        strokeWidth: props.outline
+                    }}
+                    x1="8"
+                    y1="24"
+                    x2="24"
+                    y2="8"/>
+                <line
+                    style={{
+                        fill: 'none',
+                        stroke: props.colorSecondary,
+                        strokeWidth: props.outline
+                    }}
+                    x1="8"
+                    y1="8"
+                    x2="24"
+                    y2="24"/>
+            </>}
         <line
             style={{
                 fill: 'none',
@@ -43,7 +67,10 @@ XMark.defaultProps = {
 interface Props {
     className?:string;
     colorPrimary?:string;
+    colorSecondary?:string;
     stroke?:number;
+    strokeLinecap?:'butt' | 'round' | 'square',
+    outline?:number;
     padding?:string;
     margin?:string;
     width?:string;
