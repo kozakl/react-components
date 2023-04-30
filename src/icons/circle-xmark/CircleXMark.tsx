@@ -3,11 +3,7 @@ import React from 'react';
 const CircleXMark = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.outline - 1) / 2}
-            ${-2 * (props.outline - 1) / 2}
-            ${32 + 2 * (props.outline - 1)}
-            ${32 + 2 * (props.outline - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,31 +16,31 @@ const CircleXMark = (props:Props)=> (
             style={{
                 fill: props.background,
                 stroke: props.outline && props.colorSecondary,
-                strokeWidth: 2 * props.outline
+                strokeWidth: props.outline
             }}
-            r="15"
+            r="8"
             cx="16"
             cy="16"/>
         <line
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            x1="7.2"
-            y1="24.8"
-            x2="24.8"
-            y2="7.2"/>
+            x1="11.3"
+            y1="20.7"
+            x2="20.7"
+            y2="11.3"/>
 	    <line
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            x1="7.2"
-            y1="7.2"
-            x2="24.8"
-            y2="24.8"/>
+            x1="11.3"
+            y1="11.3"
+            x2="20.7"
+            y2="20.7"/>
     </svg>
 );
 
