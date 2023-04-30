@@ -7,11 +7,20 @@ const ArrowTopLeft = (props:Props)=> (
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
+            strokeLinecap: props.strokeLinecap,
             padding: props.padding,
             margin: props.margin,
             width: props.width,
             height: props.height
         }}>
+        {props.outline &&
+            <path
+                style={{
+                    fill: 'none',
+                    stroke: props.colorSecondary,
+                    strokeWidth: props.outline
+                }}
+                d="M24,8H8 M8,8v16 M8,8l16,16"/>}
         <path
             style={{
                 fill: 'none',
@@ -30,7 +39,10 @@ ArrowTopLeft.defaultProps = {
 interface Props {
     className?:string;
     colorPrimary?:string;
+    colorSecondary?:string;
     stroke?:number;
+    strokeLinecap?:'butt' | 'round' | 'square',
+    outline?:number;
     padding?:string;
     margin?:string;
     width?:string;
