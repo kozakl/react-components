@@ -3,11 +3,7 @@ import React from 'react';
 const CircleArrowRight = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.outline - 1) / 2}
-            ${-2 * (props.outline - 1) / 2}
-            ${32 + 2 * (props.outline - 1)}
-            ${32 + 2 * (props.outline - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,26 +16,26 @@ const CircleArrowRight = (props:Props)=> (
             style={{
                 fill: props.background,
                 stroke: props.outline && props.colorSecondary,
-                strokeWidth: 2 * props.outline
+                strokeWidth: props.outline
             }}
-            r="15"
+            r="8"
             cx="16"
             cy="16"/>
         <polyline
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            points="15.8,6.2 25.5,15.9 15.8,25.8"/>
+            points="15.9,10.8 21.1,15.9 15.9,21.2"/>
         <line
             style={{
                 stroke: props.colorSecondary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            x1="6"
+            x1="10.7"
             y1="15.9"
-            x2="25.7"
+            x2="21.2"
             y2="15.9"/>
     </svg>
 );
