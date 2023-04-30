@@ -3,11 +3,7 @@ import React from 'react';
 const CircleCart = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.outline - 1) / 2}
-            ${-2 * (props.outline - 1) / 2}
-            ${32 + 2 * (props.outline - 1)}
-            ${32 + 2 * (props.outline - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,32 +16,32 @@ const CircleCart = (props:Props)=> (
             style={{
                 fill: props.background,
                 stroke: props.outline && props.colorSecondary,
-                strokeWidth: 2 * props.outline
+                strokeWidth: props.outline
             }}
-            r="15"
+            r="8"
             cx="16"
             cy="16"/>
         <polyline
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 1.5 * props.stroke
+                strokeWidth: 0.75 * props.stroke
             }}
-            points="6.6,10.7 9.8,10.7 13.1,21.2 22.3,21.2 25.3,13.9 16,13.9"/>
+            points="11,13.2 12.7,13.2 14.5,18.8 19.4,18.8 21,14.9 16,14.9"/>
         <circle
             style={{
                 fill: props.colorPrimary
             }}
-            r="1.25"
-            cx="12.3"
-            cy="25"/>
+            r="0.7"
+            cx="14"
+            cy="20.8"/>
 	    <circle
             style={{
                 fill: props.colorPrimary
             }}
-            r="1.25"
-            cx="22.3"
-            cy="25"/>
+            r="0.7"
+            cx="19.4"
+            cy="20.8"/>
     </svg>
 );
 
