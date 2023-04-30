@@ -3,11 +3,7 @@ import React from 'react';
 const CircleUser = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.outline - 1) / 2}
-            ${-2 * (props.outline - 1) / 2}
-            ${32 + 2 * (props.outline - 1)}
-            ${32 + 2 * (props.outline - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,32 +16,34 @@ const CircleUser = (props:Props)=> (
             style={{
                 fill: props.background,
                 stroke: props.outline && props.colorSecondary,
-                strokeWidth: 2 * props.outline
+                strokeWidth: props.outline
             }}
-            r="15"
+            r="8"
             cx="16"
             cy="16"/>
 	    <circle
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 1.5 * props.stroke
+                strokeWidth: 0.75 * props.stroke
             }}
-            cx="15.7" cy="13.1" r="6.3"/>
+            r="3.4"
+            cx="15.8"
+            cy="14.5"/>
 	    <path
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 1.5 * props.stroke
+                strokeWidth: 0.75 * props.stroke
             }}
-            d="M9.4,29.4v-3.6c0-3.4,2.9-6.3,6.3-6.3"/>
+            d="M12.5,23.1v-1.9c0-1.8,1.5-3.4,3.4-3.4"/>
 	    <path
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 1.5 * props.stroke
+                strokeWidth: 0.75 * props.stroke
             }}
-            d="M22.6,29.4c0-3.3,0-3.6,0-3.6c0-3.4-2.9-6.3-6.3-6.3"/>
+            d="M19.5,23.1c0-1.8,0-1.9,0-1.9c0-1.8-1.5-3.4-3.4-3.4"/>
     </svg>
 );
 
