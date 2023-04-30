@@ -7,18 +7,31 @@ const ArrowUp = (props:Props)=> (
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
+            strokeLinecap: props.strokeLinecap,
             padding: props.padding,
             margin: props.margin,
             width: props.width,
             height: props.height
         }}>
-        <polyline
-            style={{
-                fill: 'none',
-                stroke: props.colorPrimary,
-                strokeWidth: props.stroke
-            }}
-            points="8,16.6 16.1,8.6 24,16.6"/>
+        {props.outline &&
+            <>
+                <line
+                    style={{
+                        stroke: props.colorSecondary,
+                        strokeWidth: props.outline
+                    }}
+                    x1="16.1"
+                    y1="8.5"
+                    x2="16.1"
+                    y2="24.5"/>
+                <polyline
+                    style={{
+                        fill: 'none',
+                        stroke: props.colorSecondary,
+                        strokeWidth: props.outline
+                    }}
+                    points="8,16.6 16.1,8.6 24,16.6"/>
+            </>}
         <line
             style={{
                 stroke: props.colorPrimary,
@@ -28,6 +41,13 @@ const ArrowUp = (props:Props)=> (
             y1="8.5"
             x2="16.1"
             y2="24.5"/>
+        <polyline
+            style={{
+                fill: 'none',
+                stroke: props.colorPrimary,
+                strokeWidth: props.stroke
+            }}
+            points="8,16.6 16.1,8.6 24,16.6"/>
     </svg>
 );
 
@@ -39,7 +59,10 @@ ArrowUp.defaultProps = {
 interface Props {
     className?:string;
     colorPrimary?:string;
+    colorSecondary?:string;
     stroke?:number;
+    strokeLinecap?:'butt' | 'round' | 'square',
+    outline?:number;
     padding?:string;
     margin?:string;
     width?:string;
