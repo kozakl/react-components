@@ -3,11 +3,7 @@ import React from 'react';
 const Eye = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.stroke - 1) / 2}
-            ${-2 * (props.stroke - 1) / 2}
-            ${32 + 2 * (props.stroke - 1)}
-            ${32 + 2 * (props.stroke - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,16 +16,16 @@ const Eye = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            d="M1.1,16c3,5.9,8.5,9.9,14.9,9.9c6.4,0,11.9-4,14.9-9.9c-3-5.9-8.5-9.9-14.9-9.9"/>
+            d="M8,16c1.6,3.2,4.6,5.3,8,5.3s6.4-2.1,8-5.3c-1.6-3.2-4.6-5.3-8-5.3"/>
         <path
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            d="M23.2,16c0,4-3.2,7.3-7.2,7.3S8.8,20,8.8,16c0-4,3.2-7.3,7.2-7.3"/>
+            d="M19.9,16c0,2.1-1.7,3.9-3.9,3.9s-3.9-1.8-3.9-3.9s1.7-3.9,3.9-3.9"/>
     </svg>
 );
 
