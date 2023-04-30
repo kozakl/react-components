@@ -1,37 +1,43 @@
 import {ChangeEventHandler, KeyboardEventHandler,
         MouseEventHandler, ReactNode} from 'react';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './TextField.module.css';
 
 const TextField = (props:Props)=> {
+    const theme = useTheme('textField');
     return (
         <div
             className={classNames(
-                style.textField,
+                theme.textField,
                 props.className,
-                props.disabled && style.disabled
+                props.disabled &&
+                    theme.disabled
             )}>
             <div
                 className={classNames(
-                    style.adornmentContainer,
+                    theme.adornmentContainer,
                     (props.startAdornment ||
-                        props.endAdornment) && style.flex,
-                    props.outlined && style.outlined,
-                    props.error && style.error
+                        props.endAdornment) &&
+                            theme.flex,
+                    props.outlined &&
+                        theme.outlined,
+                    props.error &&
+                        theme.error
                 )}>
                 {props.startAdornment &&
-                    <div className={style.startAdornment}>
+                    <div className={theme.startAdornment}>
                         {props.startAdornment}
                     </div>}
                 <div
                     className={classNames(
-                        style.placeholderContainer,
-                        !props.startAdornment && style.relative
+                        theme.placeholderContainer,
+                        !props.startAdornment &&
+                            theme.relative
                     )}
                     onClick={props.onClick}>
                     <input
-                        className={style.input}
+                        className={theme.input}
                         id={props.id}
                         type={props.type}
                         value={props.value}
@@ -50,23 +56,25 @@ const TextField = (props:Props)=> {
                      props.placeholder &&
                         <label
                             className={classNames(
-                                style.placeholder,
+                                theme.placeholder,
                                 (props.value ||
                                     props.opened ||
-                                    props.startAdornment) && style.opened
+                                    props.startAdornment) &&
+                                        theme.opened
                             )}>
                             {props.placeholder}
                         </label>}
                 </div>
                 {props.endAdornment &&
-                    <div className={style.endAdornment}>
+                    <div className={theme.endAdornment}>
                         {props.endAdornment}
                     </div>}
             </div>
             <div
                 className={classNames(
-                    style.error,
-                    props.error && style.display
+                    theme.error,
+                    props.error &&
+                        theme.display
                 )}>
                 {props.error}
             </div>
