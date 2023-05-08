@@ -15,8 +15,8 @@ const CircleCart = (props:Props)=> (
         <circle
             style={{
                 fill: props.background,
-                stroke: props.outline && props.colorSecondary,
-                strokeWidth: props.outline
+                stroke: props.circleStroke && props.colorSecondary,
+                strokeWidth: props.circleStroke
             }}
             r="8"
             cx="16"
@@ -25,7 +25,7 @@ const CircleCart = (props:Props)=> (
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 0.75 * props.stroke
+                strokeWidth: props.stroke
             }}
             points="11,13.2 12.7,13.2 14.5,18.8 19.4,18.8 21,14.9 16,14.9"/>
         <circle
@@ -50,7 +50,7 @@ CircleCart.defaultProps = {
     colorPrimary: 'var(--color-primary)',
     colorSecondary: 'var(--color-primary)',
     stroke: 1,
-    outline: 1
+    circleStroke: 1
 }
 
 interface Props {
@@ -59,7 +59,7 @@ interface Props {
     colorPrimary?:string;
     colorSecondary?:string;
     stroke?:number;
-    outline?:number;
+    circleStroke?:number;
     padding?:string;
     margin?:string;
     width?:string;
