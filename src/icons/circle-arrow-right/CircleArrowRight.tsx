@@ -15,8 +15,8 @@ const CircleArrowRight = (props:Props)=> (
         <circle
             style={{
                 fill: props.background,
-                stroke: props.outline && props.colorSecondary,
-                strokeWidth: props.outline
+                stroke: props.circleStroke && props.colorSecondary,
+                strokeWidth: props.circleStroke
             }}
             r="8"
             cx="16"
@@ -45,7 +45,7 @@ CircleArrowRight.defaultProps = {
     colorPrimary: 'var(--color-primary)',
     colorSecondary: 'var(--color-primary)',
     stroke: 1,
-    outline: 1
+    circleStroke: 1
 }
 
 interface Props {
@@ -54,7 +54,7 @@ interface Props {
     colorPrimary?:string;
     colorSecondary?:string;
     stroke?:number;
-    outline?:number;
+    circleStroke?:number;
     padding?:string;
     margin?:string;
     width?:string;
