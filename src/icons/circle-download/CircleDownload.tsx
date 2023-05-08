@@ -3,11 +3,7 @@ import React from 'react';
 const CircleDownload = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.outline - 1) / 2}
-            ${-2 * (props.outline - 1) / 2}
-            ${32 + 2 * (props.outline - 1)}
-            ${32 + 2 * (props.outline - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,25 +16,25 @@ const CircleDownload = (props:Props)=> (
             style={{
                 fill: props.background,
                 stroke: props.outline && props.colorSecondary,
-                strokeWidth: 2 * props.outline
+                strokeWidth: props.outline
             }}
-            r="15"
+            r="8"
             cx="16"
             cy="16"/>
         <path
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            d="M22.5,14.5L16,20.9l-6.5-6.4 M16,8v13"/>
+            d="M19.5,15.2L16,18.6l-3.5-3.4 M16,11.7v6.9"/>
 	    <path
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 2 * props.stroke
+                strokeWidth: props.stroke
             }}
-            d="M22.2,24H9.8"/>
+            d="M19.3,20.3h-6.6"/>
     </svg>
 );
 
