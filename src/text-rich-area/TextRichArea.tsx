@@ -3,7 +3,6 @@ import {default as dynamic} from 'next/dynamic'
 import {EditorProps, EditorState} from 'react-draft-wysiwyg'
 import {classNames} from '@kozakl/utils';
 import {useTheme} from '../theme';
-import style from './TextRichArea.module.css';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 const Editor = dynamic<EditorProps>(()=>
@@ -35,7 +34,6 @@ const TextRichArea = (props:Props)=> {
     return (
         <div
             className={classNames(
-                style.textRichArea,
                 theme.textRichArea,
                 props.className
             )}

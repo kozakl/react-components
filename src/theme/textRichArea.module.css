@@ -1,4 +1,8 @@
 .textRichArea {
+  position: relative;
+}
+
+.textRichArea {
   .container {
     min-height: inherit;
     
