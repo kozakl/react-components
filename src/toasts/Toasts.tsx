@@ -1,15 +1,16 @@
-import {Toast} from './toast';
 import {useToastsState} from '@kozakl/states';
+import {Toast} from './toast';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './Toasts.module.css';
 
 export const Toasts = ()=> {
-    const toasts = useToastsState().get();
+    const theme = useTheme('toasts'),
+          toasts = useToastsState().get();
     return (
-        <div className={style.toasts}>
+        <div className={theme.toasts}>
             {toasts.map((toast)=>
                 <Toast
-                    className={style.toast}
+                    className={theme.toast}
                     key={toast.id}
                     {...toast}/>)}
         </div>
