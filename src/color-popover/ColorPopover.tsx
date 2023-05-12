@@ -4,7 +4,6 @@ import {useClickOutside} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {useTheme} from '../theme';
 import React from 'react';
-import style from './ColorPopover.module.css';
 
 const ColorPopover = (props:Props)=> {
     const theme = useTheme('colorPopover'),
@@ -17,7 +16,6 @@ const ColorPopover = (props:Props)=> {
     return (
         <div
             className={classNames(
-                style.colorPopover,
                 theme.colorPopover,
                 props.className
             )}
