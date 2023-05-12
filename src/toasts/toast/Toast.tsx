@@ -2,10 +2,11 @@ import {MouseEvent, ReactNode,
         useEffect, useState} from 'react';
 import {useToastsState} from '@kozakl/states';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../../theme';
 import React from 'react';
-import style from './Toast.module.css';
 
 const Toast = (props:Props)=> {
+    const theme = useTheme('toast');
     const [show, setShow] = useState(false);
     const {deleteToast} = useToastsState();
     
@@ -35,9 +36,10 @@ const Toast = (props:Props)=> {
     return (
         <div
             className={classNames(
-                style.toast,
+                theme.toast,
                 props.className,
-                show && style.show
+                show &&
+                    theme.show
             )}
             key={props.id}
             onClick={onClick}>
