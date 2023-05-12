@@ -5,7 +5,6 @@ import {classNames} from '@kozakl/utils';
 import {Calendar} from '../calendar';
 import {useTheme} from '../theme';
 import React from 'react';
-import style from './CalendarPopover.module.css';
 
 const CalendarPopover = (props:Props)=> {
     const theme = useTheme('calendarPopover'),
@@ -18,7 +17,6 @@ const CalendarPopover = (props:Props)=> {
     return (
         <div
             className={classNames(
-                style.calendarPopover,
                 theme.calendarPopover,
                 props.className
             )}

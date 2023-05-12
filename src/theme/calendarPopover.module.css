@@ -1,4 +1,8 @@
 .calendarPopover {
+  position: relative;
+}
+
+.calendarPopover {
   .date {
     color: var(--color-primary);
     cursor: pointer;
