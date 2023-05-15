@@ -1,3 +1,3 @@
-import {ColorPopover} from '../routes/color-popover';
+import {ColorPopoverExample} from '../routes/color-popover-example'
 
-export default ColorPopover;
+export default ColorPopoverExample;
