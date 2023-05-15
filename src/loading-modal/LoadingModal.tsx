@@ -1,15 +1,18 @@
 import {classNames} from '@kozakl/utils';
 import {Loading} from '../loading';
 import {withModal} from '../modal';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './LoadingModal.module.css';
 
 const LoadingModal = (props:Props)=> {
+    const theme = useTheme('loadingModal');
+    
     return (
         <Loading
             className={classNames(
-                style.loading,
-                props.active && style.show
+                theme.loadingModal,
+                props.active &&
+                    theme.show
             )}
             background={'var(--background-secondary)'}/>
     );
