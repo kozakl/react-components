@@ -1,21 +1,5 @@
 .switch {
   display: inline-block;
-  
-  &.reversed {
-    color: var(--color-secondary);
-    
-    .input {
-      background: rgba(
-        var(--background-primary-r),
-        var(--background-primary-g),
-        var(--background-primary-b),
-        0.5
-      );
-    }
-    .thumb {
-      background: var(--background-primary);
-    }
-  }
 }
 
 .switch {

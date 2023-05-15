@@ -1,23 +1,24 @@
 import {ChangeEventHandler, PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './Switch.module.css';
 
 const Switch = (props:Props)=> {
+    const theme = useTheme('switch');
     return (
         <div
             className={classNames(
-                style.switch,
-                props.reversed && style.reversed,
+                theme.switch,
                 props.className
             )}>
             <label
                 className={classNames(
-                    style.label,
-                    props.disabled && style.disabled
+                    theme.label,
+                    props.disabled &&
+                        theme.disabled
                 )}>
                 <input
-                    className={style.input}
+                    className={theme.input}
                     id={props.id}
                     name={props.name}
                     type="checkbox"
@@ -25,11 +26,11 @@ const Switch = (props:Props)=> {
                     checked={props.checked}
                     disabled={props.disabled}
                     onChange={props.onChange}/>
-                <span className={style.thumb}/>
+                <span className={theme.thumb}/>
                 <span>{props.children}</span>
             </label>
             {props.error &&
-                <div className={style.error}>
+                <div className={theme.error}>
                     {props.error}
                 </div>}
         </div>
@@ -42,7 +43,6 @@ interface Props extends PropsWithChildren<{}> {
     name?:string;
     defaultChecked?:boolean;
     checked?:boolean;
-    reversed?:boolean;
     disabled?:boolean;
     error?:string;
     onChange?:ChangeEventHandler<HTMLInputElement>;
