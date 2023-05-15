@@ -43,15 +43,13 @@ export const Range = (props:Props)=> {
                         </div>
                     </div>
                 )}
-                renderThumb={({props})=> (
+                renderThumb={({props})=>
                     <div
                         className={style.thumb}
                         {...props}
                         style={{
                             ...props.style
-                        }}
-                    />
-                )}
+                        }}/>}
             />
         </div>
     );
