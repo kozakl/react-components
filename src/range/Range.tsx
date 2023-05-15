@@ -1,16 +1,17 @@
 import {PropsWithChildren, useState} from 'react';
 import {Range as RangeCore} from 'react-range';
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './Range.module.css';
 
 export const Range = (props:Props)=> {
+    const theme = useTheme('range');
     const [values, setValues] = useState(props.values);
     
     return (
         <div
             className={classNames(
-                style.range,
+                theme.range,
                 props.className
             )}>
             <RangeCore
@@ -33,11 +34,11 @@ export const Range = (props:Props)=> {
                 }}
                 renderTrack={({props, children})=> (
                     <div
-                        className={style.trackContainer}
+                        className={theme.trackContainer}
                         onTouchStart={props.onTouchStart}
                         onMouseDown={props.onMouseDown}>
                         <div
-                            className={style.track}
+                            className={theme.track}
                             ref={props.ref}>
                             {children}
                         </div>
@@ -45,7 +46,7 @@ export const Range = (props:Props)=> {
                 )}
                 renderThumb={({props})=>
                     <div
-                        className={style.thumb}
+                        className={theme.thumb}
                         {...props}
                         style={{
                             ...props.style
