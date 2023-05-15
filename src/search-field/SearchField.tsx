@@ -4,10 +4,12 @@ import {classNames} from '@kozakl/utils';
 import {IconButton} from '../icon-button';
 import {XMark} from '../icons';
 import {TextField} from '../text-field';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './SearchField.module.css';
 
 const SearchField = (props:Props)=> {
+    const theme = useTheme('searchField');
+    
     function onDown(event:KeyboardEvent<HTMLInputElement>) {
         if (event.key == 'Enter') {
             event.preventDefault();
@@ -33,7 +35,7 @@ const SearchField = (props:Props)=> {
     return (
         <TextField
             className={classNames(
-                style.searchField,
+                theme.searchField,
                 props.className
             )}
             id={props.id}
