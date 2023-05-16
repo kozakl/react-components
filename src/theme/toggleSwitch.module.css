@@ -1,8 +1,8 @@
-.switch {
+.toggleSwitch {
   display: inline-block;
 }
 
-.switch {
+.toggleSwitch {
   .label {
     display: inline-block;
     position: relative;

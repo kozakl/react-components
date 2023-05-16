@@ -3,12 +3,12 @@ import {classNames} from '@kozakl/utils';
 import {useTheme} from '../theme';
 import React from 'react';
 
-const Switch = (props:Props)=> {
-    const theme = useTheme('switch');
+const ToggleSwitch = (props:Props)=> {
+    const theme = useTheme('toggleSwitch');
     return (
         <div
             className={classNames(
-                theme.switch,
+                theme.toggleSwitch,
                 props.className
             )}>
             <label
@@ -48,4 +48,4 @@ interface Props extends PropsWithChildren<{}> {
     onChange?:ChangeEventHandler<HTMLInputElement>;
 }
 
-export default Switch;
+export default ToggleSwitch;
