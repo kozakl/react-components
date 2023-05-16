@@ -80,7 +80,7 @@ interface Props {
         width:number;
         height:number;
     },
-    options:Options;
+    options?:Options;
 }
 
 export default VimeoPlayer;
