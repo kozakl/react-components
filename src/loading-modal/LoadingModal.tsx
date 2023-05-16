@@ -6,7 +6,6 @@ import React from 'react';
 
 const LoadingModal = (props:Props)=> {
     const theme = useTheme('loadingModal');
-    
     return (
         <Loading
             className={classNames(
