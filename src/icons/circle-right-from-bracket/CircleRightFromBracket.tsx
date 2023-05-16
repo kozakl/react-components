@@ -3,11 +3,7 @@ import React from 'react';
 const CircleRightFromBracket = (props:Props)=> (
     <svg
         className={props.className}
-        viewBox={`
-            ${-2 * (props.outline - 1) / 2}
-            ${-2 * (props.outline - 1) / 2}
-            ${32 + 2 * (props.outline - 1)}
-            ${32 + 2 * (props.outline - 1)}`}
+        viewBox="0 0 32 32"
         style={{
             display: 'inline-block',
             verticalAlign: 'middle',
@@ -20,35 +16,35 @@ const CircleRightFromBracket = (props:Props)=> (
             style={{
                 fill: props.background,
                 stroke: props.outline && props.colorSecondary,
-                strokeWidth: 2 * props.outline
+                strokeWidth: props.outline
             }}
-            r="15"
+            r="8"
             cx="16"
             cy="16"/>
         <path
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 1.5 * props.stroke
+                strokeWidth: 0.75 * props.stroke
             }}
-            d="M16,7.6h-5.2c-1.4,0-2.5,1.1-2.5,2.5v11.7c0,1.4,1.1,2.5,2.5,2.5H16"/>
+            d="M16,11.5h-2.8c-0.7,0-1.3,0.6-1.3,1.3v6.2c0,0.7,0.6,1.3,1.3,1.3H16"/>
 	    <line
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 1.5 * props.stroke
+                strokeWidth: 0.75 * props.stroke
             }}
-            x1="12.1"
+            x1="13.9"
             y1="16"
-            x2="23.3"
+            x2="19.9"
             y2="16"/>
 	    <polyline
             style={{
                 fill: 'none',
                 stroke: props.colorPrimary,
-                strokeWidth: 1.5 * props.stroke
+                strokeWidth: 0.75 * props.stroke
             }}
-            points="20.5,12.6 23.9,16 20.5,19.4"/>
+            points="18.4,14.2 20.2,16 18.4,17.8"/>
     </svg>
 );
 
