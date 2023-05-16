@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {Moon, Sun} from '@kozakl/components/icons';
 import {NavLink} from '@kozakl/components/nav-link';
-import {Switch} from '@kozakl/components/switch';
+import {ToggleSwitch} from '@kozakl/components/toggle-switch';
 import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import style from './Sidebar.module.css';
@@ -134,6 +134,13 @@ const Sidebar = (props:Props)=> {
             <NavLink
                 className={style.link}
                 activeClass={style.active}
+                href="/icon-button"
+                startWith>
+                Icon Button
+            </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
                 href="/icons"
                 startWith>
                 Icons
@@ -180,13 +187,20 @@ const Sidebar = (props:Props)=> {
                 startWith>
                 Videos Picker
             </NavLink>
+            <NavLink
+                className={style.link}
+                activeClass={style.active}
+                href="/vimeo-player"
+                startWith>
+                Vimeo Player
+            </NavLink>
             {mobile &&
                 <div className={style.appearance}>
                     <Sun
                         colorPrimary="var(--color-primary)"
                         margin="0 0.25em 0 0"
                         width="0.875em"/>
-                    <Switch
+                    <ToggleSwitch
                         defaultChecked={
                             typeof window != 'undefined' &&
                                 localStorage.getItem('appearance') != null &&
