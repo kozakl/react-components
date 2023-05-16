@@ -1,24 +1,26 @@
 import {classNames} from '@kozakl/utils';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './Loading.module.css';
 
 const Loading = (props:Props)=> {
+    const theme = useTheme('loading');
     return (
         <div
             className={classNames(
-                style.loading,
+                theme.loading,
                 props.className
             )}
             style={{width: props.size}}>
             <div
                 className={classNames(
-                    style.wrapper,
-                    props.background && style.background,
+                    theme.wrapper,
+                    props.background &&
+                        theme.background,
                 )}
                 style={{background: props.background}}>
-                <svg className={style.svg} viewBox="0 0 60 60">
+                <svg className={theme.svg} viewBox="0 0 60 60">
                     <circle
-                        className={style.circle}
+                        className={theme.circle}
                         stroke={props.color}
                         cx="30"
                         cy="30"
