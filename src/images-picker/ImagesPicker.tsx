@@ -6,14 +6,15 @@ import {IconButton} from '../icon-button';
 import {ChevronLeft, ChevronRight,
         CircleDownload, CircleMinus,
         CirclePlus} from '../icons';
+import {useTheme} from '../theme';
 import React from 'react';
-import style from './ImagesPicker.module.css';
 
 const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
+    const theme = useTheme('imagesPicker');
     return (
         <div
             className={classNames(
-                style.imagesPicker,
+                theme.imagesPicker,
                 props.className
             )}>
             <input
@@ -25,16 +26,16 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                 disabled={!props.multiple &&
                     !!props.images.length}
                 onChange={props.onChange}/>
-            <div className={style.images}>
+            <div className={theme.images}>
                 {props.images.map((image, index)=>
                     <div
-                        className={style.container}
+                        className={theme.container}
                         key={image.file ?
                             image.name + image.file.size :
                             image.url}>
-                        <div className={style.imageContainer}>
+                        <div className={theme.imageContainer}>
                             <img
-                                className={style.image}
+                                className={theme.image}
                                 title={image.name}
                                 alt={null}
                                 src={image.file ? 
@@ -45,9 +46,9 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 style={{
                                     aspectRatio: (image.width / image.height).toString()}}/>
                             {props.multiple &&
-                                <div className={style.arrows}>
+                                <div className={theme.arrows}>
                                     <IconButton
-                                        className={style.moveLeft}
+                                        className={theme.moveLeft}
                                         title="Move left"
                                         active
                                         disabled={
@@ -60,7 +61,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                             height="100%"/>
                                     </IconButton>
                                     <IconButton
-                                        className={style.moveRight}
+                                        className={theme.moveRight}
                                         title="Move right"
                                         active
                                         disabled={
@@ -75,7 +76,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 </div>}
                             {!image.file &&
                                 <a
-                                    className={style.download}
+                                    className={theme.download}
                                     title="Download"
                                     href={`${process.env.API}/${image.url}?download=true`}
                                     download>
@@ -86,7 +87,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                         width="1.875em"/>
                                 </a>}
                             <IconButton
-                                className={style.remove}
+                                className={theme.remove}
                                 title="Remove"
                                 active
                                 onClick={()=>
@@ -101,10 +102,10 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                     </div>)}
                 <label
                     className={classNames(
-                        style.add,
+                        theme.add,
                         !props.multiple &&
                             props.images.length &&
-                                style.disabled
+                                theme.disabled
                     )}
                     title="Add Image/s"
                     htmlFor={props.id}>
@@ -116,9 +117,9 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
             </div>
             <div
                 className={classNames(
-                    style.error,
+                    theme.error,
                     props.error &&
-                        style.display
+                        theme.display
                 )}>
                 {props.error}
             </div>
