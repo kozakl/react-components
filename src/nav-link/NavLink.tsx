@@ -37,7 +37,7 @@ interface Props extends PropsWithChildren<{}> {
     activeHref?:string;
     href?:string | UrlObject;
     startWith?:boolean;
-    onClick:(event:MouseEvent)=> void;
+    onClick?:(event:MouseEvent)=> void;
 }
 
 export default NavLink;
