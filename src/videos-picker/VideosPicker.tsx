@@ -85,8 +85,9 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                         onClick={()=>
                                             props.moveLeft(index)}>
                                         <ChevronLeft
+                                            margin="-1em"
                                             padding="0.25em"
-                                            height="100%"/>
+                                            height="4em"/>
                                     </IconButton>
                                     <IconButton
                                         className={theme.moveRight}
@@ -98,12 +99,13 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                         onClick={()=>
                                             props.moveRight(index)}>
                                         <ChevronRight
+                                            margin="-1em"
                                             padding="0.25em"
-                                            height="100%"/>
+                                            height="4em"/>
                                     </IconButton>
                                 </div>}
                             {!video.file &&
-                                !isAbsolute(video.url) &&
+                                !!isAbsolute(video.url) &&
                                     <a
                                         className={theme.download}
                                         title="Download"
@@ -112,8 +114,10 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                         <CircleDownload
                                             background="var(--background-primary)"
                                             colorPrimary="var(--color-primary)"
+                                            circleStroke={0.75}
                                             padding="0.25em"
-                                            width="1.875em"/>
+                                            margin="-0.8125em"
+                                            width="3.25em"/>
                                     </a>}
                             <IconButton
                                 className={theme.remove}
@@ -124,8 +128,10 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 <CircleMinus
                                     background="var(--background-primary)"
                                     colorPrimary="var(--color-primary)"
+                                    circleStroke={0.75}
                                     padding="0.25em"
-                                    width="1.875em"/>
+                                    margin="-0.8125em"
+                                    width="3.25em"/>
                             </IconButton>
                         </div>
                         <div className={theme.rangeContainer}>
@@ -159,7 +165,8 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                     <CirclePlus
                         colorPrimary="var(--background-primary)"
                         colorSecondary="var(--background-primary)"
-                        width="2.25em"/>
+                        margin="-1.125em"
+                        width="4.5em"/>
                     <IconButton
                         className={theme.directLink}
                         title="Add .mp4 video file direct link"
@@ -169,7 +176,8 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                         }}>
                         <URL
                             colorPrimary="var(--background-primary)"
-                            width="1em"/>
+                            margin="-0.5em"
+                            width="2em"/>
                     </IconButton>
                 </label>
             </div>
