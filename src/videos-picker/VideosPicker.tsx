@@ -86,7 +86,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                             props.moveLeft(index)}>
                                         <ChevronLeft
                                             margin="-1em"
-                                            padding="0.25em"
+                                            padding="0.5em"
                                             height="4em"/>
                                     </IconButton>
                                     <IconButton
@@ -100,7 +100,7 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                             props.moveRight(index)}>
                                         <ChevronRight
                                             margin="-1em"
-                                            padding="0.25em"
+                                            padding="0.5em"
                                             height="4em"/>
                                     </IconButton>
                                 </div>}
