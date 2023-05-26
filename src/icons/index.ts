@@ -10,6 +10,7 @@ export * from './caret-down';
 export * from './caret-left';
 export * from './caret-right';
 export * from './caret-up';
+export * from './carets-opposite-v';
 export * from './chevron-down';
 export * from './chevron-left';
 export * from './chevron-right';
