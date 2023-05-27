@@ -2,13 +2,14 @@ import {ReactNode, useState} from 'react';
 import {useRouter} from 'next/router';
 import {ParsedUrlQueryInput} from 'querystring';
 import {CaretUp, CaretDown,
-        CaretsOppositeV} from '@kozakl/components/icons';
-import {Loading} from '@kozakl/components/loading';
-import {NavLink} from '@kozakl/components/nav-link';
-import {Paginate} from '@kozakl/components/paginate';
+        CaretsOppositeV} from '../icons';
+import {Loading} from '../loading';
+import {NavLink} from '../nav-link';
+import {Paginate} from '../paginate';
 import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import style from './DataTable.module.css';
+import React from 'react';
 
 const DataTable = (props:Props)=> {
     const router = useRouter();
