@@ -166,17 +166,17 @@ interface Props {
         name:string;
         active:boolean;
         query:ParsedUrlQueryInput;
-    }[];
+    }[],
     columns: {
         name?:string;
         sort?:string;
         width:string;
         deletedMode:boolean;
-    }[];
+    }[],
     queryData: {
         data?: {
-            id:number;
-            deleted:boolean;
+            id?:number;
+            deleted?:boolean;
         } & ReactNode[];
         paging?: {
             total:number;
