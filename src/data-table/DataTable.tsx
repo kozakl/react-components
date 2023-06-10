@@ -177,7 +177,7 @@ interface Props {
         data?: {
             id?:number;
             deleted?:boolean;
-        } & ReactNode[];
+        }[],
         paging?: {
             total:number;
             page:number;
@@ -185,8 +185,14 @@ interface Props {
         }
     },
     loading?:boolean;
-    renderItem:(element:ReactNode)=> ReactNode;
-    renderRow:(element:ReactNode)=> ReactNode;
+    renderItem:(element: {
+        id?:number;
+        deleted?:boolean;
+    })=> ReactNode;
+    renderRow:(element: {
+        id?:number;
+        deleted?:boolean;
+    })=> ReactNode;
 }
 
 export default DataTable;
