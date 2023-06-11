@@ -51,8 +51,9 @@ const SearchField = (props:Props)=> {
                     onClick={props.onClickClose}>
                     <XMark
                         colorPrimary="var(--color-primary)"
-                        padding="0.25em"
-                        width="1.25em"/>
+                        padding="0.5em"
+                        margin="-0.625em"
+                        width="2.5em"/>
                 </IconButton>}
             error={props.error}
             onChange={props.onChange}
