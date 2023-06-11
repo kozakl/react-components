@@ -137,7 +137,6 @@
     .tableBody {
       table-layout: fixed;
       border-collapse: collapse;
-      margin: 0.5em 0;
       width: 100%;
     }
     .tableHead > thead > tr {
