@@ -11,7 +11,12 @@
 
 .textField {
   .adornmentContainer {
-    border-bottom: solid 1px;
+    border-bottom: solid 1px rgba(
+      var(--color-primary-r),
+      var(--color-primary-g),
+      var(--color-primary-b),
+      0.25
+    );
     padding-bottom: 0.25em;
     
     &.flex {
@@ -19,7 +24,12 @@
       align-items: flex-start;
     }
     &.outlined {
-      border: solid 1px;
+      border: solid 1px rgba(
+        var(--color-primary-r),
+        var(--color-primary-g),
+        var(--color-primary-b),
+        0.25
+      );
       border-radius: 0.5em;
       padding: 0.375em 0.5em;
       
