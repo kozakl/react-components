@@ -112,8 +112,8 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                         href={`${process.env.API}/${video.url}?download=true`}
                                         download>
                                         <CircleDownload
-                                            background="var(--background-primary)"
-                                            colorPrimary="var(--color-primary)"
+                                            background="var(--background-download)"
+                                            colorPrimary="var(--color-primary-download)"
                                             circleStroke={0.75}
                                             padding="0.25em"
                                             margin="-0.8125em"
@@ -126,8 +126,8 @@ const VideosPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 onClick={()=>
                                     props.remove(index)}>
                                 <CircleMinus
-                                    background="var(--background-primary)"
-                                    colorPrimary="var(--color-primary)"
+                                    background="var(--background-remove)"
+                                    colorPrimary="var(--color-primary-remove)"
                                     circleStroke={0.75}
                                     padding="0.25em"
                                     margin="-0.8125em"
