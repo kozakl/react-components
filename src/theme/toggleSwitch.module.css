@@ -1,4 +1,9 @@
 .toggleSwitch {
+  --background-primary: #ADADAD;
+  --background-secondary: #FFFFFF;
+}
+
+.toggleSwitch {
   display: inline-block;
 }
 
@@ -14,12 +19,7 @@
     }
   }
   .input {
-    background: rgba(
-      var(--background-primary-r),
-      var(--background-primary-g),
-      var(--background-primary-b),
-      0.5
-    );
+    background: var(--background-primary);
     appearance: none;
     border-radius: 0.5em;
     width: 1.5em;
@@ -29,6 +29,8 @@
       outline: solid 2px white;
     }
     &:checked {
+      background: var(--color-active);
+      
       +.thumb {
         left: 1em;
       }
@@ -36,7 +38,8 @@
   }
   .thumb {
     position: absolute;
-    background: var(--background-primary);
+    background: var(--background-secondary);
+    border: 1px solid var(--background-primary);
     border-radius: 50%;
     width: 1em;
     height: 1em;
