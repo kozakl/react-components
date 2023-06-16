@@ -1,3 +1,9 @@
 .vimeoPlayerExample {
   padding: 6em 2em 2em;
 }
+
+.vimeoPlayerExample {
+  .video {
+    width: 100%;
+  }
+}

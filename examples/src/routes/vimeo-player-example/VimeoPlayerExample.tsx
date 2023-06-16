@@ -7,6 +7,7 @@ const VimeoPlayerExample = ()=> {
         <Layout title="Vimeo Player - React Components">
             <div className={style.vimeoPlayerExample}>
                 <VimeoPlayer
+                    className={style.video}
                     video={{
                         url: 'https://vimeo.com/76979871',
                         width: 200,
