@@ -15,9 +15,9 @@
   }
   .input {
     background: rgba(
-      var(--background-secondary-r),
-      var(--background-secondary-g),
-      var(--background-secondary-b),
+      var(--background-primary-r),
+      var(--background-primary-g),
+      var(--background-primary-b),
       0.5
     );
     appearance: none;
@@ -36,7 +36,7 @@
   }
   .thumb {
     position: absolute;
-    background: var(--background-secondary);
+    background: var(--background-primary);
     border-radius: 50%;
     width: 1em;
     height: 1em;
