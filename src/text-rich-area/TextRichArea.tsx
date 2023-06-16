@@ -71,7 +71,7 @@ TextRichArea.defaultProps = {
 
 interface Props {
     className?:string;
-    id:string;
+    id?:string;
     state?:EditorState;
     placeholder?:string;
     toolbar?:object;
