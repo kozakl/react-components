@@ -1,3 +1,3 @@
-import {ImagesPicker} from '../routes/images-picker';
+import {ImagesPickerExample} from '../routes/images-picker-example';
 
-export default ImagesPicker;
+export default ImagesPickerExample;

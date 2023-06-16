@@ -2,9 +2,9 @@ import {useEffect} from 'react';
 import {ImagesPicker} from '@kozakl/components/images-picker';
 import {useImagesPicker} from '@kozakl/hooks';
 import {Layout} from '../../components/layout';
-import style from './ImagesPicker.module.css';
+import style from './ImagesPickerExample.module.css';
 
-const Main = ()=> {
+const ImagesPickerExample = ()=> {
     const imagesPicker = useImagesPicker();
     
     useEffect(()=> {
@@ -26,7 +26,7 @@ const Main = ()=> {
     
     return (
         <Layout title="Images Picker - React Components">
-            <div className={style.main}>
+            <div className={style.imagesPickerExample}>
                 <ImagesPicker
                     {...imagesPicker}
                     id="imagesPicker"/>
@@ -35,4 +35,4 @@ const Main = ()=> {
     );
 };
 
-export default Main;
+export default ImagesPickerExample;
