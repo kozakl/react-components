@@ -10,7 +10,6 @@ const TextRichAreaExample = ()=> {
         <Layout title="Text Rich Area - React Components">
             <div className={style.textRichAreaExample}>
                 <TextRichArea
-                    id="textRichArea1"
                     toolbar={{
                         options: [
                             'inline',
@@ -23,9 +22,7 @@ const TextRichAreaExample = ()=> {
                         }
                     }}
                     {...textRichArea1}/>
-                <TextRichArea
-                    id="textRichArea2"
-                    {...textRichArea2}/>
+                <TextRichArea {...textRichArea2}/>
             </div>
         </Layout>
     );
