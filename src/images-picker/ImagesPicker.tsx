@@ -57,8 +57,9 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                         onClick={()=>
                                             props.moveLeft(index)}>
                                         <ChevronLeft
-                                            padding="0.25em"
-                                            height="100%"/>
+                                            margin="-1em"
+                                            padding="0.5em"
+                                            height="4em"/>
                                     </IconButton>
                                     <IconButton
                                         className={theme.moveRight}
@@ -70,8 +71,9 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                         onClick={()=>
                                             props.moveRight(index)}>
                                         <ChevronRight
-                                            padding="0.25em"
-                                            height="100%"/>
+                                            margin="-1em"
+                                            padding="0.5em"
+                                            height="4em"/>
                                     </IconButton>
                                 </div>}
                             {!image.file &&
@@ -81,10 +83,12 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                     href={`${process.env.API}/${image.url}?download=true`}
                                     download>
                                     <CircleDownload
-                                        background="var(--background-primary)"
-                                        colorPrimary="var(--color-primary)"
+                                        background="var(--background-download)"
+                                        colorPrimary="var(--color-primary-download)"
+                                        circleStroke={0.75}
                                         padding="0.25em"
-                                        width="1.875em"/>
+                                        margin="-0.8125em"
+                                        width="3.25em"/>
                                 </a>}
                             <IconButton
                                 className={theme.remove}
@@ -93,10 +97,12 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                 onClick={()=>
                                     props.remove(index)}>
                                 <CircleMinus
-                                    background="var(--background-primary)"
-                                    colorPrimary="var(--color-primary)"
+                                    background="var(--background-remove)"
+                                    colorPrimary="var(--color-primary-remove)"
+                                    circleStroke={0.75}
                                     padding="0.25em"
-                                    width="1.875em"/>
+                                    margin="-0.8125em"
+                                    width="3.25em"/>
                             </IconButton>
                         </div>
                     </div>)}
@@ -112,7 +118,8 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                     <CirclePlus
                         colorPrimary="var(--background-primary)"
                         colorSecondary="var(--background-primary)"
-                        width="2.25em"/>
+                        margin="-1.125em"
+                        width="4.5em"/>
                 </label>
             </div>
             <div

@@ -1,4 +1,12 @@
 .imagesPicker {
+  --background-download: #FFFFFF;
+  --background-remove: #FFFFFF;
+  
+  --color-primary-download: #000000;
+  --color-primary-remove: #000000;
+}
+
+.imagesPicker {
   & > input {
     display: none;
   }
