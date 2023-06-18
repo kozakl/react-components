@@ -188,11 +188,11 @@ interface Props {
     renderItem:(element: {
         id?:number;
         deleted?:boolean;
-    })=> ReactNode;
+    }, index?:number)=> ReactNode;
     renderRow:(element: {
         id?:number;
         deleted?:boolean;
-    })=> ReactNode;
+    }, index?:number)=> ReactNode;
 }
 
 export default DataTable;
