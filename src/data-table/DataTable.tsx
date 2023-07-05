@@ -60,7 +60,8 @@ const DataTable = (props:Props)=> {
                 </div>}
             {mobile ?
                 <>
-                    {renderTabs()}
+                    {props.tabs &&
+                        renderTabs()}
                     <ul className={style.list}>
                         {props.queryData &&
                             props.queryData.data.map(props.renderItem)}
@@ -68,7 +69,8 @@ const DataTable = (props:Props)=> {
                 </> :
                 <>
                     <div className={style.tableHeadContainer}>
-                        {renderTabs()}
+                        {props.tabs &&
+                            renderTabs()}
                         <table className={style.tableHead}>
                             <thead>
                                 <tr>
@@ -162,7 +164,7 @@ const DataTable = (props:Props)=> {
 interface Props {
     className?:string;
     pathname:string;
-    tabs: {
+    tabs?: {
         name:string;
         active:boolean;
         query:ParsedUrlQueryInput;
