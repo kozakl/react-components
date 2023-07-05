@@ -1,10 +1,9 @@
 import {ReactNode, useState} from 'react';
-import {useRouter} from 'next/router';
-import {ParsedUrlQueryInput} from 'querystring';
+import {Url} from 'next/dist/shared/lib/router/router';
+import {ParsedUrlQuery, ParsedUrlQueryInput} from 'querystring';
 import {CaretUp, CaretDown,
         CaretsOppositeV} from '../icons';
 import {Loading} from '../loading';
-import {NavLink} from '../nav-link';
 import {Paginate} from '../paginate';
 import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
@@ -12,7 +11,6 @@ import style from './DataTable.module.css';
 import React from 'react';
 
 const DataTable = (props:Props)=> {
-    const router = useRouter();
     const [mobile, setMobile] = useState<boolean>(null);
     
     useMatchMedia((event)=> {
@@ -24,26 +22,28 @@ const DataTable = (props:Props)=> {
             <nav
                 className={classNames(
                     style.tabs,
-                    +router.query.deleted &&
+                    +props.router.query.deleted &&
                         style.disabled,
-                    router.query.search &&
+                    props.router.query.search &&
                         style.disabled
                 )}>
                 {props.tabs.map((tab)=>
-                    <NavLink
-                        className={style.tab}
+                    <span
+                        className={classNames(
+                            style.tab,
+                            tab.active &&
+                                style.active
+                        )}
                         key={tab.name}
-                        active={tab.active}
-                        activeClass={style.active}
-                        href={{
-                            pathname: props.pathname,
-                            query: {
-                                ...router.query,
-                                ...tab.query
-                            }
-                        }}>
+                        onClick={()=>
+                            props.router.push({
+                                query: {
+                                    ...props.router.query,
+                                    ...tab.query
+                                }
+                            }, null, {shallow: true})}>
                         {tab.name}
-                    </NavLink>)}
+                    </span>)}
             </nav>
         );
     }
@@ -75,7 +75,7 @@ const DataTable = (props:Props)=> {
                             <thead>
                                 <tr>
                                     {props.columns.map((column, index)=>
-                                        column.deletedMode == !!+router.query.deleted &&
+                                        column.deletedMode == !!+props.router.query.deleted &&
                                             <th
                                                 key={column.name || index}
                                                 style={{
@@ -83,22 +83,22 @@ const DataTable = (props:Props)=> {
                                                         'auto' : 'none',
                                                     width: column.width
                                                 }}>
-                                                <NavLink
+                                                <span
                                                     className={style.column}
-                                                    href={{
-                                                        pathname: props.pathname,
-                                                        query: {
-                                                            ...router.query,
-                                                            sort: column.sort,
-                                                            sortType: router.query.sortType ==  'desc' ?
-                                                                'asc' : 'desc',
-                                                            page: 0
-                                                        }
-                                                    }}>
+                                                    onClick={()=>
+                                                        props.router.push({
+                                                            query: {
+                                                                ...props.router.query,
+                                                                sort: column.sort,
+                                                                sortType: props.router.query.sortType ==  'desc' ?
+                                                                    'asc' : 'desc',
+                                                                page: 0
+                                                            }
+                                                        }, null, {shallow: true})}>
                                                     {column.name}
                                                     <span>
-                                                        {router.query.sort == column.sort ?
-                                                            router.query.sortType == 'desc' ?
+                                                        {props.router.query.sort == column.sort ?
+                                                            props.router.query.sortType == 'desc' ?
                                                                 <CaretUp
                                                                     margin="-0.3125em"
                                                                     width="1.25em"/> :
@@ -110,7 +110,7 @@ const DataTable = (props:Props)=> {
                                                                     margin="-0.3125em"
                                                                     width="1.25em"/>}
                                                     </span>
-                                                </NavLink>
+                                                </span>
                                             </th>)}
                                 </tr>
                             </thead>
@@ -121,7 +121,7 @@ const DataTable = (props:Props)=> {
                             <tbody>
                                 <tr>
                                     {props.columns.map((column, index)=>
-                                        column.deletedMode == !!+router.query.deleted && 
+                                        column.deletedMode == !!+props.router.query.deleted && 
                                         <td
                                             key={column.name || index}
                                             style={{
@@ -143,12 +143,12 @@ const DataTable = (props:Props)=> {
                 <Paginate
                     className={style.paginate}
                     total={props.queryData?.paging.pages || 1}
-                    current={+router.query.page || 0}
+                    current={+props.router.query.page || 0}
                     onChange={(item)=> {
                         window.scrollTo({top: 0, behavior: 'smooth'});
-                        router.push({
+                        props.router.push({
                             query: {
-                                ...router.query,
+                                ...props.router.query,
                                 page: item.selected
                             }
                         }, null, {shallow: true});
@@ -163,7 +163,10 @@ const DataTable = (props:Props)=> {
 
 interface Props {
     className?:string;
-    pathname:string;
+    router: {
+        query:ParsedUrlQuery;
+        push:(url:Url, as?:Url, options?:{})=> void;
+    },
     tabs?: {
         name:string;
         active:boolean;
