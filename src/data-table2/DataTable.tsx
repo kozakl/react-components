@@ -1,4 +1,4 @@
-import {ReactNode, useState} from 'react';
+import {ReactElement, ReactNode, useState} from 'react';
 import {Url} from 'next/dist/shared/lib/router/router';
 import {ParsedUrlQuery, ParsedUrlQueryInput} from 'querystring';
 import {CaretUp, CaretDown,
@@ -77,7 +77,7 @@ const DataTable = (props:Props)=> {
                                     {props.columns.map((column, index)=>
                                         column.deletedMode == !!+props.router.query.deleted &&
                                             <th
-                                                key={column.name || index}
+                                                key={column.name.toString() || index}
                                                 style={{
                                                     pointerEvents: column.sort ?
                                                         'auto' : 'none',
@@ -123,7 +123,7 @@ const DataTable = (props:Props)=> {
                                     {props.columns.map((column, index)=>
                                         column.deletedMode == !!+props.router.query.deleted && 
                                         <td
-                                            key={column.name || index}
+                                            key={column.name.toString() || index}
                                             style={{
                                                 visibility: 'hidden',
                                                 width: column.width
@@ -173,7 +173,7 @@ interface Props {
         query:ParsedUrlQueryInput;
     }[],
     columns: {
-        name?:string;
+        name?:string | ReactElement;
         sort?:string;
         width:string;
         deletedMode:boolean;
