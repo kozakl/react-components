@@ -89,8 +89,9 @@
   .column { }
   .tableBodyContainer { }
   .noResult {
+    font-size: 0.875em;
     text-align: center;
-    margin: 2em 0;
+    margin: 1em 0;
   }
   .paginate {
     justify-content: center;
@@ -171,10 +172,10 @@
         display: inline-block;
         text-align: center;
         vertical-align: middle;
-        line-height: 1em;
+        pointer-events: none;
+        line-height: 1.25em;
       }
       & > span {
-        vertical-align: middle;
         margin-left: 0.125em;
       }
     }
