@@ -54,10 +54,11 @@ const DataTable = (props:Props)=> {
                 style.dataTable,
                 props.className
             )}>
-            {props.queryData &&
-                <div className={style.results}>
-                    {props.queryData.paging.total} results
-                </div>}
+            {!props.hideResults &&
+                props.queryData &&
+                    <div className={style.results}>
+                        {props.queryData.paging.total} results
+                    </div>}
             {mobile ?
                 <>
                     {props.tabs &&
@@ -68,91 +69,97 @@ const DataTable = (props:Props)=> {
                     </ul>
                 </> :
                 <>
-                    <div className={style.tableHeadContainer}>
-                        {props.tabs &&
-                            renderTabs()}
-                        <table className={style.tableHead}>
-                            <thead>
-                                <tr>
-                                    {props.columns.map((column, index)=>
-                                        column.deletedMode == !!+props.router.query.deleted &&
-                                            <th
-                                                key={column.name.toString() || index}
-                                                style={{
-                                                    pointerEvents: column.sort ?
-                                                        'auto' : 'none',
-                                                    width: column.width
-                                                }}>
-                                                <span
-                                                    className={style.column}
-                                                    onClick={()=>
-                                                        props.router.push({
-                                                            query: {
-                                                                ...props.router.query,
-                                                                sort: column.sort,
-                                                                sortType: props.router.query.sortType ==  'desc' ?
-                                                                    'asc' : 'desc',
-                                                                page: 0
-                                                            }
-                                                        }, null, {shallow: true})}>
-                                                    {column.name}
-                                                    <span>
-                                                        {props.router.query.sort == column.sort ?
-                                                            props.router.query.sortType == 'desc' ?
-                                                                <CaretUp
-                                                                    margin="-0.3125em"
-                                                                    width="1.25em"/> :
-                                                                <CaretDown
-                                                                    margin="-0.3125em"
-                                                                    width="1.25em"/> :
-                                                            column.sort &&
-                                                                <CaretsOppositeV
-                                                                    margin="-0.3125em"
-                                                                    width="1.25em"/>}
+                    {!props.hideTableHead &&
+                        <div className={style.tableHeadContainer}>
+                            {props.tabs &&
+                                renderTabs()}
+                            <table className={style.tableHead}>
+                                <thead>
+                                    <tr>
+                                        {props.columns.map((column)=>
+                                            column.deletedMode == !!+props.router.query.deleted &&
+                                                <th
+                                                    key={column.name?.toString() +
+                                                        column.sort + column.width}
+                                                    style={{
+                                                        pointerEvents: column.sort ?
+                                                            'auto' : 'none',
+                                                        width: column.width
+                                                    }}>
+                                                    <span
+                                                        className={style.column}
+                                                        onClick={()=>
+                                                            props.router.push({
+                                                                query: {
+                                                                    ...props.router.query,
+                                                                    sort: column.sort,
+                                                                    sortType: props.router.query.sortType ==  'desc' ?
+                                                                        'asc' : 'desc',
+                                                                    page: 0
+                                                                }
+                                                            }, null, {shallow: true})}>
+                                                        {column.name}
+                                                        <span>
+                                                            {props.router.query.sort == column.sort ?
+                                                                props.router.query.sortType == 'desc' ?
+                                                                    <CaretUp
+                                                                        margin="-0.3125em"
+                                                                        width="1.25em"/> :
+                                                                    <CaretDown
+                                                                        margin="-0.3125em"
+                                                                        width="1.25em"/> :
+                                                                column.sort &&
+                                                                    <CaretsOppositeV
+                                                                        margin="-0.3125em"
+                                                                        width="1.25em"/>}
+                                                        </span>
                                                     </span>
-                                                </span>
-                                            </th>)}
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div className={style.tableBodyContainer}>
-                        <table className={style.tableBody}>
-                            <tbody>
-                                <tr>
-                                    {props.columns.map((column, index)=>
-                                        column.deletedMode == !!+props.router.query.deleted && 
-                                        <td
-                                            key={column.name.toString() || index}
-                                            style={{
-                                                visibility: 'hidden',
-                                                width: column.width
-                                            }}/>)}
-                                </tr>
-                                {props.queryData &&
-                                    props.queryData.data.map(props.renderRow)}
-                            </tbody>
-                        </table>
-                    </div>
+                                                </th>)}
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>}
+                    {props.queryData &&
+                        <div className={style.tableBodyContainer}>
+                            {!!props.queryData.data.length ?
+                                <table className={style.tableBody}>
+                                    <tbody>
+                                        <tr>
+                                            {props.columns.map((column)=>
+                                                column.deletedMode == !!+props.router.query.deleted && 
+                                                <td
+                                                    key={column.name?.toString() +
+                                                        column.sort + column.width}
+                                                    style={{
+                                                        visibility: 'hidden',
+                                                        width: column.width
+                                                    }}/>)}
+                                        </tr>
+                                        {props.queryData &&
+                                            props.queryData.data.map(props.renderRow)}
+                                    </tbody>
+                                </table> : 
+                                <div className={style.noResult}>
+                                    No Result
+                                </div>}
+                        </div>}
                 </>}
-            {props.queryData && !props.queryData.data.length &&
-                <div className={style.noResult}>
-                    No Result
-                </div>}
-            {props.queryData && !!props.queryData.data.length &&
-                <Paginate
-                    className={style.paginate}
-                    total={props.queryData?.paging.pages || 1}
-                    current={+props.router.query.page || 0}
-                    onChange={(item)=> {
-                        window.scrollTo({top: 0, behavior: 'smooth'});
-                        props.router.push({
-                            query: {
-                                ...props.router.query,
-                                page: item.selected
-                            }
-                        }, null, {shallow: true});
-                    }}/>}
+            {!props.hidePaginate &&
+                props.queryData &&
+                !!props.queryData.data.length &&
+                    <Paginate
+                        className={style.paginate}
+                        total={props.queryData?.paging.pages || 1}
+                        current={+props.router.query.page || 0}
+                        onChange={(item)=> {
+                            window.scrollTo({top: 0, behavior: 'smooth'});
+                            props.router.push({
+                                query: {
+                                    ...props.router.query,
+                                    page: item.selected
+                                }
+                            }, null, {shallow: true});
+                        }}/>}
             {props.loading &&
                 <div className={style.loadingContainer}>
                     <Loading className={style.loading}/>
@@ -190,6 +197,9 @@ interface Props {
         }
     },
     loading?:boolean;
+    hideResults?:boolean;
+    hideTableHead?:boolean;
+    hidePaginate?:boolean;
     renderItem:(element: {
         id?:number;
         deleted?:boolean;
