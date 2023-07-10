@@ -2,7 +2,7 @@
   background: var(--background-primary);
   color: var(--color-primary);
   box-shadow: var(--shadow-tertiary);
-  border-radius: 0.125em;
+  border-radius: 1em;
   padding: 1.5em;
   margin: 5em auto 0;
   max-width: 32em;
