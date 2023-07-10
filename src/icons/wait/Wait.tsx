@@ -21,36 +21,38 @@ const Wait = (props:Props)=> (
             className={style.ring1}
             style={{
                 fill: 'none',
-                stroke: props.color,
-                strokeWidth: 2
+                stroke: props.colorPrimary,
+                strokeWidth: props.stroke
             }}
-            d="M16,6.8c-5.1,0-9.2,4.1-9.2,9.2c0,5.1,4.1,9.2,9.2,9.2c5.1,0,9.2-4.1,9.2-9.2"/>
+            d="M16,11.1c-2.7,0-4.9,2.2-4.9,4.9s2.2,4.9,4.9,4.9s4.9-2.2,4.9-4.9"/>
         <g className={style.ring2}>
             <path
                 style={{
                     fill: 'none',
-                    stroke: props.color,
-                    strokeWidth: 1.5
+                    stroke: props.colorPrimary,
+                    strokeWidth: 0.75 * props.stroke
                 }}
-                d="M16,1c8.3,0,15,6.7,15,15"/>
+                d="M16,8c4.4,0,8,3.6,8,8"/>
             <path
                 style={{
                     fill: 'none',
-                    stroke: props.color,
-                    strokeWidth: 1.5
+                    stroke: props.colorPrimary,
+                    strokeWidth: 0.75 * props.stroke
                 }}
-                d="M31,16c0,8.3-6.7,15-15,15C7.7,31,1,24.3,1,16"/>
+                d="M24,16c0,4.4-3.6,8-8,8s-8-3.6-8-8"/>
         </g>
     </svg>
 );
 
 Wait.defaultProps = {
-    color: 'var(--color-primary)'
-}
+    colorPrimary: 'var(--color-primary)',
+    stroke: 1
+};
 
 interface Props {
     className?:string;
-    color?:string;
+    colorPrimary?:string;
+    stroke?:number;
     padding?:string;
     margin?:string;
     width?:string;
