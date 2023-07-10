@@ -32,6 +32,7 @@ export * from './menu';
 export * from './moon';
 export * from './pen';
 export * from './sun';
+export * from './tel';
 export * from './trash';
 export * from './trash-arrow-right';
 export * from './trash-clock';
