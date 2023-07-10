@@ -26,6 +26,7 @@ export * from './circle-right-from-bracket';
 export * from './circle-url';
 export * from './circle-user';
 export * from './circle-xmark';
+export * from './email';
 export * from './eye';
 export * from './menu';
 export * from './moon';
