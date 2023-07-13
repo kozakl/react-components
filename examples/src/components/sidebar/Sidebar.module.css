@@ -1,7 +1,6 @@
 .sidebar {
-  background: var(--background-primary);
+  background: var(--background-secondary);
   padding-top: 2em;
-  border-right: 1px solid var(--color-primary);
   
   & > a:last-of-type {
     border-bottom: unset;

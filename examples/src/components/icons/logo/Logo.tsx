@@ -14,39 +14,42 @@ const Logo = (props:Props)=> (
             style={{
                 fill: props.colorPrimary
             }}
-            r="2.9"
+            r="1.5"
             cx="16"
             cy="16"/>
         <g>
             <ellipse
                 style={{
                     fill: 'none',
-                    stroke: props.colorPrimary
+                    stroke: props.colorPrimary,
+                    strokeWidth: 0.75
                 }}
                 cx="16"
                 cy="16"
-                rx="15.4"
-                ry="5.9"/>
+                rx="8"
+                ry="3.1"/>
             <ellipse
                 style={{
                     fill: 'none',
-                    stroke: props.colorPrimary
+                    stroke: props.colorPrimary,
+                    strokeWidth: 0.75
                 }}
-                transform="matrix(0.866 -0.5 0.5 0.866 -5.8564 10.1436)"
+                transform="matrix(0.866 -0.5 0.5 0.866 -5.8564 10.1437)"
                 cx="16"
                 cy="16"
-                rx="5.9"
-                ry="15.4"/>
+                rx="3.1"
+                ry="8"/>
             <ellipse
                 style={{
                     fill: 'none',
-                    stroke: props.colorPrimary
+                    stroke: props.colorPrimary,
+                    strokeWidth: 0.75
                 }}
-                transform="matrix(0.5 -0.866 0.866 0.5 -5.8564 21.8564)"
+                transform="matrix(0.5 -0.866 0.866 0.5 -5.8568 21.8561)"
                 cx="16"
                 cy="16"
-                rx="15.4"
-                ry="5.9"/>
+                rx="8"
+                ry="3.1"/>
         </g>
     </svg>
 );

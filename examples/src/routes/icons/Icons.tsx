@@ -18,153 +18,155 @@ const Main = ()=> {
         <Layout title="Icons - React Components">
             <div className={style.main}>
                 <div>
-                    <ArrowUp height="1.5em"/>
+                    <div>
+                        <ArrowUp height="1.5em" colorPrimary="white" outline={2} colorSecondary="red" strokeLinecap="round"/>
+                    </div>
                     <span>arrow-up</span>
                 </div>
                 <div>
-                    <ArrowDown height="1.5em"/>
+                    <div><ArrowDown height="6em" colorPrimary="white" outline={2} colorSecondary="red" strokeLinecap="round"/></div>
                     <span>arrow-down</span>
                 </div>
                 <div>
-                    <ArrowLeft height="1.5em"/>
+                    <div><ArrowLeft height="3em" margin="-0.75em"/></div>
                     <span>arrow-left</span>
                 </div>
                 <div>
-                    <ArrowRight height="1.5em"/>
+                    <div><ArrowRight height="1.5em"/></div>
                     <span>arrow-right</span>
                 </div>
                 <div>
-                    <ArrowTopLeft height="1.5em"/>
+                    <div><ArrowTopLeft height="1.5em"/></div>
                     <span>arrow-top-left</span>
                 </div>
                 <div>
-                    <ArrowTopRight height="1.5em"/>
+                    <div><ArrowTopRight height="1.5em"/></div>
                     <span>arrow-top-right</span>
                 </div>
                 <div>
-                    <ArrowBottomLeft height="1.5em"/>
+                    <div><ArrowBottomLeft height="6em" colorPrimary="white" outline={2} colorSecondary="red" strokeLinecap="round"/></div>
                     <span>arrow-bottom-left</span>
                 </div>
                 <div>
-                    <ArrowBottomRight height="1.5em"/>
+                    <div><ArrowBottomRight height="1.5em"/></div>
                     <span>arrow-bottom-right</span>
                 </div>
                 <div>
-                    <CaretUp height="1.5em"/>
+                    <div><CaretUp height="1.5em"/></div>
                     <span>caret-up</span>
                 </div>
                 <div>
-                    <CaretDown height="1.5em"/>
+                    <div><CaretDown height="1.5em"/></div>
                     <span>caret-down</span>
                 </div>
                 <div>
-                    <CaretLeft height="1.5em"/>
+                    <div><CaretLeft height="1.5em"/></div>
                     <span>caret-left</span>
                 </div>
                 <div>
-                    <CaretRight height="1.5em"/>
+                    <div><CaretRight height="1.5em"/></div>
                     <span>caret-right</span>
                 </div>
                 <div>
-                    <ChevronUp height="1.5em"/>
+                    <div><ChevronUp height="1.5em"/></div>
                     <span>chevron-up</span>
                 </div>
                 <div>
-                    <ChevronDown height="1.5em"/>
+                    <div><ChevronDown height="5em" colorPrimary="white" outline={2} colorSecondary="red" strokeLinecap="round"/></div>
                     <span>chevron-down</span>
                 </div>
                 <div>
-                    <ChevronLeft height="1.5em"/>
+                    <div><ChevronLeft height="1.5em"/></div>
                     <span>chevron-left</span>
                 </div>
                 <div>
-                    <ChevronRight height="1.5em"/>
+                    <div><ChevronRight height="1.5em"/></div>
                     <span>chevron-right</span>
                 </div>
                 <div>
-                    <CircleArrowRight height="1.5em"/>
+                    <div><CircleArrowRight height="1.5em"/></div>
                     <span>circle-arrow-right</span>
                 </div>
                 <div>
-                    <CircleCart height="1.5em"/>
+                    <div><CircleCart height="1.5em"/></div>
                     <span>circle-cart</span>
                 </div>
                 <div>
-                    <CircleCheck height="1.5em"/>
+                    <div><CircleCheck height="1.5em"/></div>
                     <span>circle-check</span>
                 </div>
                 <div>
-                    <CircleDownload height="1.5em"/>
+                    <div><CircleDownload height="1.5em"/></div>
                     <span>circle-download</span>
                 </div>
                 <div>
-                    <CircleMinus height="1.5em"/>
+                    <div><CircleMinus height="1.5em"/></div>
                     <span>circle-minus</span>
                 </div>
                 <div>
-                    <CirclePlus height="1.5em"/>
+                    <div><CirclePlus height="1.5em"/></div>
                     <span>circle-plus</span>
                 </div>
                 <div>
-                    <CircleRightFromBracket height="1.5em"/>
+                    <div><CircleRightFromBracket height="1.5em"/></div>
                     <span>circle-right-from-bracket</span>
                 </div>
                 <div>
-                    <CircleURL height="1.5em"/>
+                    <div><CircleURL height="1.5em"/></div>
                     <span>circle-url</span>
                 </div>
                 <div>
-                    <CircleUser height="1.5em"/>
+                    <div><CircleUser height="1.5em"/></div>
                     <span>circle-user</span>
                 </div>
                 <div>
-                    <CircleXMark height="1.5em"/>
+                    <div><CircleXMark height="1.5em"/></div>
                     <span>circle-xmark</span>
                 </div>
                 <div>
-                    <Eye height="1.5em"/>
+                    <div><Eye height="1.5em"/></div>
                     <span>eye</span>
                 </div>
                 <div>
-                    <Menu
+                    <div><Menu
                         cross={false}
                         height="1.5em"/>
-                    <span>menu</span>
+                    <span>menu</span></div>
                 </div>
                 <div>
-                    <Moon height="1.5em"/>
+                    <div><Moon height="1.5em"/></div>
                     <span>moon</span>
                 </div>
                 <div>
-                    <Pen height="1.5em"/>
+                    <div><Pen height="1.5em"/></div>
                     <span>pen</span>
                 </div>
                 <div>
-                    <Sun height="1.5em"/>
+                    <div><Sun height="1.5em"/></div>
                     <span>sun</span>
                 </div>
                 <div>
-                    <Trash height="1.5em"/>
+                    <div><Trash height="1.5em"/></div>
                     <span>trash</span>
                 </div>
                 <div>
-                    <TrashArrowRight height="1.5em"/>
+                    <div><TrashArrowRight height="1.5em"/></div>
                     <span>trash-arrow-right</span>
                 </div>
                 <div>
-                    <TrashClock height="1.5em"/>
+                    <div><TrashClock height="1.5em"/></div>
                     <span>trash-clock</span>
                 </div>
                 <div>
-                    <URL height="1.5em"/>
+                    <div><URL height="1.5em"/></div>
                     <span>url</span>
                 </div>
                 <div>
-                    <Wait height="1.5em"/>
+                    <div><Wait height="1.5em"/></div>
                     <span>wait</span>
                 </div>
                 <div>
-                    <XMark height="1.5em"/>
+                    <div><XMark height="6em" colorPrimary="white" outline={2} colorSecondary="red" strokeLinecap="round"/></div>
                     <span>xmark</span>
                 </div>
             </div>

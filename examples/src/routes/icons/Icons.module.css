@@ -18,9 +18,11 @@
     width: 6.25em;
     height: 6.25em;
     
-    & > svg {
+    & > div {
       display: block !important;
       margin: 1.5em auto 0.75em;
+    }
+    & > svg {
     }
     & > span {
       display: block;

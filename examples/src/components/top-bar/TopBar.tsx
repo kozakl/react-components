@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {useRouter} from 'next/router';
 import {IconButton} from '@kozakl/components/icon-button';
 import {Menu, Moon, Sun} from '@kozakl/components/icons';
-import {Switch} from '@kozakl/components/switch';
+import {ToggleSwitch} from '@kozakl/components/toggle-switch';
 import {useMatchMedia} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {Logo} from '../icons';
@@ -40,7 +40,8 @@ const TopBar = (props:Props)=> {
                             router.push('/')}>
                         <Logo
                             colorPrimary="var(--color-secondary)"
-                            height="1.75em"/>
+                            margin="-1em"
+                            width="3.5em"/>
                     </IconButton>
                     {!mobile &&
                         <div className={style.appearance}>
@@ -48,7 +49,7 @@ const TopBar = (props:Props)=> {
                                 colorPrimary="var(--color-secondary)"
                                 margin="0 0.25em 0 0"
                                 width="0.875em"/>
-                            <Switch
+                            <ToggleSwitch
                                 defaultChecked={
                                     typeof window != 'undefined' &&
                                         localStorage.getItem('appearance') != null &&
