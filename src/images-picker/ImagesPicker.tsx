@@ -84,7 +84,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                     download>
                                     <CircleDownload
                                         background="var(--background-download)"
-                                        colorPrimary="var(--color-primary-download)"
+                                        colorPrimary="var(--color-download)"
                                         circleStroke={0.75}
                                         padding="0.25em"
                                         margin="-0.8125em"
@@ -98,7 +98,7 @@ const ImagesPicker = forwardRef<HTMLInputElement, Props>((props, ref)=> {
                                     props.remove(index)}>
                                 <CircleMinus
                                     background="var(--background-remove)"
-                                    colorPrimary="var(--color-primary-remove)"
+                                    colorPrimary="var(--color-remove)"
                                     circleStroke={0.75}
                                     padding="0.25em"
                                     margin="-0.8125em"
