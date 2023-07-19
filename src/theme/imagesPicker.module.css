@@ -23,12 +23,7 @@
   }
   .imageContainer {
     position: relative;
-    background: rgba(
-      var(--background-secondary-r),
-      var(--background-secondary-g),
-      var(--background-secondary-b),
-      0.075
-    );
+    background: var(--background-secondary);
     border-radius: 0.375em;
     max-width: 9.5em;
     height: 4.75em;
