@@ -1,4 +1,5 @@
-import {MouseEventHandler, PropsWithChildren} from 'react';
+import {CSSProperties, MouseEventHandler,
+        PropsWithChildren} from 'react';
 import {classNames} from '@kozakl/utils';
 import {useTheme} from '../theme';
 import React from 'react';
@@ -15,6 +16,7 @@ const IconButton = (props:Props)=> {
             )}
             title={props.title}
             type={props.type}
+            style={props.style}
             disabled={props.disabled}
             onClick={props.onClick}
             {...props.dataAttributes}>
@@ -31,6 +33,7 @@ interface Props extends PropsWithChildren<{}> {
     className?:string;
     title?:string;
     type?:'button' | 'submit' | 'reset';
+    style?:CSSProperties;
     active?:boolean;
     disabled?:boolean;
     dataAttributes?: {
