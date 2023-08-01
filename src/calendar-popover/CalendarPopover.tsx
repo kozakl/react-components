@@ -3,6 +3,8 @@ import {format, Locale} from 'date-fns';
 import {useClickOutside} from '@kozakl/hooks';
 import {classNames} from '@kozakl/utils';
 import {Calendar} from '../calendar';
+import {XMark} from '../icons';
+import {IconButton} from '../icon-button';
 import {useTheme} from '../theme';
 import React from 'react';
 
@@ -40,7 +42,22 @@ const CalendarPopover = (props:Props)=> {
                 onClick={()=>
                     setOpen(!open)}>
                 {props.date ?
-                    format(props.date, 'PP', {locale: props.locale}) :
+                    <>
+                        <span>{format(props.date, 'PP', {locale: props.locale})}</span>
+                        <IconButton
+                            title="Clear"
+                            style={{marginLeft: '0.25em'}}
+                            onClick={(event)=> {
+                                event.stopPropagation();
+                                props.setDate(null);
+                            }}>
+                            <XMark
+                                colorPrimary="var(--color-primary)"
+                                padding="0.5em"
+                                margin="-0.5625em"
+                                width="2.25em"/>
+                        </IconButton>
+                    </> :
                     '---- -- --'}
             </div>
             {!props.disabled &&
@@ -65,6 +82,7 @@ const CalendarPopover = (props:Props)=> {
 interface Props {
     className?:string;
     date?:Date;
+    setDate?:(date:Date)=> void;
     locale?:Locale;
     error?:string;
     disabled?:boolean;

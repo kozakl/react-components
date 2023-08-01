@@ -13,6 +13,9 @@
       opacity: 0.75;
       cursor: not-allowed;
     }
+    & > span:first-of-type {
+      vertical-align: middle;
+    }
   }
   .calendar {
     position: absolute;
