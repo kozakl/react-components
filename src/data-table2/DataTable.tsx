@@ -63,10 +63,13 @@ const DataTable = (props:Props)=> {
                 <>
                     {props.tabs &&
                         renderTabs()}
-                    <ul className={style.list}>
-                        {props.queryData &&
-                            props.queryData.data.map(props.renderItem)}
-                    </ul>
+                    {props.queryData && !!props.queryData.data.length ?
+                        <ul className={style.list}>
+                            {props.queryData.data.map(props.renderItem)}
+                        </ul> : 
+                        <div className={style.noResultMobile}>
+                            No Result
+                        </div>}
                 </> :
                 <>
                     {!props.hideTableHead &&

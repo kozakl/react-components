@@ -84,6 +84,19 @@
     border-radius: 1em;
     margin-bottom: 2em;
   }
+  .noResultMobile {
+    font-size: 0.875em;
+    text-align: center;
+    border: 1px solid rgba(
+      var(--color-primary-r),
+      var(--color-primary-g),
+      var(--color-primary-b),
+      0.125
+    );
+    border-radius: 1em;
+    padding: 1em 0;
+    margin: 2em 0;
+  }
   .tableHeadContainer { }
   .tableHead { }
   .column { }
