@@ -101,6 +101,7 @@
   .tableHead { }
   .column { }
   .tableBodyContainer { }
+  .tableBody { }
   .noResult {
     font-size: 0.875em;
     text-align: center;
@@ -170,9 +171,6 @@
         }
       }
     }
-    .tableBody {
-      margin: 0.5em 0;
-    }
     .column {
       display: inline-block;
       color: inherit;
@@ -194,6 +192,9 @@
     }
     .tableBodyContainer {
       overflow: unset;
+    }
+    .tableBody {
+      margin: 0.5em 0;
     }
   }
 }
