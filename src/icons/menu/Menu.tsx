@@ -25,19 +25,19 @@ const Menu = (props:Props)=> {
                 style={{
                     fill: props.colorPrimary
                 }}
-                d="M5 13h90v6H5z"/>
+                d="M5 17h90v6H5z"/>
             <path
                 className={style.line2}
                 style={{
                     fill: props.colorPrimary
                 }}
-                d="M5 43h90v6H5z"/>
+                d="M5 47h90v6H5z"/>
             <path
                 className={style.line3}
                 style={{
                     fill: props.colorPrimary
                 }}
-                d="M5 73h90v6H5z"/>
+                d="M5 77h90v6H5z"/>
         </svg>
     );
 };
