@@ -32,7 +32,9 @@ const DataTable = (props:Props)=> {
                         className={classNames(
                             style.tab,
                             tab.active &&
-                                style.active
+                                style.active,
+                            props.smallTabs &&
+                                style.small
                         )}
                         key={tab.name}
                         onClick={()=>
@@ -44,6 +46,42 @@ const DataTable = (props:Props)=> {
                             }, null, {shallow: true})}>
                         {tab.name}
                     </span>)}
+            </nav>
+        );
+    }
+    
+    function renderTabsMulti() {
+        return (
+            <nav
+                className={classNames(
+                    style.tabsMulti,
+                    +props.router.query.deleted &&
+                        style.disabled,
+                    props.router.query.search &&
+                        style.disabled
+                )}>
+                {props.tabsMulti.map((tabsRow)=>
+                    <div className={style.tabsRow}>
+                        {tabsRow.map((tab)=>
+                            <span
+                                className={classNames(
+                                    style.tab,
+                                    tab.active &&
+                                        style.active,
+                                    props.smallTabs &&
+                                        style.small
+                                )}
+                                key={tab.name}
+                                onClick={()=>
+                                    props.router.push({
+                                        query: {
+                                            ...props.router.query,
+                                            ...tab.query
+                                        }
+                                    }, null, {shallow: true})}>
+                                {tab.name}
+                            </span>)}
+                    </div>)}
             </nav>
         );
     }
@@ -63,6 +101,8 @@ const DataTable = (props:Props)=> {
                 <>
                     {props.tabs &&
                         renderTabs()}
+                    {props.tabsMulti &&
+                        renderTabsMulti()}
                     {props.queryData && !!props.queryData.data.length ?
                         <ul className={style.list}>
                             {props.queryData.data.map(props.renderItem)}
@@ -76,6 +116,8 @@ const DataTable = (props:Props)=> {
                         <div className={style.tableHeadContainer}>
                             {props.tabs &&
                                 renderTabs()}
+                            {props.tabsMulti &&
+                                renderTabsMulti()}
                             <table className={style.tableHead}>
                                 <thead>
                                     <tr>
@@ -182,6 +224,11 @@ interface Props {
         active:boolean;
         query:ParsedUrlQueryInput;
     }[],
+    tabsMulti?: {
+        name:string;
+        active:boolean;
+        query:ParsedUrlQueryInput;
+    }[][],
     columns: {
         name?:string | ReactElement;
         sort?:string;
@@ -200,6 +247,7 @@ interface Props {
         }
     },
     loading?:boolean;
+    smallTabs?:boolean;
     hideResults?:boolean;
     hideTableHead?:boolean;
     hidePaginate?:boolean;
