@@ -36,7 +36,7 @@ const DataTable = (props:Props)=> {
                             props.smallTabs &&
                                 style.small
                         )}
-                        key={tab.key || tab.name}
+                        key={tab.key || (tab.name as string)}
                         onClick={()=>
                             props.router.push({
                                 query: {
@@ -71,7 +71,7 @@ const DataTable = (props:Props)=> {
                                     props.smallTabs &&
                                         style.small
                                 )}
-                                key={tab.key || tab.name}
+                                key={tab.key || (tab.name as string)}
                                 onClick={()=>
                                     props.router.push({
                                         query: {
@@ -221,13 +221,13 @@ interface Props {
     },
     tabs?: {
         key?:Key;
-        name:string;
+        name:string | ReactElement;
         active:boolean;
         query:ParsedUrlQueryInput;
     }[],
     tabsMulti?: {
         key?:Key;
-        name:string;
+        name:string | ReactElement;
         active:boolean;
         query:ParsedUrlQueryInput;
     }[][],
