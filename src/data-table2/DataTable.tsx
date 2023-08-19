@@ -1,4 +1,4 @@
-import {ReactElement, ReactNode, useState} from 'react';
+import {Key, ReactElement, ReactNode, useState} from 'react';
 import {Url} from 'next/dist/shared/lib/router/router';
 import {ParsedUrlQuery, ParsedUrlQueryInput} from 'querystring';
 import {CaretUp, CaretDown,
@@ -36,7 +36,7 @@ const DataTable = (props:Props)=> {
                             props.smallTabs &&
                                 style.small
                         )}
-                        key={tab.name}
+                        key={tab.key || tab.name}
                         onClick={()=>
                             props.router.push({
                                 query: {
@@ -71,7 +71,7 @@ const DataTable = (props:Props)=> {
                                     props.smallTabs &&
                                         style.small
                                 )}
-                                key={tab.name}
+                                key={tab.key || tab.name}
                                 onClick={()=>
                                     props.router.push({
                                         query: {
@@ -220,11 +220,13 @@ interface Props {
         push:(url:Url, as?:Url, options?:{})=> void;
     },
     tabs?: {
+        key?:Key;
         name:string;
         active:boolean;
         query:ParsedUrlQueryInput;
     }[],
     tabsMulti?: {
+        key?:Key;
         name:string;
         active:boolean;
         query:ParsedUrlQueryInput;
