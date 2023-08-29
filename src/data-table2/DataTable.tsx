@@ -60,8 +60,10 @@ const DataTable = (props:Props)=> {
                     props.router.query.search &&
                         style.disabled
                 )}>
-                {props.tabsMulti.map((tabsRow)=>
-                    <div className={style.tabsRow}>
+                {props.tabsMulti.map((tabsRow, index)=>
+                    <div
+                        className={style.tabsRow}
+                        key={index}>
                         {tabsRow.map((tab)=>
                             <span
                                 className={classNames(
