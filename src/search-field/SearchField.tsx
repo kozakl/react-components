@@ -19,12 +19,12 @@ const SearchField = (props:Props)=> {
     function onUp(event:KeyboardEvent<HTMLInputElement>) {
         if (event.key == 'Enter') {
             if (props.isEmpty() && !props.allowEnterEmpty) {
-                props.setError('Field cannot be empty');
+                props.setError(props.errorMessages.empty);
                 return;
             } else if (!props.allowEnterEmpty &&
                        !props.value.startsWith('#') &&
                         props.value.length < 3) {
-                props.setError('Field has too few characters');
+                props.setError(props.errorMessages.tooFew);
                 return;
             }
             props.setError(null);
@@ -65,7 +65,11 @@ const SearchField = (props:Props)=> {
 SearchField.defaultProps = {
     placeholder: "Search",
     openable: false,
-    outlined: true
+    outlined: true,
+    errorMessages: {
+        empty: 'Field cannot be empty',
+        tooFew: 'Field has too few characters'
+    }
 };
 
 interface Props {
@@ -79,9 +83,13 @@ interface Props {
     allowEnterEmpty?:boolean;
     disabled?:boolean;
     enabledClose?:boolean;
+    isEmpty:()=> boolean;
     error?:string;
     setError?:(error:string)=> void;
-    isEmpty:()=> boolean;
+    errorMessages:{
+        empty:string;
+        tooFew:string;
+    };
     onSearch:()=> void;
     onChange?:ChangeEventHandler<HTMLInputElement>;
     onClickClose?:MouseEventHandler<HTMLButtonElement>;
