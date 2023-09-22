@@ -86,7 +86,7 @@ interface Props {
     isEmpty:()=> boolean;
     error?:string;
     setError?:(error:string)=> void;
-    errorMessages:{
+    errorMessages: {
         empty:string;
         tooFew:string;
     };
