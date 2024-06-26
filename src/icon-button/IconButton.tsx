@@ -19,7 +19,8 @@ const IconButton = (props:Props)=> {
             style={props.style}
             disabled={props.disabled}
             onClick={props.onClick}
-            {...props.dataAttributes}>
+            {...props.dataAttributes}
+            {...props.ariaAttributes}>
             {props.children}
         </button>
     );
@@ -37,7 +38,10 @@ interface Props extends PropsWithChildren<{}> {
     active?:boolean;
     disabled?:boolean;
     dataAttributes?: {
-        [attribute:`data-${string}`]:string | number | boolean
+        [attribute: `data-${string}`]:string | number | boolean
+    };
+    ariaAttributes?: {
+        [attribute: `aria-${string}`]:string | number | boolean
     };
     onClick?:MouseEventHandler<HTMLButtonElement>;
 }
