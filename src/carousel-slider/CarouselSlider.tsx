@@ -81,6 +81,9 @@ const CarouselSlider = (props:Props)=> {
             {props.arrows &&
                 <nav className={theme.arrows}>
                     <IconButton
+                        ariaAttributes={{
+                            'aria-label': 'Previous Image'
+                        }}
                         disabled={index <= 0}
                         onClick={()=> {
                             const currentIndex = index > 0 ? 
@@ -92,6 +95,9 @@ const CarouselSlider = (props:Props)=> {
                         <props.iconPrev/>
                     </IconButton>
                         <IconButton
+                            ariaAttributes={{
+                                'aria-label': 'Next Image'
+                            }}
                             disabled={
                                 index >= Math.round(list.current?.scrollWidth / list.current?.clientWidth) - 1}
                             onClick={()=> {
